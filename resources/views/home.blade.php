@@ -16,24 +16,17 @@ MyKom
             <div class="card-body">
                 <span class="svg-icon svg-icon-success svg-icon-3x">
                     <!--begin::Svg Icon | path:C:\wamp64\www\keenthemes\themes\metronic\theme\html\demo1\dist/../src/media/svg/icons\Home\Globe.svg-->
-                    <span class="svg-icon svg-icon-primary svg-icon-2x">
-                        <!--begin::Svg Icon | path:C:\wamp64\www\keenthemes\themes\metronic\theme\html\demo1\dist/../src/media/svg/icons\Food\Bottle1.svg--><svg
-                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
-                            height="24px" viewBox="0 0 24 24" version="1.1">
-                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                <rect x="0" y="0" width="24" height="24" />
-                                <path
-                                    d="M6.2,9.73333333 L8.7,6.4 C8.88885438,6.14819416 9.1852427,6 9.5,6 L14.5,6 C14.8147573,6 15.1111456,6.14819416 15.3,6.4 L17.8,9.73333333 C17.9298221,9.9064295 18,10.1169631 18,10.3333333 L18,21 C18,22.1045695 17.1045695,23 16,23 L8,23 C6.8954305,23 6,22.1045695 6,21 L6,10.3333333 C6,10.1169631 6.07017787,9.9064295 6.2,9.73333333 Z M9,12 C8.44771525,12 8,12.4477153 8,13 L8,20 C8,20.5522847 8.44771525,21 9,21 L10,21 C10.5522847,21 11,20.5522847 11,20 L11,13 C11,12.4477153 10.5522847,12 10,12 L9,12 Z"
-                                    fill="#000000" />
-                                <rect fill="#000000" opacity="0.3" x="9" y="1" width="6" height="3" rx="1" />
-                            </g>
-                        </svg>
-                        <!--end::Svg Icon-->
-                    </span>
-                    <!--end::Svg Icon-->
+                   <span class="svg-icon svg-icon-primary svg-icon-2x"><!--begin::Svg Icon | path:C:\wamp64\www\keenthemes\themes\metronic\theme\html\demo1\dist/../src/media/svg/icons\Devices\Video-camera.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <rect x="0" y="0" width="24" height="24"/>
+                        <rect fill="#000000" x="2" y="6" width="13" height="12" rx="2"/>
+                        <path d="M22,8.4142119 L22,15.5857848 C22,16.1380695 21.5522847,16.5857848 21,16.5857848 C20.7347833,16.5857848 20.4804293,16.4804278 20.2928929,16.2928912 L16.7071064,12.7071013 C16.3165823,12.3165768 16.3165826,11.6834118 16.7071071,11.2928877 L20.2928936,7.70710477 C20.683418,7.31658067 21.316583,7.31658098 21.7071071,7.70710546 C21.8946433,7.89464181 22,8.14899558 22,8.4142119 Z" fill="#000000" opacity="0.3"/>
+                    </g>
+                </svg><!--end::Svg Icon-->
+                   </span>
                 </span>
                 <div class="text-dark font-weight-bolder font-size-h2 mt-3">{{$data['products']}}</div>
-                <a class="text-muted font-weight-bold font-size-lg mt-1">عدد المنتجات</a>
+                <a class="text-muted font-weight-bold font-size-lg mt-1">عدد الفيديوهات المضافة</a>
             </div>
         </div>
     </div>
@@ -54,31 +47,7 @@ MyKom
                     <!--end::Svg Icon-->
                 </span>
                 <div class="text-dark font-weight-bolder font-size-h2 mt-3">{{$data['brands']}}</div>
-                <a class="text-muted font-weight-bold font-size-lg mt-1">عدد العلامات التجارية</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-3">
-        <div class="card card-custom gutter-b" style="height: 150px">
-            <div class="card-body">
-                <span class="svg-icon svg-icon-success svg-icon-3x">
-                    <!--begin::Svg Icon | path:C:\wamp64\www\keenthemes\themes\metronic\theme\html\demo1\dist/../src/media/svg/icons\Home\Book-open.svg-->
-                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
-                        height="24px" viewBox="0 0 24 24" version="1.1">
-                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                            <rect x="0" y="0" width="24" height="24" />
-                            <path
-                                d="M13.6855025,18.7082217 C15.9113859,17.8189707 18.682885,17.2495635 22,17 C22,16.9325178 22,13.1012863 22,5.50630526 L21.9999762,5.50630526 C21.9999762,5.23017604 21.7761292,5.00632908 21.5,5.00632908 C21.4957817,5.00632908 21.4915635,5.00638247 21.4873465,5.00648922 C18.658231,5.07811173 15.8291155,5.74261533 13,7 C13,7.04449645 13,10.79246 13,18.2438906 L12.9999854,18.2438906 C12.9999854,18.520041 13.2238496,18.7439052 13.5,18.7439052 C13.5635398,18.7439052 13.6264972,18.7317946 13.6855025,18.7082217 Z"
-                                fill="#000000" />
-                            <path
-                                d="M10.3144829,18.7082217 C8.08859955,17.8189707 5.31710038,17.2495635 1.99998542,17 C1.99998542,16.9325178 1.99998542,13.1012863 1.99998542,5.50630526 L2.00000925,5.50630526 C2.00000925,5.23017604 2.22385621,5.00632908 2.49998542,5.00632908 C2.50420375,5.00632908 2.5084219,5.00638247 2.51263888,5.00648922 C5.34175439,5.07811173 8.17086991,5.74261533 10.9999854,7 C10.9999854,7.04449645 10.9999854,10.79246 10.9999854,18.2438906 L11,18.2438906 C11,18.520041 10.7761358,18.7439052 10.4999854,18.7439052 C10.4364457,18.7439052 10.3734882,18.7317946 10.3144829,18.7082217 Z"
-                                fill="#000000" opacity="0.3" />
-                        </g>
-                    </svg>
-                    <!--end::Svg Icon-->
-                </span>
-                <div class="text-dark font-weight-bolder font-size-h2 mt-3">{{$data['orders']}}</div>
-                <a class="text-muted font-weight-bold font-size-lg mt-1">عدد الطلبات</a>
+                <a class="text-muted font-weight-bold font-size-lg mt-1">عدد الاقسام المضافة</a>
             </div>
         </div>
     </div>
@@ -107,117 +76,117 @@ MyKom
         </div>
     </div>
 </div>
-<div class="row">
-    <div class="col-lg-8">
-        <!--begin::Advance Table Widget 4-->
-        <div class="card card-custom card-stretch gutter-b">
-            <!--begin::Header-->
-            <div class="card-header border-0 py-5">
-                <h3 class="card-title align-items-start flex-column">
-                    <span class="card-label font-weight-bolder text-dark">احدث الطلبات</span>
-                </h3>
-                <div class="card-toolbar">
-                    <a href="{{ route('orders') }}" class="btn btn-success font-weight-bolder font-size-sm mr-3">كل
-                        الطلبات</a>
-                </div>
-            </div>
-            <div class="card-body pt-0 pb-3">
-                <div class="tab-content">
-                    <!--begin::Table-->
-                    <div class="table-responsive">
-                        <table class="table table-head-custom table-head-bg table-borderless table-vertical-center">
-                            <thead>
-                                <tr class="text-left text-uppercase">
-                                    <th style="min-width: 100px">
-                                        <span class="text-dark-75"> بيانات العميل</span>
-                                    </th>
-                                    <th style="min-width: 100px">
-                                        <span class="text-dark-75">رقم الطلب</span>
-                                    </th>
-                                    <th style="min-width: 100px">
-                                        <span class="text-dark-75">قيمة الطلب</span>
-                                    </th>
-                                    <th style="min-width: 130px">
-                                        <span class="text-dark-75">تاريخ الانشاء</span>
-                                    </th>
-                                    <th style="min-width: 100px">
-                                        <span class="text-dark-75">حالة الطلب</span>
-                                    </th>
-                                    <th class="text-center" style="min-width: 80px">
-                                        <span class="text-dark-75">@lang('lang.manage')</span>
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach($newest_orders as $order)
-                                <tr>
-                                    <td>{{ $order->user->name }}</td>
-                                    <td>{{ $order->uicode }}</td>
-                                    <td>{{ $order->total }}</td>
-                                    <td>{{ $order->created_at }}</td>
-                                    <td>
-                                        <span class="badge badge-primary">{{ __('lang.order_status.'.$order->status)
-                                            }}</span>
-                                    </td>
-                                    <td class="text-center">
-                                        <a href="{{ route('orders.show', $order->id) }}"> <i
-                                                class="fa la-eye text-info btn-icon"></i></a>
-                                    </td>
-                                </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                    </div>
-                    <!--end::Table-->
-                </div>
-            </div>
-            <!--end::Body-->
-        </div>
-        <!--end::Advance Table Widget 4-->
-    </div>
-    <div class="col-lg-4">
-        <div class="card card-custom card-stretch gutter-b">
-            <div class="card-header border-0">
-                <h3 class="card-title font-weight-bolder text-dark">احدث العملاء</h3>
-                <div class="card-toolbar">
-                    <div class="dropdown dropdown-inline">
-                        <a href="#" class="btn btn-success font-weight-bolder font-size-sm mr-3">كل العملاء</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card-body pt-2">
-                <div class="table-responsive">
-                    <table class="table table-head-custom table-head-bg table-borderless table-vertical-center">
-                        <tbody>
-                            @if(count($newest_customers) >0)
-                            @foreach($newest_customers as $row)
-                            <tr>
-                                <td class="pl-0 py-8">
-                                    <div class="d-flex align-items-center">
-                                        <div class="symbol symbol-50 flex-shrink-0 mr-4">
-                                            <div class="symbol symbol-40 symbol-sm flex-shrink-0">
-                                                <img class="" src="{{$row->image}}" alt="photo">
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <a href="javascript:void(this)"
-                                                class="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">{{$row->name}}</a>
-                                            <span class="text-muted font-weight-bold d-block">{{$row->phone}}</span>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <span
-                                        class="text-dark-75 font-weight-bolder d-block font-size-lg">{{$row->created_at->format('Y-m-d')}}</span>
-                                </td>
-                            </tr>
-                            @endforeach
-                            @endif
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+{{--<div class="row">--}}
+{{--    <div class="col-lg-8">--}}
+{{--        <!--begin::Advance Table Widget 4-->--}}
+{{--        <div class="card card-custom card-stretch gutter-b">--}}
+{{--            <!--begin::Header-->--}}
+{{--            <div class="card-header border-0 py-5">--}}
+{{--                <h3 class="card-title align-items-start flex-column">--}}
+{{--                    <span class="card-label font-weight-bolder text-dark">احدث الطلبات</span>--}}
+{{--                </h3>--}}
+{{--                <div class="card-toolbar">--}}
+{{--                    <a href="{{ route('orders') }}" class="btn btn-success font-weight-bolder font-size-sm mr-3">كل--}}
+{{--                        الطلبات</a>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="card-body pt-0 pb-3">--}}
+{{--                <div class="tab-content">--}}
+{{--                    <!--begin::Table-->--}}
+{{--                    <div class="table-responsive">--}}
+{{--                        <table class="table table-head-custom table-head-bg table-borderless table-vertical-center">--}}
+{{--                            <thead>--}}
+{{--                                <tr class="text-left text-uppercase">--}}
+{{--                                    <th style="min-width: 100px">--}}
+{{--                                        <span class="text-dark-75"> بيانات العميل</span>--}}
+{{--                                    </th>--}}
+{{--                                    <th style="min-width: 100px">--}}
+{{--                                        <span class="text-dark-75">رقم الطلب</span>--}}
+{{--                                    </th>--}}
+{{--                                    <th style="min-width: 100px">--}}
+{{--                                        <span class="text-dark-75">قيمة الطلب</span>--}}
+{{--                                    </th>--}}
+{{--                                    <th style="min-width: 130px">--}}
+{{--                                        <span class="text-dark-75">تاريخ الانشاء</span>--}}
+{{--                                    </th>--}}
+{{--                                    <th style="min-width: 100px">--}}
+{{--                                        <span class="text-dark-75">حالة الطلب</span>--}}
+{{--                                    </th>--}}
+{{--                                    <th class="text-center" style="min-width: 80px">--}}
+{{--                                        <span class="text-dark-75">@lang('lang.manage')</span>--}}
+{{--                                    </th>--}}
+{{--                                </tr>--}}
+{{--                            </thead>--}}
+{{--                            <tbody>--}}
+{{--                                @foreach($newest_orders as $order)--}}
+{{--                                <tr>--}}
+{{--                                    <td>{{ $order->user->name }}</td>--}}
+{{--                                    <td>{{ $order->uicode }}</td>--}}
+{{--                                    <td>{{ $order->total }}</td>--}}
+{{--                                    <td>{{ $order->created_at }}</td>--}}
+{{--                                    <td>--}}
+{{--                                        <span class="badge badge-primary">{{ __('lang.order_status.'.$order->status)--}}
+{{--                                            }}</span>--}}
+{{--                                    </td>--}}
+{{--                                    <td class="text-center">--}}
+{{--                                        <a href="{{ route('orders.show', $order->id) }}"> <i--}}
+{{--                                                class="fa la-eye text-info btn-icon"></i></a>--}}
+{{--                                    </td>--}}
+{{--                                </tr>--}}
+{{--                                @endforeach--}}
+{{--                            </tbody>--}}
+{{--                        </table>--}}
+{{--                    </div>--}}
+{{--                    <!--end::Table-->--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <!--end::Body-->--}}
+{{--        </div>--}}
+{{--        <!--end::Advance Table Widget 4-->--}}
+{{--    </div>--}}
+{{--    <div class="col-lg-4">--}}
+{{--        <div class="card card-custom card-stretch gutter-b">--}}
+{{--            <div class="card-header border-0">--}}
+{{--                <h3 class="card-title font-weight-bolder text-dark">احدث العملاء</h3>--}}
+{{--                <div class="card-toolbar">--}}
+{{--                    <div class="dropdown dropdown-inline">--}}
+{{--                        <a href="#" class="btn btn-success font-weight-bolder font-size-sm mr-3">كل العملاء</a>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="card-body pt-2">--}}
+{{--                <div class="table-responsive">--}}
+{{--                    <table class="table table-head-custom table-head-bg table-borderless table-vertical-center">--}}
+{{--                        <tbody>--}}
+{{--                            @if(count($newest_customers) >0)--}}
+{{--                            @foreach($newest_customers as $row)--}}
+{{--                            <tr>--}}
+{{--                                <td class="pl-0 py-8">--}}
+{{--                                    <div class="d-flex align-items-center">--}}
+{{--                                        <div class="symbol symbol-50 flex-shrink-0 mr-4">--}}
+{{--                                            <div class="symbol symbol-40 symbol-sm flex-shrink-0">--}}
+{{--                                                <img class="" src="{{$row->image}}" alt="photo">--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                        <div>--}}
+{{--                                            <a href="javascript:void(this)"--}}
+{{--                                                class="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">{{$row->name}}</a>--}}
+{{--                                            <span class="text-muted font-weight-bold d-block">{{$row->phone}}</span>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </td>--}}
+{{--                                <td>--}}
+{{--                                    <span--}}
+{{--                                        class="text-dark-75 font-weight-bolder d-block font-size-lg">{{$row->created_at->format('Y-m-d')}}</span>--}}
+{{--                                </td>--}}
+{{--                            </tr>--}}
+{{--                            @endforeach--}}
+{{--                            @endif--}}
+{{--                        </tbody>--}}
+{{--                    </table>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--</div>--}}
 @endsection

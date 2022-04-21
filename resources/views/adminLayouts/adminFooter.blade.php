@@ -12,8 +12,9 @@
         <div class="text-dark order-2 order-md-1">
 
             {{--            <span class="text-muted font-weight-bold mr-2">{{\Carbon\Carbon::now()->year}}</span>--}}
-            <a href="{{settings('copyright')}}" title="{{settings('copyright')}}" target="_blank"
-               class="text-dark-75 text-hover-primary">{{settings('copyright')}}</a>
+            <a href="http://tesolutionspro.com/" title="جميع الحقوق محفوظة منصة lima ، تنفيذ و تطوير بواسطة TES"
+               target="_blank"
+               class="text-dark-75 text-hover-primary">جميع الحقوق محفوظة منصة lima ، تنفيذ و تطوير بواسطة TES</a>
         </div>
         <!--end::Copyright-->
         <!--begin::Nav-->
@@ -172,8 +173,8 @@
         "font-family": "Poppins"
     };
     const ARE_YOU_SURE = "{{ __('lang.are_you_sure') }}";
-    
-    </script>
+
+</script>
 <!--end::Global Config-->
 <!--begin::Global Theme Bundle(used by all pages)-->
 <script src="assets/plugins/global/plugins.bundle.js"></script>

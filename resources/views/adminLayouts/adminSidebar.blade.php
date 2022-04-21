@@ -42,43 +42,43 @@
                     </a>
                 </li>
             @endcan
-            @can('read-brands')
-                <li class="menu-item menu-item-submenu @if( Request::segment(1)== 'brands' or Request::segment(1)== 'brand_products' ) menu-item-open @endif"
-                    aria-haspopup="true" data-menu-toggle="hover">
-                    <a href="{{route('brands')}}" class="menu-link menu-toggle">
-                        <i class="menu-icon flaticon2-drop"></i>
-                        <span class="menu-text">العلامات التجاريه</span>
-                    </a>
-                </li>
-            @endcan
-            @can('read-coupons')
-                <li class="menu-item menu-item-submenu @if(request()->segment(1) == 'coupons') menu-item-open @endif "
-                    aria-haspopup="true" data-menu-toggle="hover">
-                    <a href="{{route('coupons')}}" class="menu-link menu-toggle">
-                        <i class="menu-icon flaticon2-menu-3"></i>
-                        <span class="menu-text">كوبونات الخصم</span>
-                    </a>
-                </li>
-            @endcan
-            @can('read-orders')
-            <li class="menu-item menu-item-submenu @if(request()->segment(1) == 'orders') menu-item-active @endif "
-                aria-haspopup="true" data-menu-toggle="hover">
-                <a href="{{route('orders')}}" class="menu-link menu-toggle">
-                    <i class="menu-icon flaticon2-shopping-cart-1"></i>
-                    <span class="menu-text">الطلبات</span>
-                </a>
-            </li>
-            @endcan
-            
-            @can('read-orders')
-            <li class="menu-item {{ request()->routeIs('shippings*') ? 'menu-item-active' : '' }} "
-                aria-haspopup="true" data-menu-toggle="hover">
-                <a href="{{route('shippings')}}" class="menu-link menu-toggle">
-                    <i class="menu-icon flaticon2-shopping-cart-1"></i>
-                    <span class="menu-text">{{ __('lang.shipments') }}</span>
-                </a>
-            </li>
-            @endcan
+{{--            @can('read-brands')--}}
+{{--                <li class="menu-item menu-item-submenu @if( Request::segment(1)== 'brands' or Request::segment(1)== 'brand_products' ) menu-item-open @endif"--}}
+{{--                    aria-haspopup="true" data-menu-toggle="hover">--}}
+{{--                    <a href="{{route('brands')}}" class="menu-link menu-toggle">--}}
+{{--                        <i class="menu-icon flaticon2-drop"></i>--}}
+{{--                        <span class="menu-text">العلامات التجاريه</span>--}}
+{{--                    </a>--}}
+{{--                </li>--}}
+{{--            @endcan--}}
+{{--            @can('read-coupons')--}}
+{{--                <li class="menu-item menu-item-submenu @if(request()->segment(1) == 'coupons') menu-item-open @endif "--}}
+{{--                    aria-haspopup="true" data-menu-toggle="hover">--}}
+{{--                    <a href="{{route('coupons')}}" class="menu-link menu-toggle">--}}
+{{--                        <i class="menu-icon flaticon2-menu-3"></i>--}}
+{{--                        <span class="menu-text">كوبونات الخصم</span>--}}
+{{--                    </a>--}}
+{{--                </li>--}}
+{{--            @endcan--}}
+{{--            @can('read-orders')--}}
+{{--            <li class="menu-item menu-item-submenu @if(request()->segment(1) == 'orders') menu-item-active @endif "--}}
+{{--                aria-haspopup="true" data-menu-toggle="hover">--}}
+{{--                <a href="{{route('orders')}}" class="menu-link menu-toggle">--}}
+{{--                    <i class="menu-icon flaticon2-shopping-cart-1"></i>--}}
+{{--                    <span class="menu-text">الطلبات</span>--}}
+{{--                </a>--}}
+{{--            </li>--}}
+{{--            @endcan--}}
+
+{{--            @can('read-orders')--}}
+{{--            <li class="menu-item {{ request()->routeIs('shippings*') ? 'menu-item-active' : '' }} "--}}
+{{--                aria-haspopup="true" data-menu-toggle="hover">--}}
+{{--                <a href="{{route('shippings')}}" class="menu-link menu-toggle">--}}
+{{--                    <i class="menu-icon flaticon2-shopping-cart-1"></i>--}}
+{{--                    <span class="menu-text">{{ __('lang.shipments') }}</span>--}}
+{{--                </a>--}}
+{{--            </li>--}}
+{{--            @endcan--}}
 
             @can('read-admins')
                 <li class="menu-item menu-item-submenu @if(request()->segment(1) == 'admins') menu-item-open @endif "
@@ -98,19 +98,19 @@
                     </a>
                 </li>
             @endcan
-            @can('read-inboxes')
-                @php($new=\App\Models\Inbox::where('seen','0')->count())
-                <li class="menu-item menu-item-submenu @if(request()->segment(1) == 'inboxes') menu-item-open @endif "
-                    aria-haspopup="true" data-menu-toggle="hover">
-                    <a href="{{url('/inboxes')}}" class="menu-link menu-toggle">
-                        <i class="menu-icon fas fa-envelope"></i>
-                        <span class="menu-text">الرسائل</span>
-                        <span class="menu-label">
-                    @if($new>0)<span class="label label-danger label-inline">{{$new}}</span>@endif
-													</span>
-                    </a>
-                </li>
-            @endcan
+{{--            @can('read-inboxes')--}}
+{{--                @php($new=\App\Models\Inbox::where('seen','0')->count())--}}
+{{--                <li class="menu-item menu-item-submenu @if(request()->segment(1) == 'inboxes') menu-item-open @endif "--}}
+{{--                    aria-haspopup="true" data-menu-toggle="hover">--}}
+{{--                    <a href="{{url('/inboxes')}}" class="menu-link menu-toggle">--}}
+{{--                        <i class="menu-icon fas fa-envelope"></i>--}}
+{{--                        <span class="menu-text">الرسائل</span>--}}
+{{--                        <span class="menu-label">--}}
+{{--                    @if($new>0)<span class="label label-danger label-inline">{{$new}}</span>@endif--}}
+{{--													</span>--}}
+{{--                    </a>--}}
+{{--                </li>--}}
+{{--            @endcan--}}
             @can('read-settings')
                 <li class="menu-item menu-item-submenu @if(request()->segment(1) == 'settings') menu-item-open @endif "
                     aria-haspopup="true" data-menu-toggle="hover">

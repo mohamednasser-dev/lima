@@ -1,7 +1,7 @@
 @php($title='صور العرض')
 @extends('adminLayouts.app')
 @section('title')
-   {{$title}}
+    {{$title}}
 @endsection
 @section('header')
 
@@ -29,21 +29,27 @@
                 <div class="row">
                     <div class="col-md-6 text-left">
                         @can('delete-sliders')
-                            <button type="submit" style="display:none; margin-right: 10px;" class="btn btn-sm btn-light-danger font-weight-bolder mr-2 delete-selected-btn"><i class="fa fa-trash"></i> حذف المحدد  </button>
+                            <button type="submit" style="display:none; margin-right: 10px;"
+                                    class="btn btn-sm btn-light-danger font-weight-bolder mr-2 delete-selected-btn"><i
+                                    class="fa fa-trash"></i> حذف المحدد
+                            </button>
                         @endcan
                     </div>
                     <div class="col-md-6 text-right">
                         @can('create-sliders')
-                            <a href="{{route('sliders.create')}}" class="btn btn-sm btn-light-success font-weight-bolder mr-2">
+                            <a href="{{route('sliders.create')}}"
+                               class="btn btn-sm btn-light-success font-weight-bolder mr-2">
                                 <i class="fa fa-plus"></i>اضـافـه</a>
                         @endcan
                     </div>
                 </div>
             </div>
             <div class="card-body">
+
             {!! $dataTable->table() !!}
         </form>
     </div>
+    {{--                ['class' => 'table  table-hover table-checkable'], true--}}
 @endsection
 @section('script')
     {!! $dataTable->scripts() !!}

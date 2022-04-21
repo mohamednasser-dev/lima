@@ -65,7 +65,7 @@ License: You must have a valid license purchased only from themeforest(the above
                     @csrf
                     <!--begin::Title-->
                         <div class="pb-5 pb-lg-15" style="text-align: center;">
-                            <h3 class="font-weight-bolder text-success font-size-h2 font-size-h1-lg">تسجيل الدخول</h3>
+                            <h3 class="font-weight-bolder text-danger font-size-h2 font-size-h1-lg">تسجيل الدخول</h3>
                         </div>
                         <!--begin::Title-->
                         <!--begin::Form group-->
@@ -90,7 +90,7 @@ License: You must have a valid license purchased only from themeforest(the above
                     <!--end::Form group-->
                         <!--begin::Action-->
                         <div class="pb-lg-0 pb-5" style="text-align: center;">
-                            <button type="submit" id="kt_login_singin_form_submit_button" class="btn btn-success font-weight-bolder font-size-h6 px-8 py-4 my-3 mr-3">تسجيل الدخول</button>
+                            <button type="submit" id="kt_login_singin_form_submit_button" class="btn btn-danger font-weight-bolder font-size-h6 px-8 py-4 my-3 mr-3">تسجيل الدخول</button>
                         </div>
                         <!--end::Action-->
                     </form>
