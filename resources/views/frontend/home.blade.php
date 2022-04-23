@@ -197,29 +197,27 @@
                                                                     <select class="filter">
                                                                         <option value="*" selected>كل الاقسام الرئيسية
                                                                         </option>
-                                                                        <option value=".happyfeet">الامهات</option>
                                                                         <option value=".lego">الاطفال</option>
+                                                                        <option value=".happyfeet">الامهات</option>
                                                                     </select>
                                                                 </div>
                                                                 <div class="grid isotope" data-ppp="8" data-cols="954">
+                                                                    @for($i=0;$i<6;$i++)
                                                                     <div data-categories="happyfeet "
                                                                          class="iso-item happyfeet">
                                                                         <div class="content-wrapper">
                                                                             <figure>
-                                                                                <a title="Project 5"
-                                                                                   class="prettyPhoto kids_picture"
-                                                                                   data-rel="prettyPhoto[portfolio]"
-                                                                                   href="http://www.youtube.com/watch?v=HwXbtZXjbVE"><img
+                                                                                    <img
                                                                                         src='{{url('front')}}/pic/250x250-kos-9.jpg'
                                                                                         width='278' height='182'
-                                                                                        alt=''/></a>
+                                                                                        alt=''/>
                                                                             </figure>
                                                                         </div>
                                                                         <!--/ content-wrapper-->
                                                                         <div class="gallery-text">
                                                                             <div class="title"><a class="link"
                                                                                                   href="portfolio-single-item.html">Project
-                                                                                    5</a></div>
+                                                                                    {{$i+1}}</a></div>
                                                                             <p>Lorem ipsum dolor sit amet. Lorem ipsum
                                                                                 dolor sit amet, consectetuer ...</p>
                                                                         </div>
@@ -229,193 +227,34 @@
                                                                         <!--/ post-footer-->
                                                                         <div class="kids_clear"></div>
                                                                     </div>
-                                                                    <div data-categories="tangled "
-                                                                         class="tangled iso-item">
-                                                                        <div class="content-wrapper">
-                                                                            <figure>
-                                                                                <a title="Item 9"
-                                                                                   class="prettyPhoto kids_picture"
-                                                                                   data-rel="prettyPhoto[portfolio]"
-                                                                                   href="http://www.youtube.com/watch?v=HwXbtZXjbVE"><img
-                                                                                        src='{{url('front')}}/pic/250x250-kos-13.jpg'
-                                                                                        width='278' height='182'
-                                                                                        alt=''/></a>
-                                                                            </figure>
-                                                                        </div>
-                                                                        <!--/ content-wrapper-->
-                                                                        <div class="gallery-text">
-                                                                            <div class="title"><a class="link"
-                                                                                                  href="portfolio-single-item.html">Item
-                                                                                    9</a></div>
-                                                                            <p>Lorem ipsum dolor sit amet. Lorem ipsum
-                                                                                dolor sit amet, consectetuer ...</p>
-                                                                        </div>
-                                                                        <div class="post-footer">
-                                                                            <a href="#" class="cws_button">Read More</a>
-                                                                        </div>
-                                                                        <!--/ post-footer-->
-                                                                        <div class="kids_clear"></div>
-                                                                    </div>
-                                                                    <div data-categories="tangled "
-                                                                         class="tangled iso-item">
-                                                                        <div class="content-wrapper">
-                                                                            <figure>
-                                                                                <a title="Project 8"
-                                                                                   class="prettyPhoto kids_picture"
-                                                                                   data-rel="prettyPhoto[portfolio]"
-                                                                                   href="pic/Tangled_2nd5.jpg"><img
-                                                                                        src='{{url('front')}}/pic/250x250-kos-12.jpg'
-                                                                                        width='278' height='182'
-                                                                                        alt=''/></a>
-                                                                            </figure>
-                                                                        </div>
-                                                                        <!--/ content-wrapper-->
-                                                                        <div class="gallery-text">
-                                                                            <div class="title"><a class="link"
-                                                                                                  href="portfolio-single-item.html">Project
-                                                                                    8</a></div>
-                                                                            <p>Lorem ipsum dolor sit amet. Lorem ipsum
-                                                                                dolor sit amet, consectetuer ...</p>
-                                                                        </div>
-                                                                        <div class="post-footer">
-                                                                            <a href="#" class="cws_button">Read More</a>
-                                                                        </div>
-                                                                        <!--/ post-footer-->
-                                                                        <div class="kids_clear"></div>
-                                                                    </div>
-                                                                    <div data-categories="lego " class="lego iso-item">
-                                                                        <div class="content-wrapper">
-                                                                            <figure>
-                                                                                <a title="Project 7"
-                                                                                   class="prettyPhoto kids_picture"
-                                                                                   data-rel="prettyPhoto[portfolio]"
-                                                                                   href="pic/LegoMovie_4th5.jpg"><img
-                                                                                        src='{{url('front')}}/pic/250x250-kos-11.jpg'
-                                                                                        width='278' height='182'
-                                                                                        alt=''/></a>
-                                                                            </figure>
-                                                                        </div>
-                                                                        <!--/ content-wrapper-->
-                                                                        <div class="gallery-text">
-                                                                            <div class="title"><a class="link"
-                                                                                                  href="portfolio-single-item.html">Project
-                                                                                    7</a></div>
-                                                                            <p>Lorem ipsum dolor sit amet. Lorem ipsum
-                                                                                dolor sit amet, consectetuer ...</p>
-                                                                        </div>
-                                                                        <div class="post-footer">
-                                                                            <a href="#" class="cws_button">Read More</a>
-                                                                        </div>
-                                                                        <!--/ post-footer-->
-                                                                        <div class="kids_clear"></div>
-                                                                    </div>
-                                                                    <div data-categories="lego " class="lego iso-item">
-                                                                        <div class="content-wrapper">
-                                                                            <figure>
-                                                                                <a title="Project 6"
-                                                                                   class="prettyPhoto kids_picture"
-                                                                                   data-rel="prettyPhoto[portfolio]"
-                                                                                   href="pic/LegoMovie_3rd4.jpg"><img
-                                                                                        src='{{url('front')}}/pic/250x250-kos-10.jpg'
-                                                                                        width='278' height='182'
-                                                                                        alt=''/></a>
-                                                                            </figure>
-                                                                        </div>
-                                                                        <!--/ content-wrapper-->
-                                                                        <div class="gallery-text">
-                                                                            <div class="title"><a class="link"
-                                                                                                  href="portfolio-single-item.html">Project
-                                                                                    6</a></div>
-                                                                            <p>Lorem ipsum dolor sit amet. Lorem ipsum
-                                                                                dolor sit amet, consectetuer ...</p>
-                                                                        </div>
-                                                                        <div class="post-footer">
-                                                                            <a href="#" class="cws_button">Read More</a>
-                                                                        </div>
-                                                                        <!--/ post-footer-->
-                                                                        <div class="kids_clear"></div>
-                                                                    </div>
-                                                                    <div data-categories="happyfeet "
-                                                                         class="happyfeet iso-item">
-                                                                        <div class="content-wrapper">
-                                                                            <figure>
-                                                                                <a title="Project 4"
-                                                                                   class="prettyPhoto kids_picture"
-                                                                                   data-rel="prettyPhoto[portfolio]"
-                                                                                   href="pic/HappyFeet_4th5.jpg"><img
-                                                                                        src='{{url('front')}}/pic/250x250-kos-8.jpg'
-                                                                                        width='278' height='182'
-                                                                                        alt=''/></a>
-                                                                            </figure>
-                                                                        </div>
-                                                                        <!--/ content-wrapper-->
-                                                                        <div class="gallery-text">
-                                                                            <div class="title"><a class="link"
-                                                                                                  href="portfolio-single-item.html">Project
-                                                                                    4</a></div>
-                                                                            <p>Lorem ipsum dolor sit amet. Lorem ipsum
-                                                                                dolor sit amet, consectetuer ...</p>
-                                                                        </div>
-                                                                        <div class="post-footer">
-                                                                            <a href="#" class="cws_button">Read More</a>
-                                                                        </div>
-                                                                        <!--/ post-footer-->
-                                                                        <div class="kids_clear"></div>
-                                                                    </div>
-                                                                    <div data-categories="happyfeet "
-                                                                         class="happyfeet iso-item">
-                                                                        <div class="content-wrapper">
-                                                                            <figure>
-                                                                                <a title="Project 3"
-                                                                                   class="prettyPhoto kids_picture"
-                                                                                   data-rel="prettyPhoto[portfolio]"
-                                                                                   href="pic/HappyFeet_3rd4.jpg"><img
-                                                                                        src='{{url('front')}}/pic/250x250-kos-15.jpg'
-                                                                                        width='278' height='182'
-                                                                                        alt=''/></a>
-                                                                            </figure>
-                                                                        </div>
-                                                                        <!--/ content-wrapper-->
-                                                                        <div class="gallery-text">
-                                                                            <div class="title"><a class="link"
-                                                                                                  href="portfolio-single-item.html">Project
-                                                                                    3</a></div>
-                                                                            <p>Lorem ipsum dolor sit amet. Lorem ipsum
-                                                                                dolor sit amet, consectetuer ...</p>
-                                                                        </div>
-                                                                        <div class="post-footer">
-                                                                            <a href="#" class="cws_button">Read More</a>
-                                                                        </div>
-                                                                        <!--/ post-footer-->
-                                                                        <div class="kids_clear"></div>
-                                                                    </div>
-                                                                    <div data-categories="happyfeet "
-                                                                         class="happyfeet iso-item">
-                                                                        <div class="content-wrapper">
-                                                                            <figure>
-                                                                                <a title="Project 2"
-                                                                                   class="prettyPhoto kids_picture"
-                                                                                   data-rel="prettyPhoto[portfolio]"
-                                                                                   href="pic/HappyFeet_2nd4.jpg"><img
-                                                                                        src='{{url('front')}}/pic/250x250-kos-14.jpg'
-                                                                                        width='278' height='182'
-                                                                                        alt=''/></a>
-                                                                            </figure>
-                                                                        </div>
-                                                                        <!--/ content-wrapper-->
-                                                                        <div class="gallery-text">
-                                                                            <div class="title"><a class="link"
-                                                                                                  href="portfolio-single-item.html">Project
-                                                                                    2</a></div>
-                                                                            <p>Lorem ipsum dolor sit amet. Lorem ipsum
-                                                                                dolor sit amet, consectetuer ...</p>
-                                                                        </div>
-                                                                        <div class="post-footer">
-                                                                            <a href="#" class="cws_button">Read More</a>
-                                                                        </div>
-                                                                        <!--/ post-footer-->
-                                                                        <div class="kids_clear"></div>
-                                                                    </div>
+                                                                    @endfor
+                                                                        @for($i=0;$i<6;$i++)
+                                                                            <div data-categories="lego "
+                                                                                 class="iso-item lego">
+                                                                                <div class="content-wrapper">
+                                                                                    <figure>
+                                                                                        <img
+                                                                                            src='{{url('front')}}/pic/250x250-kos-9.jpg'
+                                                                                            width='278' height='182'
+                                                                                            alt=''/>
+                                                                                    </figure>
+                                                                                </div>
+                                                                                <!--/ content-wrapper-->
+                                                                                <div class="gallery-text">
+                                                                                    <div class="title"><a class="link"
+                                                                                                          href="portfolio-single-item.html">Project
+                                                                                            {{$i+1}}</a></div>
+                                                                                    <p>Lorem ipsum dolor sit amet. Lorem ipsum
+                                                                                        dolor sit amet, consectetuer ...</p>
+                                                                                </div>
+                                                                                <div class="post-footer">
+                                                                                    <a href="#" class="cws_button">Read More</a>
+                                                                                </div>
+                                                                                <!--/ post-footer-->
+                                                                                <div class="kids_clear"></div>
+                                                                            </div>
+                                                                        @endfor
+
                                                                 </div>
                                                                 <!-- grid isotope -->
 

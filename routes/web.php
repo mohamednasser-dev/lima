@@ -46,6 +46,21 @@ Route::get('/', function () {
 })->name('front.home');
 
 
+Route::get('lang/{lang}', function ($lang) {
+
+
+    if (session()->has('lang')) {
+        session()->forget('lang');
+    }
+    if ($lang == 'en') {
+        session()->put('lang', 'en');
+    } else {
+        session()->put('lang', 'ar');
+    }
+
+
+    return back();
+});
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/dashboard', [HomeController::class, 'index'])->name('admin');
 
