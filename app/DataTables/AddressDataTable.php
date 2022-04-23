@@ -33,7 +33,9 @@ class AddressDataTable extends DataTable
     public function query(Address $model)
     {
         $key = $this->key;
-        return $model->newQuery()->where('user_id',$key)->orderBy('created_at','desc');
+        return $model->newQuery()
+            ->where('user_id',$key)
+            ->orderBy('created_at','desc');
     }
 
     /**

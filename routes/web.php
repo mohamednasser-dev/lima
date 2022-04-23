@@ -42,7 +42,7 @@ Route::get('cache', function () {
 
 
 Route::get('/', function () {
-    return redirect()->route('admin');
+    return view('frontend.home');
 })->name('front.home');
 
 
