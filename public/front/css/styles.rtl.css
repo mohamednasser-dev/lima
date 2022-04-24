@@ -733,9 +733,9 @@ MODULES -> Begin
 	left: 0;
 }
 
-.t-pattern-1 .bg-level-2 {
-    background-image: url("../images/pattern_balloons.png");
-}
+/*.t-pattern-1 .bg-level-2 {*/
+/*    background-image: url("../images/pattern_balloons.png");*/
+/*}*/
 
 .t-pattern-2 .bg-level-2{
     background-image: url("../images/pattern_star.png");

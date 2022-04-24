@@ -174,14 +174,10 @@
     <!-- .bg-level-1 -->
     <div id="kids_middle_container">
         <!-- .content -->
-        <div class="kids_top_content">
-            <div class="kids_top_content_middle homepage">
-                <div class="l-page-width">
-                </div>
-                <div class="bottom-border"></div>
-            </div>
-            <!-- .kids_top_content_middle -->
-        </div>
+        <br>
+        <br>
+        <br>
+        <br>
         <div class="bg-level-2-full-width-container kids_bottom_content">
             <div class="bg-level-2-page-width-container no-padding">
                 <section class="kids_bottom_content_container">
@@ -209,68 +205,64 @@
                                                                 </div>
                                                                 <div class="grid isotope" data-ppp="8" data-cols="954">
                                                                     @for($i=0;$i<6;$i++)
-                                                                        <div data-categories="happyfeet "
-                                                                             class="iso-item happyfeet">
-                                                                            <div class="content-wrapper">
-                                                                                <figure>
+                                                                    <div data-categories="happyfeet "
+                                                                         class="iso-item happyfeet">
+                                                                        <div class="content-wrapper">
+                                                                            <figure>
                                                                                     <img
                                                                                         src='{{url('front')}}/pic/250x250-kos-9.jpg'
                                                                                         width='278' height='182'
                                                                                         alt=''/>
-                                                                                </figure>
-                                                                            </div>
-                                                                            <!--/ content-wrapper-->
-                                                                            <div class="gallery-text">
-                                                                                <div class="title"><a class="link"
-                                                                                                      href="portfolio-single-item.html">Project
-                                                                                        {{$i+1}}</a></div>
-                                                                                <p>Lorem ipsum dolor sit amet. Lorem
-                                                                                    ipsum
-                                                                                    dolor sit amet, consectetuer ...</p>
-                                                                            </div>
-                                                                            <div class="post-footer">
-                                                                                <a href="#" class="cws_button">Read
-                                                                                    More</a>
-                                                                            </div>
-                                                                            <!--/ post-footer-->
-                                                                            <div class="kids_clear"></div>
+                                                                            </figure>
                                                                         </div>
-                                                                    @endfor
-                                                                    @for($i=0;$i<6;$i++)
-                                                                        <div data-categories="lego "
-                                                                             class="iso-item lego">
-                                                                            <div class="content-wrapper">
-                                                                                <figure>
-                                                                                    <img
-                                                                                        src='{{url('front')}}/pic/250x250-kos-9.jpg'
-                                                                                        width='278' height='182'
-                                                                                        alt=''/>
-                                                                                </figure>
-                                                                            </div>
-                                                                            <!--/ content-wrapper-->
-                                                                            <div class="gallery-text">
-                                                                                <div class="title"><a class="link"
-                                                                                                      href="portfolio-single-item.html">Project
-                                                                                        {{$i+1}}</a></div>
-                                                                                <p>Lorem ipsum dolor sit amet. Lorem
-                                                                                    ipsum
-                                                                                    dolor sit amet, consectetuer ...</p>
-                                                                            </div>
-                                                                            <div class="post-footer">
-                                                                                <a href="#" class="cws_button">Read
-                                                                                    More</a>
-                                                                            </div>
-                                                                            <!--/ post-footer-->
-                                                                            <div class="kids_clear"></div>
+                                                                        <!--/ content-wrapper-->
+                                                                        <div class="gallery-text">
+                                                                            <div class="title"><a class="link"
+                                                                                                  href="portfolio-single-item.html">Project
+                                                                                    {{$i+1}}</a></div>
+                                                                            <p>Lorem ipsum dolor sit amet. Lorem ipsum
+                                                                                dolor sit amet, consectetuer ...</p>
                                                                         </div>
+                                                                        <div class="post-footer">
+                                                                            <a href="#" class="cws_button">Read More</a>
+                                                                        </div>
+                                                                        <!--/ post-footer-->
+                                                                        <div class="kids_clear"></div>
+                                                                    </div>
                                                                     @endfor
+                                                                        @for($i=0;$i<6;$i++)
+                                                                            <div data-categories="lego "
+                                                                                 class="iso-item lego">
+                                                                                <div class="content-wrapper">
+                                                                                    <figure>
+                                                                                        <img
+                                                                                            src='{{url('front')}}/pic/250x250-kos-9.jpg'
+                                                                                            width='278' height='182'
+                                                                                            alt=''/>
+                                                                                    </figure>
+                                                                                </div>
+                                                                                <!--/ content-wrapper-->
+                                                                                <div class="gallery-text">
+                                                                                    <div class="title"><a class="link"
+                                                                                                          href="portfolio-single-item.html">Project
+                                                                                            {{$i+1}}</a></div>
+                                                                                    <p>Lorem ipsum dolor sit amet. Lorem ipsum
+                                                                                        dolor sit amet, consectetuer ...</p>
+                                                                                </div>
+                                                                                <div class="post-footer">
+                                                                                    <a href="#" class="cws_button">Read More</a>
+                                                                                </div>
+                                                                                <!--/ post-footer-->
+                                                                                <div class="kids_clear"></div>
+                                                                            </div>
+                                                                        @endfor
 
                                                                 </div>
                                                                 <!-- grid isotope -->
 
-                                                                <!-- .gl_col_ -->
-                                                                <!-- comments block -->
-                                                                <!-- //end comments block -->
+                                                            <!-- .gl_col_ -->
+                                                            <!-- comments block -->
+                                                            <!-- //end comments block -->
                                                         </main>
                                                     </div>
                                                     <!-- .entry-container -->

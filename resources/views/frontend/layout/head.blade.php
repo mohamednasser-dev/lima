@@ -8,9 +8,9 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Lima &#8211; Premium Children HTML Template</title>
+    <title>Lima &#8211; Home</title>
     <link rel="alternate" type="application/rss+xml"
-          title="Lima - Premium Children HTML Template &raquo; Comments Feed" href="#"/>
+          title="Lima - Home &raquo; Comments Feed" href="#"/>
     <link rel="shortcut icon" href="{{url('front')}}/images/favicon.png">
     <link rel="stylesheet" href="{{url('front')}}/css/font-awesome.css">
     @if(session('lang') == "ar")
