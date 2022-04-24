@@ -164,5 +164,6 @@
 <script type='text/javascript' src='{{url('front')}}/js/jquery.isotope.min.js'></script>
 <script type='text/javascript' src='{{url('front')}}/js/jquery.flexnav.min.js'></script>
 <script type='text/javascript' src='{{url('front')}}/js/jquery.prettyPhoto.js'></script>
+
 </body>
 </html>
