@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\City;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 
@@ -14,13 +15,13 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
+       $city = City::first();
         $user = User::create([
-            'name' => 'admin',
+            'name' => 'customer',
             'email' => 'customer@demo.com',
-            'phone' => '010000000000',
-            'lat' => 'aaaa aaa aaa',
-            'lng' => 'aaaa aaa aaa',
+            'phone' => '01201636129',
             'password' => '123456',
+            'city_id' => $city->id,
         ]);
     }
 }

@@ -25,7 +25,7 @@ MyKom
                 </svg><!--end::Svg Icon-->
                    </span>
                 </span>
-                <div class="text-dark font-weight-bolder font-size-h2 mt-3">{{$data['products']}}</div>
+                <div class="text-dark font-weight-bolder font-size-h2 mt-3">{{$data['post_videos']}}</div>
                 <a class="text-muted font-weight-bold font-size-lg mt-1">عدد الفيديوهات المضافة</a>
             </div>
         </div>
@@ -46,7 +46,7 @@ MyKom
                     </svg>
                     <!--end::Svg Icon-->
                 </span>
-                <div class="text-dark font-weight-bolder font-size-h2 mt-3">{{$data['brands']}}</div>
+                <div class="text-dark font-weight-bolder font-size-h2 mt-3">{{$data['categories']}}</div>
                 <a class="text-muted font-weight-bold font-size-lg mt-1">عدد الاقسام المضافة</a>
             </div>
         </div>

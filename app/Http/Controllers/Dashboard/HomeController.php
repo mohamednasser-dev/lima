@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers\Dashboard;
 
-use App\Models\Brand;
-use App\Models\BrandProduct;
-use App\Models\Order;
+use App\Models\Category;
+use App\Models\Post;
 use App\Models\User;
 use App\Http\Controllers\GeneralController;
 
@@ -27,12 +26,10 @@ class HomeController extends GeneralController
      */
     public function index()
     {
-        $data['products']  = BrandProduct::get()->count();
+        $data['post_videos'] = Post::where('type','video')->get()->count();
+        $data['post_videos'] = Category::where('parent_id',null)->get()->count();
         $data['customers'] = User::get()->count();
-        $data['orders']    = Order::get()->count();
-        $data['brands']    = Brand::get()->count();
         $newest_customers  = User::orderBy('created_at', 'desc')->take(5)->get();
-        $newest_orders     = Order::with('user')->orderBy('created_at')->take(5)->get();
-        return view('home',compact('data','newest_customers', 'newest_orders'));
+        return view('home',compact('data','newest_customers'));
     }
 }
