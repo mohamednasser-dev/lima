@@ -1,3 +1,5 @@
+
+
 <div class="row">
     <div class="col-lg-6  col-md-6">
         <div class="form-group ">
@@ -58,52 +60,12 @@
 
     <div class="col-lg-6  col-md-6">
         <div class="form-group ">
-            <label for="copyright"> حقوق الملكيه <span  class="text-danger">*</span></label>
-            <input type="text" name="copyright" id="location"
-                   value="{{ old('copyright', $data->where('key', 'copyright')->first()->val) }}"
-                   class="form-control {{ $errors->has('copyright') ? 'border-danger' : '' }}"
-                   placeholder="أدخل حقوق الملكيه<"/>
-        </div>
-    </div>
-
-
-    <div class="col-lg-6  col-md-6">
-        <div class="form-group ">
-            <label for="copyright_link_text"> نص حقوق الملكيه <span class="text-danger">*</span></label>
-            <input type="text" name="copyright_link_text" id="copyright_link_text"
-                   value="{{ old('copyright_link_text', $data->where('key', 'copyright_link_text')->first()->val) }}"
-                   class="form-control {{ $errors->has('copyright_link_text') ? 'border-danger' : '' }}" placeholder="أدخل نص حقوق الملكيه" >
-
-        </div>
-    </div>
-
-
-    <div class="col-lg-6  col-md-6">
-        <div class="form-group ">
-            <label for="copyright_link"> رابط حقوق الملكيه <span  class="text-danger">*</span> </label>
-
-            <input type="url" name="copyright_link" id="copyright_link"
-                   value="{{ old('copyright_link', $data->where('key', 'copyright_link')->first()->val) }}"
-                   class="form-control {{ $errors->has('copyright_link') ? 'border-danger' : '' }}"  placeholder="أدخل رابط حقوق الملكيه"/>
-        </div>
-    </div>
-
-    <div class="col-lg-6  col-md-6">
-        <div class="form-group ">
-            <label for="sm_description_ar"> وصف قصير بالعربيه <span class="text-danger">*</span></label>
-            <input type="text" name="sm_description_ar" id="sm_description_ar"
-                   value="{{ old('sm_description_ar', $data->where('key', 'sm_description_ar')->first()->val) }}"
-                   class="form-control {{ $errors->has('sm_description_ar') ? 'border-danger' : '' }}" placeholder="أدخلوصف قصير بالعربيه" >
-
-        </div>
-    </div>
-    <div class="col-lg-6  col-md-6">
-        <div class="form-group ">
-            <label for="sm_description_en"> وصف قصير بالانجليزيه <span class="text-danger">*</span></label>
-            <input type="text" name="sm_description_en" id="sm_description_en" style="direction: ltr;"
-                   value="{{ old('sm_description_en', $data->where('key', 'sm_description_en')->first()->val) }}"
-                   class="form-control {{ $errors->has('sm_description_en') ? 'border-danger' : '' }}" placeholder="أدخل وصف قصير بالانجليزيه" >
-
+            <label for="phone">رقم الجوال <span
+                    class="text-danger">*</span></label>
+            <input type="number" name="phone" id="phone"
+                   value="{{ old('phone', $data->where('key', 'phone')->first()->val) }}"
+                   class="form-control {{ $errors->has('phone') ? 'border-danger' : '' }}"
+                   placeholder="أدخل رقم الجوال"/>
         </div>
     </div>
 
@@ -179,52 +141,7 @@
         </div>
     </div>
 
-    <div class="col-lg-6  col-md-6">
-        <div class="form-group ">
-            <label for="delivery_cost">قيمه الشحن <span
-                    class="text-danger">*</span></label>
-            <input type="number" name="delivery_cost" id="delivery_cost"
-                   value="{{ old('delivery_cost', $data->where('key', 'delivery_cost')->first()->val) }}"
-                   class="form-control {{ $errors->has('delivery_cost') ? 'border-danger' : '' }}"
-                   placeholder="أدخل قيمه الشحن"/>
-        </div>
-    </div>
 
-
-    <div class="col-lg-6  col-md-6">
-        <div class="form-group ">
-            <label for="cash_on_delivery">قيمه الشحن عند التوصيل <span
-                    class="text-danger">*</span></label>
-            <input type="number" name="cash_on_delivery" id="cash_on_delivery"
-                   value="{{ old('cash_on_delivery', $data->where('key', 'cash_on_delivery')->first()->val) }}"
-                   class="form-control {{ $errors->has('cash_on_delivery') ? 'border-danger' : '' }}"
-                   placeholder="أدخل قيمه الشحن عند التوصيل"/>
-        </div>
-    </div>
-
-    <div class="col-lg-6  col-md-6">
-        <div class="form-group ">
-            <label for="phone">رقم الجوال <span
-                    class="text-danger">*</span></label>
-            <input type="number" name="phone" id="phone"
-                   value="{{ old('phone', $data->where('key', 'phone')->first()->val) }}"
-                   class="form-control {{ $errors->has('phone') ? 'border-danger' : '' }}"
-                   placeholder="أدخل رقم الجوال"/>
-        </div>
-    </div>
-
-
-
-    <div class="col-lg-6  col-md-6">
-        <div class="form-group ">
-            <label for="phone">رقم الجوال <span
-                    class="text-danger">*</span></label>
-            <input type="number" name="phone" id="phone"
-                   value="{{ old('phone', $data->where('key', 'phone')->first()->val) }}"
-                   class="form-control {{ $errors->has('phone') ? 'border-danger' : '' }}"
-                   placeholder="أدخل رقم الجوال"/>
-        </div>
-    </div>
     <div class="col-lg-6  col-md-6">
         <div class="form-group ">
             <label for="email">البريد الالكتروني <span

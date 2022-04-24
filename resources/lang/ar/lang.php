@@ -62,35 +62,7 @@ return [
     'shipping_cost'                         => 'تكلفة الشحنة',
     'total_shipping_cost'                   => 'إجمالي تكلفة الشحنات',
     'shipping_date'                         => 'تاريخ التوصيل',
-    'shipping_status_list'                  => [
-        OrderShipping::PENDING => 'تحت الانتظار',
-        OrderShipping::DELIVERED => 'تم التوصيل',
-    ],
     'shipping_type'                         => 'نوع الشحن',
-    'shipping_types'                        => [
-        Order::ONCE => 'مرة واحدة',
-        Order::DAILY => 'يومي',
-        Order::WEEKLY => 'أسبوعي',
-        Order::MONTHLY => 'شهري',
-    ],
-    'order_status'                         => [
-        Order::PENDING => 'تحت الانتظار',
-        Order::ACCEPTED => 'تمت الموافقة',
-        Order::REJECTED => 'تم الرفض',
-        Order::DELIVERED => 'تم الشحن',
-        Order::FINISHED => 'تم التوصيل',
-    ],
-
-    'payment_types'                         => [
-        Order::CASH => 'نقدًا',
-        Order::CARD => 'بالفيزا',
-    ],
-
-    'payment_status_list'                         => [
-        Order::PAID => 'مدفوع',
-        Order::UNPAID => 'غير مدفوع',
-    ],
-
     'shipments'                             => 'الشحنات',
     'shipment'                             => 'الشحنة',
     'shipping_count'                        => 'عدد الشحنات',
@@ -104,7 +76,6 @@ return [
     'total'                                 => 'الإجمالي',
     'ordered_items'                         => 'العناصر المطلوبة',
     'print_order_details'                   => 'طباعة تفاصيل الطلب',
-
     // Addresses
     'addresses'                             => 'عناوين الشحن',
     'address'                               => 'العنوان',

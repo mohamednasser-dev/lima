@@ -41,11 +41,6 @@ class SettingRequest extends FormRequest
             'telegram' => 'nullable|url|max:191',
             'address_ar' => 'nullable|string|max:191',
             'address_en' => 'nullable|string|max:191',
-            'sm_description_ar' => 'required|string|max:191',
-            'sm_description_en' => 'required|string|max:191',
-            'copyright' => 'required|string|max:191',
-            'copyright_link_text' => 'nullable|string|max:191',
-            'copyright_link' => 'nullable|url|max:191',
             'terms_ar'=>'nullable|max:1000',
             'terms_en'=>'nullable|max:1000',
             'privacy_ar'=>'nullable|max:1000',
@@ -54,8 +49,6 @@ class SettingRequest extends FormRequest
             'usage_en'=>'nullable|max:1000',
             'about_ar'=>'nullable|max:1000',
             'about_en'=>'nullable|max:1000',
-            'delivery_cost'=>'nullable|numeric',
-            'cash_on_delivery'=>'nullable|numeric',
 
         ];
     }
