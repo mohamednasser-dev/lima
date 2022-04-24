@@ -15,10 +15,10 @@ class SettingSeeder extends Seeder
     public function run()
     {
         $data = [
-            'site_name_ar' => 'mykom',
-            'site_name_en' => 'mykom',
+            'site_name_ar' => 'ليما',
+            'site_name_en' => 'lima',
             'phone' => '8484858845855',
-            'email' => 'info@eggs-plus.com',
+            'email' => 'info@lima.com',
             'logo' => 'uploads/setting/web_logo.png',
             'login_pg' => 'uploads/setting/login_pg.png',
             'logo_login' => 'uploads/setting/login_page_logo.png',
@@ -30,13 +30,8 @@ class SettingSeeder extends Seeder
             'snapchat' => null,
             'telegram' => null,
             'youtube' => null,
-            'address_ar' => 'mykom mykom',
-            'address_en' => 'mykom mykom',
-            'sm_description_ar' => 'mykom description about application',
-            'sm_description_en' => 'mykom description about application',
-            'copyright' => 'جميع الحقوق محفوظة منصة MyKom، تنفيذ و تطوير بواسطة',
-            'copyright_link_text' => 'mykom',
-            'copyright_link' => 'http://www.google.com',
+            'address_ar' => 'المنوفية',
+            'address_en' => 'al mnofia',
 
             'terms_ar' => 'terms_ar',
             'terms_en' => 'terms_en',
@@ -46,8 +41,9 @@ class SettingSeeder extends Seeder
             'usage_en' => 'usage_en',
             'about_ar' => 'about_ar',
             'about_en' => 'about_en',
-            'delivery_cost' => '200',
-            'cash_on_delivery' => '0',
+            'yearly_cost' => '200',
+            'half_year_cost' => '100',
+            'app_gif' => null,
         ];
 
 

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class UpdateInboxTable extends Migration
+class UpdateCategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class UpdateInboxTable extends Migration
      */
     public function up()
     {
-        Schema::table('inboxes', function (Blueprint $table) {
-            $table->string('phone')->after('name');
+        Schema::table('categories', function (Blueprint $table) {
+            $table->foreignId('parent_id')->nullable()->references('id')->on('categories')->onDelete('cascade');
 
         });
     }

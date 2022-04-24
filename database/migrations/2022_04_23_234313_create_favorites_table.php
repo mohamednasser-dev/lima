@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBrandCertificatesTable extends Migration
+class CreateFavoritesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateBrandCertificatesTable extends Migration
      */
     public function up()
     {
-        Schema::create('brand_certificates', function (Blueprint $table) {
+        Schema::create('favorites', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('brand_id')->constrained('brands')->onDelete('cascade');
-            $table->string('image');
+            $table->foreignId('user_id')->nullable()->references('id')->on('users')->onDelete('cascade');
+            $table->foreignId('post_id')->nullable()->references('id')->on('posts')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateBrandCertificatesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('brand_certificates');
+        Schema::dropIfExists('favorites');
     }
 }

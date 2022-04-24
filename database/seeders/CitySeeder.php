@@ -16,12 +16,12 @@ class CitySeeder extends Seeder
     {
         $data = [
             [
-                'name_ar' => 'الرياض',
-                'name_en' => 'Riyadh',
+                'name_ar' => 'القاهرة',
+                'name_en' => 'cairo',
             ],
             [
-                'name_ar' => 'جده',
-                'name_en' => 'Jeddah',
+                'name_ar' => 'المنوفية',
+                'name_en' => 'al-mnofia',
             ],
             [
                 'name_ar' => 'جده',

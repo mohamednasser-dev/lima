@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddQuantityReservedToBrandProductsTable extends Migration
+class CreateCategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,12 @@ class AddQuantityReservedToBrandProductsTable extends Migration
      */
     public function up()
     {
-        Schema::table('brand_products', function (Blueprint $table) {
-            $table->unsignedBigInteger('quantity_reserved')->default(0)->after('quantity');
+        Schema::create('categories', function (Blueprint $table) {
+            $table->id();
+            $table->string('name_ar');
+            $table->string('name_en');
+            $table->string('image');
+            $table->timestamps();
         });
     }
 
@@ -25,8 +29,6 @@ class AddQuantityReservedToBrandProductsTable extends Migration
      */
     public function down()
     {
-        Schema::table('brand_products', function (Blueprint $table) {
-            $table->dropColumn('quantity_reserved');
-        });
+        Schema::dropIfExists('categories');
     }
 }
