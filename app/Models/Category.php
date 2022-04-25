@@ -9,20 +9,29 @@ class Category extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
 
     protected $appends = ['name'];
 
+    public function Parent()
+    {
+        return $this->belongsTo(Category::class, 'parent_id');
+    }
+
+    public function Posts()
+    {
+        return $this->hasMany(Post::class, 'category_id', 'id');
+    }
 
     public function childrenCategories()
     {
-        return $this->hasMany(Category::class,'parent_id')->with('childrenCategories');
+        return $this->hasMany(Category::class, 'parent_id')->with('childrenCategories');
     }
 
     public function scopeRoot($query)
     {
         return $query->where('parent_id', null);
     }
-
 
     public function getNameAttribute()
     {
@@ -32,8 +41,6 @@ class Category extends Model
             return $this->name_en;
         }
     }
-
-
     public function getImageAttribute($image)
     {
         if (!empty($image)) {
@@ -52,4 +59,5 @@ class Category extends Model
             $this->attributes['image'] = $image;
         }
     }
+
 }

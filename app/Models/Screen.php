@@ -8,7 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Screen extends Model
 {
     use HasFactory;
+
     protected $guarded = [''];
+
     protected $appends = ['title', 'body'];
 
     public function getTitleAttribute()
@@ -30,13 +32,23 @@ class Screen extends Model
     }
 
 
+    public function getImageAttribute($image)
+    {
+        if (!empty($image)) {
+            return asset('uploads/screens') . '/' . $image;
+        }
+        return asset('default-image.png');
+    }
 
-//    public function setImageAttribute($image)
-//    {th
-//        if (is_file($image)) {
-//            $imageFields = upload($image, 'Screen');
-//            $this->attributes['file'] = $imageFields;
-//        }
-//
-//    }
+    public function setImageAttribute($image)
+    {
+        if (is_file($image)) {
+            $img_name = time() . uniqid() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('/uploads/screens/'), $img_name);
+            $this->attributes['image'] = $img_name;
+        } else {
+            $this->attributes['image'] = $image;
+        }
+    }
+
 }

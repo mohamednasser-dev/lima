@@ -30,5 +30,6 @@ class HomeController extends Controller
 
         $data['sliders'] = Slider::all();
         return view('frontend.home', compact('data'));
+
     }
 }

@@ -3,10 +3,7 @@
 namespace App\DataTables;
 
 use App\Models\User;
-use Yajra\DataTables\Html\Button;
 use Yajra\DataTables\Html\Column;
-use Yajra\DataTables\Html\Editor\Editor;
-use Yajra\DataTables\Html\Editor\Fields;
 use Yajra\DataTables\Services\DataTable;
 
 class UserDataTable extends DataTable
@@ -24,11 +21,11 @@ class UserDataTable extends DataTable
             ->editColumn('image', '<img class="img-thumbnail" src="{{$image}}" style="height: 75px; width: 75px;">')
             ->addColumn('action', 'dashboard.user.parts.action')
             ->addColumn('status', 'dashboard.user.parts.status')
-            ->addColumn('address', 'dashboard.user.parts.address')
+//            ->addColumn('address', 'dashboard.user.parts.address')
             ->addColumn('id', function ($data) {
                 return "<input type='checkbox' name='data[]' class='data-item' value='{$data['id']}'/> ";
             })
-            ->rawColumns(['status','address','action','id','image']);
+            ->rawColumns(['status','action','id','image']);
     }
 
     /**
@@ -80,7 +77,7 @@ class UserDataTable extends DataTable
             Column::make('name')->title('الاسم'),
             Column::make('phone')->title('رقم الهاتف'),
             Column::make('status')->title('التفعيل'),
-            Column::make('address')->title('العناوين'),
+//            Column::make('address')->title('العناوين'),
             Column::make('action')->title('الاجرائات'),
         ];
     }

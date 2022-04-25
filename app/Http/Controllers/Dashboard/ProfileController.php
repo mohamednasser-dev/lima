@@ -31,7 +31,6 @@ class ProfileController extends GeneralController
     {
         // Get and Check Data
         $data = $this->model->findOrfail($id);
-
         // Get data from request
         $inputs = $request->validated();
         // Set Password if exist inputs data
@@ -40,8 +39,7 @@ class ProfileController extends GeneralController
         } else {
             unset($inputs['password']);
         }
-        $updated = $data->update($inputs);
-
+        $data->update($inputs);
         return redirect()->route($this->route)->with('success', 'تم تعديل الملف الشخصي بنجاح');
     }
 }

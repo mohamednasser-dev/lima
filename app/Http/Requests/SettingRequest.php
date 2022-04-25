@@ -49,7 +49,6 @@ class SettingRequest extends FormRequest
             'usage_en'=>'nullable|max:1000',
             'about_ar'=>'nullable|max:1000',
             'about_en'=>'nullable|max:1000',
-
         ];
     }
 }
