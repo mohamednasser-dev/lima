@@ -29,10 +29,38 @@
                     aria-haspopup="true" data-menu-toggle="hover">
                     <a href="{{route('cities')}}" class="menu-link menu-toggle">
                         <i class="menu-icon flaticon2-location"></i>
-                        <span class="menu-text">المدن</span>
+                        <span class="menu-text">الدول</span>
                     </a>
                 </li>
             @endcan
+            <li class="menu-item menu-item-submenu @if( Request::segment(1)== 'city' ) menu-item-open @endif"
+                aria-haspopup="true" data-menu-toggle="hover">
+                <a href="{{route('cities')}}" class="menu-link menu-toggle">
+                    <i class="menu-icon flaticon2-location"></i>
+                    <span class="menu-text">الاقسام</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-submenu @if( Request::segment(1)== 'city' ) menu-item-open @endif"
+                aria-haspopup="true" data-menu-toggle="hover">
+                <a href="{{route('cities')}}" class="menu-link menu-toggle">
+                    <i class="menu-icon flaticon2-location"></i>
+                    <span class="menu-text">الفيديوهات</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-submenu @if( Request::segment(1)== 'city' ) menu-item-open @endif"
+                aria-haspopup="true" data-menu-toggle="hover">
+                <a href="{{route('cities')}}" class="menu-link menu-toggle">
+                    <i class="menu-icon flaticon2-location"></i>
+                    <span class="menu-text">المقالات</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-submenu @if( Request::segment(1)== 'city' ) menu-item-open @endif"
+                aria-haspopup="true" data-menu-toggle="hover">
+                <a href="{{route('cities')}}" class="menu-link menu-toggle">
+                    <i class="menu-icon flaticon2-location"></i>
+                    <span class="menu-text">الصفحات</span>
+                </a>
+            </li>
             @can('read-users')
                 <li class="menu-item menu-item-submenu @if(request()->segment(1) == 'users') menu-item-open @endif "
                     aria-haspopup="true" data-menu-toggle="hover">

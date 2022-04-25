@@ -15,11 +15,11 @@ class CreateScreensTable extends Migration
     {
         Schema::create('screens', function (Blueprint $table) {
             $table->id();
+            $table->string('image');
             $table->string('title_ar');
             $table->string('title_en');
-            $table->text('body_ar');
-            $table->text('body_en');
-            $table->string('image');
+            $table->longText('body_ar');
+            $table->longText('body_en');
             $table->timestamps();
         });
     }

@@ -14,7 +14,7 @@
             {{--            <span class="text-muted font-weight-bold mr-2">{{\Carbon\Carbon::now()->year}}</span>--}}
             <a href="http://tesolutionspro.com/" title="جميع الحقوق محفوظة منصة lima ، تنفيذ و تطوير بواسطة TES"
                target="_blank"
-               class="text-dark-75 text-hover-primary">جميع الحقوق محفوظة منصة lima ، تنفيذ و تطوير بواسطة TES</a>
+               class="text-dark-75 text-hover-primary">جميع الحقوق محفوظة شركة 80 فكرة ، تنفيذ و تطوير بواسطة TES</a>
         </div>
         <!--end::Copyright-->
         <!--begin::Nav-->

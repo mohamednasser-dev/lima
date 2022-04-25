@@ -23,7 +23,7 @@ class CreateSubscriptionHistoriesTable extends Migration
             $table->date('ended_at');
             $table->double('cost')->default(0);
             $table->enum('type',['visa','cash','manual'])->default('cash');
-            $table->enum('cash_type',['payed','not_payed'])->default('not_payed');
+            $table->tinyInteger('payment_status')->default(0);
             $table->timestamps();
         });
     }
