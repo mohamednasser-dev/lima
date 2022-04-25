@@ -20,7 +20,7 @@ class Category extends Model
 
     public function Posts()
     {
-        return $this->hasMany(Post::class, 'category_id', 'id');
+        return $this->hasMany(Post::class, 'category_id', 'id')->orderBy('free','desc');
     }
 
     public function childrenCategories()

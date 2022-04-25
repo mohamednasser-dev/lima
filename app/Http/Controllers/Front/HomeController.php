@@ -22,7 +22,10 @@ class HomeController extends Controller
     public function CategoryDetails($id)
     {
 
-        $data['main_categories'] = Category::where('id', $id)->with('childrenCategories')->first();
+        $data['main_categories'] = Category::where('id', $id)->with('childrenCategories')->with('Posts',function ($q){
+            $q->where('status',1);
+        })->first();
+
         if (!$data['main_categories']) {
             abort(404);
         }
@@ -30,11 +33,10 @@ class HomeController extends Controller
 
         if ($data['main_categories']->childrenCategories->count() == 0) {
 //            to posts and articles
-            dd("die");
+            return view('frontend.category_details', compact('data'));
         }
 
 //        to sub category
-
         return view('frontend.category', compact('data'));
 
      }

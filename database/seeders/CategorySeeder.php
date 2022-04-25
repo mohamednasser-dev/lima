@@ -18,7 +18,7 @@ class CategorySeeder extends Seeder
             [
                 'name_ar' => 'الاطفال',
                 'name_en' => 'children',
-                'image' => 'children.png',
+                'image' => '1.png',
             ],
             [
                 'name_ar' => 'الامهات',
