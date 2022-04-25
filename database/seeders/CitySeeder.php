@@ -16,20 +16,17 @@ class CitySeeder extends Seeder
     {
         $data = [
             [
-                'name_ar' => 'القاهرة',
-                'name_en' => 'cairo',
+                'name_ar' => 'مصر',
+                'name_en' => 'Egypt',
+                'code' => '+20',
+                'active' => 1,
+
             ],
             [
-                'name_ar' => 'المنوفية',
-                'name_en' => 'al-mnofia',
-            ],
-            [
-                'name_ar' => 'جده',
-                'name_en' => 'Jeddah',
-            ],
-            [
-                'name_ar' => 'مكة المكرمة',
-                'name_en' => 'Mecca',
+                'name_ar' => 'السعودية',
+                'name_en' => 'saudi arabia',
+                'code' => '+966',
+                'active' => 0,
             ],
         ];
         foreach ($data as $get) {

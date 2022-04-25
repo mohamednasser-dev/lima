@@ -16,7 +16,7 @@ class UserSeeder extends Seeder
     public function run()
     {
        $city = City::first();
-        $user = User::create([
+         User::create([
             'name' => 'customer',
             'email' => 'customer@demo.com',
             'phone' => '01201636129',

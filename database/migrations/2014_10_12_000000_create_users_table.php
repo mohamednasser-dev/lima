@@ -19,12 +19,12 @@ class CreateUsersTable extends Migration
             $table->string('phone')->unique();
             $table->string('email')->nullable()->unique();
             $table->string('password');
-            $table->enum('status',['active','unactive'])->default('active');
-            $table->integer('subscriber')->default(0);
-            $table->enum('sms_verified',['0','1'])->default('0');
-            $table->string('image')->nullable()->default('default.png');
+            $table->enum('status',['active','inactive'])->default('active');
+            $table->tinyInteger('subscriber')->default(0);
+            $table->date('subscription_ended_at')->nullable();
+            $table->tinyInteger('verified')->default(0);
+            $table->string('image')->nullable();
             $table->foreignId('city_id')->references('id')->on('cities')->onDelete('restrict');
-            $table->timestamp('subscription_ended_at')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

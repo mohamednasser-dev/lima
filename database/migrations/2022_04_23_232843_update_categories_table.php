@@ -15,7 +15,6 @@ class UpdateCategoriesTable extends Migration
     {
         Schema::table('categories', function (Blueprint $table) {
             $table->foreignId('parent_id')->nullable()->references('id')->on('categories')->onDelete('cascade');
-
         });
     }
 

@@ -32,7 +32,6 @@ class SettingSeeder extends Seeder
             'youtube' => null,
             'address_ar' => 'المنوفية',
             'address_en' => 'al mnofia',
-
             'terms_ar' => 'terms_ar',
             'terms_en' => 'terms_en',
             'privacy_ar' => 'privacy_ar',
@@ -41,8 +40,6 @@ class SettingSeeder extends Seeder
             'usage_en' => 'usage_en',
             'about_ar' => 'about_ar',
             'about_en' => 'about_en',
-            'yearly_cost' => '200',
-            'half_year_cost' => '100',
             'app_gif' => null,
         ];
 

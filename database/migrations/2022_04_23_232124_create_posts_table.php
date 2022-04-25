@@ -17,16 +17,15 @@ class CreatePostsTable extends Migration
             $table->id();
             $table->text('name_ar');
             $table->text('name_en');
-            $table->text('body_ar')->nullable();
-            $table->text('body_en')->nullable();
+            $table->longText('body_ar')->nullable();
+            $table->longText('body_en')->nullable();
             $table->enum('type',['video','article','voice'])->default('video');
             $table->string('video')->nullable();
-            $table->string('video_image')->nullable();
             $table->string('image')->nullable();
             $table->string('voice')->nullable();
-            $table->integer('free')->default(0);
-            $table->foreignId('cat_id')->references('id')->on('categories')->onDelete('restrict');
-            $table->foreignId('sub_cat_id')->nullable()->references('id')->on('categories')->onDelete('restrict');
+            $table->tinyInteger('free')->default(0);
+            $table->foreignId('category_id')->references('id')->on('categories')->onDelete('restrict');
+            $table->tinyInteger('status')->default(1);
             $table->timestamps();
         });
     }
