@@ -24,6 +24,7 @@ class SettingSeeder extends Seeder
             'logo_login' => 'uploads/setting/login_page_logo.png',
             'location' => null,
             'facebook' => 'https://www.facebook.com',
+            'google' => 'https://www.facebook.com',
             'twitter' => null,
             'instagram' => null,
             'pinterest' => null,
@@ -32,7 +33,6 @@ class SettingSeeder extends Seeder
             'youtube' => null,
             'address_ar' => 'المنوفية',
             'address_en' => 'al mnofia',
-
             'terms_ar' => 'terms_ar',
             'terms_en' => 'terms_en',
             'privacy_ar' => 'privacy_ar',
