@@ -41,9 +41,10 @@ Route::get('cache', function () {
 });
 
 
-Route::get('/', function () {
-    return view('frontend.home');
-})->name('front.home');
+    Route::get('/', [\App\Http\Controllers\Front\HomeController::class, 'Home'])->name('front.home');
+
+
+
 
 
 Route::get('lang/{lang}', function ($lang) {

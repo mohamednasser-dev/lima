@@ -36,6 +36,11 @@ class AppServiceProvider extends ServiceProvider
                 App::setLocale('ar');
             }
         }
+
+        if (!session()->has('lang')) {
+            session()->put('lang', 'ar');
+            App::setLocale('ar');
         }
+    }
 
 }

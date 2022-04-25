@@ -8,10 +8,10 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Lima &#8211; Home</title>
+    <title>{{\App\Models\Setting::where('key', 'site_name_'.session('lang'))->first()->val}} - {{$data['title']}}</title>
     <link rel="alternate" type="application/rss+xml"
-          title="Lima - Home &raquo; Comments Feed" href="#"/>
-    <link rel="shortcut icon" href="{{url('front')}}/images/favicon.png">
+          title="{{\App\Models\Setting::where('key', 'site_name_'.session('lang'))->first()->val}} - {{$data['title']}} &raquo; Comments Feed" href="#"/>
+    <link rel="shortcut icon" href="{{url('/')}}/{{\App\Models\Setting::where('key', 'logo')->first()->val}}">
     <link rel="stylesheet" href="{{url('front')}}/css/font-awesome.css">
     @if(session('lang') == "ar")
         <link rel="stylesheet" type="text/css" href="{{url('front')}}/css/styles.rtl.css"/>
@@ -104,9 +104,9 @@
             <!-- .kids_social -->
             <div class="kids_clear"></div>
             <div id="kids_logo_block" class="logo-position-left">
-                <a id="kids_logo_text" href="{{url('/')}}"><img src="{{url('front')}}/images/logo.png"
-                                                                alt="HappyKids - Premium Children HTML Template"
-                                                                title="HappyKids - Premium Children HTML Template"/></a>
+                <a id="kids_logo_text" href="{{url('/')}}"><img style="max-height: 40%;max-width: 40%" src="{{url('/')}}/{{\App\Models\Setting::where('key', 'logo')->first()->val}}"
+                                                                alt="{{\App\Models\Setting::where('key', 'site_name_'.session('lang'))->first()->val}}"
+                                                                title="{{\App\Models\Setting::where('key', 'site_name_'.session('lang'))->first()->val}}"/></a>
             </div>
             <nav id="kids_main_nav" class="menu-position-right">
                 <div class="menu-button">
@@ -115,8 +115,8 @@
                     <span class="menu-button-line"></span>
                 </div>
                 <ul id="menu-main" class="clearfix flexnav " data-breakpoint="800">
-                    <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item">
-                        <a href="{{url('/')}}">Home</a></li>
+                    <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item @if(Request::segment(1) == "") current_page_item @endif">
+                        <a href="{{url('/')}}">{{$data['title']}}</a></li>
                     <li class="menu-item menu-item-has-children"><a href="page-features.html">Features</a>
                         <ul class="sub-menu">
                             <li class="menu-item"><a href="page-features.html">Template Features</a></li>
