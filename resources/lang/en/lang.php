@@ -36,5 +36,7 @@ return [
     'Home' => 'Home',
     'aboutUs' => 'about Us',
     'ReadMore' => 'Read More',
+    'page not found' => 'page not found',
+    'Unfortunately, this page is absent or unavailable' => 'Unfortunately, this page is absent or unavailable',
 
 ];

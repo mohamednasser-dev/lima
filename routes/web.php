@@ -44,6 +44,7 @@ Route::get('cache', function () {
 
     Route::get('/', [\App\Http\Controllers\Front\HomeController::class, 'Home'])->name('front.home');
     Route::get('/home', [\App\Http\Controllers\Front\HomeController::class, 'Home'])->name('front.home');
+    Route::get('/category/{id}', [\App\Http\Controllers\Front\HomeController::class, 'CategoryDetails']);
 
 
 

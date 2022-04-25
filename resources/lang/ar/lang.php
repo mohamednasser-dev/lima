@@ -115,5 +115,7 @@ return [
     'Home' => 'الرئيسية',
     'aboutUs' => 'من نحن',
     'ReadMore' => 'المزيد',
+    'page not found' => 'الصفحة غير موجودة',
+    'Unfortunately, this page is absent or unavailable' => 'للأسف هذه الصفحة غائبة أو غير متوفرة',
 
 ];
