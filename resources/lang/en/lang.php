@@ -2,6 +2,12 @@
 
 return [
 
+    'article' => 'article',
+    'voice' => 'voice',
+    'video' => 'video',
+    'visa' => 'Visa subscription',
+    'cash' => 'Subscription by delegate',
+    'manual' => 'Subscription from the administration',
     'profile' => 'profile',
     'statuschanged' => 'status changed successfully',
     'you_are_not_active' => 'you are not active , contact admin to active your account',

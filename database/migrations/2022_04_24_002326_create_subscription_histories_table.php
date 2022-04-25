@@ -15,8 +15,11 @@ class CreateSubscriptionHistoriesTable extends Migration
     {
         Schema::create('subscription_histories', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('subscribe_type_id')->references('id')->on('subscribe_types')->onDelete('restrict');
             $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->string('name')->nullable();
+            $table->string('name_ar')->comment('subscription name ar');
+            $table->string('name_en')->comment('subscription name ar');
+            $table->string('user_name')->nullable();
             $table->string('phone')->nullable();
             $table->text('address')->nullable();
             $table->date('started_at');

@@ -10,8 +10,10 @@ use Spatie\Permission\Traits\HasRoles;
 
 class Admin extends Authenticatable
 {
-    use HasFactory,HasRoles, Notifiable;
-    protected $guarded=[];
+    use HasFactory, HasRoles, Notifiable;
+
+    protected $guarded = [];
+
     public function setPasswordAttribute($password)
     {
         if (!empty($password)) {

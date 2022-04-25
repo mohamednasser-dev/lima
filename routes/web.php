@@ -5,14 +5,8 @@ use App\Http\Controllers\Dashboard\AdminController;
 use App\Http\Controllers\Dashboard\CityController;
 use App\Http\Controllers\Dashboard\SettingController;
 use App\Http\Controllers\Dashboard\SliderController;
-use App\Http\Controllers\Dashboard\BrandController;
-use App\Http\Controllers\Dashboard\InboxController;
 use App\Http\Controllers\Dashboard\ProfileController;
-use App\Http\Controllers\Dashboard\BrandProductController;
 use App\Http\Controllers\Dashboard\UserController;
-use App\Http\Controllers\Dashboard\CouponController;
-use App\Http\Controllers\Dashboard\OrderController;
-use App\Http\Controllers\Dashboard\OrderShippingController;
 use App\Http\Controllers\Dashboard\HomeController;
 use App\Http\Controllers\Dashboard\RoleController;
 use Illuminate\Support\Facades\App;
@@ -44,7 +38,11 @@ Route::get('cache', function () {
 
 Route::get('/', [\App\Http\Controllers\Front\HomeController::class, 'Home'])->name('front.home');
 Route::get('/home', [\App\Http\Controllers\Front\HomeController::class, 'Home'])->name('front.home');
+<<<<<<< HEAD
 Route::get('/category-details/{id}', [\App\Http\Controllers\Front\HomeController::class, 'CategoryDetails']);
+=======
+Route::get('/category/{id}', [\App\Http\Controllers\Front\HomeController::class, 'CategoryDetails']);
+>>>>>>> 0249e836fc631718c09f422182fd99668bfde777
 
 
 Route::get('lang/{lang}', function ($lang) {
@@ -121,6 +119,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('deletes', [SliderController::class, 'deletes'])->name('sliders.deletes')->middleware('permission:delete-' . $permission);
         Route::get('delete/{id}', [SliderController::class, 'delete'])->name('sliders.delete')->middleware('permission:delete-' . $permission);
     });
+<<<<<<< HEAD
 
 //brands
     Route::group(['prefix' => 'brands'], function () {
@@ -152,6 +151,8 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('deletes', [BrandProductController::class, 'deletes'])->name('brand_products.deletes')->middleware('permission:delete-' . $permission);
         Route::get('delete/{id}', [BrandProductController::class, 'delete'])->name('brand_products.delete')->middleware('permission:delete-' . $permission);
     });
+=======
+>>>>>>> 0249e836fc631718c09f422182fd99668bfde777
 
 
 // cities Route
@@ -165,6 +166,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('deletes', [CityController::class, 'deletes'])->name('cities.deletes')->middleware('permission:delete-' . $permission);
         Route::get('delete/{id}', [CityController::class, 'delete'])->name('cities.delete')->middleware('permission:delete-' . $permission);
     });
+<<<<<<< HEAD
 
 // coupons Route
     Route::group(['prefix' => 'coupons'], function () {
@@ -202,16 +204,16 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('{id}', [$controller, 'show'])->name('shippings.show')->middleware('permission:read-' . $permission);
         Route::post('{id}/approve', [$controller, 'approve'])->name('shippings.approve')->middleware('permission:update-' . $permission);
     });
+=======
+
+
+>>>>>>> 0249e836fc631718c09f422182fd99668bfde777
 //settings
     Route::group(['prefix' => 'settings'], function () {
         Route::get('/', [SettingController::class, 'index'])->name('settings');
         Route::post('/update', [SettingController::class, 'update'])->name('settings.update');
     });
-//inboxs
-    Route::group(['prefix' => 'inboxes'], function () {
-        Route::get('/', [InboxController::class, 'index'])->name('inboxes');
-        Route::get('/{id}', [InboxController::class, 'show'])->name('inboxes.show');
-    });
+
     //profile
     Route::group(['prefix' => 'profile'], function () {
         Route::get('/', [ProfileController::class, 'edit'])->name('profile');

@@ -60,14 +60,23 @@ class User extends Authenticatable implements JWTSubject
         }
     }
 
+
     public function getImageAttribute($image)
     {
-        if ($image) {
-            return asset('/') . $image;
+        if (!empty($image)) {
+            return asset('uploads/users') . '/' . $image;
+        }
+        return asset('default.png');
+    }
 
+    public function setImageAttribute($image)
+    {
+        if (is_file($image)) {
+            $img_name = time() . uniqid() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('/uploads/users/'), $img_name);
+            $this->attributes['image'] = $img_name;
         } else {
-            return asset('/') . 'uploads/users/default.png';
-
+            $this->attributes['image'] = $image;
         }
     }
 
@@ -76,14 +85,19 @@ class User extends Authenticatable implements JWTSubject
      * + Relationships
      * --------------------------------
      */
-    public function orders(): HasMany
+    public function City()
     {
-        return $this->hasMany(Order::class, 'user_id');
+        return $this->belongsTo(City::class, 'city_id');
     }
 
-    public function cart(): HasMany
+    public function Addresses()
     {
-        return $this->hasMany(Cart::class, 'user_id');
+        return $this->hasMany(Address::class, 'user_id', 'id');
+    }
+
+    public function Subscriptions()
+    {
+        return $this->hasMany(SubscriptionHistory::class, 'user_id', 'id');
     }
 
 }

@@ -5,6 +5,12 @@ use App\Models\OrderShipping;
 
 return [
 
+    'article' => 'مقال',
+    'voice' => 'مقال صوتي',
+    'video' => 'فيديو',
+    'visa' => 'اشتراك بالفيزا',
+    'cash' => 'اشتراك عن طريق مندوب',
+    'manual' => 'اشتراك من الادارة',
     'profile' => 'الصفحة الشخصية',
     'statuschanged' => 'تم تغيير الحاله بنجاح',
     'you_are_not_active' => 'انت غير مفعل يرجى التواصل مع الاداره للتفعيل',
@@ -117,5 +123,6 @@ return [
     'ReadMore' => 'المزيد',
     'page not found' => 'الصفحة غير موجودة',
     'Unfortunately, this page is absent or unavailable' => 'للأسف هذه الصفحة غائبة أو غير متوفرة',
+
 
 ];

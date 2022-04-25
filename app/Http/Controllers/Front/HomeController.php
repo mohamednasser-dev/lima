@@ -36,5 +36,6 @@ class HomeController extends Controller
 //        to sub category
 
         return view('frontend.category', compact('data'));
-    }
+
+     }
 }

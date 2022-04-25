@@ -1,7 +1,7 @@
 @php($title='الصفحه الرئيسيه')
 @extends('adminLayouts.app')
 @section('title')
-MyKom
+{{settings('site_name_en')}} | {{$title}}
 @endsection
 @section('breadcrumb')
 <div class="d-flex align-items-baseline flex-wrap mr-5">
