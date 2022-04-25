@@ -7,6 +7,10 @@
 @extends('frontend.layout.master')
 @push('css')
 @endpush
+
+@section('title')
+    {{trans('lang.page not found')}}
+@endsection
 @section('content')
 
 </div>
