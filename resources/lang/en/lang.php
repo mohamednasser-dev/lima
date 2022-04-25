@@ -29,4 +29,12 @@ return [
     'logout_s' => 'User successfully logged out.',
     'login_data_not_correct' => 'login data not correct',
     'should_send_valid_id' => 'you should send valid data',
+
+    'usage' => 'usage',
+    'terms' => 'terms',
+    'privacy' => 'privacy',
+    'Home' => 'Home',
+    'aboutUs' => 'about Us',
+    'ReadMore' => 'Read More',
+
 ];

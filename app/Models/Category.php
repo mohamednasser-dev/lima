@@ -9,6 +9,31 @@ class Category extends Model
 {
     use HasFactory;
 
+
+    protected $appends = ['name'];
+
+
+    public function childrenCategories()
+    {
+        return $this->hasMany(Category::class,'parent_id')->with('childrenCategories');
+    }
+
+    public function scopeRoot($query)
+    {
+        return $query->where('parent_id', null);
+    }
+
+
+    public function getNameAttribute()
+    {
+        if ($locale = \app()->getLocale() == "ar") {
+            return $this->name_ar;
+        } else {
+            return $this->name_en;
+        }
+    }
+
+
     public function getImageAttribute($image)
     {
         if (!empty($image)) {
@@ -21,7 +46,7 @@ class Category extends Model
     {
         if (is_file($image)) {
             $img_name = time() . uniqid() . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('/uploads/Slider/'), $img_name);
+            $image->move(public_path('/uploads/categories/'), $img_name);
             $this->attributes['image'] = $img_name;
         } else {
             $this->attributes['image'] = $image;

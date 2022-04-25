@@ -15,6 +15,7 @@ use App\Http\Controllers\Dashboard\OrderController;
 use App\Http\Controllers\Dashboard\OrderShippingController;
 use App\Http\Controllers\Dashboard\HomeController;
 use App\Http\Controllers\Dashboard\RoleController;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -56,8 +57,10 @@ Route::get('lang/{lang}', function ($lang) {
     }
     if ($lang == 'en') {
         session()->put('lang', 'en');
+        App::setLocale('en');
     } else {
         session()->put('lang', 'ar');
+        App::setLocale('ar');
     }
 
 

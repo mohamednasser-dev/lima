@@ -115,7 +115,7 @@
                     <span class="menu-button-line"></span>
                 </div>
                 <ul id="menu-main" class="clearfix flexnav " data-breakpoint="800">
-                    <li class="menu-item menu-item-type-custom menu-item-object-custom  @if(Request::segment(1) == "home" ||Request::segment(1) == "/" ) current-menu-item current_page_item @endif">
+                    <li class="menu-item menu-item-type-custom menu-item-object-custom  @if(Request::segment(1) == "home" || Request::segment(1) == "" ) current-menu-item current_page_item @endif">
                         <a href="{{url('/')}}">{{trans('lang.Home')}}</a></li>
                     <li class="menu-item menu-item-has-children"><a href="page-features.html">Features</a>
                         <ul class="sub-menu">
