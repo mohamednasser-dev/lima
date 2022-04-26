@@ -1,5 +1,4 @@
 @include('frontend.layout.head')
 @stack('css')
 @yield('content')
-@stack('js')
 @include('frontend.layout.foot')

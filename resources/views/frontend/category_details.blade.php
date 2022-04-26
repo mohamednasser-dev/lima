@@ -53,7 +53,7 @@
                                                                             <div class="title">
 
                                                                                 <a class="link"
-                                                                                   @if($post->free == 0)  href="{{url('post-details/'.$post->id)}}" @endif>
+                                                                                   @if($post->free == 1)  href="{{url('post-details/'.$post->id)}}" @endif>
                                                                                     {{$post->name}}
                                                                                 </a>
 
@@ -61,7 +61,7 @@
                                                                             {{--                                                                               <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetuer ...</p>--}}
                                                                         </div>
                                                                         <div class="post-footer">
-                                                                            @if($post->free == 0)
+                                                                            @if($post->free == 1)
                                                                                 <a href="{{url('post-details/'.$post->id)}}"
                                                                                    class="cws_button">{{trans('lang.ReadMore')}}</a>
                                                                             @else

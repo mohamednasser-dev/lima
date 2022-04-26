@@ -75,4 +75,24 @@ class Post extends Model
             $this->attributes['image'] = $image;
         }
     }
+
+    public function getVideoAttribute($video)
+    {
+
+        if (!empty($video)) {
+            return asset('uploads/posts') . '/' . $video;
+        }
+        return asset('default-image.png');
+    }
+
+    public function setVideoAttribute($video)
+    {
+        if (is_file($video)) {
+            $img_name = time() . uniqid() . '.' . $video->getClientOriginalExtension();
+            $video->move(public_path('/uploads/posts/'), $img_name);
+            $this->attributes['video'] = $img_name;
+        } else {
+            $this->attributes['video'] = $video;
+        }
+    }
 }

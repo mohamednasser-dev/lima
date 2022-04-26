@@ -42,8 +42,13 @@ class HomeController extends Controller
     public function PostDetails($id)
     {
         $data['post'] = Post::findOrFail($id);
-
         $data['title'] = $data['post']->name;
+        if ($data['post']->free == 0) {
+//            check auth subscribe
+            abort(404);
+        }
+
+//        dd($data['post']);
 
         return view('frontend.post_details', compact('data'));
     }

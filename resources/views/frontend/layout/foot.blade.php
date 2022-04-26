@@ -150,6 +150,12 @@
 <script type='text/javascript' src='{{url('front')}}/js/jquery.isotope.min.js'></script>
 <script type='text/javascript' src='{{url('front')}}/js/jquery.flexnav.min.js'></script>
 <script type='text/javascript' src='{{url('front')}}/js/jquery.prettyPhoto.js'></script>
+<script>
 
+    document.addEventListener('contextmenu', event => event.preventDefault());
+
+
+</script>
+@yield('js')
 </body>
 </html>
