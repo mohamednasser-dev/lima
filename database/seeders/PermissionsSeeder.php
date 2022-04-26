@@ -15,32 +15,6 @@ class PermissionsSeeder extends Seeder
     public function run()
     {
         $data = [
-            // orders permissions
-            [
-                'path' => 'orders',
-                'name' => 'read-orders',
-                'display_name' => 'read orders',
-                'description' => 'عرض الطلبات',
-            ],
-            [
-                'path' => 'orders',
-                'name' => 'update-orders',
-                'display_name' => 'update orders',
-                'description' => 'تعديل الطلبات',
-            ],
-            [
-                'path' => 'orders',
-                'name' => 'create-orders',
-                'display_name' => 'create orders',
-                'description' => 'إضافة الطلبات',
-            ],
-            [
-                'path' => 'orders',
-                'name' => 'delete-orders',
-                'display_name' => 'delete orders',
-                'description' => 'حذف الطلبات',
-            ],
-
             // cities permissions
             [
                 'path' => 'cities',
@@ -65,6 +39,31 @@ class PermissionsSeeder extends Seeder
                 'name' => 'delete-cities',
                 'display_name' => 'delete cities',
                 'description' => 'حذف المدن',
+            ],
+            // categories permissions
+            [
+                'path' => 'categories',
+                'name' => 'read-categories',
+                'display_name' => 'read categories',
+                'description' => 'عرض الاقسام',
+            ],
+            [
+                'path' => 'categories',
+                'name' => 'update-categories',
+                'display_name' => 'update categories',
+                'description' => 'تعديل الاقسام',
+            ],
+            [
+                'path' => 'categories',
+                'name' => 'create-categories',
+                'display_name' => 'create categories',
+                'description' => 'إضافة الاقسام',
+            ],
+            [
+                'path' => 'categories',
+                'name' => 'delete-categories',
+                'display_name' => 'delete categories',
+                'description' => 'حذف الاقسام',
             ],
 
             // sliders permissions
@@ -93,19 +92,6 @@ class PermissionsSeeder extends Seeder
                 'description' => 'حذف صور العرض',
             ],
 
-            // inboxes permissions
-            [
-                'path' => 'inboxes',
-                'name' => 'read-inboxes',
-                'display_name' => 'read inboxes',
-                'description' => 'عرض الرسائل',
-            ],
-            [
-                'path' => 'inboxes',
-                'name' => 'delete-inboxes',
-                'display_name' => 'delete inboxes',
-                'description' => 'حذف الرسائل',
-            ],
 
             // users permissions
             [
@@ -195,81 +181,6 @@ class PermissionsSeeder extends Seeder
                 'name' => 'delete-admins',
                 'display_name' => 'delete admins',
                 'description' => 'حذف المديرين',
-            ],
-            // brands permissions
-            [
-                'path' => 'brands',
-                'name' => 'read-brands',
-                'display_name' => 'read brands',
-                'description' => 'عرض العلامات التجاريه',
-            ],
-            [
-                'path' => 'brands',
-                'name' => 'update-brands',
-                'display_name' => 'update brands',
-                'description' => 'تعديل العلامات التجاريه',
-            ],
-            [
-                'path' => 'brands',
-                'name' => 'create-brands',
-                'display_name' => 'create brands',
-                'description' => 'إضافة العلامات التجاريه',
-            ],
-            [
-                'path' => 'brands',
-                'name' => 'delete-brands',
-                'display_name' => 'delete brands',
-                'description' => 'حذف العلامات التجاريه',
-            ],
- // brand_products permissions
-            [
-                'path' => 'brand_products',
-                'name' => 'read-brand_products',
-                'display_name' => 'read brand products',
-                'description' => 'عرض المنتجات',
-            ],
-            [
-                'path' => 'brand_products',
-                'name' => 'update-brand_products',
-                'display_name' => 'update brand products',
-                'description' => 'تعديل المنتجات',
-            ],
-            [
-                'path' => 'brand_products',
-                'name' => 'create-brand_products',
-                'display_name' => 'create brand products',
-                'description' => 'إضافة المنتجات',
-            ],
-            [
-                'path' => 'brand_products',
-                'name' => 'delete-brand_products',
-                'display_name' => 'delete brand products',
-                'description' => 'حذف المنتجات',
-            ],
-            // coupons permissions
-            [
-                'path' => 'coupons',
-                'name' => 'read-coupons',
-                'display_name' => 'read coupons',
-                'description' => 'عرض كوبونات الخصم',
-            ],
-            [
-                'path' => 'coupons',
-                'name' => 'update-coupons',
-                'display_name' => 'update coupons',
-                'description' => 'تعديل كوبونات الخصم',
-            ],
-            [
-                'path' => 'coupons',
-                'name' => 'create-coupons',
-                'display_name' => 'create coupons',
-                'description' => 'إضافة كوبونات الخصم',
-            ],
-            [
-                'path' => 'coupons',
-                'name' => 'delete-coupons',
-                'display_name' => 'delete coupons',
-                'description' => 'حذف كوبونات الخصم',
             ],
 
         ];

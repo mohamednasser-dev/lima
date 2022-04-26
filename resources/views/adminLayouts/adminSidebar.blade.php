@@ -14,7 +14,6 @@
                     <span class="menu-text">الصفحة الرئيسية</span>
                 </a>
             </li>
-
             @can('read-sliders')
                 <li class="menu-item menu-item-submenu @if( Request::segment(1)== 'sliders' ) menu-item-open @endif"
                     aria-haspopup="true" data-menu-toggle="hover">
@@ -33,13 +32,15 @@
                     </a>
                 </li>
             @endcan
-            <li class="menu-item menu-item-submenu @if( Request::segment(1)== 'city' ) menu-item-open @endif"
+            @can('read-categories')
+            <li class="menu-item menu-item-submenu @if( Request::segment(1)== 'categories' ) menu-item-open @endif"
                 aria-haspopup="true" data-menu-toggle="hover">
-                <a href="{{route('cities')}}" class="menu-link menu-toggle">
-                    <i class="menu-icon flaticon2-location"></i>
+                <a href="{{route('categories')}}" class="menu-link menu-toggle">
+                    <i class="menu-icon flaticon-app"></i>
                     <span class="menu-text">الاقسام</span>
                 </a>
             </li>
+            @endcan
             <li class="menu-item menu-item-submenu @if( Request::segment(1)== 'city' ) menu-item-open @endif"
                 aria-haspopup="true" data-menu-toggle="hover">
                 <a href="{{route('cities')}}" class="menu-link menu-toggle">

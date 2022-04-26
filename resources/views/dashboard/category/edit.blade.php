@@ -1,4 +1,4 @@
-@php($title='اضافه مدينه')
+@php($title='تعديل المدينه')
 @extends('adminLayouts.app')
 @section('title')
     {{$title}}
@@ -13,8 +13,8 @@
         <div class="subheader-separator subheader-separator-ver mt-2 mb-2 mr-4 bg-gray-200"></div>
         <ul class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
             <li class="breadcrumb-item">
-                <a href="{{route('cities')}}"
-                   class="text-muted">المدن</a>
+                <a href="{{route('categories')}}"
+                   class="text-muted">الاقسام</a>
             </li>
             <li class="breadcrumb-item">
                 <a href="{{route('admin')}}"
@@ -29,15 +29,19 @@
 
     <div class="card">
         <div class="card-body">
-            <form method="post"  id="form" action="{{route('cities.store')}}" enctype="multipart/form-data">
+            <form method="post" action="{{route('categories.update',$data->id)}}" enctype="multipart/form-data">
                 @csrf
-                @include('dashboard.city.form')
+                @include('dashboard.category.form')
             </form>
         </div>
     </div>
 
+
 @endsection
 @section('script')
+    <script !src="">
+        var avatar1 = new KTImageInput('kt_image_1');
+    </script>
     <script>
         $(document).ready(function() {
             $(document).on('submit', 'form', function() {

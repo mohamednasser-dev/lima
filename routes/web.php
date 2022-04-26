@@ -9,6 +9,7 @@ use App\Http\Controllers\Dashboard\ProfileController;
 use App\Http\Controllers\Dashboard\UserController;
 use App\Http\Controllers\Dashboard\HomeController;
 use App\Http\Controllers\Dashboard\RoleController;
+use App\Http\Controllers\Dashboard\CategoryController;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
@@ -34,7 +35,6 @@ Route::get('cache', function () {
     Artisan::call('route:clear');
     return 'success';
 });
-
 
 Route::get('/', [\App\Http\Controllers\Front\HomeController::class, 'Home'])->name('front.home');
 Route::get('/home', [\App\Http\Controllers\Front\HomeController::class, 'Home'])->name('front.home');
@@ -117,36 +117,6 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('delete/{id}', [SliderController::class, 'delete'])->name('sliders.delete')->middleware('permission:delete-' . $permission);
     });
 
-//brands
-    Route::group(['prefix' => 'brands'], function () {
-        $permission = 'brands';
-        Route::get('/', [BrandController::class, 'index'])->name('brands')->middleware('permission:read-' . $permission);
-        Route::get('show/{id}', [BrandController::class, 'show'])->name('brands.show')->middleware('permission:create-' . $permission);
-        Route::get('create', [BrandController::class, 'create'])->name('brands.create')->middleware('permission:create-' . $permission);
-        Route::post('store', [BrandController::class, 'store'])->name('brands.store')->middleware('permission:create-' . $permission);
-        Route::get('edit/{id}', [BrandController::class, 'edit'])->name('brands.edit')->middleware('permission:update-' . $permission);
-        Route::post('update/{id}', [BrandController::class, 'update'])->name('brands.update')->middleware('permission:update-' . $permission);
-        Route::post('deletes', [BrandController::class, 'deletes'])->name('brands.deletes')->middleware('permission:delete-' . $permission);
-        Route::get('delete/{id}', [BrandController::class, 'delete'])->name('brands.delete')->middleware('permission:delete-' . $permission);
-        Route::get('delete/image/{id}', [BrandController::class, 'deletebrandsImage'])->name('brands.image.delete')->middleware('permission:delete-' . $permission);
-        Route::post('upload_images', [BrandController::class, 'uploadbrandsImage'])->name('brands.upload.images')->middleware('permission:create-' . $permission);
-
-    });
-
-    Route::group(['prefix' => 'brand_products'], function () {
-        $permission = 'brand_products';
-        Route::get('show/{id}', [BrandProductController::class, 'show'])->name('brand_products')->middleware('permission:read-' . $permission);
-        Route::get('details/{id}', [BrandProductController::class, 'details'])->name('brand_products.details')->middleware('permission:read-' . $permission);
-        Route::get('view/{id}', [BrandProductController::class, 'show'])->name('brand_products.view')->middleware('permission:read-' . $permission);
-        Route::post('search', [BrandProductController::class, 'search'])->name('brand_products.search')->middleware('permission:read-' . $permission);
-        Route::get('create/{id}', [BrandProductController::class, 'create'])->name('brand_products.create')->middleware('permission:create-' . $permission);
-        Route::get('products/{id}', [BrandProductController::class, 'products'])->name('brand_products.products')->middleware('permission:read-' . $permission);
-        Route::post('store', [BrandProductController::class, 'store'])->name('brand_products.store')->middleware('permission:create-' . $permission);
-        Route::get('edit/{id}', [BrandProductController::class, 'edit'])->name('brand_products.edit')->middleware('permission:update-' . $permission);
-        Route::post('update/{id}', [BrandProductController::class, 'update'])->name('brand_products.update')->middleware('permission:update-' . $permission);
-        Route::post('deletes', [BrandProductController::class, 'deletes'])->name('brand_products.deletes')->middleware('permission:delete-' . $permission);
-        Route::get('delete/{id}', [BrandProductController::class, 'delete'])->name('brand_products.delete')->middleware('permission:delete-' . $permission);
-    });
 
 // cities Route
     Route::group(['prefix' => 'city'], function () {
@@ -160,42 +130,18 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('delete/{id}', [CityController::class, 'delete'])->name('cities.delete')->middleware('permission:delete-' . $permission);
     });
 
-// coupons Route
-    Route::group(['prefix' => 'coupons'], function () {
-        $permission = 'coupons';
-        Route::get('/', [CouponController::class, 'index'])->name('coupons')->middleware('permission:read-' . $permission);
-        Route::get('create', [CouponController::class, 'create'])->name('coupons.create')->middleware('permission:create-' . $permission);
-        Route::post('store', [CouponController::class, 'store'])->name('coupons.store')->middleware('permission:create-' . $permission);
-        Route::post('change_status', [CouponController::class, 'change_status'])->name('coupons.change_status')->middleware('permission:update-' . $permission);
-        Route::get('edit/{id}', [CouponController::class, 'edit'])->name('coupons.edit')->middleware('permission:update-' . $permission);
-        Route::post('update/{id}', [CouponController::class, 'update'])->name('coupons.update')->middleware('permission:update-' . $permission);
-        Route::post('deletes', [CouponController::class, 'deletes'])->name('coupons.deletes')->middleware('permission:delete-' . $permission);
-        Route::get('delete/{id}', [CouponController::class, 'delete'])->name('coupons.delete')->middleware('permission:delete-' . $permission);
+    Route::group(['prefix' => 'categories','as'=>'categories'], function () {
+        $permission = 'categories';
+        Route::get('/', [CategoryController::class, 'index'])->middleware('permission:read-' . $permission);
+        Route::get('create/{parent_id}', [CategoryController::class, 'create'])->name('.create')->middleware('permission:create-' . $permission);
+        Route::post('store', [CategoryController::class, 'store'])->name('.store')->middleware('permission:create-' . $permission);
+        Route::get('edit/{id}', [CategoryController::class, 'edit'])->name('.edit')->middleware('permission:update-' . $permission);
+        Route::get('show/{parent_id}', [CategoryController::class, 'show'])->name('.show')->middleware('permission:update-' . $permission);
+        Route::post('update/{id}', [CategoryController::class, 'update'])->name('.update')->middleware('permission:update-' . $permission);
+        Route::post('deletes', [CategoryController::class, 'deletes'])->name('.deletes')->middleware('permission:delete-' . $permission);
+        Route::get('delete/{id}', [CategoryController::class, 'delete'])->name('.delete')->middleware('permission:delete-' . $permission);
     });
 
-//orders
-    Route::group(['prefix' => 'orders'], function () {
-        $permission = 'orders';
-        $controller = OrderController::class;
-
-        Route::get('/', [$controller, 'index'])->name('orders')->middleware('permission:read-' . $permission);
-        Route::get('/{order}', [$controller, 'show'])->name('orders.show')->middleware('permission:read-' . $permission);
-        Route::post('change_status', [$controller, 'change_status'])->name('orders.change_status')->middleware('permission:update-' . $permission);
-        Route::get('edit/{id}', [$controller, 'edit'])->name('orders.edit')->middleware('permission:update-' . $permission);
-        Route::post('update/{id}', [$controller, 'update'])->name('orders.update')->middleware('permission:update-' . $permission);
-        Route::post('deletes', [$controller, 'deletes'])->name('orders.deletes')->middleware('permission:delete-' . $permission);
-        Route::get('delete/{id}', [$controller, 'delete'])->name('orders.delete')->middleware('permission:delete-' . $permission);
-    });
-
-//shippings
-    Route::group(['prefix' => 'shippings', 'middleware' => 'auth'], function () {
-        $permission = 'orders';
-        $controller = OrderShippingController::class;
-
-        Route::get('/', [$controller, 'index'])->name('shippings')->middleware('permission:read-' . $permission);
-        Route::get('{id}', [$controller, 'show'])->name('shippings.show')->middleware('permission:read-' . $permission);
-        Route::post('{id}/approve', [$controller, 'approve'])->name('shippings.approve')->middleware('permission:update-' . $permission);
-    });
 //settings
     Route::group(['prefix' => 'settings'], function () {
         Route::get('/', [SettingController::class, 'index'])->name('settings');

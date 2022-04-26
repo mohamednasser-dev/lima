@@ -8,7 +8,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>{{\App\Models\Setting::where('key', 'site_name_'.session('lang'))->first()->val}} - @yield('title')</title>
+    <title>{{settings('site_name_'.session('lang'))}} </title>
     <link rel="alternate" type="application/rss+xml"
           title="{{\App\Models\Setting::where('key', 'site_name_'.session('lang'))->first()->val}}  &raquo; Comments Feed"
           href="#"/>

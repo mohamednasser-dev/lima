@@ -22,7 +22,8 @@
     <link href="assets/css/themes/layout/brand/dark.rtl.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/themes/layout/aside/dark.rtl.css" rel="stylesheet" type="text/css" />
     <!--end::Layout Themes-->
-    <link rel="shortcut icon" href="assets/media/logos/mykom.ico" />
+{{--    <link rel="shortcut icon" href="assets/media/logos/mykom.ico" />--}}
+    <link rel="shortcut icon" href="{{settings('logo')}}" />
     <!--begin yajra datatable-->
 
     <!--end yajra datatable-->
@@ -42,7 +43,7 @@
 <div id="kt_header_mobile" class="header-mobile align-items-center header-mobile-fixed">
     <!--begin::Logo-->
     <a href="{{route('admin')}}">
-        <img alt="Logo" style="width: 160px;" src="{{settings('logo')}})" />
+        <img alt="Logo" style="width: 160px;" src="{{settings('logo')}}" />
     </a>
     <!--end::Logo-->
     <!--begin::Toolbar-->
