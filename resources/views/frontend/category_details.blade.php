@@ -7,8 +7,6 @@
 @section('content')
 
 
-
-
 </div>
 <!-- .bg-level-1 -->
 <div id="kids_middle_container">
@@ -34,7 +32,8 @@
                                                     {{--                                                        for eac main category    --}}
 
                                                     <main>
-                                                        <div class='widget-title'>{{$data['main_categories']->name}}</div>
+                                                        <div
+                                                            class='widget-title'>{{$data['main_categories']->name}}</div>
                                                         <div class="portfolio iso-column iso-four-column">
                                                             <div class="grid isotope" data-ppp="8"
                                                                  data-cols="954">
@@ -51,15 +50,24 @@
                                                                         </div>
                                                                         <!--/ content-wrapper-->
                                                                         <div class="gallery-text">
-                                                                            <div class="title"><a class="link"
-                                                                                                  href="{{url('post-details/'.$post->id)}}">{{$post->name}}
-                                                                                </a></div>
-                                                                            {{--                                                                            <p>Lorem ipsum dolor sit amet. Lorem ipsum--}}
-                                                                            {{--                                                                                dolor sit amet, consectetuer ...</p>--}}
+                                                                            <div class="title">
+
+                                                                                <a class="link"
+                                                                                   @if($post->free == 0)  href="{{url('post-details/'.$post->id)}}" @endif>
+                                                                                    {{$post->name}}
+                                                                                </a>
+
+                                                                            </div>
+                                                                            {{--                                                                               <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetuer ...</p>--}}
                                                                         </div>
                                                                         <div class="post-footer">
-                                                                            <a href="{{url('post-details/'.$post->id)}}"
-                                                                               class="cws_button">{{trans('lang.ReadMore')}}</a>
+                                                                            @if($post->free == 0)
+                                                                                <a href="{{url('post-details/'.$post->id)}}"
+                                                                                   class="cws_button">{{trans('lang.ReadMore')}}</a>
+                                                                            @else
+                                                                                <a href="#"
+                                                                                   class="cws_button">{{trans('lang.Register')}}</a>
+                                                                            @endif
                                                                         </div>
                                                                         <!--/ post-footer-->
                                                                         <div class="kids_clear"></div>

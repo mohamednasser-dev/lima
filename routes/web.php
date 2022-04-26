@@ -39,6 +39,7 @@ Route::get('cache', function () {
 Route::get('/', [\App\Http\Controllers\Front\HomeController::class, 'Home'])->name('front.home');
 Route::get('/home', [\App\Http\Controllers\Front\HomeController::class, 'Home'])->name('front.home');
 Route::get('/category-details/{id}', [\App\Http\Controllers\Front\HomeController::class, 'CategoryDetails']);
+Route::get('/post-details/{id}', [\App\Http\Controllers\Front\HomeController::class, 'PostDetails']);
 
 
 Route::get('lang/{lang}', function ($lang) {
