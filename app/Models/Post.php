@@ -9,9 +9,9 @@ class Post extends Model
 {
     use HasFactory;
 
-    protected $guarded=[];
+    protected $guarded = [];
 
-    protected $appends = ['name','body','type_name'];
+    protected $appends = ['name', 'body', 'type_name'];
 
     public function getNameAttribute()
     {
@@ -94,5 +94,20 @@ class Post extends Model
         } else {
             $this->attributes['video'] = $video;
         }
+    }
+
+    public function Likes()
+    {
+        return $this->hasMany(PostLike::class, 'post_id', 'id');
+    }
+
+    public function Views()
+    {
+        return $this->hasMany(PostView::class, 'post_id', 'id');
+    }
+
+    public function Favorites()
+    {
+        return $this->hasMany(Favorite::class, 'post_id', 'id');
     }
 }
