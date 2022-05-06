@@ -10,6 +10,7 @@ use App\Http\Controllers\Dashboard\UserController;
 use App\Http\Controllers\Dashboard\HomeController;
 use App\Http\Controllers\Dashboard\RoleController;
 use App\Http\Controllers\Dashboard\CategoryController;
+use App\Http\Controllers\Dashboard\PostController;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
@@ -140,6 +141,19 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('update/{id}', [CategoryController::class, 'update'])->name('.update')->middleware('permission:update-' . $permission);
         Route::post('deletes', [CategoryController::class, 'deletes'])->name('.deletes')->middleware('permission:delete-' . $permission);
         Route::get('delete/{id}', [CategoryController::class, 'delete'])->name('.delete')->middleware('permission:delete-' . $permission);
+    });
+
+    Route::group(['prefix' => 'posts','as'=>'posts'], function () {
+        $permission = 'posts';
+        Route::get('create', [PostController::class, 'create'])->name('.create')->middleware('permission:create-' . $permission);
+        Route::get('/{type}', [PostController::class, 'index'])->name('.index')->middleware('permission:read-' . $permission);
+        Route::get('/get_subcategory/{id}', [PostController::class, 'get_subcategory'])->name('.get_subcategory');
+        Route::post('store', [PostController::class, 'store'])->name('.store')->middleware('permission:create-' . $permission);
+        Route::get('edit/{id}', [PostController::class, 'edit'])->name('.edit')->middleware('permission:update-' . $permission);
+        Route::get('show/{parent_id}', [PostController::class, 'show'])->name('.show')->middleware('permission:update-' . $permission);
+        Route::post('update/{id}', [PostController::class, 'update'])->name('.update')->middleware('permission:update-' . $permission);
+        Route::post('deletes', [PostController::class, 'deletes'])->name('.deletes')->middleware('permission:delete-' . $permission);
+        Route::get('delete/{id}', [PostController::class, 'delete'])->name('.delete')->middleware('permission:delete-' . $permission);
     });
 
 //settings

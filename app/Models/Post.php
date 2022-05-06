@@ -31,11 +31,6 @@ class Post extends Model
         }
     }
 
-    public function Category()
-    {
-        return $this->belongsTo(Category::class, 'category_id');
-    }
-
     public function scopeActive($query)
     {
         return $query->where('status', 1);
@@ -88,12 +83,17 @@ class Post extends Model
     public function setVideoAttribute($video)
     {
         if (is_file($video)) {
-            $img_name = time() . uniqid() . '.' . $video->getClientOriginalExtension();
-            $video->move(public_path('/uploads/posts/'), $img_name);
-            $this->attributes['video'] = $img_name;
+            $video_name = time() . uniqid() . '.' . $video->getClientOriginalExtension();
+            $video->move(public_path('/uploads/posts/'), $video_name);
+            $this->attributes['video'] = $video_name;
         } else {
             $this->attributes['video'] = $video;
         }
+    }
+
+    public function Category()
+    {
+        return $this->belongsTo(Category::class, 'category_id');
     }
 
     public function Likes()
@@ -109,5 +109,10 @@ class Post extends Model
     public function Favorites()
     {
         return $this->hasMany(Favorite::class, 'post_id', 'id');
+    }
+
+    public function childrenCategories()
+    {
+        return $this->hasMany(Category::class)->with('childrenCategories');
     }
 }

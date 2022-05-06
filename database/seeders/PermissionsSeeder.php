@@ -15,6 +15,32 @@ class PermissionsSeeder extends Seeder
     public function run()
     {
         $data = [
+            // sliders permissions
+            [
+                'path' => 'sliders',
+                'name' => 'read-sliders',
+                'display_name' => 'read sliders',
+                'description' => 'عرض صور العرض',
+            ],
+            [
+                'path' => 'sliders',
+                'name' => 'update-sliders',
+                'display_name' => 'update sliders',
+                'description' => 'تعديل صور العرض',
+            ],
+            [
+                'path' => 'sliders',
+                'name' => 'create-sliders',
+                'display_name' => 'create sliders',
+                'description' => 'إضافة صور العرض',
+            ],
+            [
+                'path' => 'sliders',
+                'name' => 'delete-sliders',
+                'display_name' => 'delete sliders',
+                'description' => 'حذف صور العرض',
+            ],
+
             // cities permissions
             [
                 'path' => 'cities',
@@ -66,31 +92,32 @@ class PermissionsSeeder extends Seeder
                 'description' => 'حذف الاقسام',
             ],
 
-            // sliders permissions
+            // posts permissions
             [
-                'path' => 'sliders',
-                'name' => 'read-sliders',
-                'display_name' => 'read sliders',
-                'description' => 'عرض صور العرض',
+                'path' => 'posts',
+                'name' => 'read-posts',
+                'display_name' => 'read posts',
+                'description' => 'عرض المنشور',
             ],
             [
-                'path' => 'sliders',
-                'name' => 'update-sliders',
-                'display_name' => 'update sliders',
-                'description' => 'تعديل صور العرض',
+                'path' => 'posts',
+                'name' => 'update-posts',
+                'display_name' => 'update posts',
+                'description' => 'تعديل المنشور',
             ],
             [
-                'path' => 'sliders',
-                'name' => 'create-sliders',
-                'display_name' => 'create sliders',
-                'description' => 'إضافة صور العرض',
+                'path' => 'posts',
+                'name' => 'create-posts',
+                'display_name' => 'create posts',
+                'description' => 'إضافة المنشور',
             ],
             [
-                'path' => 'sliders',
-                'name' => 'delete-sliders',
-                'display_name' => 'delete sliders',
-                'description' => 'حذف صور العرض',
+                'path' => 'posts',
+                'name' => 'delete-posts',
+                'display_name' => 'delete posts',
+                'description' => 'حذف المنشور',
             ],
+
 
 
             // users permissions

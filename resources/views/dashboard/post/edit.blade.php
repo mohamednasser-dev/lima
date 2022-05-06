@@ -1,4 +1,4 @@
-@php($title='اضافة قسم')
+@php($title='تعديل بيانات الفيديو')
 @extends('adminLayouts.app')
 @section('title')
     {{$title}}
@@ -13,8 +13,8 @@
         <div class="subheader-separator subheader-separator-ver mt-2 mb-2 mr-4 bg-gray-200"></div>
         <ul class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
             <li class="breadcrumb-item">
-                <a href="{{route('categories')}}"
-                   class="text-muted">الاقسام</a>
+                <a href="{{route('posts.index',['type'=>'video'])}}"
+                   class="text-muted">الفيديوهات</a>
             </li>
             <li class="breadcrumb-item">
                 <a href="{{route('admin')}}"
@@ -28,25 +28,13 @@
 @section('content')
     <div class="card">
         <div class="card-body">
-            <form method="post"  id="form" action="{{route('categories.store')}}" enctype="multipart/form-data">
+            <form method="post" action="{{route('posts.update',$data->id)}}" enctype="multipart/form-data">
                 @csrf
-                <input type="hidden" name="parent_id" required value="{{$parent_id}}">
-                @include('dashboard.category.form')
+                @include('dashboard.post.form')
             </form>
         </div>
     </div>
+@endsection
 
-@endsection
-@section('script')
-    <script !src="">
-        var avatar1 = new KTImageInput('kt_image_1');
-    </script>
-    <script>
-        $(document).ready(function() {
-            $(document).on('submit', 'form', function() {
-                $('button').attr('disabled', 'disabled');
-            });
-        });
-    </script>
-@endsection
+
 
