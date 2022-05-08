@@ -9,6 +9,7 @@ use App\DataTables\PostDataTable;
 use App\Http\Requests\PostRequest;
 use App\Models\Category;
 use App\Models\Post;
+use Illuminate\Http\Request;
 
 class PostController extends GeneralController
 {
@@ -27,10 +28,10 @@ class PostController extends GeneralController
         return $dataTable->with('type', $type)->render($this->viewPath . '.index');
     }
 
-    public function create()
+    public function create($type)
     {
         $category = Category::where('parent_id', null)->get();
-        return view($this->viewPath . '.create', compact('category'));
+        return view($this->viewPath . '.create', compact('category', 'type'));
     }
 
     public function get_subcategory($id)
@@ -53,8 +54,8 @@ class PostController extends GeneralController
         } elseif ($request->category_id != null) {
             $data['category_id'] = $request->category_id;
         }
-unset($data['sub_category_id']);
-unset($data['sub_sub_category_id']);
+        unset($data['sub_category_id']);
+        unset($data['sub_sub_category_id']);
         $this->model::create($data);
         return redirect()->route($this->route . '.index', ['type' => 'video'])->with('success', 'تم الاضافه بنجاح');
     }
@@ -83,11 +84,11 @@ unset($data['sub_sub_category_id']);
             }
         }
         //generate sub category data ...
-        $sub_category = Category::where('parent_id',$first_cat_id)->get();
+        $sub_category = Category::where('parent_id', $first_cat_id)->get();
 
         //generate sub sub category data ...
-        $sub_sub_category = Category::where('parent_id',$second_cat_id)->get();
-        return view($this->viewPath . '.edit', compact('data', 'category', 'first_cat_id', 'second_cat_id', 'third_cat_id','sub_category','sub_sub_category'));
+        $sub_sub_category = Category::where('parent_id', $second_cat_id)->get();
+        return view($this->viewPath . '.edit', compact('data', 'category', 'first_cat_id', 'second_cat_id', 'third_cat_id', 'sub_category', 'sub_sub_category'));
     }
 
     public function update(PostRequest $request, $id)
@@ -104,8 +105,11 @@ unset($data['sub_sub_category_id']);
         }
         unset($data['sub_category_id']);
         unset($data['sub_sub_category_id']);
+        if($request->image){
+
+        }
+
         $this->model::where('id', $id)->update($data);
-        $row = $this->model::findOrFail($id);
         return redirect()->route($this->route . '.index', ['type' => 'video'])->with('success', 'تم التعديل بنجاح');
 
     }
@@ -141,5 +145,12 @@ unset($data['sub_sub_category_id']);
         } catch (\Exception $e) {
             return redirect()->back()->with('danger', 'لا يمكنك الحذف');
         }
+    }
+
+    public function change_free(Request $request)
+    {
+        $data['free'] = $request->status;
+        $user = Post::where('id', $request->id)->update($data);
+        return 1;
     }
 }

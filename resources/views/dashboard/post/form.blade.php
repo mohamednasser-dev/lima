@@ -66,21 +66,6 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="form-group col-md-6">
-            <label>الفيديو<span class="text-danger">*</span></label>
-            <div class="col-lg-12">
-                <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="customFile" name="video"
-                           accept=".mp4, .mov, .wmv, .flv, .avi, .mkv, .webm"/>
-                    <label class="custom-file-label" for="customFile">اختر الفيديو</label>
-                </div>
-
-                {{--            <input type="file" name="video" value="{{old('video', $data->video ?? '')}}" accept=".mp4, .mov, .wmv, .flv, .avi, .mkv, .webm">--}}
-
-            </div>
-        </div>
         <div class="form-group col-md-6">
             @if(Request::segment(2)== 'edit')
                 <video width="400" height="400" controls>
@@ -90,6 +75,22 @@
                 </video>
             @endif
         </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-6">
+            <label>الفيديو<span class="text-danger">*</span></label>
+            <div class="col-lg-12">
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input {{ $errors->has('video') ? 'border-danger' : '' }}" id="customFile" name="video"
+                           accept=".mp4, .mov, .wmv, .flv, .avi, .mkv, .webm"/>
+                    <label class="custom-file-label" for="customFile">اختر الفيديو</label>
+                </div>
+
+                {{--            <input type="file" name="video" value="{{old('video', $data->video ?? '')}}" accept=".mp4, .mov, .wmv, .flv, .avi, .mkv, .webm">--}}
+
+            </div>
+        </div>
+
     </div>
 </div>
 <div class="card-footer text-left">

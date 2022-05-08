@@ -35,7 +35,7 @@ class PostRequest extends FormRequest
                 'nullable',
                 'mimes:mp4,mov,wmv,flv,avi,mkv,webm',
                 Rule::requiredIf(function() {
-                    return Request::routeIs('posts.create');
+                    return Request::routeIs('posts.store');
                 })
             ],
             'image' => [
@@ -43,7 +43,7 @@ class PostRequest extends FormRequest
                 'image',
                 'mimes:jpeg,jpg,png',
                 Rule::requiredIf(function() {
-                    return Request::routeIs('posts.create');
+                    return Request::routeIs('posts.store');
                 })
             ],
         ];

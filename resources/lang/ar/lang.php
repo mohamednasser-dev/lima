@@ -5,6 +5,8 @@ use App\Models\OrderShipping;
 
 return [
 
+    'posts' => 'المحتوى',
+    'categories' => 'الاقسام',
     'article' => 'مقال',
     'voice' => 'مقال صوتي',
     'video' => 'فيديو',

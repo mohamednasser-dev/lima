@@ -97,25 +97,25 @@ class PermissionsSeeder extends Seeder
                 'path' => 'posts',
                 'name' => 'read-posts',
                 'display_name' => 'read posts',
-                'description' => 'عرض المنشور',
+                'description' => 'عرض المحتوى',
             ],
             [
                 'path' => 'posts',
                 'name' => 'update-posts',
                 'display_name' => 'update posts',
-                'description' => 'تعديل المنشور',
+                'description' => 'تعديل المحتوى',
             ],
             [
                 'path' => 'posts',
                 'name' => 'create-posts',
                 'display_name' => 'create posts',
-                'description' => 'إضافة المنشور',
+                'description' => 'إضافة المحتوى',
             ],
             [
                 'path' => 'posts',
                 'name' => 'delete-posts',
                 'display_name' => 'delete posts',
-                'description' => 'حذف المنشور',
+                'description' => 'حذف المحتوى',
             ],
 
 

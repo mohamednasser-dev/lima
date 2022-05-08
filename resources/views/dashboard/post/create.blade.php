@@ -1,4 +1,11 @@
-@php($title='اضافة فيديو جديد')
+
+@if($type == 'video')
+    @php($title='اضافة فيديو جديد')
+    @php($parent_title='الفيديوهات')
+@else
+    @php($title='اضافة مقال جديد')
+    @php($parent_title='المقالات')
+@endif
 @extends('adminLayouts.app')
 @section('title')
     {{$title}}
@@ -12,10 +19,10 @@
         <h5 class="text-warning font-weight-bold my-1 mr-5">{{$title}}</h5>
         <div class="subheader-separator subheader-separator-ver mt-2 mb-2 mr-4 bg-gray-200"></div>
         <ul class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
-            <li class="breadcrumb-item">
-                <a href="{{route('posts.index',['type'=>'video'])}}"
-                   class="text-muted">الفيديوهات</a>
-            </li>
+                <li class="breadcrumb-item">
+                    <a href="{{route('posts.index',['type'=>$type])}}"
+                       class="text-muted">{{$parent_title}}</a>
+                </li>
             <li class="breadcrumb-item">
                 <a href="{{route('admin')}}"
                    class="text-muted">الصفحة الرئيسية</a>
@@ -27,7 +34,7 @@
 @section('content')
     <div class="card">
         <div class="card-body">
-            <form method="post"  id="form" action="{{route('posts.store')}}" enctype="multipart/form-data">
+            <form method="post" id="form" action="{{route('posts.store')}}" enctype="multipart/form-data">
                 @csrf
 {{--                <input type="hidden" name="parent_id" required value="{{$parent_id}}">--}}
                 @include('dashboard.post.form')

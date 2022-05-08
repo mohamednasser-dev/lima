@@ -28,7 +28,7 @@
 @section('content')
     <div class="card">
         <div class="card-body">
-            <form method="post" action="{{route('posts.update',$data->id)}}" enctype="multipart/form-data">
+            <form method="post" id="form" action="{{route('posts.update',$data->id)}}" enctype="multipart/form-data">
                 @csrf
                 @include('dashboard.post.form')
             </form>

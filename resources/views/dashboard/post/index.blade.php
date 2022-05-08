@@ -1,4 +1,8 @@
-@php($title='الفيديوهات')
+@if(Request::segment(2) == 'video')
+    @php($title='الفيديوهات')
+@else
+    @php($title='المقالات')
+@endif
 @extends('adminLayouts.app')
 @section('title')
     {{$title}}
@@ -26,18 +30,16 @@
             <div class="card-header">
                 <div class="row">
                     <div class="col-md-6 text-left">
-                        @if(Request::segment(2) == 'show')
-                            @can('delete-posts')
-                                <button type="submit" style="display:none; margin-right: 10px;"
-                                        class="btn btn-sm btn-light-danger font-weight-bolder mr-2 delete-selected-btn">
-                                    <i class="fa fa-trash"></i> حذف المحدد
-                                </button>
-                            @endcan
-                        @endif
+                        @can('delete-posts')
+                            <button type="submit" style="display:none; margin-right: 10px;"
+                                    class="btn btn-sm btn-light-danger font-weight-bolder mr-2 delete-selected-btn">
+                                <i class="fa fa-trash"></i> حذف المحدد
+                            </button>
+                        @endcan
                     </div>
                     <div class="col-md-6 text-right">
                         @can('create-posts')
-                            <a href="{{route('posts.create')}}"
+                            <a href="{{route('posts.create',['type'=>Request::segment(2)])}}"
                                class="btn btn-sm btn-light-success font-weight-bolder mr-2">
                                 <i class="fa fa-plus"></i>إضـافـة</a>
                         @endcan
@@ -51,6 +53,26 @@
 @endsection
 @section('script')
     {!! $dataTable->scripts() !!}
+    <script type="text/javascript">
+        function update_free(el) {
+            if (el.checked) {
+                var status = 1;
+            } else {
+                var status = 0;
+            }
+            $.post('{{ route('posts.change_free') }}', {
+                _token: '{{ csrf_token() }}',
+                id: el.value,
+                status: status
+            }, function (data) {
+                if (data == 1) {
+                    toastr.success(".....             {{trans('lang.statuschanged')}}");
+                } else {
+                    toastr.error("{{trans('lang.statuschanged')}}");
+                }
+            });
+        }
+    </script>
     <script>
         $(document).on("ready", function () {
             "use strict";

@@ -145,7 +145,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::group(['prefix' => 'posts','as'=>'posts'], function () {
         $permission = 'posts';
-        Route::get('create', [PostController::class, 'create'])->name('.create')->middleware('permission:create-' . $permission);
+        Route::get('create/{type}', [PostController::class, 'create'])->name('.create')->middleware('permission:create-' . $permission);
         Route::get('/{type}', [PostController::class, 'index'])->name('.index')->middleware('permission:read-' . $permission);
         Route::get('/get_subcategory/{id}', [PostController::class, 'get_subcategory'])->name('.get_subcategory');
         Route::post('store', [PostController::class, 'store'])->name('.store')->middleware('permission:create-' . $permission);
@@ -153,6 +153,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('show/{parent_id}', [PostController::class, 'show'])->name('.show')->middleware('permission:update-' . $permission);
         Route::post('update/{id}', [PostController::class, 'update'])->name('.update')->middleware('permission:update-' . $permission);
         Route::post('deletes', [PostController::class, 'deletes'])->name('.deletes')->middleware('permission:delete-' . $permission);
+        Route::post('change_free', [PostController::class, 'change_free'])->name('.change_free')->middleware('permission:update-' . $permission);
         Route::get('delete/{id}', [PostController::class, 'delete'])->name('.delete')->middleware('permission:delete-' . $permission);
     });
 
