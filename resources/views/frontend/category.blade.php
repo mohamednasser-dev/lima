@@ -17,7 +17,7 @@
         <br>
         <br>
         <br>
-        <div class="bg-level-2-full-width-container kids_bottom_content">
+        <div class="bg-level-2-full-width-container kids_bottom_content" >
             <div class="bg-level-2-page-width-container no-padding">
                 <section class="kids_bottom_content_container">
                     <!-- ***************** - START Image floating - *************** -->
