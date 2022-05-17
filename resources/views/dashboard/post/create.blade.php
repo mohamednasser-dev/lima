@@ -35,6 +35,7 @@
     <div class="card">
         <div class="card-body">
             <form method="post" id="form" action="{{route('posts.store')}}" enctype="multipart/form-data">
+                <input type="hidden" name="type" value="{{$type}}" >
                 @csrf
 {{--                <input type="hidden" name="parent_id" required value="{{$parent_id}}">--}}
                 @include('dashboard.post.form')

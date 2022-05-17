@@ -47,7 +47,7 @@
     </div>
     <div class="row">
         <div class="form-group col-md-6">
-            <label> الصورة الاساسية للفيديو<span class="text-danger">*</span></label>
+            <label> الصورة الاساسية <span class="text-danger">*</span></label>
             <div class="col-lg-8">
                 <div class="image-input image-input-outline" id="kt_image_1">
                     <div class="image-input-wrapper {{ $errors->has('image') ? 'border-danger' : '' }}"
