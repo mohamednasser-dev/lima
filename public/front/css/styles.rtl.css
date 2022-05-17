@@ -443,7 +443,7 @@ address{
 }
 
 code, kbd, tt, var, samp, pre {
-	font-family: monospace, serif;
+	font-family: Tajawal, sans-serif;
 	font-size: 0.875em;
 	-webkit-hyphens: none;
 	-moz-hyphens: none;
@@ -514,9 +514,9 @@ li.widget{
 li.widget:before{
 	display: none;
 }
-.t-header-1 h1, .t-header-1 h2, .t-header-1 h3, .t-header-1 h4, .t-header-1 h5, .t-header-1 h6 {font-family: 'Jockey One', cursive;}
-.t-header-2 h1, .t-header-2 h2, .t-header-2 h3, .t-header-2 h4, .t-header-2 h5, .t-header-2 h6 {font-family: 'Oswald', sans-serif;}
-.t-header-3 h1, .t-header-3 h2, .t-header-3 h3, .t-header-3 h4, .t-header-3 h5, .t-header-3 h6 {font-family: 'Yanone Kaffeesatz', sans-serif; font-weight: 600;}
+.t-header-1 h1, .t-header-1 h2, .t-header-1 h3, .t-header-1 h4, .t-header-1 h5, .t-header-1 h6 {font-family: Tajawal, sans-serif;}
+.t-header-2 h1, .t-header-2 h2, .t-header-2 h3, .t-header-2 h4, .t-header-2 h5, .t-header-2 h6 {font-family: Tajawal, sans-serif;}
+.t-header-3 h1, .t-header-3 h2, .t-header-3 h3, .t-header-3 h4, .t-header-3 h5, .t-header-3 h6 {font-family: Tajawal, sans-serif; font-weight: 600;}
 
 .kids_clear {clear: both;}
 
@@ -2903,7 +2903,7 @@ STYLED ELEMENTS -> End
     text-decoration: none !important;
 	font-style: normal !important;
 	cursor: pointer;
-	font-family: Arial;
+	font-family: Tajawal, sans-serif;
 	line-height: 1;
 	color: #fff;
 	-webkit-border-radius: 4px;
@@ -4380,7 +4380,7 @@ body.t-text-2 .latest-posts-widget ul {
 .contact-us textarea {
     border: 1px solid;
     border-radius: 3px;
-    font-family: Arial;
+    font-family: Tajawal, sans-serif;
     font-size: 12px;
     margin-bottom: 10px;
     width: 100%;
@@ -4418,7 +4418,7 @@ body.t-text-2 .latest-posts-widget ul {
 	border-radius: 5px;
 	color: #2f2f2f;
 	font-size: 13px;
-	font-family: Arial;
+	font-family: Tajawal, sans-serif;
 }
 
 .contact-us.type-1 fieldset {margin: 0 10px;}
@@ -6577,7 +6577,7 @@ body.single .post-item .post-entry>div>*{
 }
 
 .comment-date {
-	font-family: 'Averia Sans Libre';
+	font-family: Tajawal, sans-serif;
 	color: #0d0d0e;
 	font-style: italic;
 	font-size: 0.917em;
@@ -8237,7 +8237,7 @@ input[type="checkbox"]:checked:before{
 	padding: 0.4em 0.6em 0.4em;
 	font-size: 15px;
 	cursor: pointer;
-	font-family: Arial;
+	font-family: Tajawal, sans-serif;
 	line-height: 1.4;
 	-webkit-border-radius: 4px;
 	   -moz-border-radius: 4px;
@@ -8489,7 +8489,7 @@ li.empty{
 
 /* fonts */
 html body{
-	font-family: Lato;
+    font-family: Tajawal, sans-serif;
 	color: #a2825c;
 	font-size: 16px;
 	line-height: 1.375;
@@ -8511,7 +8511,7 @@ input[type="date"]{
 	color: #a2825c;
 }
 #kids_main_nav a{
-	font-family: Lobster Two;
+	font-family: Tajawal, sans-serif;
 	color: #fff;
 	font-size: 19px;
 	line-height: 1.5;
@@ -8567,7 +8567,7 @@ ul.products li.product .price,
 .woocommerce .added_to_cart,
 .holder404,
 .ui-datepicker-title{
-	font-family: Lobster Two;
+	font-family: Tajawal, sans-serif;
 }
 .ui-datepicker-prev.ui-corner-all,
 .ui-datepicker-next.ui-corner-all{
@@ -9074,7 +9074,7 @@ hr{
     font-size: 43px;
     line-height: 36px;
     font-weight: 700;
-    font-family: "Lobster Two";
+    font-family: Tajawal, sans-serif;
     color: rgb(255, 255, 255);
     text-decoration: none;
     padding: 6px 21px 12px;
@@ -9091,7 +9091,7 @@ hr{
     font-size: 19px;
     line-height: 20px;
     font-weight: 400;
-    font-family: "Lobster Two";
+    font-family: Tajawal, sans-serif;
     color: rgb(255, 255, 255);
     text-decoration: none;
     padding: 8px 21px;
