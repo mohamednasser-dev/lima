@@ -145,19 +145,7 @@ class PermissionsSeeder extends Seeder
                 'display_name' => 'delete users',
                 'description' => 'حذف العملاء',
             ],
-            // settings permissions
-            [
-                'path' => 'settings',
-                'name' => 'read-settings',
-                'display_name' => 'read settings',
-                'description' => 'عرض الاعدادت',
-            ],
-            [
-                'path' => 'settings',
-                'name' => 'update-settings',
-                'display_name' => 'update settings',
-                'description' => 'تعديل الاعدادت',
-            ],
+
 
             // roles permissions
             [
@@ -208,6 +196,44 @@ class PermissionsSeeder extends Seeder
                 'name' => 'delete-admins',
                 'display_name' => 'delete admins',
                 'description' => 'حذف المديرين',
+            ],
+            // pages permissions
+            [
+                'path' => 'pages',
+                'name' => 'read-pages',
+                'display_name' => 'read pages',
+                'description' => 'عرض الصفحات',
+            ],
+            [
+                'path' => 'pages',
+                'name' => 'update-pages',
+                'display_name' => 'update pages',
+                'description' => 'تعديل الصفحات',
+            ],
+            [
+                'path' => 'pages',
+                'name' => 'create-pages',
+                'display_name' => 'create pages',
+                'description' => 'إضافة الصفحات',
+            ],
+            [
+                'path' => 'pages',
+                'name' => 'delete-pages',
+                'display_name' => 'delete pages',
+                'description' => 'حذف الصفحات',
+            ],
+            // settings permissions
+            [
+                'path' => 'settings',
+                'name' => 'read-settings',
+                'display_name' => 'read settings',
+                'description' => 'عرض الاعدادت',
+            ],
+            [
+                'path' => 'settings',
+                'name' => 'update-settings',
+                'display_name' => 'update settings',
+                'description' => 'تعديل الاعدادت',
             ],
 
         ];

@@ -11,6 +11,7 @@ use App\Http\Controllers\Dashboard\HomeController;
 use App\Http\Controllers\Dashboard\RoleController;
 use App\Http\Controllers\Dashboard\CategoryController;
 use App\Http\Controllers\Dashboard\PostController;
+use App\Http\Controllers\Dashboard\PageController;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
@@ -116,6 +117,18 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('update/{id}', [SliderController::class, 'update'])->name('sliders.update')->middleware('permission:update-' . $permission);
         Route::post('deletes', [SliderController::class, 'deletes'])->name('sliders.deletes')->middleware('permission:delete-' . $permission);
         Route::get('delete/{id}', [SliderController::class, 'delete'])->name('sliders.delete')->middleware('permission:delete-' . $permission);
+    });
+
+    //pages
+    Route::group(['prefix' => 'pages'], function () {
+        $permission = 'pages';
+        Route::get('/', [PageController::class, 'index'])->name('pages')->middleware('permission:read-' . $permission);
+        Route::get('create', [PageController::class, 'create'])->name('pages.create')->middleware('permission:create-' . $permission);
+        Route::post('store', [PageController::class, 'store'])->name('pages.store')->middleware('permission:create-' . $permission);
+        Route::get('edit/{id}', [PageController::class, 'edit'])->name('pages.edit')->middleware('permission:update-' . $permission);
+        Route::post('update/{id}', [PageController::class, 'update'])->name('pages.update')->middleware('permission:update-' . $permission);
+        Route::post('deletes', [PageController::class, 'deletes'])->name('pages.deletes')->middleware('permission:delete-' . $permission);
+        Route::get('delete/{id}', [PageController::class, 'delete'])->name('pages.delete')->middleware('permission:delete-' . $permission);
     });
 
 

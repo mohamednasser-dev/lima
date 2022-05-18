@@ -120,13 +120,7 @@
                 </div>
             </li>
             @endcan
-            <li class="menu-item menu-item-submenu @if( Request::segment(1)== 'city' ) menu-item-open @endif"
-                aria-haspopup="true" data-menu-toggle="hover">
-                <a href="{{route('cities')}}" class="menu-link menu-toggle">
-                    <i class="menu-icon flaticon2-location"></i>
-                    <span class="menu-text">الصفحات</span>
-                </a>
-            </li>
+
             @can('read-users')
                 <li class="menu-item menu-item-submenu @if(request()->segment(1) == 'users') menu-item-open @endif "
                     aria-haspopup="true" data-menu-toggle="hover">
@@ -153,6 +147,15 @@
                         <span class="menu-text">الصلاحيات</span>
                     </a>
                 </li>
+            @endcan
+            @can('read-pages')
+            <li class="menu-item menu-item-submenu @if( Request::segment(1)== 'pages' ) menu-item-open @endif"
+                aria-haspopup="true" data-menu-toggle="hover">
+                <a href="{{route('pages')}}" class="menu-link menu-toggle">
+                    <i class="menu-icon flaticon2-paper"></i>
+                    <span class="menu-text">الصفحات</span>
+                </a>
+            </li>
             @endcan
             @can('read-settings')
                 <li class="menu-item menu-item-submenu @if(request()->segment(1) == 'settings') menu-item-open @endif "

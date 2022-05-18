@@ -6,10 +6,6 @@
         </li>
         <li class="nav-item">
             <a class="nav-link" data-toggle="tab"
-               href="#kt_logo_themes">الصفحات</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" data-toggle="tab"
                href="#kt_hide_page">الروابط</a>
         </li>
     </ul>
@@ -161,77 +157,6 @@
                                 <i class="ki ki-bold-close icon-xs text-muted"></i>
                             </span>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="tab-pane" id="kt_logo_themes">
-            <div class="row">
-                <div class="col-lg-6  col-md-6">
-                    <div class="form-group ">
-                        <label for="terms_ar">الأحكام والشروط بالعربيه<span class="text-danger">*</span></label>
-                        <textarea name="terms_ar" rows="10" cols="90" class="form-control">
-        {{ old('terms_ar', $data->where('key', 'terms_ar')->first()->val) }}
-             </textarea>
-                    </div>
-                </div>
-                <div class="col-lg-6  col-md-6">
-                    <div class="form-group ">
-                        <label for="terms_en">الأحكام والشروط بالانجليزيه<span class="text-danger">*</span></label>
-                        <textarea name="terms_en" rows="10" cols="90" class="form-control" style="direction: ltr;">
-        {{ old('terms_en', $data->where('key', 'terms_en')->first()->val) }}
-             </textarea>
-                    </div>
-                </div>
-
-                <div class="col-lg-6  col-md-6">
-                    <div class="form-group ">
-                        <label for="privacy_ar">الخصوصيه بالعربيه<span class="text-danger">*</span></label>
-                        <textarea name="privacy_ar" rows="10" cols="90" class="form-control">
-        {{ old('privacy_ar', $data->where('key', 'privacy_ar')->first()->val) }}
-             </textarea>
-                    </div>
-                </div>
-                <div class="col-lg-6  col-md-6">
-                    <div class="form-group ">
-                        <label for="privacy_en">الخصوصيه بالانجليزيه<span class="text-danger">*</span></label>
-                        <textarea name="privacy_en" rows="10" cols="90" class="form-control" style="direction: ltr;">
-        {{ old('privacy_en', $data->where('key', 'privacy_en')->first()->val) }}
-             </textarea>
-                    </div>
-                </div>
-
-                <div class="col-lg-6  col-md-6">
-                    <div class="form-group ">
-                        <label for="usage_ar">سياسيه الاستخدام بالعربيه<span class="text-danger">*</span></label>
-                        <textarea name="usage_ar" rows="10" cols="90" class="form-control">
-        {{ old('usage_ar', $data->where('key', 'usage_ar')->first()->val) }}
-             </textarea>
-                    </div>
-                </div>
-                <div class="col-lg-6  col-md-6">
-                    <div class="form-group ">
-                        <label for="usage_en">سياسيه الاستخدام بالانجليزيه<span class="text-danger">*</span></label>
-                        <textarea name="usage_en" rows="10" cols="90" class="form-control" style="direction: ltr;">
-        {{ old('usage_en', $data->where('key', 'usage_en')->first()->val) }}
-             </textarea>
-                    </div>
-                </div>
-
-                <div class="col-lg-6  col-md-6">
-                    <div class="form-group ">
-                        <label for="about_ar">عن التطبيق بالعربيه<span class="text-danger">*</span></label>
-                        <textarea name="about_ar" rows="10" cols="90" class="form-control">
-        {{ old('about_ar', $data->where('key', 'about_ar')->first()->val) }}
-             </textarea>
-                    </div>
-                </div>
-                <div class="col-lg-6  col-md-6">
-                    <div class="form-group ">
-                        <label for="about_en">عن التطبيق بالانجليزيه<span class="text-danger">*</span></label>
-                        <textarea name="about_en" rows="10" cols="90" class="form-control" style="direction: ltr;">
-        {{ old('about_en', $data->where('key', 'about_en')->first()->val) }}
-             </textarea>
                     </div>
                 </div>
             </div>

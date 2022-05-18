@@ -13,7 +13,7 @@ class CityController extends GeneralController
 {
     protected $viewPath = 'roles';
     protected $path = 'roles';
-    private $route = 'groups';
+    private $route = 'cities';
     protected $paginate = 30;
 
     public function __construct(City $model)
@@ -36,7 +36,7 @@ class CityController extends GeneralController
 
         $data = $request->validated();
         $city = $this->model::create($data);
-        return redirect()->route('cities')->with('success', 'تم الاضافه بنجاح');
+        return redirect()->route($this->route )->with('success', 'تم الاضافه بنجاح');
     }
 
     public function edit($id)
@@ -50,7 +50,7 @@ class CityController extends GeneralController
 
         $data = $request->validated();
         $this->model::where('id', $id)->update($data);;
-        return redirect()->route('cities')->with('success', 'تم التعديل بنجاح');
+        return redirect()->route($this->route )->with('success', 'تم التعديل بنجاح');
 
     }
 
