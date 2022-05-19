@@ -37,6 +37,7 @@ class PageDataTable extends DataTable
      */
     public function html()
     {
+
         return $this->builder()
             ->setTableId('page-table')
             ->columns($this->getColumns())
@@ -60,7 +61,7 @@ class PageDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            Column::make('image')->class('text-center')->title('صورة الصفحة'),
+            Column::make('image')->style('width: 8%;')->class('text-center')->title('صورة الصفحة'),
             Column::make('title_ar')->class('text-center')->title('العنوان بالعربيه'),
             Column::make('title_en')->class('text-center')->title('العنوان بالانجليزيه'),
             Column::make('action')->class('text-center')->title('الاجرائات'),

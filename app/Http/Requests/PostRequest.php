@@ -25,27 +25,51 @@ class PostRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            'name_ar' => 'required|string|max:255',
-            'name_en' => 'required|string|max:255',
-            'category_id' => 'required|exists:categories,id',
-            'sub_category_id' => 'required|exists:categories,id',
-            'sub_sub_category_id' => 'nullable|exists:categories,id',
-            'video' => [
-                'nullable',
-                'mimes:mp4,mov,wmv,flv,avi,mkv,webm',
-                Rule::requiredIf(function() {
-                    return Request::routeIs('posts.store');
-                })
-            ],
-            'image' => [
-                'nullable',
-                'image',
-                'mimes:jpeg,jpg,png',
-                Rule::requiredIf(function() {
-                    return Request::routeIs('posts.store');
-                })
-            ],
-        ];
+
+        if (Request('type') == 'video') {
+            return [
+                'type' => 'required|string|in:video,article',
+                'name_ar' => 'required|string',
+                'name_en' => 'required|string',
+                'category_id' => 'required|exists:categories,id',
+                'sub_category_id' => 'required|exists:categories,id',
+                'sub_sub_category_id' => 'nullable|exists:categories,id',
+                'video' => [
+                    'nullable',
+                    'mimes:mp4,mov,wmv,flv,avi,mkv,webm',
+                    Rule::requiredIf(function () {
+                        return Request::routeIs('posts.store');
+                    })
+                ],
+                'image' => [
+                    'nullable',
+                    'image',
+                    'mimes:jpeg,jpg,png',
+                    Rule::requiredIf(function () {
+                        return Request::routeIs('posts.store');
+                    })
+                ],
+            ];
+        } elseif (Request('type') == 'article') {
+            return [
+                'type' => 'required|string|in:video,article',
+                'name_ar' => 'required|string',
+                'name_en' => 'required|string',
+                'body_ar' => 'required|string',
+                'body_en' => 'required|string',
+                'category_id' => 'required|exists:categories,id',
+                'sub_category_id' => 'required|exists:categories,id',
+                'sub_sub_category_id' => 'nullable|exists:categories,id',
+                'image' => [
+                    'nullable',
+                    'image',
+                    'mimes:jpeg,jpg,png',
+                    Rule::requiredIf(function () {
+                        return Request::routeIs('posts.store');
+                    })
+                ],
+            ];
+        }
+
     }
 }

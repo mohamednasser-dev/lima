@@ -39,6 +39,12 @@ class Pageseeder extends Seeder
                 'type' => 'idea',
                 'image' => 'idea.png',
             ],
+            [
+                'title_ar' => 'اتصل بنا ',
+                'title_en' => 'call us',
+                'type' => 'call_us',
+                'image' => 'call_us.png',
+            ],
         ];
         foreach ($data as $get) {
             Page::updateOrCreate($get);

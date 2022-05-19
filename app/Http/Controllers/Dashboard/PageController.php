@@ -6,6 +6,7 @@ use App\DataTables\PageDataTable;
 use App\Http\Controllers\GeneralController;
 use App\Http\Requests\PageRequest;
 use App\Models\Page;
+use Illuminate\Http\Request;
 
 //use File;
 
@@ -36,8 +37,14 @@ class PageController extends GeneralController
     public function update(PageRequest $request, $id)
     {
         $data = $request->validated();
+        if($request->image){
+            if (is_file($request->image)) {
+                $img_name = time() . uniqid() . '.' . $request->image->getClientOriginalExtension();
+                $request->image->move(public_path('/uploads/pages/'), $img_name);
+                $data['image'] = $img_name;
+            }
+        }
         $this->model::where('id', $id)->update($data);
-        $row = $this->model::findOrFail($id);
         return redirect()->route($this->route )->with('success', 'تم التعديل بنجاح');
 
     }

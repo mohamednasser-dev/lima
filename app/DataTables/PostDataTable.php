@@ -77,7 +77,7 @@ class PostDataTable extends DataTable
                 ->orderable(false)
                 ->width(30),
             Column::make('image')->class('text-center')->title('الصورة الاساسية'),
-            Column::make('name_ar')->class('text-center')->title('عنوان الفيديو'),
+            Column::make('name_ar')->class('text-center')->title('عنوان المحتوى'),
             Column::make('likes_count')->class('text-center')->title('عدد الاعجابات'),
             Column::make('views_count')->class('text-center')->title('عدد المشاهدات'),
             Column::make('free_btn')->class('text-center')->title('مجانا'),

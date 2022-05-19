@@ -29,6 +29,7 @@
     <div class="card">
         <div class="card-body">
             <form method="post" id="form" action="{{route('posts.update',$data->id)}}" enctype="multipart/form-data">
+                <input type="hidden" name="type" value="{{$data->type}}" >
                 @csrf
                 @include('dashboard.post.form')
             </form>

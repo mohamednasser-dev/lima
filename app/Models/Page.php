@@ -27,14 +27,14 @@ class Page extends Model
         return asset('default-image.png');
     }
 
-    public function setImageAttribute($image)
-    {
-        if (is_file($image)) {
-            $img_name = time() . uniqid() . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('/uploads/pages/'), $img_name);
-            $this->attributes['image'] = $img_name;
-        } else {
-            $this->attributes['image'] = $image;
-        }
-    }
+//    public function setImageAttribute($image)
+//    {
+//        if (is_file($image)) {
+//            $img_name = time() . uniqid() . '.' . $image->getClientOriginalExtension();
+//            $image->move(public_path('/uploads/pages/'), $img_name);
+//            $this->attributes['image'] = $img_name;
+//        } else {
+//            $this->attributes['image'] = $image;
+//        }
+//    }
 }

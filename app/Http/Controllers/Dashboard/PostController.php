@@ -43,9 +43,6 @@ class PostController extends GeneralController
     public function store(PostRequest $request)
     {
         $data = $request->validated();
-        //select post type
-        $data['type'] = 'video';
-
         //generate category id
         if ($request->sub_sub_category_id != null) {
             $data['category_id'] = $request->sub_sub_category_id;
@@ -57,7 +54,7 @@ class PostController extends GeneralController
         unset($data['sub_category_id']);
         unset($data['sub_sub_category_id']);
         $this->model::create($data);
-        return redirect()->route($this->route . '.index', ['type' => 'video'])->with('success', 'تم الاضافه بنجاح');
+        return redirect()->route($this->route . '.index', ['type' => $data['type']])->with('success', 'تم الاضافه بنجاح');
     }
 
     public function edit($id)
@@ -88,7 +85,8 @@ class PostController extends GeneralController
 
         //generate sub sub category data ...
         $sub_sub_category = Category::where('parent_id', $second_cat_id)->get();
-        return view($this->viewPath . '.edit', compact('data', 'category', 'first_cat_id', 'second_cat_id', 'third_cat_id', 'sub_category', 'sub_sub_category'));
+        $type = $data->type;
+        return view($this->viewPath . '.edit', compact('data', 'category', 'first_cat_id', 'second_cat_id', 'third_cat_id', 'sub_category', 'sub_sub_category','type'));
     }
 
     public function update(PostRequest $request, $id)
@@ -105,12 +103,8 @@ class PostController extends GeneralController
         }
         unset($data['sub_category_id']);
         unset($data['sub_sub_category_id']);
-        if($request->image){
-
-        }
-
         $this->model::where('id', $id)->update($data);
-        return redirect()->route($this->route . '.index', ['type' => 'video'])->with('success', 'تم التعديل بنجاح');
+        return redirect()->route($this->route . '.index', ['type' => $data['type']])->with('success', 'تم التعديل بنجاح');
 
     }
 

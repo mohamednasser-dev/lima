@@ -9,6 +9,18 @@
             <textarea name="name_en" id="kt-ckeditor-2">{{ old('name_en', $data->name_en ?? '') }}</textarea>
         </div>
     </div>
+    @if($type == 'article')
+        <div class="row">
+            <div class="form-group  col-6">
+                <label>تفاصيل المحتوى بالعربيه<span class="text-danger">*</span></label>
+                <textarea name="body_ar" id="kt-ckeditor-3">{{ old('body_ar', $data->body_ar ?? '') }}</textarea>
+            </div>
+            <div class="form-group  col-6">
+                <label>تفاصيل المحتوى بالانجليزيه<span class="text-danger">*</span></label>
+                <textarea name="body_en" id="kt-ckeditor-4">{{ old('body_en', $data->body_en ?? '') }}</textarea>
+            </div>
+        </div>
+    @endif
     <div class="row">
         <div class="form-group  col-4">
             <label>القسم الرئيسي<span class="text-danger">*</span></label>
@@ -20,7 +32,8 @@
                 @endforeach
             </select>
         </div>
-        <div class="form-group  col-4" @if(Request::segment(2) != 'edit') style="display: none;" @endif id="sub_category_container">
+        <div class="form-group  col-4" @if(Request::segment(2) != 'edit') style="display: none;"
+             @endif id="sub_category_container">
             <label>القسم الفرعي الاول<span class="text-danger">*</span></label>
             <select required name="sub_category_id" class="form-control select2" id="kt_select2_2" style="width: 100%">
                 @if(Request::segment(2)== 'edit')
@@ -31,15 +44,17 @@
                 @endif
             </select>
         </div>
-        <div class="form-group  col-4"@if(Request::segment(2) == 'edit' ) @if($third_cat_id == null) style="display: none;" @endif  @else style="display: none;" @endif  id="sub_sub_category_container">
-            <label>القسم الفرعي الثاني<span class="text-danger">*</span></label>
+        <div class="form-group  col-4"
+             @if(Request::segment(2) == 'edit' ) @if($third_cat_id == null) style="display: none;"
+             @endif  @else style="display: none;" @endif  id="sub_sub_category_container">
+            <label>القسم الفرعي الثاني</label>
             <select name="sub_sub_category_id" class="form-control select2" id="kt_select2_3" style="width: 100%">
                 @if(Request::segment(2)== 'edit')
                     @if($third_cat_id != null)
-                    @foreach($sub_sub_category as $row)
-                        <option value="{{$row->id}}"
-                                @if($third_cat_id == $row->id) selected @endif >{{$row->name_ar}}</option>
-                    @endforeach
+                        @foreach($sub_sub_category as $row)
+                            <option value="{{$row->id}}"
+                                    @if($third_cat_id == $row->id) selected @endif >{{$row->name_ar}}</option>
+                        @endforeach
                     @endif
                 @endif
             </select>
@@ -66,32 +81,36 @@
                 </div>
             </div>
         </div>
-        <div class="form-group col-md-6">
-            @if(Request::segment(2)== 'edit')
-                <video width="400" height="400" controls>
-                    <source src="{{$data->video}}" type="video/mp4">
-                    <source src="{{$data->video}}" type="video/ogg">
-                    Your browser does not support HTML video.
-                </video>
-            @endif
-        </div>
+        @if($type == 'video')
+            <div class="form-group col-md-6">
+                @if(Request::segment(2)== 'edit')
+                    <video width="400" height="400" controls>
+                        <source src="{{$data->video}}" type="video/mp4">
+                        <source src="{{$data->video}}" type="video/ogg">
+                        Your browser does not support HTML video.
+                    </video>
+                @endif
+            </div>
+        @endif
     </div>
-    <div class="row">
-        <div class="form-group col-md-6">
-            <label>الفيديو<span class="text-danger">*</span></label>
-            <div class="col-lg-12">
-                <div class="custom-file">
-                    <input type="file" class="custom-file-input {{ $errors->has('video') ? 'border-danger' : '' }}" id="customFile" name="video"
-                           accept=".mp4, .mov, .wmv, .flv, .avi, .mkv, .webm"/>
-                    <label class="custom-file-label" for="customFile">اختر الفيديو</label>
+    @if($type == 'video')
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label>الفيديو<span class="text-danger">*</span></label>
+                <div class="col-lg-12">
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input {{ $errors->has('video') ? 'border-danger' : '' }}"
+                               id="customFile" name="video"
+                               accept=".mp4, .mov, .wmv, .flv, .avi, .mkv, .webm"/>
+                        <label class="custom-file-label" for="customFile">اختر الفيديو</label>
+                    </div>
+
+                    {{--            <input type="file" name="video" value="{{old('video', $data->video ?? '')}}" accept=".mp4, .mov, .wmv, .flv, .avi, .mkv, .webm">--}}
+
                 </div>
-
-                {{--            <input type="file" name="video" value="{{old('video', $data->video ?? '')}}" accept=".mp4, .mov, .wmv, .flv, .avi, .mkv, .webm">--}}
-
             </div>
         </div>
-
-    </div>
+    @endif
 </div>
 <div class="card-footer text-left">
     <button type="Submit" id="submit" class="btn btn-success btn-default ">حفظ</button>
