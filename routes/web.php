@@ -43,10 +43,7 @@ Route::get('/home', [\App\Http\Controllers\Front\HomeController::class, 'Home'])
 Route::get('/category-details/{id}', [\App\Http\Controllers\Front\HomeController::class, 'CategoryDetails']);
 Route::get('/post-details/{id}', [\App\Http\Controllers\Front\HomeController::class, 'PostDetails']);
 
-
 Route::get('lang/{lang}', function ($lang) {
-
-
     if (session()->has('lang')) {
         session()->forget('lang');
     }
@@ -57,8 +54,6 @@ Route::get('lang/{lang}', function ($lang) {
         session()->put('lang', 'ar');
         App::setLocale('ar');
     }
-
-
     return back();
 });
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');

@@ -29,6 +29,7 @@ class AppServiceProvider extends ServiceProvider
         //for make api language make changes in system language
         $languages = ['ar', 'en'];
         $lang = request()->header('lang');
+
         if ($lang) {
             if (in_array($lang, $languages)) {
                 App::setLocale($lang);

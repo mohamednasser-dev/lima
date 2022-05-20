@@ -1,7 +1,8 @@
 <?php
 
 return [
-
+    'otp_invalid' => 'otp invalid',
+    'verify_phone' => 'verify phone',
     'article' => 'article',
     'voice' => 'voice',
     'video' => 'video',

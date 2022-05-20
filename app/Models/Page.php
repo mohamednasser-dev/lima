@@ -11,12 +11,12 @@ class Page extends Model
 
     protected $guarded = [];
 
-    public function getNameAttribute()
+    public function getTitleAttribute()
     {
         if ($locale = \app()->getLocale() == "ar") {
-            return $this->name_ar;
+            return $this->title_ar;
         } else {
-            return $this->name_en;
+            return $this->title_en;
         }
     }
     public function getImageAttribute($image)

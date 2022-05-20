@@ -5,6 +5,8 @@ use App\Models\OrderShipping;
 
 return [
 
+    'otp_invalid' => 'لم يتم التحقق - كود التحقق خطأ',
+    'verify_phone' => 'تحقق من الهاتف',
     'posts' => 'المحتوى',
     'categories' => 'الاقسام',
     'article' => 'مقال',

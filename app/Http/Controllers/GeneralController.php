@@ -332,8 +332,8 @@ class GeneralController extends Controller
     {
         // Set array response data
         $response = [
-            'status' => true,
-            'message' => $message,
+            'status' => $statusCode,
+            'msg' => $message,
         ];
         // Set Data in Response Array
         $response['data'] = $data;
@@ -353,8 +353,8 @@ class GeneralController extends Controller
     {
         // Set array response data
         $response = [
-            'status' => false,
-            'message' => $error
+            'status' => $code,
+            'msg' => $error
         ];
 
         // If not empty errors message => set item data in response array
