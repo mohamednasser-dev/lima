@@ -65,8 +65,8 @@ class UserController extends GeneralController
         if ($validator->fails()) {
             return response()->json(['status' => 401, 'msg' => $validator->messages()->first()]);
         }
-        $validated_otp = \Otp::validate($data['phone'], $data['otp']);
-        if ($validated_otp->status == true) {
+//        $validated_otp = \Otp::validate($data['phone'], $data['otp']);
+//        if ($validated_otp->status == true) {
             unset($data['otp']);
             $created_user = User::create($data);
             if ($created_user) {
@@ -81,9 +81,9 @@ class UserController extends GeneralController
                 }
             }
 
-        } else {
-            return $this->errorResponse(__('lang.otp_invalid'), null, 401);
-        }
+//        } else {
+//            return $this->errorResponse(__('lang.otp_invalid'), null, 401);
+//        }
 
     }
 
