@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -28,8 +29,10 @@ class AppServiceProvider extends ServiceProvider
         Paginator::useBootstrap();
         //for make api language make changes in system language
         $languages = ['ar', 'en'];
-        $lang = request()->header('lang');
+        App::setLocale('ar');
+        Schema::defaultStringLength(255);
 
+        $lang = request()->header('lang');
         if ($lang) {
             if (in_array($lang, $languages)) {
                 App::setLocale($lang);
@@ -38,10 +41,7 @@ class AppServiceProvider extends ServiceProvider
             }
         }
 
-        if (!session()->has('lang')) {
-            session()->put('lang', 'ar');
-            App::setLocale('ar');
-        }
+
     }
 
 }
