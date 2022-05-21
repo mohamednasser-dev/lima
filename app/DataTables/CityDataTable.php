@@ -18,11 +18,12 @@ class CityDataTable extends DataTable
     {
         return datatables()
             ->eloquent($query)
+            ->addColumn('active_btn', 'dashboard.city.parts.active_btn')
             ->addColumn('action', 'dashboard.city.parts.action')
             ->addColumn('id', function ($data) {
                 return "<input type='checkbox' name='data[]' class='data-item' value='{$data['id']}'/> ";
             })
-            ->rawColumns(['action','id']);
+            ->rawColumns(['action','active_btn','id']);
     }
 
     /**
@@ -33,7 +34,7 @@ class CityDataTable extends DataTable
      */
     public function query(City $model)
     {
-        return $model->newQuery()->orderBy('created_at','desc');
+        return $model->newQuery()->orderBy('id','desc');
     }
 
     /**
@@ -72,6 +73,7 @@ class CityDataTable extends DataTable
                 ->width(30),
             Column::make('name_ar')->title('الاسم بالعربيه'),
             Column::make('name_en')->title('الاسم بالانجليزيه'),
+            Column::make('active_btn')->title('تفعيل / تعطيل'),
             Column::make('action')->title('الاجرائات'),
         ];
     }

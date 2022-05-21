@@ -35,7 +35,7 @@ class SliderDataTable extends DataTable
      */
     public function query(Slider $model)
     {
-        return $model->newQuery()->orderBy('created_at','desc');
+        return $model->orderBy('id','desc')->newQuery();
     }
 
     /**

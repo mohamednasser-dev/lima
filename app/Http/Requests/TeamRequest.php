@@ -3,10 +3,10 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Request;
 use Illuminate\Validation\Rule;
 
-class SliderRequest extends FormRequest
+class TeamRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -28,13 +28,14 @@ class SliderRequest extends FormRequest
         return [
             'title_ar' => 'required|string|max:255',
             'title_en' => 'required|string|max:255',
-            'body_ar' => 'required|string|max:900',
-            'body_en' => 'required|string|max:900',
+            'job_ar' => 'required|string|max:255',
+            'job_en' => 'required|string|max:255',
             'image' => [
-                'required',
+                'nullable',
+                'image',
                 'mimes:jpeg,jpg,png',
                 Rule::requiredIf(function () {
-                    return \Illuminate\Http\Request::routeIs('sliders.store');
+                    return \Illuminate\Http\Request::routeIs('teams.store');
                 })
             ],
         ];

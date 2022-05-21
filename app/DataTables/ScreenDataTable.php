@@ -28,7 +28,7 @@ class ScreenDataTable extends DataTable
      */
     public function query(Screen $model)
     {
-        return $model->newQuery()->orderBy('created_at', 'desc');
+        return $model->newQuery()->orderBy('id', 'desc');
     }
 
     /**

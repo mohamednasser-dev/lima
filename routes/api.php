@@ -20,12 +20,13 @@ use App\Http\Controllers\Api\UserController;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-
-Route::group(['middleware' => 'api', 'prefix' => "v1", 'namespace' => 'v1'], function () {
+//, 'AccessKey'
+Route::group(['middleware' => ['api'], 'prefix' => "v1", 'namespace' => 'v1'], function () {
 
     Route::group(['prefix' => "app"], function () {
         //main screens
         Route::get('/cities', [HelperController::class, 'cities']);
+        Route::get('/teams', [HelperController::class, 'teams']);
         Route::get('/screens', [HelperController::class, 'screens']);
         Route::get('/settings', [HelperController::class, 'settings']);
         Route::post('/contact_us', [HelperController::class, 'contact_us']);

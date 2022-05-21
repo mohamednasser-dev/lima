@@ -12,16 +12,16 @@
                maxlength="255" />
     </div>
     <div class="form-group  col-6">
-        <label>المحتوى بالعربيه<span
+        <label>الوظيفة بالعربيه<span
                 class="text-danger">*</span></label>
-        <textarea required name="body_ar" rows="10" cols="90"
-                  class="form-control">{{ old('body_ar', $data->body_ar ?? '') }}</textarea>
+        <input required name="job_ar"   value="{{ old('job_ar', $data->job_ar ?? '') }}" class="form-control  {{ $errors->has('job_ar') ? 'border-danger' : '' }}" type="text"
+               maxlength="255" />
     </div>
     <div class="form-group  col-6">
-        <label>المحتوى بالانجليزيه<span
+        <label>الوظيفة بالانجليزيه<span
                 class="text-danger">*</span></label>
-        <textarea required name="body_en" rows="10" cols="90"
-                  class="form-control">{{ old('body_en', $data->body_en ?? '') }}</textarea>
+        <input required name="job_en" style="direction: ltr;"  value="{{ old('job_en', $data->job_en ?? '') }}" class="form-control  {{ $errors->has('job_en') ? 'border-danger' : '' }}" type="text"
+               maxlength="255" />
     </div>
     <div class="form-group col-md-6">
         <label>الصورة</label>

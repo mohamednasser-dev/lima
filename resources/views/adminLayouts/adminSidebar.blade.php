@@ -164,6 +164,15 @@
                 </a>
             </li>
             @endcan
+            @can('read-teams')
+            <li class="menu-item menu-item-submenu @if( Request::segment(1)== 'teams' ) menu-item-open @endif"
+                aria-haspopup="true" data-menu-toggle="hover">
+                <a href="{{route('teams')}}" class="menu-link menu-toggle">
+                    <i class="menu-icon flaticon2-user-1"></i>
+                    <span class="menu-text">فريق العمل</span>
+                </a>
+            </li>
+            @endcan
             @can('read-settings')
                 <li class="menu-item menu-item-submenu @if(request()->segment(1) == 'settings') menu-item-open @endif "
                     aria-haspopup="true" data-menu-toggle="hover">

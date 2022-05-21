@@ -33,7 +33,7 @@ class RoleDataTable extends DataTable
      */
     public function query(Role $model)
     {
-        return $model->newQuery()->orderBy('created_at','desc');
+        return $model->newQuery()->orderBy('id','desc');
     }
 
     /**

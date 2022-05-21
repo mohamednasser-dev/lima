@@ -39,7 +39,7 @@ class PostDataTable extends DataTable
     public function query(Post $model)
     {
         $type = $this->type;
-        return $model->newQuery()->where('type', $type)->orderBy('created_at', 'desc');
+        return $model->newQuery()->where('type', $type)->orderBy('id', 'desc');
     }
 
     /**

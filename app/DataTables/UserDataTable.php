@@ -36,7 +36,7 @@ class UserDataTable extends DataTable
      */
     public function query(User $model)
     {
-        return $model->newQuery()->orderBy('created_at','desc');
+        return $model->newQuery()->orderBy('id','desc');
     }
 
     /**

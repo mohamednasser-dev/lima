@@ -33,7 +33,7 @@ class AdminDataTable extends DataTable
      */
     public function query(Admin $model)
     {
-        return $model->newQuery()->orderBy('created_at','desc');
+        return $model->newQuery()->orderBy('id','desc');
     }
 
     /**

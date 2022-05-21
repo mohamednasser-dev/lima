@@ -6,10 +6,12 @@ use App\Http\Controllers\GeneralController;
 use App\Http\Resources\CityResources;
 use App\Http\Resources\PageResources;
 use App\Http\Resources\ScreenResources;
+use App\Http\Resources\TeamResources;
 use App\Models\City;
 use App\Models\Page;
 use App\Models\Screen;
 use App\Models\Setting;
+use App\Models\Team;
 use Illuminate\Http\Request;
 use function auth;
 
@@ -40,6 +42,12 @@ class HelperController extends GeneralController
         $screens = Screen::orderBy('id','asc')->get();
         $screens = (ScreenResources::collection($screens));
         return response()->json(msgdata($request, success(), __('lang.data_show_successfully'), $screens));
+    }
+    public function teams(Request $request)
+    {
+        $data = Team::orderBy('id','asc')->get();
+        $data = (TeamResources::collection($data));
+        return response()->json(msgdata($request, success(), __('lang.data_show_successfully'), $data));
     }
 
 }

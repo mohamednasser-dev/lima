@@ -42,6 +42,7 @@ class SettingSeeder extends Seeder
             'about_ar' => 'about_ar',
             'about_en' => 'about_en',
             'app_gif' => null,
+            'accessKey' => 'accessKey9A3q9p6V0eKVizqYt9Su9KAMfORbccWrvoJVUCGPKqHBvEgvtJq',
         ];
 
 

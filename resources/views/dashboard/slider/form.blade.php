@@ -1,12 +1,33 @@
 <div class="card-body row">
-
+    <div class="form-group  col-6">
+        <label>العنوان بالعربيه<span
+                class="text-danger">*</span></label>
+        <input required name="title_ar" value="{{ old('title_ar', $data->title_ar ?? '') }}"
+               class="form-control  {{ $errors->has('title_ar') ? 'border-danger' : '' }}" type="text"
+               maxlength="255"/>
+    </div>
+    <div class="form-group  col-6">
+        <label>العنوان بالانجليزيه<span
+                class="text-danger">*</span></label>
+        <input required name="title_en" style="direction: ltr;" value="{{ old('title_en', $data->title_en ?? '') }}"
+               class="form-control  {{ $errors->has('title_en') ? 'border-danger' : '' }}" type="text"
+               maxlength="255"/>
+    </div>
+    <div class="form-group  col-6">
+        <label>المحتوى بالعربيه<span
+                class="text-danger">*</span></label>
+        <textarea required name="body_ar" rows="10" cols="90"
+                  class="form-control">{{ old('body_ar', $data->body_ar ?? '') }}</textarea>
+    </div>
+    <div class="form-group  col-6">
+        <label>المحتوى بالانجليزيه<span
+                class="text-danger">*</span></label>
+        <textarea required name="body_en" rows="10" cols="90" style="direction: ltr;"
+                  class="form-control">{{ old('body_en', $data->body_en ?? '') }}</textarea>
+    </div>
     <div class="form-group col-md-6">
-        <label> صورة العرض
-
-{{--            <span class="text-danger">  * يجب ان يكون ابعاد الصوره 2 : 1</span>--}}
-        </label>
+        <label> صورة العرض</label>
         <div class="col-lg-8">
-
             <div class="image-input image-input-outline" id="kt_image_1">
                 <div class="image-input-wrapper {{ $errors->has('image') ? 'border-danger' : '' }}"
                      style="background-image: url({{old('image', $data->image ?? 'default-image.png' )}})"></div>
@@ -25,10 +46,8 @@
             </div>
         </div>
     </div>
-
 </div>
 <div class="card-footer text-left">
     <button type="Submit" id="submit" class="btn btn-success btn-default ">حفظ</button>
     <a href="{{ URL::previous() }}" class="btn btn-secondary">الغاء</a>
 </div>
-

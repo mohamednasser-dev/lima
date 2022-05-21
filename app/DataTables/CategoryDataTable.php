@@ -34,7 +34,7 @@ class CategoryDataTable extends DataTable
     public function query(Category $model)
     {
         $parent_id = $this->parent_id;
-        return $model->newQuery()->where('parent_id', $parent_id)->orderBy('created_at', 'desc');
+        return $model->newQuery()->where('parent_id', $parent_id)->orderBy('id', 'desc');
     }
 
     /**

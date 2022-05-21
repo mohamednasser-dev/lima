@@ -8,6 +8,7 @@ use App\Http\Requests\CityRequest;
 use App\Http\Requests\General\MultiDelete;
 use App\Models\City;
 use Illuminate\Http\Request;
+use mysql_xdevapi\Exception;
 
 class CityController extends GeneralController
 {
@@ -36,7 +37,7 @@ class CityController extends GeneralController
 
         $data = $request->validated();
         $city = $this->model::create($data);
-        return redirect()->route($this->route )->with('success', 'تم الاضافه بنجاح');
+        return redirect()->route($this->route)->with('success', 'تم الاضافه بنجاح');
     }
 
     public function edit($id)
@@ -50,15 +51,20 @@ class CityController extends GeneralController
 
         $data = $request->validated();
         $this->model::where('id', $id)->update($data);;
-        return redirect()->route($this->route )->with('success', 'تم التعديل بنجاح');
+        return redirect()->route($this->route)->with('success', 'تم التعديل بنجاح');
 
     }
 
     public function delete(Request $request, $id)
     {
-        $data = $this->model::findOrFail($id);
-        $data->delete();
-        return redirect()->back()->with('success', 'تم الحذف بنجاح');
+        try {
+            $data = $this->model::findOrFail($id);
+            $data->delete();
+            return redirect()->back()->with('success', 'تم الحذف بنجاح');
+        } catch (\Exception $e) {
+            return redirect()->route($this->route)->with('danger', 'لا يمكنك الحذف لاستخدام الدولة عن طريق العملاء');
+        }
+
     }
 
     public function deletes(MultiDelete $request)
@@ -74,11 +80,19 @@ class CityController extends GeneralController
             }
             //check brand used city
             foreach ($items as $row) {
-                    $this->model->where('id', $row->id)->delete();
+                $this->model->where('id', $row->id)->delete();
             }
             return redirect()->back()->with('success', 'تم الحذف بنجاح');
         } catch (\Exception $e) {
             return redirect()->back()->with('danger', 'لا يمكنك الحذف');
         }
+    }
+
+
+    public function change_active(Request $request)
+    {
+        $data['active'] = $request->status;
+        $this->model::findOrFail($request->id)->update($data);
+        return 1;
     }
 }

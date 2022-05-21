@@ -1,10 +1,7 @@
 <?php
 
-use App\Models\Order;
-use App\Models\OrderShipping;
-
 return [
-
+    'dont_have_permission_access' => 'لا تمتلك الصلاحية للوصول لهذا الرابط',
     'otp_invalid' => 'لم يتم التحقق - كود التحقق خطأ',
     'verify_phone' => 'تحقق من الهاتف',
     'posts' => 'المحتوى',

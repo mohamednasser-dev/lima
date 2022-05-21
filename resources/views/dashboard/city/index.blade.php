@@ -1,4 +1,4 @@
-@php($title='المدن')
+@php($title='الدول')
 @extends('adminLayouts.app')
 @section('title')
     {{$title}}
@@ -51,6 +51,26 @@
 @endsection
 @section('script')
     {!! $dataTable->scripts() !!}
+    <script type="text/javascript">
+        function update_active(el) {
+            if (el.checked) {
+                var status = 1;
+            } else {
+                var status = 0;
+            }
+            $.post('{{ route('cities.change_active') }}', {
+                _token: '{{ csrf_token() }}',
+                id: el.value,
+                status: status
+            }, function (data) {
+                if (data == 1) {
+                    toastr.success(".....             {{trans('lang.statuschanged')}}");
+                } else {
+                    toastr.error("{{trans('lang.statuschanged')}}");
+                }
+            });
+        }
+    </script>
     <script>
         $(document).on("ready", function () {
             "use strict";

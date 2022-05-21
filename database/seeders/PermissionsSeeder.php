@@ -247,6 +247,31 @@ class PermissionsSeeder extends Seeder
                 'display_name' => 'delete screens',
                 'description' => 'حذف الشاشات الترحيبية',
             ],
+            // teams permissions
+            [
+                'path' => 'teams',
+                'name' => 'read-teams',
+                'display_name' => 'read teams',
+                'description' => 'عرض فريق العمل',
+            ],
+            [
+                'path' => 'teams',
+                'name' => 'update-teams',
+                'display_name' => 'update teams',
+                'description' => 'تعديل فريق العمل',
+            ],
+            [
+                'path' => 'teams',
+                'name' => 'create-teams',
+                'display_name' => 'create teams',
+                'description' => 'إضافة فريق العمل',
+            ],
+            [
+                'path' => 'teams',
+                'name' => 'delete-teams',
+                'display_name' => 'delete teams',
+                'description' => 'حذف فريق العمل',
+            ],
             // settings permissions
             [
                 'path' => 'settings',

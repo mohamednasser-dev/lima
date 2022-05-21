@@ -32,7 +32,7 @@ class AddressDataTable extends DataTable
         $key = $this->key;
         return $model->newQuery()
             ->where('user_id',$key)
-            ->orderBy('created_at','desc');
+            ->orderBy('id','desc');
     }
 
     /**

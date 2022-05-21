@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Screen;
 use App\Models\Slider;
+use App\Models\Team;
 use Illuminate\Database\Seeder;
 
 class ScreenSeeder extends Seeder
@@ -68,6 +69,35 @@ class ScreenSeeder extends Seeder
         ];
         foreach ($slider_data as $get) {
             Slider::updateOrCreate($get);
+        }
+
+        //app team
+        $team_data = [
+            [
+                'title_ar' => 'احمد محمد',
+                'title_en' => 'ahmed mohamed',
+                'job_ar' => 'مصممً',
+                'job_en' => 'designer',
+                'image' => '1.png',
+            ],
+            [
+                'title_ar' => 'احمد محمد',
+                'title_en' => 'ahmed mohamed',
+                'job_ar' => 'مصممً',
+                'job_en' => 'designer',
+                'image' => '2.png',
+            ],
+            [
+                'title_ar' => 'احمد محمد',
+                'title_en' => 'ahmed mohamed',
+                'job_ar' => 'مصممً',
+                'job_en' => 'designer',
+                'image' => '3.png',
+            ],
+
+        ];
+        foreach ($team_data as $get) {
+            Team::updateOrCreate($get);
         }
     }
 }

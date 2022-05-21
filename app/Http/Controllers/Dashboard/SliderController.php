@@ -35,9 +35,11 @@ class SliderController extends GeneralController
     public function store(SliderRequest $request)
     {
         $data = $request->validated();
-        if ($request->image) {
-            if ($request->hasFile('image')) {
-                $data['image'] = $this->uploadImage($request->file('image'), $this->image_path);
+        if($request->image){
+            if (is_file($request->image)) {
+                $img_name = time() . uniqid() . '.' . $request->image->getClientOriginalExtension();
+                $request->image->move(public_path('/uploads/sliders/'), $img_name);
+                $data['image'] = $img_name;
             }
         }
         $this->model::create($data);
@@ -54,14 +56,12 @@ class SliderController extends GeneralController
     {
         $data = $request->validated();
         $item = $this->model->findOrFail($id);
-        unset($data['_token']);
-        if ($request->image) {
-            if ($request->hasFile('image')) {
-                $data['image'] = $this->uploadImage($request->file('image'), $this->image_path, $item->image);
-                $this->deleteImage($item->image);
+        if($request->image){
+            if (is_file($request->image)) {
+                $img_name = time() . uniqid() . '.' . $request->image->getClientOriginalExtension();
+                $request->image->move(public_path('/uploads/sliders/'), $img_name);
+                $data['image'] = $img_name;
             }
-        } else {
-            unset($data['image']);
         }
         $this->model::where('id', $id)->update($data);
         return redirect()->route($this->route)->with('success', 'تم التعديل بنجاح');

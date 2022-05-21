@@ -13,6 +13,7 @@ use App\Http\Controllers\Dashboard\CategoryController;
 use App\Http\Controllers\Dashboard\PostController;
 use App\Http\Controllers\Dashboard\PageController;
 use App\Http\Controllers\Dashboard\ScreenController;
+use App\Http\Controllers\Dashboard\TeamController;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
@@ -150,6 +151,20 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('update/{id}', [CityController::class, 'update'])->name('cities.update')->middleware('permission:update-' . $permission);
         Route::post('deletes', [CityController::class, 'deletes'])->name('cities.deletes')->middleware('permission:delete-' . $permission);
         Route::get('delete/{id}', [CityController::class, 'delete'])->name('cities.delete')->middleware('permission:delete-' . $permission);
+        Route::post('change_active', [CityController::class, 'change_active'])->name('cities.change_active')->middleware('permission:delete-' . $permission);
+    });
+
+    // teams Route
+    Route::group(['prefix' => 'teams'], function () {
+        $permission = 'teams';
+        Route::get('/', [TeamController::class, 'index'])->name('teams')->middleware('permission:read-' . $permission);
+        Route::get('create', [TeamController::class, 'create'])->name('teams.create')->middleware('permission:create-' . $permission);
+        Route::post('store', [TeamController::class, 'store'])->name('teams.store')->middleware('permission:create-' . $permission);
+        Route::get('edit/{id}', [TeamController::class, 'edit'])->name('teams.edit')->middleware('permission:update-' . $permission);
+        Route::post('update/{id}', [TeamController::class, 'update'])->name('teams.update')->middleware('permission:update-' . $permission);
+        Route::post('deletes', [TeamController::class, 'deletes'])->name('teams.deletes')->middleware('permission:delete-' . $permission);
+        Route::get('delete/{id}', [TeamController::class, 'delete'])->name('teams.delete')->middleware('permission:delete-' . $permission);
+        Route::post('change_active', [TeamController::class, 'change_active'])->name('teams.change_active')->middleware('permission:delete-' . $permission);
     });
 
     Route::group(['prefix' => 'categories','as'=>'categories'], function () {

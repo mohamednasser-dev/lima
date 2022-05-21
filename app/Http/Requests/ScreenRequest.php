@@ -26,14 +26,17 @@ class ScreenRequest extends FormRequest
     public function rules()
     {
         return [
-            'title_ar' => 'required|string',
-            'title_en' => 'required|string',
-            'body_ar' => 'required|string',
-            'body_en' => 'required|string',
+            'title_ar' => 'required|string|max:255',
+            'title_en' => 'required|string|max:255',
+            'body_ar' => 'required|string|max:900',
+            'body_en' => 'required|string|max:900',
             'image' => [
                 'nullable',
                 'image',
                 'mimes:jpeg,jpg,png',
+                Rule::requiredIf(function () {
+                    return \Illuminate\Http\Request::routeIs('screens.store');
+                })
             ],
         ];
     }

@@ -27,7 +27,7 @@ class PageDataTable extends DataTable
      */
     public function query(Page $model)
     {
-        return $model->newQuery()->orderBy('created_at', 'desc');
+        return $model->newQuery()->orderBy('id', 'desc');
     }
 
     /**

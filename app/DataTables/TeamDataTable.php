@@ -26,7 +26,7 @@ class TeamDataTable extends DataTable
      */
     public function query(Team $model)
     {
-        return $model->newQuery()->orderBy('created_at', 'desc');
+        return $model->newQuery()->orderBy('id', 'desc');
     }
 
     /**

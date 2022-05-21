@@ -39,8 +39,8 @@ trait ResponseJson
     {
         // Set array response data
         $response = [
-            'status' => false,
-            'message' => $error
+            'status' => $code,
+            'msg' => $error
         ];
 
         // If not empty errors message => set item data in response array
