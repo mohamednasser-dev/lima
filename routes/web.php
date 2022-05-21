@@ -12,6 +12,7 @@ use App\Http\Controllers\Dashboard\RoleController;
 use App\Http\Controllers\Dashboard\CategoryController;
 use App\Http\Controllers\Dashboard\PostController;
 use App\Http\Controllers\Dashboard\PageController;
+use App\Http\Controllers\Dashboard\ScreenController;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
@@ -124,6 +125,18 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('update/{id}', [PageController::class, 'update'])->name('pages.update')->middleware('permission:update-' . $permission);
         Route::post('deletes', [PageController::class, 'deletes'])->name('pages.deletes')->middleware('permission:delete-' . $permission);
         Route::get('delete/{id}', [PageController::class, 'delete'])->name('pages.delete')->middleware('permission:delete-' . $permission);
+    });
+
+    //screens
+    Route::group(['prefix' => 'screens'], function () {
+        $permission = 'screens';
+        Route::get('/', [ScreenController::class, 'index'])->name('screens')->middleware('permission:read-' . $permission);
+        Route::get('create', [ScreenController::class, 'create'])->name('screens.create')->middleware('permission:create-' . $permission);
+        Route::post('store', [ScreenController::class, 'store'])->name('screens.store')->middleware('permission:create-' . $permission);
+        Route::get('edit/{id}', [ScreenController::class, 'edit'])->name('screens.edit')->middleware('permission:update-' . $permission);
+        Route::post('update/{id}', [ScreenController::class, 'update'])->name('screens.update')->middleware('permission:update-' . $permission);
+        Route::post('deletes', [ScreenController::class, 'deletes'])->name('screens.deletes')->middleware('permission:delete-' . $permission);
+        Route::get('delete/{id}', [ScreenController::class, 'delete'])->name('screens.delete')->middleware('permission:delete-' . $permission);
     });
 
 

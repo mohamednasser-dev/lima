@@ -5,8 +5,10 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\GeneralController;
 use App\Http\Resources\CityResources;
 use App\Http\Resources\PageResources;
+use App\Http\Resources\ScreenResources;
 use App\Models\City;
 use App\Models\Page;
+use App\Models\Screen;
 use App\Models\Setting;
 use Illuminate\Http\Request;
 use function auth;
@@ -32,6 +34,12 @@ class HelperController extends GeneralController
         $data = Page::where('type', $type)->first();
         $data = (new PageResources($data));
         return $this->sendResponse($data, __('lang.data_show_successfully'), 200);
+    }
+    public function screens(Request $request)
+    {
+        $screens = Screen::orderBy('id','asc')->get();
+        $screens = (ScreenResources::collection($screens));
+        return response()->json(msgdata($request, success(), __('lang.data_show_successfully'), $screens));
     }
 
 }

@@ -4,10 +4,11 @@ namespace App\DataTables;
 
 use App\Models\Category;
 use App\Models\Page;
+use App\Models\Screen;
 use Yajra\DataTables\Html\Column;
 use Yajra\DataTables\Services\DataTable;
 
-class PageDataTable extends DataTable
+class ScreenDataTable extends DataTable
 {
 
     public function dataTable($query)
@@ -15,7 +16,7 @@ class PageDataTable extends DataTable
         return datatables()
             ->eloquent($query)
             ->editColumn('image', '<img class="img-thumbnail" src="{{$image}}" style="height: 75px; width: 75px;">')
-            ->addColumn('action', 'dashboard.page.parts.action')
+            ->addColumn('action', 'dashboard.screen.parts.action')
             ->rawColumns(['action', 'image']);
     }
 
@@ -25,7 +26,7 @@ class PageDataTable extends DataTable
      * @param \App\Models\City $model
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function query(Page $model)
+    public function query(Screen $model)
     {
         return $model->newQuery()->orderBy('created_at', 'desc');
     }
@@ -62,7 +63,6 @@ class PageDataTable extends DataTable
     {
         return [
             Column::make('image')->class('text-center')->title('صورة الصفحة'),
-            Column::make('type_text')->class('text-center')->title('نوع الصفحة'),
             Column::make('title_ar')->class('text-center')->title('العنوان بالعربيه'),
             Column::make('title_en')->class('text-center')->title('العنوان بالانجليزيه'),
             Column::make('action')->class('text-center')->title('الاجرائات'),

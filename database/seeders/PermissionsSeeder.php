@@ -222,6 +222,31 @@ class PermissionsSeeder extends Seeder
                 'display_name' => 'delete pages',
                 'description' => 'حذف الصفحات',
             ],
+            // screens permissions
+            [
+                'path' => 'screens',
+                'name' => 'read-screens',
+                'display_name' => 'read screens',
+                'description' => 'عرض الشاشات الترحيبية',
+            ],
+            [
+                'path' => 'screens',
+                'name' => 'update-screens',
+                'display_name' => 'update screens',
+                'description' => 'تعديل الشاشات الترحيبية',
+            ],
+            [
+                'path' => 'screens',
+                'name' => 'create-screens',
+                'display_name' => 'create screens',
+                'description' => 'إضافة الشاشات الترحيبية',
+            ],
+            [
+                'path' => 'screens',
+                'name' => 'delete-screens',
+                'display_name' => 'delete screens',
+                'description' => 'حذف الشاشات الترحيبية',
+            ],
             // settings permissions
             [
                 'path' => 'settings',

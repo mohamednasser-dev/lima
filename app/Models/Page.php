@@ -11,6 +11,7 @@ class Page extends Model
 
     protected $guarded = [];
 
+    protected $appends = ['type_text'];
     public function getTitleAttribute()
     {
         if ($locale = \app()->getLocale() == "ar") {
@@ -25,6 +26,20 @@ class Page extends Model
             return asset('uploads/pages') . '/' . $image;
         }
         return asset('default-image.png');
+    }
+    public function getTypeTextAttribute()
+    {
+        if ($this->type == 'about') {
+            return 'عن التطبيق';
+        } elseif ($this->type == 'idea') {
+            return 'عن 80 فكرة';
+        }elseif ($this->type == 'privacy') {
+            return 'سياسة الخصوصية';
+        }elseif ($this->type == 'terms') {
+            return 'الشروط والاحكام';
+        }elseif ($this->type == 'call_us') {
+            return 'اتصل بنا';
+        }
     }
 
 //    public function setImageAttribute($image)

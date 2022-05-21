@@ -153,7 +153,14 @@
                 aria-haspopup="true" data-menu-toggle="hover">
                 <a href="{{route('pages')}}" class="menu-link menu-toggle">
                     <i class="menu-icon flaticon2-paper"></i>
-                    <span class="menu-text">الصفحات</span>
+                    <span class="menu-text">صفحات التطبيق</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-submenu @if( Request::segment(1)== 'screens' ) menu-item-open @endif"
+                aria-haspopup="true" data-menu-toggle="hover">
+                <a href="{{route('screens')}}" class="menu-link menu-toggle">
+                    <i class="menu-icon flaticon2-browser"></i>
+                    <span class="menu-text">الشاشات الترحيبية</span>
                 </a>
             </li>
             @endcan
