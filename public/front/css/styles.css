@@ -8920,7 +8920,9 @@ hr{
 }
 
 .pp_social {display:none;}
-.page-content .container {padding-bottom: 160px;}
+.page-content .container {
+    padding-bottom: 50px;
+}
 .kids_bottom_content .content_bottom_bg{height:160px}
 .bg-level-1 {background-image: url(../images/clouds_retina4-2yqdoj5quytw8tu84f9b7u.png);}
 .kids_bottom_content .content_bottom_bg {background-image: url(../images/grass_retina4-2yqdohngqzju07o7oeuwwa.png);}
