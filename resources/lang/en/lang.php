@@ -56,6 +56,7 @@ return [
     'privacy' => 'privacy',
     'terms' => 'terms',
     'contact' => 'contact',
+    'screenShot' => 'App Screen Shot',
 
 
 ];
