@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'about_idea' => 'about 80 idea',
     'dont_have_permission_access' => 'dont have permission access',
     'otp_invalid' => 'otp invalid',
     'verify_phone' => 'verify phone',

@@ -41,6 +41,10 @@ class AppServiceProvider extends ServiceProvider
             }
         }
 
+        if (!session()->has('lang')) {
+            session()->put('lang', 'ar');
+        }
+
 
     }
 

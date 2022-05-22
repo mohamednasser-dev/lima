@@ -31,6 +31,7 @@ Route::group(['middleware' => ['api'], 'prefix' => "v1", 'namespace' => 'v1'], f
         Route::get('/settings', [HelperController::class, 'settings']);
         Route::post('/contact_us', [HelperController::class, 'contact_us']);
         Route::get('/pages/{type}', [HelperController::class, 'pages']);
+        Route::get('/links/{key}', [HelperController::class, 'links']);
         Route::get('/home/categories/{id}', [HomeController::class, 'home']);
     });
 

@@ -37,17 +37,29 @@ class HelperController extends GeneralController
         $data = (new PageResources($data));
         return $this->sendResponse($data, __('lang.data_show_successfully'), 200);
     }
+
     public function screens(Request $request)
     {
-        $screens = Screen::orderBy('id','asc')->get();
+        $screens = Screen::orderBy('id', 'asc')->get();
         $screens = (ScreenResources::collection($screens));
         return response()->json(msgdata($request, success(), __('lang.data_show_successfully'), $screens));
     }
+
     public function teams(Request $request)
     {
-        $data = Team::orderBy('id','asc')->get();
+        $data = Team::orderBy('id', 'asc')->get();
         $data = (TeamResources::collection($data));
         return response()->json(msgdata($request, success(), __('lang.data_show_successfully'), $data));
+    }
+
+    public function links(Request $request, $key)
+    {
+        $data = Setting::where('key', $key)->first();
+        $result['result'] = "";
+        if($data){
+            $result['result'] = $data->val;
+        }
+        return response()->json(msgdata($request, success(), __('lang.data_show_successfully'), $result));
     }
 
 }

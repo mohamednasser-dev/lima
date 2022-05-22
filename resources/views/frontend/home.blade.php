@@ -151,9 +151,9 @@
                                                 <div class='widget-title'>{{trans('lang.aboutUs')}}</div>
                                                 <section class='cws_widget_content'>
                                                     <p><img class="alignleft border size-thumbnail"
-                                                            src="{{url('/')}}/{{\App\Models\Setting::where('key', 'app_gif')->first()->val}}"
+                                                            src="{{ \App\Models\Page::where('type','about')->first()->image}}"
                                                             alt="content_img_1" width="150" height="150"/>
-                                                        {!! \App\Models\Setting::where('key', 'about_'.session('lang'))->first()->val !!}
+                                                        {!! \App\Models\Page::where('type','about')->first()->title !!}
                                                     </p>
                                                 </section>
                                             </section>

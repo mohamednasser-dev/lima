@@ -11,7 +11,7 @@
                         <div class='widget_text'>
                             <!-- see gallery_shortcode() -->
                             <div id='' class='column-1'>
-                                {!! \App\Models\Setting::where('key', 'about_'.session('lang'))->first()->val !!}
+                                {!! \App\Models\Page::where('type','about')->first()->title !!}
                             </div>
                         </div>
                     </div>
@@ -21,12 +21,12 @@
                 <div class="textwidget">
                     <div class='shortcode_carousel' data-carousel-column="1">
                         <div class='carousel_header clearfix'>
-                            <div class='widget-title'>{{trans('lang.usage')}}</div>
+                            <div class='widget-title'>{{trans('lang.about_idea')}}</div>
                         </div>
                         <div class='widget_text'>
                             <!-- see gallery_shortcode() -->
                             <div id='' class=' column-1'>
-                                {!! \App\Models\Setting::where('key', 'usage_'.session('lang'))->first()->val !!}
+                                {!! \App\Models\Page::where('type','idea')->first()->title !!}
                             </div>
                         </div>
                     </div>
@@ -42,7 +42,7 @@
                         <div class='widget_text'>
                             <!-- see gallery_shortcode() -->
                             <div id='' class=' column-1'>
-                                {!! \App\Models\Setting::where('key', 'terms_'.session('lang'))->first()->val !!}
+                                {!! \App\Models\Page::where('type','terms')->first()->title !!}
                             </div>
                         </div>
                     </div>
@@ -58,7 +58,7 @@
                         <div class='widget_text'>
                             <!-- see gallery_shortcode() -->
                             <div id='' class=' column-1'>
-                                {!! \App\Models\Setting::where('key', 'privacy_'.session('lang'))->first()->val !!}
+                                {!! \App\Models\Page::where('type','privacy')->first()->title !!}
                             </div>
                         </div>
                     </div>
