@@ -130,5 +130,7 @@ return [
     'page not found' => 'الصفحة غير موجودة',
     'Unfortunately, this page is absent or unavailable' => 'للأسف هذه الصفحة غائبة أو غير متوفرة',
 
-
+    'about80Fekra' => 'عن 80 فكرة',
+    'team' => 'فريق العمل',
+    'contact' => 'تواصل معنا',
 ];

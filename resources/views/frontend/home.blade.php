@@ -1,5 +1,6 @@
 @extends('frontend.layout.master')
 @push('css')
+
 @endpush
 @section('title')
     {{$data['title']}}
@@ -79,7 +80,7 @@
         <br>
         <br>
         <br>
-        <div class="bg-level-2-full-width-container kids_bottom_content">
+        <div class="bg-level-2-full-width-container ">
             <div class="bg-level-2-page-width-container no-padding">
                 <section class="kids_bottom_content_container">
                     <!-- ***************** - START Image floating - *************** -->
@@ -187,7 +188,136 @@
 
             <div class="content_bottom_bg"></div>
         </div>
+        <div class="bg-level-2-full-width-container kids_bottom_content">
+            <div class="bg-level-2-page-width-container no-padding">
+                <section class="kids_bottom_content_container">
+                    <!-- ***************** - START Image floating - *************** -->
+                    <div class='grid-row clearfix'>
+                        <div class='grid-col grid-col-12'>
+                            <section class='cws-widget'>
+                                <h3 class='widget-title'>{{trans('lang.screenShot')}}</h3>
+
+                            </section>
+                        </div>
+                    </div>
+
+                    <div class="page-content">
+                        <div class="bg-level-2 first-part"></div>
+                        <div class="container l-page-width">
+                            <div class="entry-container ">
+                                <main>
+                                    <div class='grid-row clearfix'>
+                                        <div class='grid-col grid-col-12'>
+                                            <section class='cws-widget'>
+                                                <section class='cws_widget_content'>
+
+                                                    <!-- see gallery_shortcode() -->
+                                                    <div id='ngallery-1' class='ngallery clearfix column-4'>
+                                                        <dl class='gallery-item'>
+                                                            <dt class='gallery-icon '>
+                                                                <div class='content-wrapper'>
+                                                                    <figure>
+                                                                        <a href="{{url('front')}}/pic/Tangled_3rd5.jpg" data-rel="prettyPhoto[25727]" class="prettyPhoto kids_picture">
+                                                                            <img src="{{url('front')}}/pic/300x300-img-12.jpg" alt="" /></a>
+                                                                    </figure>
+                                                                </div>
+                                                            </dt>
+                                                        </dl>
+                                                        <dl class='gallery-item'>
+                                                            <dt class='gallery-icon '>
+                                                                <div class='content-wrapper'>
+                                                                    <figure>
+                                                                        <a href="{{url('front')}}/pic/Tangled_2nd5.jpg" data-rel="prettyPhoto[25727]" class="prettyPhoto kids_picture">
+                                                                            <img src="{{url('front')}}/pic/300x300-img-11.jpg" alt="" /></a>
+                                                                    </figure>
+                                                                </div>
+                                                            </dt>
+                                                        </dl>
+                                                        <dl class='gallery-item'>
+                                                            <dt class='gallery-icon '>
+                                                                <div class='content-wrapper'>
+                                                                    <figure>
+                                                                        <a href="{{url('front')}}/pic/LegoMovie_4th5.jpg" data-rel="prettyPhoto[25727]" class="prettyPhoto kids_picture">
+                                                                            <img src="{{url('front')}}/pic/300x300-img-10.jpg" alt="" /></a>
+                                                                    </figure>
+                                                                </div>
+                                                            </dt>
+                                                        </dl>
+                                                        <dl class='gallery-item'>
+                                                            <dt class='gallery-icon '>
+                                                                <div class='content-wrapper'>
+                                                                    <figure>
+                                                                        <a href="{{url('front')}}/pic/LegoMovie_3rd4.jpg" data-rel="prettyPhoto[25727]" class="prettyPhoto kids_picture">
+                                                                            <img src="{{url('front')}}/pic/300x300-img-9.jpg" alt="" /></a>
+                                                                    </figure>
+                                                                </div>
+                                                            </dt>
+                                                        </dl>
+                                                        <dl class='gallery-item'>
+                                                            <dt class='gallery-icon '>
+                                                                <div class='content-wrapper'>
+                                                                    <figure>
+                                                                        <a href="{{url('front')}}/pic/HappyFeet_5th5.jpg" data-rel="prettyPhoto[25727]" class="prettyPhoto kids_picture">
+                                                                            <img src="{{url('front')}}/pic/300x300-img-8.jpg" alt="" /></a>
+                                                                    </figure>
+                                                                </div>
+                                                            </dt>
+                                                        </dl>
+                                                        <dl class='gallery-item'>
+                                                            <dt class='gallery-icon '>
+                                                                <div class='content-wrapper'>
+                                                                    <figure>
+                                                                        <a href="{{url('front')}}/pic/HappyFeet_2nd4.jpg" data-rel="prettyPhoto[25727]" class="prettyPhoto kids_picture">
+                                                                            <img src="{{url('front')}}/pic/300x300-img-5.jpg" alt="" /></a>
+                                                                    </figure>
+                                                                </div>
+                                                            </dt>
+                                                        </dl>
+                                                        <dl class='gallery-item'>
+                                                            <dt class='gallery-icon '>
+                                                                <div class='content-wrapper'>
+                                                                    <figure>
+                                                                        <a href="{{url('front')}}/pic/HappyFeet_1st4.jpg" data-rel="prettyPhoto[25727]" class="prettyPhoto kids_picture">
+                                                                            <img src="{{url('front')}}/pic/300x300-img-4.jpg" alt="" /></a>
+                                                                    </figure>
+                                                                </div>
+                                                            </dt>
+                                                        </dl>
+                                                        <dl class='gallery-item'>
+                                                            <dt class='gallery-icon '>
+                                                                <div class='content-wrapper'>
+                                                                    <figure>
+                                                                        <a href="{{url('front')}}/pic/HappyFeet_4th5.jpg" data-rel="prettyPhoto[25727]" class="prettyPhoto kids_picture">
+                                                                            <img src="{{url('front')}}/pic/300x300-img-7.jpg" alt="" /></a>
+                                                                    </figure>
+                                                                </div>
+                                                            </dt>
+                                                        </dl>
+                                                    </div>
+                                                </section>
+                                            </section>
+                                        </div>
+                                    </div>
+                                    <!-- comments block -->
+                                    <!-- //end comments block -->
+                                </main>
+                                <div class="kids_clear"></div>
+                            </div>
+                            <!-- .entry-container -->
+                        </div>
+                        <div class="bg-level-2 second-part"></div>
+                    </div>
+                    <!-- ***************** - END Image floating - *************** -->
+                </section>
+                <!-- .bottom_content_container -->
+            </div>
+            <div class="content_bottom_bg"></div>
+        </div>
     </div>
+
+
+
+
 
     <!-- .end_content -->
 

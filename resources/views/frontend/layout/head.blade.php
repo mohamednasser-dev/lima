@@ -146,71 +146,86 @@
                 <ul id="menu-main" class="clearfix flexnav " data-breakpoint="800">
                     <li class="menu-item menu-item-type-custom menu-item-object-custom  @if(Request::segment(1) == "home" || Request::segment(1) == "" ) current-menu-item current_page_item @endif">
                         <a href="{{url('/')}}">{{trans('lang.Home')}}</a></li>
-                    <li class="menu-item menu-item-has-children"><a href="page-features.html">Features</a>
-                        <ul class="sub-menu">
-                            <li class="menu-item"><a href="page-features.html">Template Features</a></li>
-                            <li class="menu-item menu-item-has-children"><a href="content-elements.html">Content
-                                    Elements</a>
-                                <ul class="sub-menu">
-                                    <li class="menu-item"><a href="page-grid.html">Grids Showcase</a></li>
-                                    <li class="menu-item"><a href="content-elements.html">Content Elements</a></li>
-                                    <li class="menu-item"><a href="page-video.html">Video</a></li>
-                                    <li class="menu-item"><a href="typography.html">Text and Headings</a></li>
-                                </ul>
-                            </li>
-                            <li class="menu-item"><a href="pricing-tables.html">Pricing Tables</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-item menu-item-has-children"><a href="full-width-page.html">Pages</a>
-                        <ul class="sub-menu">
-                            <li class="menu-item"><a href="full-width-page.html">Full Width Page</a></li>
-                            <li class="menu-item"><a href="doble-sidebars.html">Doble Sidebars</a></li>
-                            <li class="menu-item"><a href="right-navigation.html">Right Navigation</a></li>
-                            <li class="menu-item"><a href="left-navigation.html">Left Navigation</a></li>
-                            <li class="menu-item"><a href="right-nav-sidebar.html">Right Nav + Sidebar</a></li>
-                            <li class="menu-item"><a href="left-nav-sidebar.html">Left Nav + Sidebar</a></li>
-                            <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="page-404.html">404
-                                    Page</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-itemmenu-item-has-children"><a href="portfolio-full-width.html">Portfolio</a>
-                        <ul class="sub-menu">
-                            <li class="menu-item-has-children"><a href="#">Columns</a>
-                                <ul class="sub-menu">
-                                    <li class="menu-item"><a href="portfolio-1col.html">Portfolio 1 Column</a></li>
-                                    <li class="menu-item"><a href="portfolio-2col.html">Portfolio 2 Columns</a></li>
-                                    <li class="menu-item"><a href="portfolio-3col.html">Portfolio 3 Columns</a></li>
-                                    <li class="menu-item"><a href="portfolio-4col.html">Portfolio 4 Columns</a></li>
-                                </ul>
-                            </li>
-                            <li class="menu-item"><a href="portfolio-full-width.html">Full-width page</a></li>
-                            <li class="menu-item"><a href="portfolio-right-sidebar.html">Right Sidebar</a></li>
-                            <li class="menu-item"><a href="portfolio-left-sidebar.html">Left Sidebar</a></li>
-                            <li class="menu-item"><a href="portfolio-double-sidebars.html">Double Sidebars</a></li>
-                            <li class="menu-item"><a href="portfolio-gallery.html">Gallery</a></li>
-                            <li class="menu-item"><a href="portfolio-gallery-sidebar.html">Gallery + Sidebar</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children"><a
-                            href="#">Blog</a>
-                        <ul class="sub-menu">
-                            <li class="menu-item"><a href="blog-right-sidebar.html">Right Sidebar</a></li>
-                            <li class="menu-item"><a href="blog-left-sidebar.html">Left Sidebar</a></li>
-                            <li class="menu-item"><a href="blog-double-sidebars.html">DoubleSidebars</a></li>
-                            <li class="menu-item"><a href="blog-fullwidth.html">Full Width</a></li>
 
-                        </ul>
-                    </li>
-                    <li class="menu-item menu-item-has-children"><a href="shop.html">Shop</a>
-                        <ul class="sub-menu">
-                            <li class="menu-item"><a href="shop-shortcodes.html">Woo Shortcodes</a></li>
-                            <li class="menu-item"><a href="shop-cart.html">Cart</a></li>
+                    <li class="menu-item menu-item-type-custom menu-item-object-custom  @if(Request::segment(1) == "about80Fekra"  ) current-menu-item current_page_item @endif">
+                        <a href="{{url('/')}}">{{trans('lang.about80Fekra')}}</a></li>
 
-                            <li class="menu-item"><a href="shop-checkout.html">Checkout</a></li>
-                            <li class="menu-item"><a href="shop-account.html">My Account</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-item"><a href="page-contact.html">Contact</a></li>
+                    <li class="menu-item menu-item-type-custom menu-item-object-custom  @if(Request::segment(1) == "team"  ) current-menu-item current_page_item @endif">
+                        <a href="{{url('/')}}">{{trans('lang.team')}}</a></li>
+
+                    <li class="menu-item menu-item-type-custom menu-item-object-custom  @if(Request::segment(1) == "privacy"  ) current-menu-item current_page_item @endif">
+                        <a href="{{url('/')}}">{{trans('lang.privacy')}}</a></li>
+
+                    <li class="menu-item menu-item-type-custom menu-item-object-custom  @if(Request::segment(1) == "terms"  ) current-menu-item current_page_item @endif">
+                        <a href="{{url('/')}}">{{trans('lang.terms')}}</a></li>
+
+                    <li class="menu-item menu-item-type-custom menu-item-object-custom  @if(Request::segment(1) == "contact"  ) current-menu-item current_page_item @endif">
+                        <a href="{{url('/')}}">{{trans('lang.contact')}}</a></li>
+{{--                    <li class="menu-item menu-item-has-children"><a href="page-features.html">Features</a>--}}
+{{--                        <ul class="sub-menu">--}}
+{{--                            <li class="menu-item"><a href="page-features.html">Template Features</a></li>--}}
+{{--                            <li class="menu-item menu-item-has-children"><a href="content-elements.html">Content--}}
+{{--                                    Elements</a>--}}
+{{--                                <ul class="sub-menu">--}}
+{{--                                    <li class="menu-item"><a href="page-grid.html">Grids Showcase</a></li>--}}
+{{--                                    <li class="menu-item"><a href="content-elements.html">Content Elements</a></li>--}}
+{{--                                    <li class="menu-item"><a href="page-video.html">Video</a></li>--}}
+{{--                                    <li class="menu-item"><a href="typography.html">Text and Headings</a></li>--}}
+{{--                                </ul>--}}
+{{--                            </li>--}}
+{{--                            <li class="menu-item"><a href="pricing-tables.html">Pricing Tables</a></li>--}}
+{{--                        </ul>--}}
+{{--                    </li>--}}
+{{--                    <li class="menu-item menu-item-has-children"><a href="full-width-page.html">Pages</a>--}}
+{{--                        <ul class="sub-menu">--}}
+{{--                            <li class="menu-item"><a href="full-width-page.html">Full Width Page</a></li>--}}
+{{--                            <li class="menu-item"><a href="doble-sidebars.html">Doble Sidebars</a></li>--}}
+{{--                            <li class="menu-item"><a href="right-navigation.html">Right Navigation</a></li>--}}
+{{--                            <li class="menu-item"><a href="left-navigation.html">Left Navigation</a></li>--}}
+{{--                            <li class="menu-item"><a href="right-nav-sidebar.html">Right Nav + Sidebar</a></li>--}}
+{{--                            <li class="menu-item"><a href="left-nav-sidebar.html">Left Nav + Sidebar</a></li>--}}
+{{--                            <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="page-404.html">404--}}
+{{--                                    Page</a></li>--}}
+{{--                        </ul>--}}
+{{--                    </li>--}}
+{{--                    <li class="menu-itemmenu-item-has-children"><a href="portfolio-full-width.html">Portfolio</a>--}}
+{{--                        <ul class="sub-menu">--}}
+{{--                            <li class="menu-item-has-children"><a href="#">Columns</a>--}}
+{{--                                <ul class="sub-menu">--}}
+{{--                                    <li class="menu-item"><a href="portfolio-1col.html">Portfolio 1 Column</a></li>--}}
+{{--                                    <li class="menu-item"><a href="portfolio-2col.html">Portfolio 2 Columns</a></li>--}}
+{{--                                    <li class="menu-item"><a href="portfolio-3col.html">Portfolio 3 Columns</a></li>--}}
+{{--                                    <li class="menu-item"><a href="portfolio-4col.html">Portfolio 4 Columns</a></li>--}}
+{{--                                </ul>--}}
+{{--                            </li>--}}
+{{--                            <li class="menu-item"><a href="portfolio-full-width.html">Full-width page</a></li>--}}
+{{--                            <li class="menu-item"><a href="portfolio-right-sidebar.html">Right Sidebar</a></li>--}}
+{{--                            <li class="menu-item"><a href="portfolio-left-sidebar.html">Left Sidebar</a></li>--}}
+{{--                            <li class="menu-item"><a href="portfolio-double-sidebars.html">Double Sidebars</a></li>--}}
+{{--                            <li class="menu-item"><a href="portfolio-gallery.html">Gallery</a></li>--}}
+{{--                            <li class="menu-item"><a href="portfolio-gallery-sidebar.html">Gallery + Sidebar</a></li>--}}
+{{--                        </ul>--}}
+{{--                    </li>--}}
+{{--                    <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children"><a--}}
+{{--                            href="#">Blog</a>--}}
+{{--                        <ul class="sub-menu">--}}
+{{--                            <li class="menu-item"><a href="blog-right-sidebar.html">Right Sidebar</a></li>--}}
+{{--                            <li class="menu-item"><a href="blog-left-sidebar.html">Left Sidebar</a></li>--}}
+{{--                            <li class="menu-item"><a href="blog-double-sidebars.html">DoubleSidebars</a></li>--}}
+{{--                            <li class="menu-item"><a href="blog-fullwidth.html">Full Width</a></li>--}}
+
+{{--                        </ul>--}}
+{{--                    </li>--}}
+{{--                    <li class="menu-item menu-item-has-children"><a href="shop.html">Shop</a>--}}
+{{--                        <ul class="sub-menu">--}}
+{{--                            <li class="menu-item"><a href="shop-shortcodes.html">Woo Shortcodes</a></li>--}}
+{{--                            <li class="menu-item"><a href="shop-cart.html">Cart</a></li>--}}
+
+{{--                            <li class="menu-item"><a href="shop-checkout.html">Checkout</a></li>--}}
+{{--                            <li class="menu-item"><a href="shop-account.html">My Account</a></li>--}}
+{{--                        </ul>--}}
+{{--                    </li>--}}
+{{--                    <li class="menu-item"><a href="page-contact.html">Contact</a></li>--}}
                 </ul>
             </nav>
             <!-- #kids_main_nav -->
