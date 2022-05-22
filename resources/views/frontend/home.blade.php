@@ -120,10 +120,10 @@
                                                                                     {{--                                                                            <p>Lorem ipsum dolor sit amet. Lorem ipsum--}}
                                                                                     {{--                                                                                dolor sit amet, consectetuer ...</p>--}}
                                                                                 </div>
-                                                                                <div class="post-footer">
-                                                                                    <a href="{{url('category-details/'.$subCategory->id)}}"
-                                                                                       class="cws_button">{{trans('lang.ReadMore')}}</a>
-                                                                                </div>
+{{--                                                                                <div class="post-footer">--}}
+{{--                                                                                    <a href="{{url('category-details/'.$subCategory->id)}}"--}}
+{{--                                                                                       class="cws_button" >{{trans('lang.ReadMore')}}</a>--}}
+{{--                                                                                </div>--}}
                                                                                 <!--/ post-footer-->
                                                                                 <div class="kids_clear"></div>
                                                                             </div>

@@ -4734,10 +4734,10 @@ hr{
 .content-wrapper.alignright {
 	margin: 0 0.9em 0.5em 0;
 }
-.content-wrapper figure{
-	border: 10px solid #fee6b4;
-	border-radius: 10px;
-}
+/*.content-wrapper figure{*/
+/*	border: 10px solid #fee6b4;*/
+/*	border-radius: 10px;*/
+/*}*/
 aside .content-wrapper figure{
 	border-width: 2px;
 	border-style: solid;
@@ -8525,7 +8525,7 @@ input[type="date"]{
 .entry-container aside:not(#sidebar-right):not(#sidebar-left) .widget-title,
 .entry-container main .widget-title{
 	font-size: 32px;
-	color: #3185cb;
+	color: black;
 	line-height: 1.25;
 }
 
@@ -8574,14 +8574,14 @@ ul.products li.product .price,
 	display: none;
 }
 #respond_block .comment-author{
-	color: #3185cb;
+	color: #8BDED6;
 }
 
 a,
 ul.type-2 li:before,
 .post-title a:hover,
 a.alt:hover{
-	color: #3185cb;
+	color: black;
 }
 
 
@@ -8636,7 +8636,7 @@ input[type="radio"]:checked:before,
 
 @media screen and (max-width: 980px){
 	#kids_main_nav>ul{
-		background-color: #3185cb;
+		background-color: #8BDED6;
 	}
 }
 
@@ -8644,11 +8644,11 @@ input[type="radio"]:checked:before,
 .pricing_table_header .title,
 .widget_categories ul li:before,
 .catappendspan:before{
-	color: #3185cb;
+	color: #8BDED6;
 }
 
 input[type="checkbox"]:before{
-	color: #3185cb;
+	color: #8BDED6;
 }
 .latest_tweets li .icon_frame i.fa:before{
 	background-color: rgba(49,133,203,0.4);
@@ -8695,14 +8695,14 @@ input[type="checkbox"]:before{
 #kids_header .kids_social li.hide,
 .kids_social .lang_bar>div>ul a:after,
 .kids_social .lang_bar>div>ul a:before{
-	background-color: #3185cb;
+	background-color: #4A9188;
 }
 #kids_header .kids_social li,
 .kids_social .lang_bar>div>ul>li>a:before{
-	background-color: rgba(49,133,203,0.65);
+	background-color: #4A9188;
 }
 .top-panel{
-	border-color: #3185cb;
+	border-color: #8BDED6;
 }
 
 /* Colors for: middle content (the sand color) */
@@ -9079,7 +9079,7 @@ hr{
     text-decoration: none;
     padding: 6px 21px 12px;
     text-shadow: none;
-    background-color: rgb(49, 133, 203);
+    background-color: #4A9188;
     border-radius: 7px 7px 7px 7px;
     border-width: 0px;
     border-color: rgb(0, 0, 0);
