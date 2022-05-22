@@ -1,6 +1,8 @@
 <?php
 
 return [
+    'liked_s' => 'liked done successfully',
+    'like_added_before' => 'post liked before',
     'fav_added_before' => 'this added before in laravel',
     'subscription_s' => 'subscribed successfully',
     'data_added_successfully' => 'data added successfully',

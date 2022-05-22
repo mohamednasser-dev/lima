@@ -14,14 +14,15 @@ class FavPostsResources extends JsonResource
      */
     public function toArray($request)
     {
-        $fav = false ;
-        if(apiUser()){
+        $fav = false;
+        $free = $this->free;
+        if (apiUser()) {
             //check favorite
-            $exists_fav = apiUser()->Favorites->where('post_id',$this->id)->first();
-            if($exists_fav){
-                $fav = true ;
-            }else{
-                $fav = false ;
+            $exists_fav = apiUser()->Favorites->where('post_id', $this->id)->first();
+            if ($exists_fav) {
+                $fav = true;
+            } else {
+                $fav = false;
             }
             //check subscription
             if ($this->free == 0) {
@@ -30,8 +31,6 @@ class FavPostsResources extends JsonResource
                 } else {
                     $free = 0;
                 }
-            } else {
-                $free = $this->free;
             }
         }
         return [

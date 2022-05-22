@@ -1,6 +1,8 @@
 <?php
 
 return [
+    'liked_s' => 'تم الاعجاب بنجاح',
+    'like_added_before' => 'تم الاعجاب بالمحتوى من قبل',
     'fav_added_before' => 'تم الاضافة للمفضله من قبل',
     'subscription_s' => 'تم الاشتراك بنجاح',
     'about_idea' => 'عن 80 فكرة',

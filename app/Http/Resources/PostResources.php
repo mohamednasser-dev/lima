@@ -15,6 +15,7 @@ class PostResources extends JsonResource
     public function toArray($request)
     {
         $fav = false;
+        $free = $this->free;
         if (apiUser()) {
             //check favorite
             $exists_fav = apiUser()->Favorites->where('post_id', $this->id)->first();
@@ -30,8 +31,6 @@ class PostResources extends JsonResource
                 } else {
                     $free = 0;
                 }
-            } else {
-                $free = $this->free;
             }
         }
         return [

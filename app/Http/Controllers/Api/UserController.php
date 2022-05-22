@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\GeneralController;
 use App\Http\Resources\UserResources;
+use App\Models\Post;
+use App\Models\PostLike;
 use App\Models\SubscribeType;
 use App\Models\SubscriptionHistory;
 use Carbon\Carbon;
@@ -207,7 +209,7 @@ class UserController extends GeneralController
         $data['started_at'] = $today;
         $ended_date = $today->addMonths($subscription->month_count);
         $data['ended_at'] = $ended_date;
-        $data['payment_status'] = 1 ;
+        $data['payment_status'] = 1;
         SubscriptionHistory::create($data);
 
         //update user table
@@ -216,6 +218,24 @@ class UserController extends GeneralController
         User::find(apiUser()->id)->update($user_data);
 
         return $this->sendResponse((object)[], trans('lang.subscription_s'), 200);
+    }
+
+    public function like_store(Request $request)
+    {
+        $data = $request->all();
+        $validator = Validator::make($data, [
+            'post_id' => 'required|exists:posts,id',
+        ]);
+        if ($validator->fails()) {
+            return response()->json(['status' => 401, 'msg' => $validator->messages()->first()]);
+        }
+        try {
+            $data['user_id'] = apiUser()->id;
+            PostLike::create($data);
+        } catch (\Exception $ex) {
+            return response()->json(['status' => 401, 'msg' => __('lang.like_added_before')]);
+        }
+        return $this->sendResponse((object)[], trans('lang.liked_s'), 200);
     }
 
 

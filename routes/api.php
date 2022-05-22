@@ -59,10 +59,12 @@ Route::group(['middleware' => ['api'], 'prefix' => "v1", 'namespace' => 'v1'], f
         Route::post('/logout', [UserController::class, 'logout']);
 
         Route::post('/subscription/store', [UserController::class, 'store_subscription']);
+        Route::post('/post/like/store', [UserController::class, 'like_store']);
 
         //favorites
         Route::get('/favorites', [FavoriteController::class, 'index']);
         Route::post('/favorite/store', [FavoriteController::class, 'store']);
+
 
 
     });
