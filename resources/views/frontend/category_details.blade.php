@@ -87,7 +87,7 @@
                                                 </div>
                                                 <!-- .entry-container -->
                                             </div>
-                                            <div class="bg-level-2 second-part"></div>
+{{--                                            <div class="bg-level-2 second-part"></div>--}}
                                         </div>
                                     </div>
                                 </div>
