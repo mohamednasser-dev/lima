@@ -77,7 +77,7 @@ class Post extends Model
         if (!empty($video)) {
             return asset('uploads/posts') . '/' . $video;
         }
-        return asset('default-image.png');
+        return null;
     }
 
     public function setVideoAttribute($video)
