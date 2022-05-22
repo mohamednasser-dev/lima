@@ -1,6 +1,8 @@
 <?php
 
 return [
+    'fav_added_before' => 'تم الاضافة للمفضله من قبل',
+    'subscription_s' => 'تم الاشتراك بنجاح',
     'about_idea' => 'عن 80 فكرة',
     'dont_have_permission_access' => 'لا تمتلك الصلاحية للوصول لهذا الرابط',
     'otp_invalid' => 'لم يتم التحقق - كود التحقق خطأ',

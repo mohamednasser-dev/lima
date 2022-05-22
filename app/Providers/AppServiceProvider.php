@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Schema;
@@ -45,6 +47,13 @@ class AppServiceProvider extends ServiceProvider
             session()->put('lang', 'ar');
         }
 
+        //check users subscription to auto end it
+        $ended_users = User::where('subscriber',1)->where('subscription_ended_at','<', Carbon::now())->get();
+        if(count($ended_users) > 0){
+            foreach ($ended_users as $user){
+               User::find($user->id)->update(['subscriber'=>0]);
+            }
+        }
 
     }
 

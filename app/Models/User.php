@@ -100,4 +100,9 @@ class User extends Authenticatable implements JWTSubject
         return $this->hasMany(SubscriptionHistory::class, 'user_id', 'id');
     }
 
+    public function Favorites()
+    {
+        return $this->hasMany(Favorite::class, 'user_id', 'id');
+    }
+
 }

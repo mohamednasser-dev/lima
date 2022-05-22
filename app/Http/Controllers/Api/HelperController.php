@@ -6,11 +6,13 @@ use App\Http\Controllers\GeneralController;
 use App\Http\Resources\CityResources;
 use App\Http\Resources\PageResources;
 use App\Http\Resources\ScreenResources;
+use App\Http\Resources\SubscribeTypeResources;
 use App\Http\Resources\TeamResources;
 use App\Models\City;
 use App\Models\Page;
 use App\Models\Screen;
 use App\Models\Setting;
+use App\Models\SubscribeType;
 use App\Models\Team;
 use Illuminate\Http\Request;
 use function auth;
@@ -21,6 +23,13 @@ class HelperController extends GeneralController
     public function __construct(City $model)
     {
         parent::__construct($model);
+    }
+
+    public function subscription_types(Request $request)
+    {
+        $data = SubscribeType::get();
+        $data = (SubscribeTypeResources::collection($data));
+        return $this->sendResponse($data, __('lang.data_show_successfully'), 200);
     }
 
     public function cities(Request $request)
@@ -60,6 +69,11 @@ class HelperController extends GeneralController
             $result['result'] = $data->val;
         }
         return response()->json(msgdata($request, success(), __('lang.data_show_successfully'), $result));
+    }
+    public function settings(Request $request)
+    {
+        $data = Setting::get();
+        return response()->json(msgdata($request, success(), __('lang.data_show_successfully'), $data));
     }
 
 }

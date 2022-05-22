@@ -1,6 +1,9 @@
 <?php
 
 return [
+    'fav_added_before' => 'this added before in laravel',
+    'subscription_s' => 'subscribed successfully',
+    'data_added_successfully' => 'data added successfully',
     'about_idea' => 'about 80 idea',
     'dont_have_permission_access' => 'dont have permission access',
     'otp_invalid' => 'otp invalid',

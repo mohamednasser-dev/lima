@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\HelperController;
 use App\Http\Controllers\Api\HomeController;
+use App\Http\Controllers\Api\FavoriteController;
 use App\Http\Controllers\Api\UserController;
 
 /*
@@ -32,7 +33,14 @@ Route::group(['middleware' => ['api'], 'prefix' => "v1", 'namespace' => 'v1'], f
         Route::post('/contact_us', [HelperController::class, 'contact_us']);
         Route::get('/pages/{type}', [HelperController::class, 'pages']);
         Route::get('/links/{key}', [HelperController::class, 'links']);
+        Route::get('/subscription/types', [HelperController::class, 'subscription_types']);
+
+        //home
         Route::get('/home/categories/{id}', [HomeController::class, 'home']);
+        Route::get('/category/posts/{id}', [HomeController::class, 'posts']);
+
+        Route::get('/post/details/{id}', [HomeController::class, 'post_details']);
+
     });
 
     Route::group(['prefix' => 'auth'], function () {
@@ -43,12 +51,19 @@ Route::group(['middleware' => ['api'], 'prefix' => "v1", 'namespace' => 'v1'], f
     });
 
     Route::group(['middleware' => ['auth:api'], 'prefix' => "user"], function () {
+
         //user profile
         Route::get('/profile', [UserController::class, 'profile']);
         Route::post('/profile/update', [UserController::class, 'update_profile']);
         Route::post('/profile/update_password', [UserController::class, 'update_password']);
-        //
         Route::post('/logout', [UserController::class, 'logout']);
+
+        Route::post('/subscription/store', [UserController::class, 'store_subscription']);
+
+        //favorites
+        Route::get('/favorites', [FavoriteController::class, 'index']);
+        Route::post('/favorite/store', [FavoriteController::class, 'store']);
+
 
     });
 });
