@@ -12,6 +12,7 @@ use App\Models\City;
 use App\Models\Page;
 use App\Models\Screen;
 use App\Models\Setting;
+use App\Models\SocialLink;
 use App\Models\SubscribeType;
 use App\Models\Team;
 use Illuminate\Http\Request;
@@ -61,18 +62,26 @@ class HelperController extends GeneralController
         return response()->json(msgdata($request, success(), __('lang.data_show_successfully'), $data));
     }
 
+
+    public function settings(Request $request)
+    {
+        $data = Setting::get();
+        return response()->json(msgdata($request, success(), __('lang.data_show_successfully'), $data));
+    }
+
     public function links(Request $request, $key)
     {
         $data = Setting::where('key', $key)->first();
         $result['result'] = "";
-        if($data){
+        if ($data) {
             $result['result'] = $data->val;
         }
         return response()->json(msgdata($request, success(), __('lang.data_show_successfully'), $result));
     }
-    public function settings(Request $request)
+
+    public function all_links(Request $request)
     {
-        $data = Setting::get();
+        $data = SocialLink::get();
         return response()->json(msgdata($request, success(), __('lang.data_show_successfully'), $data));
     }
 

@@ -272,6 +272,31 @@ class PermissionsSeeder extends Seeder
                 'display_name' => 'delete teams',
                 'description' => 'حذف فريق العمل',
             ],
+            // links permissions
+            [
+                'path' => 'links',
+                'name' => 'read-links',
+                'display_name' => 'read links',
+                'description' => 'عرض الروابط',
+            ],
+            [
+                'path' => 'links',
+                'name' => 'update-links',
+                'display_name' => 'update links',
+                'description' => 'تعديل الروابط',
+            ],
+            [
+                'path' => 'links',
+                'name' => 'create-links',
+                'display_name' => 'create links',
+                'description' => 'إضافة الروابط',
+            ],
+            [
+                'path' => 'links',
+                'name' => 'delete-links',
+                'display_name' => 'delete links',
+                'description' => 'حذف الروابط',
+            ],
             // settings permissions
             [
                 'path' => 'settings',

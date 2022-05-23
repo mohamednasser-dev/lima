@@ -8,7 +8,6 @@
 @endsection
 @section('breadcrumb')
     <div class="d-flex align-items-baseline flex-wrap mr-5">
-        <!--begin::Breadcrumb-->
         <h5 class="text-warning font-weight-bold my-1 mr-5">{{$title}}</h5>
         <div class="subheader-separator subheader-separator-ver mt-2 mb-2 mr-4 bg-gray-200"></div>
         <ul class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
@@ -16,13 +15,10 @@
                 <a href="{{route('admin')}}"
                    class="text-muted">الصفحة الرئيسية</a>
             </li>
-
         </ul>
-        <!--end::Breadcrumb-->
     </div>
 @endsection
 @section('content')
-
     <div class="card">
         <div class="card-body">
             <form method="post" action="{{route('settings.update')}}" enctype="multipart/form-data">
@@ -32,10 +28,6 @@
                         <li class="nav-item">
                             <a class="nav-link active" data-toggle="tab"
                                href="#kt_builder_themes">الاعدادات الاساسية</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" data-toggle="tab"
-                               href="#kt_hide_page">الروابط</a>
                         </li>
                     </ul>
                 </div>
@@ -190,80 +182,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane" id="kt_hide_page">
-                            <div class="row">
-                                <div class="col-lg-6  col-md-6">
-                                    <div class="form-group ">
-                                        <label for="facebook">رابط الفيس بوك <span
-                                                class="text-danger">*</span></label>
-                                        <input type="url" name="facebook" id="facebook"
-                                               value="{{ old('facebook', $data->where('key', 'facebook')->first()->val) }}"
-                                               class="form-control {{ $errors->has('facebook') ? 'border-danger' : '' }}"
-                                               placeholder="أدخل رابط الفيس بوك"/>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6  col-md-6">
-                                    <div class="form-group ">
-                                        <label for="twitter">رابط تويتر <span
-                                                class="text-danger">*</span></label>
-                                        <input type="url" name="twitter" id="twitter"
-                                               value="{{ old('twitter', $data->where('key', 'twitter')->first()->val) }}"
-                                               class="form-control {{ $errors->has('twitter') ? 'border-danger' : '' }}"
-                                               placeholder="أدخل رابط تويتر"/>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6  col-md-6">
-                                    <div class="form-group ">
-                                        <label for="instagram">رابط انستقرام <span
-                                                class="text-danger">*</span></label>
-                                        <input type="url" name="instagram" id="instagram"
-                                               value="{{ old('instagram', $data->where('key', 'instagram')->first()->val) }}"
-                                               class="form-control {{ $errors->has('instagram') ? 'border-danger' : '' }}"
-                                               placeholder="أدخل رابط انستقرام"/>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6  col-md-6">
-                                    <div class="form-group ">
-                                        <label for="snapchat">رابط سنابشات <span
-                                                class="text-danger">*</span></label>
-                                        <input type="url" name="snapchat" id="snapchat"
-                                               value="{{ old('snapchat', $data->where('key', 'snapchat')->first()->val) }}"
-                                               class="form-control {{ $errors->has('snapchat') ? 'border-danger' : '' }}"
-                                               placeholder="أدخل رابط سنابشات"/>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6  col-md-6">
-                                    <div class="form-group ">
-                                        <label for="pinterest">رابط بينتريست <span
-                                                class="text-danger">*</span></label>
-                                        <input type="url" name="pinterest" id="snapchat"
-                                               value="{{ old('pinterest', $data->where('key', 'pinterest')->first()->val) }}"
-                                               class="form-control {{ $errors->has('pinterest') ? 'border-danger' : '' }}"
-                                               placeholder="أدخل رابط بينتريست"/>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6  col-md-6">
-                                    <div class="form-group ">
-                                        <label for="youtube">رابط يوتيوب <span
-                                                class="text-danger">*</span></label>
-                                        <input type="url" name="youtube" id="youtube"
-                                               value="{{ old('youtube', $data->where('key', 'youtube')->first()->val) }}"
-                                               class="form-control {{ $errors->has('youtube') ? 'border-danger' : '' }}"
-                                               placeholder="أدخل رابط يوتيوب"/>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6  col-md-6">
-                                    <div class="form-group ">
-                                        <label for="telegram">رابط تيليجرام <span
-                                                class="text-danger">*</span></label>
-                                        <input type="url" name="telegram" id="telegram"
-                                               value="{{ old('telegram', $data->where('key', 'telegram')->first()->val) }}"
-                                               class="form-control {{ $errors->has('telegram') ? 'border-danger' : '' }}"
-                                               placeholder="أدخل رابط تيليجرام"/>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <br>
@@ -278,8 +196,6 @@
             </form>
         </div>
     </div>
-
-
 @endsection
 @section('script')
     <script !src="">
@@ -298,9 +214,7 @@
             });
         });
     </script>
-
     <script src="assets/plugins/custom/ckeditor/ckeditor-classic.bundle.js"></script>
-
     <script>
         var terms_ar = function () {
             // Private functions

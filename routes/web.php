@@ -14,6 +14,7 @@ use App\Http\Controllers\Dashboard\PostController;
 use App\Http\Controllers\Dashboard\PageController;
 use App\Http\Controllers\Dashboard\ScreenController;
 use App\Http\Controllers\Dashboard\TeamController;
+use App\Http\Controllers\Dashboard\SocialLinkController;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
@@ -138,6 +139,18 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('update/{id}', [ScreenController::class, 'update'])->name('screens.update')->middleware('permission:update-' . $permission);
         Route::post('deletes', [ScreenController::class, 'deletes'])->name('screens.deletes')->middleware('permission:delete-' . $permission);
         Route::get('delete/{id}', [ScreenController::class, 'delete'])->name('screens.delete')->middleware('permission:delete-' . $permission);
+    });
+
+    //links
+    Route::group(['prefix' => 'links'], function () {
+        $permission = 'links';
+        Route::get('/', [SocialLinkController::class, 'index'])->name('links')->middleware('permission:read-' . $permission);
+        Route::get('create', [SocialLinkController::class, 'create'])->name('links.create')->middleware('permission:create-' . $permission);
+        Route::post('store', [SocialLinkController::class, 'store'])->name('links.store')->middleware('permission:create-' . $permission);
+        Route::get('edit/{id}', [SocialLinkController::class, 'edit'])->name('links.edit')->middleware('permission:update-' . $permission);
+        Route::post('update/{id}', [SocialLinkController::class, 'update'])->name('links.update')->middleware('permission:update-' . $permission);
+        Route::post('deletes', [SocialLinkController::class, 'deletes'])->name('links.deletes')->middleware('permission:delete-' . $permission);
+        Route::get('delete/{id}', [SocialLinkController::class, 'delete'])->name('links.delete')->middleware('permission:delete-' . $permission);
     });
 
 

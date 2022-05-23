@@ -34,6 +34,7 @@ Route::group(['middleware' => ['api'], 'prefix' => "v1", 'namespace' => 'v1'], f
         Route::get('/pages/{type}', [HelperController::class, 'pages']);
         Route::get('/links/{key}', [HelperController::class, 'links']);
         Route::get('/subscription/types', [HelperController::class, 'subscription_types']);
+        Route::get('/links', [HelperController::class, 'all_links']);
 
         //home
         Route::get('/home/categories/{id}', [HomeController::class, 'home']);

@@ -173,6 +173,15 @@
                 </a>
             </li>
             @endcan
+            @can('read-links')
+                <li class="menu-item menu-item-submenu @if( Request::segment(1)== 'links' ) menu-item-open @endif"
+                    aria-haspopup="true" data-menu-toggle="hover">
+                    <a href="{{route('links')}}" class="menu-link menu-toggle">
+                        <i class="menu-icon flaticon-tool-1"></i>
+                        <span class="menu-text">الروابط</span>
+                    </a>
+                </li>
+            @endcan
             @can('read-settings')
                 <li class="menu-item menu-item-submenu @if(request()->segment(1) == 'settings') menu-item-open @endif "
                     aria-haspopup="true" data-menu-toggle="hover">

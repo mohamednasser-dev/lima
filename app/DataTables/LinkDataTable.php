@@ -2,11 +2,12 @@
 
 namespace App\DataTables;
 
+use App\Models\SocialLink;
 use App\Models\Team;
 use Yajra\DataTables\Html\Column;
 use Yajra\DataTables\Services\DataTable;
 
-class TeamDataTable extends DataTable
+class LinkDataTable extends DataTable
 {
 
     public function dataTable($query)
@@ -14,7 +15,7 @@ class TeamDataTable extends DataTable
         return datatables()
             ->eloquent($query)
             ->editColumn('image', '<img class="img-thumbnail" src="{{$image}}" style="height: 75px; width: 75px;">')
-            ->addColumn('action', 'dashboard.team.parts.action')
+            ->addColumn('action', 'dashboard.link.parts.action')
             ->rawColumns(['action', 'image']);
     }
 
@@ -24,7 +25,7 @@ class TeamDataTable extends DataTable
      * @param \App\Models\City $model
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function query(Team $model)
+    public function query(SocialLink $model)
     {
         return $model->newQuery()->orderBy('id', 'desc');
     }
@@ -37,7 +38,7 @@ class TeamDataTable extends DataTable
     public function html()
     {
         return $this->builder()
-            ->setTableId('page-table')
+            ->setTableId('links-table')
             ->columns($this->getColumns())
             ->minifiedAjax()
             ->orderBy(0)
@@ -60,10 +61,7 @@ class TeamDataTable extends DataTable
     {
         return [
             Column::make('image')->class('text-center')->title('الصورة'),
-            Column::make('title_ar')->class('text-center')->title('الاسم بالعربيه'),
-            Column::make('title_en')->class('text-center')->title('الاسم بالانجليزيه'),
-            Column::make('job_ar')->class('text-center')->title('الوظيفة بالعربيه'),
-            Column::make('job_en')->class('text-center')->title('الوظيفة بالانجليزيه'),
+            Column::make('link')->class('text-center')->title('الرابط'),
             Column::make('action')->class('text-center')->title('الاجرائات'),
         ];
     }
@@ -75,6 +73,6 @@ class TeamDataTable extends DataTable
      */
     protected function filename()
     {
-        return 'Team_' . date('YmdHis');
+        return 'Links_' . date('YmdHis');
     }
 }
