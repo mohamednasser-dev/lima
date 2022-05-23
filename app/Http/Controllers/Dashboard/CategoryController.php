@@ -54,6 +54,13 @@ class CategoryController extends GeneralController
     public function update(CategoryRequest $request, $id)
     {
         $data = $request->validated();
+        if($request->image){
+            if (is_file($request->image)) {
+                $img_name = time() . uniqid() . '.' . $request->image->getClientOriginalExtension();
+                $request->image->move(public_path('/uploads/categories/'), $img_name);
+                $data['image'] = $img_name;
+            }
+        }
         $this->model::where('id', $id)->update($data);
         $row = $this->model::findOrFail($id);
         return redirect()->route($this->route . '.show', ['parent_id' => $row->parent_id])->with('success', 'تم التعديل بنجاح');
