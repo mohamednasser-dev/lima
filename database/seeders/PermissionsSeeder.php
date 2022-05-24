@@ -146,6 +146,21 @@ class PermissionsSeeder extends Seeder
                 'description' => 'حذف العملاء',
             ],
 
+            // subscriptions permissions
+            [
+                'path' => 'subscriptions',
+                'name' => 'read-subscriptions',
+                'display_name' => 'read subscriptions',
+                'description' => 'عرض الاشتراك',
+            ],
+            [
+                'path' => 'subscriptions',
+                'name' => 'update-subscriptions',
+                'display_name' => 'update subscriptions',
+                'description' => 'تعديل الاشتراك',
+            ],
+
+
 
             // roles permissions
             [

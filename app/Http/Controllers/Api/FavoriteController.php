@@ -4,10 +4,10 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\GeneralController;
 use App\Http\Resources\FavPostsResources;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Favorite;
-use Illuminate\Support\Facades\Validator;
 
 class FavoriteController extends GeneralController
 {

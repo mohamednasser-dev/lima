@@ -5,7 +5,7 @@ if (!function_exists('settings')) {
     function settings($key)
     {
         $setting = Setting::where('key',$key)->first();
-        
+
         if(!$setting)
             return "";
 
@@ -104,5 +104,11 @@ if (!function_exists('not_active')) {
 if(!function_exists('apiUser')){
     function apiUser(){
         return auth('api')->user();
+    }
+}
+
+if(!function_exists('new_subscription')){
+    function new_subscription(){
+        return \App\Models\SubscriptionHistory::where('status','pending')->get()->count();
     }
 }

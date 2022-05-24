@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Dashboard;
 
+use App\Http\Controllers\GeneralController;
 use App\Models\Category;
 use App\Models\Post;
 use App\Models\User;
-use App\Http\Controllers\GeneralController;
 
 class HomeController extends GeneralController
 {

@@ -6,6 +6,8 @@ use App\Http\Controllers\Api\HelperController;
 use App\Http\Controllers\Api\HomeController;
 use App\Http\Controllers\Api\FavoriteController;
 use App\Http\Controllers\Api\UserController;
+use App\Http\Controllers\Api\SubscriptionController;
+use App\Http\Controllers\Api\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,14 +35,13 @@ Route::group(['middleware' => ['api'], 'prefix' => "v1", 'namespace' => 'v1'], f
         Route::post('/contact_us', [HelperController::class, 'contact_us']);
         Route::get('/pages/{type}', [HelperController::class, 'pages']);
         Route::get('/links/{key}', [HelperController::class, 'links']);
-        Route::get('/subscription/types', [HelperController::class, 'subscription_types']);
         Route::get('/links', [HelperController::class, 'all_links']);
-
+        Route::get('/subscription/types', [SubscriptionController::class, 'subscription_types']);
         //home
         Route::get('/home/categories/{id}', [HomeController::class, 'home']);
-        Route::get('/category/posts/{id}', [HomeController::class, 'posts']);
-
-        Route::get('/post/details/{id}', [HomeController::class, 'post_details']);
+        //posts
+        Route::get('/category/posts/{id}', [PostController::class, 'posts']);
+        Route::get('/post/details/{id}', [PostController::class, 'post_details']);
 
     });
 
@@ -59,8 +60,8 @@ Route::group(['middleware' => ['api'], 'prefix' => "v1", 'namespace' => 'v1'], f
         Route::post('/profile/update_password', [UserController::class, 'update_password']);
         Route::post('/logout', [UserController::class, 'logout']);
 
-        Route::post('/subscription/store', [UserController::class, 'store_subscription']);
-        Route::post('/post/like/store', [UserController::class, 'like_store']);
+        Route::post('/subscription/store', [SubscriptionController::class, 'store_subscription']);
+        Route::post('/post/like/store', [PostController::class, 'like_store']);
 
         //favorites
         Route::get('/favorites', [FavoriteController::class, 'index']);

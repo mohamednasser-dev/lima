@@ -3,19 +3,14 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\GeneralController;
+use Illuminate\Support\Facades\Validator;
 use App\Http\Resources\UserResources;
-use App\Models\Post;
-use App\Models\PostLike;
-use App\Models\SubscribeType;
-use App\Models\SubscriptionHistory;
-use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
 use App\Models\VerfiyCode;
 use App\Mail\CodeMail;
 use App\Models\User;
-use Illuminate\Support\Facades\Validator;
 use function auth;
 use function msgdata;
 use function response;
@@ -187,56 +182,8 @@ class UserController extends GeneralController
         }
     }
 
-    public function store_subscription(Request $request)
-    {
-        $data = $request->all();
-        $validator = Validator::make($data, [
-            'subscribe_type_id' => 'required|exists:subscribe_types,id',
-            'type' => 'required|in:visa,cash'
-        ]);
-        if ($validator->fails()) {
-            return response()->json(['status' => 401, 'msg' => $validator->messages()->first()]);
-        }
-        $subscription = SubscribeType::findOrFail($request->subscribe_type_id);
 
-        $data['name_ar'] = $subscription->name_ar;
-        $data['name_en'] = $subscription->name_en;
-        $data['cost'] = $subscription->cost;
-        $data['user_name'] = apiUser()->name;
-        $data['phone'] = apiUser()->phone;
-        $data['user_id'] = apiUser()->id;
-        $today = Carbon::now();
-        $data['started_at'] = $today;
-        $ended_date = $today->addMonths($subscription->month_count);
-        $data['ended_at'] = $ended_date;
-        $data['payment_status'] = 1;
-        SubscriptionHistory::create($data);
 
-        //update user table
-        $user_data['subscriber'] = 1;
-        $user_data['subscription_ended_at'] = $ended_date;
-        User::find(apiUser()->id)->update($user_data);
-
-        return $this->sendResponse((object)[], trans('lang.subscription_s'), 200);
-    }
-
-    public function like_store(Request $request)
-    {
-        $data = $request->all();
-        $validator = Validator::make($data, [
-            'post_id' => 'required|exists:posts,id',
-        ]);
-        if ($validator->fails()) {
-            return response()->json(['status' => 401, 'msg' => $validator->messages()->first()]);
-        }
-        try {
-            $data['user_id'] = apiUser()->id;
-            PostLike::create($data);
-        } catch (\Exception $ex) {
-            return response()->json(['status' => 401, 'msg' => __('lang.like_added_before')]);
-        }
-        return $this->sendResponse((object)[], trans('lang.liked_s'), 200);
-    }
 
 
     public function logout()

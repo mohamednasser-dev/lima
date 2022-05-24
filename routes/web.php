@@ -15,6 +15,7 @@ use App\Http\Controllers\Dashboard\PageController;
 use App\Http\Controllers\Dashboard\ScreenController;
 use App\Http\Controllers\Dashboard\TeamController;
 use App\Http\Controllers\Dashboard\SocialLinkController;
+use App\Http\Controllers\Dashboard\SubscriptionController;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
@@ -99,10 +100,14 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('update/{id}', [UserController::class, 'update'])->name('users.update')->middleware('permission:update-' . $permission);
         Route::post('deletes', [UserController::class, 'deletes'])->name('users.deletes')->middleware('permission:delete-' . $permission);
         Route::get('delete/{id}', [UserController::class, 'delete'])->name('users.delete')->middleware('permission:delete-' . $permission);
+    });
 
-        //userAddress
-        Route::get('address/{id}', [UserController::class, 'indexAddress'])->name('users.address')->middleware('permission:read-' . $permission);
-
+    // subscriptions Route
+    Route::group(['prefix' => 'subscriptions'], function () {
+        $permission = 'subscriptions';
+        Route::get('/', [SubscriptionController::class, 'index'])->name('subscriptions')->middleware('permission:read-' . $permission);
+        Route::get('show/{id}', [SubscriptionController::class, 'show'])->name('subscriptions.show')->middleware('permission:create-' . $permission);
+        Route::get('change_status/{status}/{id}', [SubscriptionController::class, 'change_status'])->name('subscriptions.change_status')->middleware('permission:update-' . $permission);
     });
 
 //sliders

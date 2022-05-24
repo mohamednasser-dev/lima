@@ -1,6 +1,12 @@
 <?php
 
 return [
+    'finished' => 'finished',
+    "pending" => "pending",
+    "accepted" => "accepted",
+    "rejected" => "rejected",
+
+    'liked__removed_s' => 'Like deleted successfully',
     'liked_s' => 'liked done successfully',
     'like_added_before' => 'post liked before',
     'fav_added_before' => 'this added before in laravel',

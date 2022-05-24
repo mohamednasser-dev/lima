@@ -1,6 +1,12 @@
 <?php
 
 return [
+    'finished' => 'تم الانتهاء',
+    "pending" => "تحت المراجعة",
+    "accepted" => "مقبول",
+    "rejected" => "مرفوض",
+
+    'liked__removed_s' => 'تم حذف الاعجاب بنجاح',
     'liked_s' => 'تم الاعجاب بنجاح',
     'like_added_before' => 'تم الاعجاب بالمحتوى من قبل',
     'fav_added_before' => 'تم الاضافة للمفضله من قبل',
