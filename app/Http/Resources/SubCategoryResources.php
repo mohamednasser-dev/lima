@@ -18,7 +18,7 @@ class SubCategoryResources extends JsonResource
             'id' => $this->id,
             'name' => $this->name,
             'image' => $this->image,
-            'selected' => false,
+//            'selected' => false,
         ];
     }
 }

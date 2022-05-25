@@ -19,7 +19,7 @@ class PostController extends GeneralController
         parent::__construct($model);
     }
 
-    public function posts($id)
+    public function sub_categories($id)
     {
         //selected category
         $category = Category::findOrFail($id);
@@ -29,10 +29,22 @@ class PostController extends GeneralController
             $id = $category->parent_id;
         }
         $child_categories = Category::where('parent_id', $id)->get();
+        $data = (SubCategoryResources::collection($child_categories));
+
+        return $this->sendResponse($data, __('lang.data_show_successfully'), 200);
+    }
+    public function posts($id)
+    {
+        //selected category
+        $category = Category::findOrFail($id);
+        //check if this sub category or not
+        $parents = [1, 2];
+        if (!in_array($category->parent_id, $parents)) {
+            $id = $category->parent_id;
+        }
         $sub_ids = Category::where('parent_id', $id)->get()->pluck('id')->toArray();
-        $data['sub_categories'] = (SubCategoryResources::collection($child_categories));
         $posts = $this->model::whereIn('category_id', $sub_ids)->orWhere('category_id', $id)->active()->paginate(20);
-        $data['content'] = (PostResources::collection($posts))->response()->getData(true);
+        $data = (PostResources::collection($posts))->response()->getData(true);
         return $this->sendResponse($data, __('lang.data_show_successfully'), 200);
     }
 

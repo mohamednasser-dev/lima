@@ -40,6 +40,7 @@ Route::group(['middleware' => ['api'], 'prefix' => "v1", 'namespace' => 'v1'], f
         //home
         Route::get('/home/categories/{id}', [HomeController::class, 'home']);
         //posts
+        Route::get('/category/sub_categories/{id}', [PostController::class, 'sub_categories']);
         Route::get('/category/posts/{id}', [PostController::class, 'posts']);
         Route::get('/post/details/{id}', [PostController::class, 'post_details']);
 
