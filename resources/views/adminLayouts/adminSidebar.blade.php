@@ -134,7 +134,7 @@
                 <li class="menu-item menu-item-submenu @if(request()->segment(1) == 'subscriptions') menu-item-open @endif "
                     aria-haspopup="true" data-menu-toggle="hover">
                     <a href="{{route('subscriptions')}}" class="menu-link menu-toggle">
-                        <i class="menu-icon fa fa-shield"></i>
+                        <i class="menu-icon fa fa-rocket"></i>
                         <span class="menu-text">
                             الاشتراكات
                              @if(new_subscription() > 0)
@@ -146,7 +146,6 @@
                                 </span>
                             @endif
                         </span>
-
                     </a>
                 </li>
             @endcan

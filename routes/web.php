@@ -199,9 +199,9 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::group(['prefix' => 'posts','as'=>'posts'], function () {
         $permission = 'posts';
-        Route::get('create/{type}', [PostController::class, 'create'])->name('.create')->middleware('permission:create-' . $permission);
+        Route::get('/{type}/create', [PostController::class, 'create'])->name('.create')->middleware('permission:create-' . $permission);
         Route::get('/{type}', [PostController::class, 'index'])->name('.index')->middleware('permission:read-' . $permission);
-        Route::get('/get_subcategory/{id}', [PostController::class, 'get_subcategory'])->name('.get_subcategory');
+        Route::get('/get_subcategory/{id}/{type}', [PostController::class, 'get_subcategory'])->name('.get_subcategory');
         Route::post('store', [PostController::class, 'store'])->name('.store')->middleware('permission:create-' . $permission);
         Route::get('edit/{id}', [PostController::class, 'edit'])->name('.edit')->middleware('permission:update-' . $permission);
         Route::get('show/{parent_id}', [PostController::class, 'show'])->name('.show')->middleware('permission:update-' . $permission);

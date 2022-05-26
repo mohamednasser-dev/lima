@@ -26,6 +26,7 @@ class CategoryRequest extends FormRequest
     public function rules()
     {
         return [
+            'type' => 'required|string|in:video,article',
             'name_ar' => 'required|string|max:255',
             'name_en' => 'required|string|max:255',
             'parent_id' => [

@@ -41,7 +41,7 @@ class PostResources extends JsonResource
             'likes' => (integer)$this->likes,
             'views' => (integer)$this->views,
             'type' => $this->type,
-            'free' => $free,
+            'free' => (integer)$free,
             'category_id' => $this->category_id,
             'category' => $this->Category->name,
             'fav' => $fav,

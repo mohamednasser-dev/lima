@@ -40,10 +40,11 @@ class PostController extends GeneralController
         //check if this sub category or not
         $parents = [1, 2];
         if (!in_array($category->parent_id, $parents)) {
-            $id = $category->parent_id;
+            $posts = $this->model::Where('category_id', $id)->active()->paginate(20);
+        }else{
+            $sub_ids = Category::where('parent_id', $id)->get()->pluck('id')->toArray();
+            $posts = $this->model::whereIn('category_id', $sub_ids)->active()->paginate(20);
         }
-        $sub_ids = Category::where('parent_id', $id)->get()->pluck('id')->toArray();
-        $posts = $this->model::whereIn('category_id', $sub_ids)->orWhere('category_id', $id)->active()->paginate(20);
         $data = (PostResources::collection($posts))->response()->getData(true);
         return $this->sendResponse($data, __('lang.data_show_successfully'), 200);
     }
