@@ -16,7 +16,7 @@ class FavPostsResources extends JsonResource
     {
         $fav = false;
         $is_liked = false;
-        $free = $this->free;
+        $free = $this->Post->free;
         if (apiUser()) {
             //check favorite
             $exists_fav = apiUser()->Favorites->where('post_id', $this->post_id)->first();
@@ -33,7 +33,7 @@ class FavPostsResources extends JsonResource
                 $is_liked = false;
             }
             //check subscription
-            if ($this->free == 0) {
+            if ($this->Post->free == 0) {
                 if (apiUser()->subscriber == 1) {
                     $free = 1;
                 } else {
