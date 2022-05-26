@@ -96,12 +96,12 @@ class Post extends Model
         return $this->belongsTo(Category::class, 'category_id');
     }
 
-    public function Likes()
+    public function postLikes()
     {
         return $this->hasMany(PostLike::class, 'post_id', 'id');
     }
 
-    public function Views()
+    public function postViews()
     {
         return $this->hasMany(PostView::class, 'post_id', 'id');
     }

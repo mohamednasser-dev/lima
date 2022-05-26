@@ -1,18 +1,33 @@
 <div class="card-body row">
-    <div class="form-group  col-6">
+    <div class="form-group  col-3">
         <label>الاسم بالعربيه<span
                 class="text-danger">*</span></label>
         <input name="name_ar" placeholder="الاسم بالعربيه" value="{{ old('name_ar', $data->name_ar ?? '') }}"
                class="form-control  {{ $errors->has('name_ar') ? 'border-danger' : '' }}" type="text"
                maxlength="255"/>
     </div>
-    <div class="form-group  col-6">
+    <div class="form-group  col-3">
         <label>الاسم بالانجليزيه<span
                 class="text-danger">*</span></label>
         <input name="name_en" placeholder="الاسم بالانجليزيه" style="direction: ltr;"
                value="{{ old('name_en', $data->name_en ?? '') }}"
                class="form-control  {{ $errors->has('name_en') ? 'border-danger' : '' }}" type="text"
                maxlength="255"/>
+    </div>
+    <div class="form-group  col-3">
+        <label>نوع محتوى القسم<span
+                class="text-danger">*</span></label>
+        <select name="type" class="form-control select2 {{ $errors->has('role_id') ? 'border-danger' : '' }}" id="kt_select2_1_modal">
+            @foreach($roles as $row)
+                <option
+                    @if(Request::segment(2)== 'edit')
+                    {{ $row->id == old('role_id',  $data->role_id)  ? 'selected' : '' }}
+                    @else
+                    {{ $row->id == old('role_id') ? 'selected' : '' }}
+                    @endif
+                    value="{{ $row->id }}">{{ $row->name }}</option>
+            @endforeach
+        </select>
     </div>
     <div class="form-group col-md-6">
         <label> صورة القسم
