@@ -1,6 +1,8 @@
 <?php
 
 return [
+    'fav_removed_successfully' => 'تم حذف المفضل بنجاح',
+    'fav_added_successfully' => 'تم الاضافة الى المفضل بنجاح',
     'finished' => 'تم الانتهاء',
     "pending" => "تحت المراجعة",
     "accepted" => "مقبول",

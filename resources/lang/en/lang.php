@@ -1,6 +1,8 @@
 <?php
 
 return [
+    'fav_removed_successfully' => 'favorite removed successfully',
+    'fav_added_successfully' => 'favorite added successfully',
     'finished' => 'finished',
     "pending" => "pending",
     "accepted" => "accepted",

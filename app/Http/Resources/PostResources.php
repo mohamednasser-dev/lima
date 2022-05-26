@@ -15,6 +15,7 @@ class PostResources extends JsonResource
     public function toArray($request)
     {
         $fav = false;
+        $is_liked = false;
         $free = $this->free;
         if (apiUser()) {
             //check favorite
@@ -23,6 +24,13 @@ class PostResources extends JsonResource
                 $fav = true;
             } else {
                 $fav = false;
+            }
+            //check favorite
+            $exists_like = apiUser()->Likes->where('post_id', $this->id)->first();
+            if ($exists_like) {
+                $is_liked = true;
+            } else {
+                $is_liked = false;
             }
             //check subscription
             if ($this->free == 0) {
@@ -45,6 +53,7 @@ class PostResources extends JsonResource
             'category_id' => $this->category_id,
             'category' => $this->Category->name,
             'fav' => $fav,
+            'is_liked' => $is_liked,
         ];
     }
 }

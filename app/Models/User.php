@@ -105,4 +105,9 @@ class User extends Authenticatable implements JWTSubject
         return $this->hasMany(Favorite::class, 'user_id', 'id');
     }
 
+    public function Likes()
+    {
+        return $this->hasMany(PostLike::class, 'user_id', 'id');
+    }
+
 }
