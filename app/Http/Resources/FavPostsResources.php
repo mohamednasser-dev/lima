@@ -15,14 +15,22 @@ class FavPostsResources extends JsonResource
     public function toArray($request)
     {
         $fav = false;
+        $is_liked = false;
         $free = $this->free;
         if (apiUser()) {
             //check favorite
-            $exists_fav = apiUser()->Favorites->where('post_id', $this->id)->first();
+            $exists_fav = apiUser()->Favorites->where('post_id', $this->post_id)->first();
             if ($exists_fav) {
                 $fav = true;
             } else {
                 $fav = false;
+            }
+            //check favorite
+            $exists_like = apiUser()->Likes->where('post_id', $this->post_id)->first();
+            if ($exists_like) {
+                $is_liked = true;
+            } else {
+                $is_liked = false;
             }
             //check subscription
             if ($this->free == 0) {
@@ -46,6 +54,7 @@ class FavPostsResources extends JsonResource
             'category_id' => $this->Post->category_id,
             'category' => $this->Post->Category->name,
             'fav' => $fav,
+            'is_liked' => $is_liked,
         ];
     }
 }
