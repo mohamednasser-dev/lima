@@ -73,7 +73,7 @@ class UserDataTable extends DataTable
                 ->title("<input type='checkbox' id='DataSelect' class='select-checkbox'>")
                 ->orderable(false)
                 ->width(30),
-            Column::make('image')->title('الصورة'),
+//            Column::make('image')->title('الصورة'),
             Column::make('name')->title('الاسم'),
             Column::make('phone')->title('رقم الهاتف'),
             Column::make('status')->title('التفعيل'),

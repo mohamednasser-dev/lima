@@ -225,18 +225,6 @@ class PermissionsSeeder extends Seeder
                 'display_name' => 'update pages',
                 'description' => 'تعديل الصفحات',
             ],
-            [
-                'path' => 'pages',
-                'name' => 'create-pages',
-                'display_name' => 'create pages',
-                'description' => 'إضافة الصفحات',
-            ],
-            [
-                'path' => 'pages',
-                'name' => 'delete-pages',
-                'display_name' => 'delete pages',
-                'description' => 'حذف الصفحات',
-            ],
             // screens permissions
             [
                 'path' => 'screens',
@@ -249,18 +237,6 @@ class PermissionsSeeder extends Seeder
                 'name' => 'update-screens',
                 'display_name' => 'update screens',
                 'description' => 'تعديل الشاشات الترحيبية',
-            ],
-            [
-                'path' => 'screens',
-                'name' => 'create-screens',
-                'display_name' => 'create screens',
-                'description' => 'إضافة الشاشات الترحيبية',
-            ],
-            [
-                'path' => 'screens',
-                'name' => 'delete-screens',
-                'display_name' => 'delete screens',
-                'description' => 'حذف الشاشات الترحيبية',
             ],
             // teams permissions
             [

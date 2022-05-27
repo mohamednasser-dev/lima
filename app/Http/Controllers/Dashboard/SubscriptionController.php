@@ -7,6 +7,7 @@ use App\Http\Controllers\GeneralController;
 use App\Http\Requests\TeamRequest;
 use App\DataTables\TeamDataTable;
 use App\Models\SubscriptionHistory;
+use App\Models\User;
 
 class SubscriptionController extends GeneralController
 {
@@ -28,7 +29,14 @@ class SubscriptionController extends GeneralController
 
     public function change_status($status,$id)
     {
-        $this->model::findOrFail($id)->update(['status'=>$status]);
+        $subscription = $this->model::findOrFail($id);
+        $subscription->status = $status ;
+        $subscription->save() ;
+        if($status == 'accepted'){
+            $user_data['subscriber'] = 1;
+            $user_data['subscription_ended_at'] = $subscription->ended_at;
+            User::find($subscription->user_id)->update($user_data);
+        }
         return redirect()->back()->with('success','تم تغيير الحالة بنجاح');
     }
 

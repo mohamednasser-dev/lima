@@ -14,6 +14,7 @@
                class="form-control  {{ $errors->has('name_en') ? 'border-danger' : '' }}" type="text"
                maxlength="255"/>
     </div>
+    @if(Request::segment(2) != 'edit')
     <div class="form-group  col-4">
         <label>نوع محتوى القسم<span
                 class="text-danger">*</span></label>
@@ -24,6 +25,7 @@
                     value="article">مقالات</option>
         </select>
     </div>
+    @endif
     <div class="form-group col-md-6">
         <label> صورة القسم
         </label>

@@ -1,4 +1,4 @@
-@php($title='تعديل المدينه')
+@php($title='تعديل القسم')
 @extends('adminLayouts.app')
 @section('title')
     {{$title}}

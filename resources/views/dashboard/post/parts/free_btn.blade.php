@@ -1,3 +1,4 @@
+@can('update-posts')
 <span class="switch">
     <label>
         <input type="checkbox" onchange="update_free(this)"
@@ -6,3 +7,4 @@
         <span></span>
     </label>
 </span>
+@endcan

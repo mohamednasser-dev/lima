@@ -17,6 +17,9 @@ class SubscriptionDataTable extends DataTable
             ->editColumn('selected_user_name', function(SubscriptionHistory $sub){
                 return $sub->User->name;
             })
+            ->editColumn('created_at', function ($request) {
+                return $request->created_at->format('Y-m-d'); // human readable format
+            })
             ->addColumn('action', 'dashboard.subscription.parts.action')
             ->rawColumns(['action','user_name','sub_type']);
     }
@@ -68,6 +71,7 @@ class SubscriptionDataTable extends DataTable
             Column::make('started_at')->class('text-center')->title('يبدأ في'),
             Column::make('ended_at')->class('text-center')->title('ينتهي في'),
             Column::make('cost')->class('text-center')->title('مبلغ الاشتراك'),
+//            Column::make('created_at')->class('text-center')->title('تاريخ طلب الاشتراك'),
             Column::make('type_name')->class('text-center')->title('طريقة الدفع'),
             Column::make('status_text')->class('text-center')->title('حالة الاشتراك'),
             Column::make('action')->class('text-center')->title('الاجرائات'),

@@ -54,7 +54,7 @@
             if (el.checked) {
                 var status = 'active';
             } else {
-                var status = 'unactive';
+                var status = 'inactive';
             }
             $.post('{{ route('users.change_status') }}', {
                 _token: '{{ csrf_token() }}',
