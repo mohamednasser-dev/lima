@@ -43,7 +43,11 @@ class PostController extends GeneralController
             $posts = $this->model::Where('category_id', $id)->active()->paginate(20);
         }else{
             $sub_ids = Category::where('parent_id', $id)->get()->pluck('id')->toArray();
-            $posts = $this->model::whereIn('category_id', $sub_ids)->active()->paginate(20);
+            if(count($sub_ids) > 0){
+                $posts = $this->model::whereIn('category_id', $sub_ids)->active()->paginate(20);
+            }else{
+                $posts = $this->model::where('category_id', $id)->active()->paginate(20);
+            }
         }
         $data = (PostResources::collection($posts))->response()->getData(true);
         return $this->sendResponse($data, __('lang.data_show_successfully'), 200);
