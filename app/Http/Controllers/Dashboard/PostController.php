@@ -103,6 +103,13 @@ class PostController extends GeneralController
         }
         unset($data['sub_category_id']);
         unset($data['sub_sub_category_id']);
+        if($request->image){
+            if (is_file($request->image)) {
+                $img_name = time() . uniqid() . '.' . $request->image->getClientOriginalExtension();
+                $request->image->move(public_path('/uploads/posts/'), $img_name);
+                $data['image'] = $img_name;
+            }
+        }
         $this->model::where('id', $id)->update($data);
         return redirect()->route($this->route . '.index', ['type' => $data['type']])->with('success', 'تم التعديل بنجاح');
 
