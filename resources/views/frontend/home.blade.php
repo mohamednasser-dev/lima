@@ -74,7 +74,7 @@
     </div>
     </div>
     <!-- .bg-level-1 -->
-    <div id="kids_middle_container">
+    <div id="kids_middle_container" class="kids_middle_container">
         <!-- .content -->
         <br>
         <br>

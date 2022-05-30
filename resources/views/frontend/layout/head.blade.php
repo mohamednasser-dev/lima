@@ -45,7 +45,9 @@
                                              supported by Chrome, Edge, Opera and Firefox */
         }
 
-
+        #kids_middle_container {
+            background-image: url({{url("/")}}/front/images/bg-2.png)!important;
+        }
 
 
     </style>
