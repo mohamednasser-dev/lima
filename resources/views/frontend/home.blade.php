@@ -151,7 +151,7 @@
                                             <section class='cws-widget'>
                                                 <div class='widget-title'>{{trans('lang.aboutUs')}}</div>
                                                 <section class='cws_widget_content'>
-                                                    <p><img class="alignleft border size-thumbnail"
+                                                    <p style="color: black;"><img class="alignleft border size-thumbnail"
                                                             src="{{ \App\Models\Page::where('type','about')->first()->image}}"
                                                             alt="content_img_1" width="150" height="150"/>
                                                         {!! \App\Models\Page::where('type','about')->first()->title !!}
