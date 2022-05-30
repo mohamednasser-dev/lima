@@ -146,6 +146,21 @@ class PermissionsSeeder extends Seeder
                 'description' => 'حذف العملاء',
             ],
 
+            // subscriptions permissions
+            [
+                'path' => 'subscriptions',
+                'name' => 'read-subscriptions',
+                'display_name' => 'read subscriptions',
+                'description' => 'عرض الاشتراك',
+            ],
+            [
+                'path' => 'subscriptions',
+                'name' => 'update-subscriptions',
+                'display_name' => 'update subscriptions',
+                'description' => 'تعديل الاشتراك',
+            ],
+
+
 
             // roles permissions
             [
@@ -210,18 +225,6 @@ class PermissionsSeeder extends Seeder
                 'display_name' => 'update pages',
                 'description' => 'تعديل الصفحات',
             ],
-            [
-                'path' => 'pages',
-                'name' => 'create-pages',
-                'display_name' => 'create pages',
-                'description' => 'إضافة الصفحات',
-            ],
-            [
-                'path' => 'pages',
-                'name' => 'delete-pages',
-                'display_name' => 'delete pages',
-                'description' => 'حذف الصفحات',
-            ],
             // screens permissions
             [
                 'path' => 'screens',
@@ -234,18 +237,6 @@ class PermissionsSeeder extends Seeder
                 'name' => 'update-screens',
                 'display_name' => 'update screens',
                 'description' => 'تعديل الشاشات الترحيبية',
-            ],
-            [
-                'path' => 'screens',
-                'name' => 'create-screens',
-                'display_name' => 'create screens',
-                'description' => 'إضافة الشاشات الترحيبية',
-            ],
-            [
-                'path' => 'screens',
-                'name' => 'delete-screens',
-                'display_name' => 'delete screens',
-                'description' => 'حذف الشاشات الترحيبية',
             ],
             // teams permissions
             [
@@ -271,6 +262,31 @@ class PermissionsSeeder extends Seeder
                 'name' => 'delete-teams',
                 'display_name' => 'delete teams',
                 'description' => 'حذف فريق العمل',
+            ],
+            // links permissions
+            [
+                'path' => 'links',
+                'name' => 'read-links',
+                'display_name' => 'read links',
+                'description' => 'عرض الروابط',
+            ],
+            [
+                'path' => 'links',
+                'name' => 'update-links',
+                'display_name' => 'update links',
+                'description' => 'تعديل الروابط',
+            ],
+            [
+                'path' => 'links',
+                'name' => 'create-links',
+                'display_name' => 'create links',
+                'description' => 'إضافة الروابط',
+            ],
+            [
+                'path' => 'links',
+                'name' => 'delete-links',
+                'display_name' => 'delete links',
+                'description' => 'حذف الروابط',
             ],
             // settings permissions
             [

@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Dashboard;
 
+use App\Http\Controllers\GeneralController;
 use App\Models\Category;
 use App\Models\Post;
 use App\Models\User;
-use App\Http\Controllers\GeneralController;
 
 class HomeController extends GeneralController
 {
@@ -27,7 +27,7 @@ class HomeController extends GeneralController
     public function index()
     {
         $data['post_videos'] = Post::where('type','video')->get()->count();
-        $data['categories'] = Category::where('parent_id',null)->get()->count();
+        $data['categories'] = Category::where('parent_id','!=',null)->get()->count();
         $data['customers'] = User::get()->count();
         $newest_customers  = User::orderBy('created_at', 'desc')->take(5)->get();
         return view('home',compact('data','newest_customers'));

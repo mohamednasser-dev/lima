@@ -161,8 +161,9 @@
         $(document).ready(function () {
             $('#kt_select2_1').change(function () {
                 var category = $(this).val();
+                var type = document.getElementById("txt_type").value;
                 $.ajax({
-                    url: "/posts/get_subcategory/" + category,
+                    url: "/posts/get_subcategory/" + category + "/" + type,
                     dataType: 'html',
                     type: 'get',
                     success: function (data) {
@@ -174,8 +175,9 @@
             });
             $('#kt_select2_2').change(function () {
                 var category = $(this).val();
+                var type = document.getElementById("txt_type").value;
                 $.ajax({
-                    url: "/posts/get_subcategory/" + category,
+                    url: "/posts/get_subcategory/" + category+ "/" + type,
                     dataType: 'html',
                     type: 'get',
                     success: function (data) {

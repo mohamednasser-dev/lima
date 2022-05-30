@@ -18,16 +18,10 @@ class PostDataTable extends DataTable
             ->addColumn('action', 'dashboard.post.parts.action')
             ->addColumn('free_btn', 'dashboard.post.parts.free_btn')
             ->escapeColumns(['name_en'])
-            ->editColumn('likes_count', function(Post $post){
-                return $post->Likes->count();
-            })
-            ->editColumn('views_count', function(Post $post){
-                return $post->Views->count();
-            })
             ->addColumn('id', function ($data) {
                 return "<input type='checkbox' name='data[]' class='data-item' value='{$data['id']}'/> ";
             })
-            ->rawColumns(['action', 'image', 'id','likes_count','views_count','free_btn']);
+            ->rawColumns(['action', 'image', 'id','free_btn']);
     }
 
     /**
@@ -78,8 +72,8 @@ class PostDataTable extends DataTable
                 ->width(30),
             Column::make('image')->class('text-center')->title('الصورة الاساسية'),
             Column::make('name_ar')->class('text-center')->title('عنوان المحتوى'),
-            Column::make('likes_count')->class('text-center')->title('عدد الاعجابات'),
-            Column::make('views_count')->class('text-center')->title('عدد المشاهدات'),
+            Column::make('likes')->class('text-center')->title('عدد الاعجابات'),
+            Column::make('views')->class('text-center')->title('عدد المشاهدات'),
             Column::make('free_btn')->class('text-center')->title('مجانا'),
             Column::make('action')->class('text-center')->title('الاجرائات'),
         ];

@@ -4,10 +4,10 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\GeneralController;
 use App\Http\Resources\FavPostsResources;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Favorite;
-use Illuminate\Support\Facades\Validator;
 
 class FavoriteController extends GeneralController
 {
@@ -30,12 +30,14 @@ class FavoriteController extends GeneralController
         if ($validator->fails()) {
             return response()->json(['status' =>  401, 'msg' => $validator->messages()->first()]);
         }
+        $user_id = apiUser()->id;
         try{
-            $data['user_id'] = apiUser()->id;
+            $data['user_id'] = $user_id;
             Favorite::create($data);
+            return $this->sendResponse((object)[],__('lang.fav_added_successfully'),200);
         }catch(\Exception $ex){
-            return response()->json(['status' =>  401, 'msg' =>__('lang.fav_added_before') ]);
+            Favorite::where('user_id',$user_id)->where('post_id',$request->post_id)->delete();
+            return $this->sendResponse((object)[],__('lang.fav_removed_successfully'),200);
         }
-        return $this->sendResponse((object)[],__('lang.data_added_successfully'),200);
     }
 }

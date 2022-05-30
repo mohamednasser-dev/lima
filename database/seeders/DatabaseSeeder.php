@@ -24,5 +24,6 @@ class DatabaseSeeder extends Seeder
         $this->call(CategorySeeder::class);
         $this->call(Pageseeder::class);
         $this->call(SubscriptionTypeSeeder::class);
+        $this->call(LinksSeeder::class);
     }
 }

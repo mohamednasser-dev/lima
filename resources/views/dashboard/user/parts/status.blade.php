@@ -1,3 +1,4 @@
+@can('update-users')
 <span class="switch">
     <label>
         <input type="checkbox" onchange="update_active(this)"
@@ -6,3 +7,4 @@
         <span></span>
     </label>
 </span>
+@endcan

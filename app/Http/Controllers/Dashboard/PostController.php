@@ -34,9 +34,9 @@ class PostController extends GeneralController
         return view($this->viewPath . '.create', compact('category', 'type'));
     }
 
-    public function get_subcategory($id)
+    public function get_subcategory($id,$type)
     {
-        $data = Category::where('parent_id', $id)->get();
+        $data = Category::where('type',$type)->where('parent_id', $id)->get();
         return view('dashboard.post.parts.subCategories', compact('data'));
     }
 
@@ -81,10 +81,10 @@ class PostController extends GeneralController
             }
         }
         //generate sub category data ...
-        $sub_category = Category::where('parent_id', $first_cat_id)->get();
+        $sub_category = Category::where('type',$data->type)->where('parent_id', $first_cat_id)->get();
 
         //generate sub sub category data ...
-        $sub_sub_category = Category::where('parent_id', $second_cat_id)->get();
+        $sub_sub_category = Category::where('type',$data->type)->where('parent_id', $second_cat_id)->get();
         $type = $data->type;
         return view($this->viewPath . '.edit', compact('data', 'category', 'first_cat_id', 'second_cat_id', 'third_cat_id', 'sub_category', 'sub_sub_category','type'));
     }
@@ -103,6 +103,13 @@ class PostController extends GeneralController
         }
         unset($data['sub_category_id']);
         unset($data['sub_sub_category_id']);
+        if($request->image){
+            if (is_file($request->image)) {
+                $img_name = time() . uniqid() . '.' . $request->image->getClientOriginalExtension();
+                $request->image->move(public_path('/uploads/posts/'), $img_name);
+                $data['image'] = $img_name;
+            }
+        }
         $this->model::where('id', $id)->update($data);
         return redirect()->route($this->route . '.index', ['type' => $data['type']])->with('success', 'تم التعديل بنجاح');
 

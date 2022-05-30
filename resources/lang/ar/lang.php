@@ -1,6 +1,14 @@
 <?php
 
 return [
+    'fav_removed_successfully' => 'تم حذف المفضل بنجاح',
+    'fav_added_successfully' => 'تم الاضافة الى المفضل بنجاح',
+    'finished' => 'تم الانتهاء',
+    "pending" => "تحت المراجعة",
+    "accepted" => "مقبول",
+    "rejected" => "مرفوض",
+
+    'liked__removed_s' => 'تم حذف الاعجاب بنجاح',
     'liked_s' => 'تم الاعجاب بنجاح',
     'like_added_before' => 'تم الاعجاب بالمحتوى من قبل',
     'fav_added_before' => 'تم الاضافة للمفضله من قبل',
@@ -14,8 +22,8 @@ return [
     'article' => 'مقال',
     'voice' => 'مقال صوتي',
     'video' => 'فيديو',
-    'visa' => 'اشتراك بالفيزا',
-    'cash' => 'اشتراك عن طريق مندوب',
+    'visa' => 'فيزا',
+    'cash' => 'عن طريق مندوب',
     'manual' => 'اشتراك من الادارة',
     'profile' => 'الصفحة الشخصية',
     'statuschanged' => 'تم تغيير الحاله بنجاح',

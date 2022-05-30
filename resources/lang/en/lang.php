@@ -1,6 +1,14 @@
 <?php
 
 return [
+    'fav_removed_successfully' => 'favorite removed successfully',
+    'fav_added_successfully' => 'favorite added successfully',
+    'finished' => 'finished',
+    "pending" => "pending",
+    "accepted" => "accepted",
+    "rejected" => "rejected",
+
+    'liked__removed_s' => 'Like deleted successfully',
     'liked_s' => 'liked done successfully',
     'like_added_before' => 'post liked before',
     'fav_added_before' => 'this added before in laravel',

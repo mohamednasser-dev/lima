@@ -14,6 +14,8 @@ use App\Http\Controllers\Dashboard\PostController;
 use App\Http\Controllers\Dashboard\PageController;
 use App\Http\Controllers\Dashboard\ScreenController;
 use App\Http\Controllers\Dashboard\TeamController;
+use App\Http\Controllers\Dashboard\SocialLinkController;
+use App\Http\Controllers\Dashboard\SubscriptionController;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
@@ -98,10 +100,14 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('update/{id}', [UserController::class, 'update'])->name('users.update')->middleware('permission:update-' . $permission);
         Route::post('deletes', [UserController::class, 'deletes'])->name('users.deletes')->middleware('permission:delete-' . $permission);
         Route::get('delete/{id}', [UserController::class, 'delete'])->name('users.delete')->middleware('permission:delete-' . $permission);
+    });
 
-        //userAddress
-        Route::get('address/{id}', [UserController::class, 'indexAddress'])->name('users.address')->middleware('permission:read-' . $permission);
-
+    // subscriptions Route
+    Route::group(['prefix' => 'subscriptions'], function () {
+        $permission = 'subscriptions';
+        Route::get('/', [SubscriptionController::class, 'index'])->name('subscriptions')->middleware('permission:read-' . $permission);
+        Route::get('show/{id}', [SubscriptionController::class, 'show'])->name('subscriptions.show')->middleware('permission:create-' . $permission);
+        Route::get('change_status/{status}/{id}', [SubscriptionController::class, 'change_status'])->name('subscriptions.change_status')->middleware('permission:update-' . $permission);
     });
 
 //sliders
@@ -138,6 +144,18 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('update/{id}', [ScreenController::class, 'update'])->name('screens.update')->middleware('permission:update-' . $permission);
         Route::post('deletes', [ScreenController::class, 'deletes'])->name('screens.deletes')->middleware('permission:delete-' . $permission);
         Route::get('delete/{id}', [ScreenController::class, 'delete'])->name('screens.delete')->middleware('permission:delete-' . $permission);
+    });
+
+    //links
+    Route::group(['prefix' => 'links'], function () {
+        $permission = 'links';
+        Route::get('/', [SocialLinkController::class, 'index'])->name('links')->middleware('permission:read-' . $permission);
+        Route::get('create', [SocialLinkController::class, 'create'])->name('links.create')->middleware('permission:create-' . $permission);
+        Route::post('store', [SocialLinkController::class, 'store'])->name('links.store')->middleware('permission:create-' . $permission);
+        Route::get('edit/{id}', [SocialLinkController::class, 'edit'])->name('links.edit')->middleware('permission:update-' . $permission);
+        Route::post('update/{id}', [SocialLinkController::class, 'update'])->name('links.update')->middleware('permission:update-' . $permission);
+        Route::post('deletes', [SocialLinkController::class, 'deletes'])->name('links.deletes')->middleware('permission:delete-' . $permission);
+        Route::get('delete/{id}', [SocialLinkController::class, 'delete'])->name('links.delete')->middleware('permission:delete-' . $permission);
     });
 
 
@@ -181,9 +199,9 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::group(['prefix' => 'posts','as'=>'posts'], function () {
         $permission = 'posts';
-        Route::get('create/{type}', [PostController::class, 'create'])->name('.create')->middleware('permission:create-' . $permission);
+        Route::get('/{type}/create', [PostController::class, 'create'])->name('.create')->middleware('permission:create-' . $permission);
         Route::get('/{type}', [PostController::class, 'index'])->name('.index')->middleware('permission:read-' . $permission);
-        Route::get('/get_subcategory/{id}', [PostController::class, 'get_subcategory'])->name('.get_subcategory');
+        Route::get('/get_subcategory/{id}/{type}', [PostController::class, 'get_subcategory'])->name('.get_subcategory');
         Route::post('store', [PostController::class, 'store'])->name('.store')->middleware('permission:create-' . $permission);
         Route::get('edit/{id}', [PostController::class, 'edit'])->name('.edit')->middleware('permission:update-' . $permission);
         Route::get('show/{parent_id}', [PostController::class, 'show'])->name('.show')->middleware('permission:update-' . $permission);

@@ -28,13 +28,14 @@ class UserRequest extends FormRequest
 
         return [
             'name' => 'required|string|max:191|min:3',
-            'image' => 'nullable|mimes:jpeg,jpg,png',
-            'email' => [
-                'required',
-                'email',
-                'max:191',
-                Rule::unique('users', 'email')->ignore($this->route('id'))
-            ],
+            'city_id' => 'required|exists:cities,id',
+//            'image' => 'nullable|mimes:jpeg,jpg,png',
+//            'email' => [
+//                'required',
+//                'email',
+//                'max:191',
+//                Rule::unique('users', 'email')->ignore($this->route('id'))
+//            ],
             'phone' => [
                 'string',
                 'required',
@@ -45,8 +46,8 @@ class UserRequest extends FormRequest
             'password' => [
                 'string',
                 'nullable',
-                'min:6',
-                'max:191',
+                'min:8',
+                'max:100',
                 'required_with:password_confirm',
                 'confirmed',
                 Rule::requiredIf(function() {

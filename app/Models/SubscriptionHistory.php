@@ -11,7 +11,7 @@ class SubscriptionHistory extends Model
 
     protected $guarded = [];
 
-    protected $appends = [ 'name' , 'type_name' ];
+    protected $appends = [ 'name' , 'type_name', 'status_text' ];
 
     public function getNameAttribute()
     {
@@ -28,7 +28,7 @@ class SubscriptionHistory extends Model
     }
     public function SubscribeType()
     {
-        return $this->belongsTo(User::class, 'subscribe_type_id');
+        return $this->belongsTo(SubscribeType::class, 'subscribe_type_id');
     }
 
 
@@ -40,6 +40,19 @@ class SubscriptionHistory extends Model
             return trans('lang.cash');
         } elseif ($this->type == 'manual') {
             return trans('lang.manual');
+        }
+    }
+
+    public function getStatusTextAttribute()
+    {
+        if ($this->status == 'accepted') {
+            return trans('lang.accepted');
+        } elseif ($this->status == 'rejected') {
+            return trans('lang.rejected');
+        } elseif ($this->status == 'finished') {
+            return trans('lang.finished');
+        } elseif ($this->status == 'pending') {
+            return trans('lang.pending');
         }
     }
 

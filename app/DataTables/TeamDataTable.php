@@ -62,7 +62,7 @@ class TeamDataTable extends DataTable
             Column::make('image')->class('text-center')->title('الصورة'),
             Column::make('title_ar')->class('text-center')->title('الاسم بالعربيه'),
             Column::make('title_en')->class('text-center')->title('الاسم بالانجليزيه'),
-            Column::make('job_en')->class('text-center')->title('الوظيفة بالعربيه'),
+            Column::make('job_ar')->class('text-center')->title('الوظيفة بالعربيه'),
             Column::make('job_en')->class('text-center')->title('الوظيفة بالانجليزيه'),
             Column::make('action')->class('text-center')->title('الاجرائات'),
         ];

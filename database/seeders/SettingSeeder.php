@@ -23,21 +23,11 @@ class SettingSeeder extends Seeder
             'login_pg' => 'uploads/setting/login_pg.png',
             'logo_login' => 'uploads/setting/login_page_logo.png',
             'location' => null,
-            'facebook' => 'https://www.facebook.com',
-            'google' => 'https://www.facebook.com',
-            'twitter' => null,
-            'instagram' => null,
-            'pinterest' => null,
-            'snapchat' => null,
-            'telegram' => null,
-            'youtube' => null,
             'address_ar' => 'المنوفية',
             'address_en' => 'al mnofia',
             'app_gif' => null,
             'accessKey' => 'accessKey9A3q9p6V0eKVizqYt9Su9KAMfORbccWrvoJVUCGPKqHBvEgvtJq',
         ];
-
-
         Setting::setMany($data);
     }
 }

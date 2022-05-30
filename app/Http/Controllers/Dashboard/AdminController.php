@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\Dashboard;
 
-use App\DataTables\AdminDataTable;
 use App\Http\Controllers\GeneralController;
-use App\Http\Requests\AdminRequest;
 use App\Http\Requests\General\MultiDelete;
-use App\Models\Admin;
+use App\Http\Requests\AdminRequest;
+use App\DataTables\AdminDataTable;
 use Illuminate\Support\Facades\DB;
 use Spatie\Permission\Models\Role;
+use App\Models\Admin;
 
 class AdminController extends GeneralController
 {

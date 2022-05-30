@@ -117,17 +117,17 @@
                         @endif
                     </div>
                 </li>
-                <li><a href="{{\App\Models\Setting::where('key', 'google')->first()->val}}" title="Google Plus"
+                <li><a href="#" title="Google Plus"
                        target="_blank"><i
                             class="fa fa-google-plus fa-2x"></i></a><span style="background-color:#dd4b39;"></span></li>
-                <li><a href="{{\App\Models\Setting::where('key', 'facebook')->first()->val}}" title="Facebook"
+                <li><a href="#" title="Facebook"
                        target="_blank"><i
                             class="fa fa-facebook fa-2x"></i></a><span style="background-color:#3b5998;"></span></li>
-                <li><a href="{{\App\Models\Setting::where('key', 'youtube')->first()->val}}" title="Youtube"
+                <li><a href="#" title="Youtube"
                        target="_blank"><i
                             class="fa fa-youtube-play fa-2x"></i></a><span style="background-color:#b31217;"></span>
                 </li>
-                <li><a href="{{\App\Models\Setting::where('key','twitter')->first()->val}}" title="Twitter"
+                <li><a href="#" title="Twitter"
                        target="_blank"><i
                             class="fa fa-twitter fa-2x"></i></a><span style="background-color:#4099ff;"></span></li>
 

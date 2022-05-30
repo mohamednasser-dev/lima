@@ -26,6 +26,14 @@ class CategoryRequest extends FormRequest
     public function rules()
     {
         return [
+            'type' => [
+                'nullable',
+                'string',
+                'in:video,article',
+                Rule::requiredIf(function() {
+                    return Request::routeIs('categories.create');
+                })
+            ],
             'name_ar' => 'required|string|max:255',
             'name_en' => 'required|string|max:255',
             'parent_id' => [

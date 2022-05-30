@@ -3,18 +3,17 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\GeneralController;
+use App\Http\Resources\ScreenResources;
 use App\Http\Resources\CityResources;
 use App\Http\Resources\PageResources;
-use App\Http\Resources\ScreenResources;
-use App\Http\Resources\SubscribeTypeResources;
 use App\Http\Resources\TeamResources;
+use Illuminate\Http\Request;
+use App\Models\SocialLink;
+use App\Models\Setting;
+use App\Models\Screen;
 use App\Models\City;
 use App\Models\Page;
-use App\Models\Screen;
-use App\Models\Setting;
-use App\Models\SubscribeType;
 use App\Models\Team;
-use Illuminate\Http\Request;
 use function auth;
 
 
@@ -25,12 +24,7 @@ class HelperController extends GeneralController
         parent::__construct($model);
     }
 
-    public function subscription_types(Request $request)
-    {
-        $data = SubscribeType::get();
-        $data = (SubscribeTypeResources::collection($data));
-        return $this->sendResponse($data, __('lang.data_show_successfully'), 200);
-    }
+
 
     public function cities(Request $request)
     {
@@ -61,18 +55,26 @@ class HelperController extends GeneralController
         return response()->json(msgdata($request, success(), __('lang.data_show_successfully'), $data));
     }
 
+
+    public function settings(Request $request)
+    {
+        $data = Setting::get();
+        return response()->json(msgdata($request, success(), __('lang.data_show_successfully'), $data));
+    }
+
     public function links(Request $request, $key)
     {
         $data = Setting::where('key', $key)->first();
         $result['result'] = "";
-        if($data){
+        if ($data) {
             $result['result'] = $data->val;
         }
         return response()->json(msgdata($request, success(), __('lang.data_show_successfully'), $result));
     }
-    public function settings(Request $request)
+
+    public function all_links(Request $request)
     {
-        $data = Setting::get();
+        $data = SocialLink::get();
         return response()->json(msgdata($request, success(), __('lang.data_show_successfully'), $data));
     }
 
