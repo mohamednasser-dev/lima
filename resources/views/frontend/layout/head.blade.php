@@ -46,7 +46,7 @@
         }
 
         #kids_middle_container {
-            background-image: url({{url("/")}}/front/images/bg-2.png)!important;
+            background-image: url({{url("/")}}/front/images/bg-2.png) !important;
         }
 
 
@@ -117,9 +117,10 @@
                         @endif
                     </div>
                 </li>
-                <li><a href="#" title="Google Plus"
-                       target="_blank"><i
-                            class="fa fa-google-plus fa-2x"></i></a><span style="background-color:#dd4b39;"></span></li>
+                <li><a href="#" class="lang_sel_sel icl-en"><img class="iclflag" style="padding-top: 12px;padding-right: 6px;"
+                                                                 src="{{url('front')}}/images/en.png"
+                                                                 alt="en" title="English"/> &nbsp;
+                    </a></li>
                 <li><a href="#" title="Facebook"
                        target="_blank"><i
                             class="fa fa-facebook fa-2x"></i></a><span style="background-color:#3b5998;"></span></li>
