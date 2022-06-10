@@ -1,6 +1,8 @@
 <?php
 
 return [
+    'current_pass_incorrect' => 'كلمة المرور الحلية غير صحيحه',
+    'user_password_updated_successfully' => 'تم تحديث كلمة المرور بنجاح',
     'fav_removed_successfully' => 'تم حذف المفضل بنجاح',
     'fav_added_successfully' => 'تم الاضافة الى المفضل بنجاح',
     'finished' => 'تم الانتهاء',
