@@ -135,7 +135,7 @@ return [
     'terms' => 'الشروط والاحكام',
     'privacy' => 'سياسة الخصوصية',
     'Home' => 'الرئيسية',
-    'aboutUs' => 'من نحن',
+    'aboutUs' => 'عن التطبيق',
     'ReadMore' => 'المزيد',
     'page not found' => 'الصفحة غير موجودة',
     'Unfortunately, this page is absent or unavailable' => 'للأسف هذه الصفحة غائبة أو غير متوفرة',
@@ -144,4 +144,5 @@ return [
     'team' => 'فريق العمل',
     'contact' => 'تواصل معنا',
     'screenShot' => 'صور التطبيق',
+    'my_account' => 'حسابي',
 ];

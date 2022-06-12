@@ -122,11 +122,12 @@
                 </li>
 
                 @foreach(\App\Models\SocialLink::all() as $link)
-                <li><a href="{{$link->link}}" class="lang_sel_sel icl-en"><img class="iclflag"
-                                                                 style="padding-top: 12px;padding-right: 6px;"
-                                                                 src="{{$link->imgae}}"
-                                                                 alt="{{$link->link}}" title="{{$link->link}}"/> &nbsp;
-                    </a></li>
+                    <li><a href="{{$link->link}}" class="lang_sel_sel icl-en"><img class="iclflag"
+                                                                                   style="padding-top: 12px;padding-right: 6px;"
+                                                                                   src="{{$link->imgae}}"
+                                                                                   alt="{{$link->link}}"
+                                                                                   title="{{$link->link}}"/> &nbsp;
+                        </a></li>
                 @endforeach
 
             </ul>
@@ -151,8 +152,11 @@
                     <li class="menu-item menu-item-type-custom menu-item-object-custom  @if(Request::segment(1) == "page" && Request::segment(2) == "4"   ) current-menu-item current_page_item @endif">
                         <a href="{{url('/page/4')}}">{{trans('lang.about80Fekra')}}</a></li>
 
-                    <li class="menu-item menu-item-type-custom menu-item-object-custom  @if(Request::segment(1) == "team"  ) current-menu-item current_page_item @endif">
-                        <a href="{{url('/')}}">{{trans('lang.team')}}</a></li>
+                    <li class="menu-item menu-item-type-custom menu-item-object-custom  @if(Request::segment(1) == "page" && Request::segment(2) == "1"   ) current-menu-item current_page_item @endif">
+                        <a href="{{url('/page/1')}}">{{trans('lang.aboutUs')}}</a></li>
+                    <li class="menu-item menu-item-type-custom menu-item-object-custom  @if(Request::segment(1) == "page" && Request::segment(2) == "5"   ) current-menu-item current_page_item @endif">
+                        <a href="{{url('/page/5')}}">{{trans('lang.contact')}}</a></li>
+
 
                     <li class="menu-item menu-item-type-custom menu-item-object-custom  @if(Request::segment(1) == "page" && Request::segment(2) == "3"   ) current-menu-item current_page_item @endif">
                         <a href="{{url('/page/3')}}">{{trans('lang.privacy')}}</a></li>
@@ -160,16 +164,13 @@
                     <li class="menu-item menu-item-type-custom menu-item-object-custom  @if(Request::segment(1) == "page" && Request::segment(2) == "2"   )  current-menu-item current_page_item @endif">
                         <a href="{{url('/page/2')}}">{{trans('lang.terms')}}</a></li>
 
-                    <li class="menu-item menu-item-type-custom menu-item-object-custom  @if(Request::segment(1) == "page" && Request::segment(2) == "5"   ) current-menu-item current_page_item @endif">
-                        <a href="{{url('/page/5')}}">{{trans('lang.contact')}}</a></li>
-
 
                     @if(!\Illuminate\Support\Facades\Auth::guard('users')->check())
                         <li class="menu-item menu-item-has-children
                                 @if(Request::segment(1) == "user-login" ||  Request::segment(1) == "register")
                             current-menu-item current_page_item
-@endif ">
-                            <a href="#">{{trans('lang.register')}}</a>
+                        @endif ">
+                            <a href="#">{{trans('lang.my_account')}}</a>
                             <ul class="sub-menu">
                                 <li class="menu-item"><a href="{{url('/user-login')}}">{{trans('lang.login')}}</a></li>
 
@@ -181,11 +182,13 @@
                         @if(Request::segment(1) == "user-profile" ||  Request::segment(1) == "subscribe"||  Request::segment(1) == "favourite-list")
                             current-menu-item current_page_item
                         @endif ">
-                            <a href="#">{{trans('lang.profile')}}</a>
+                            <a href="#">{{trans('lang.my_account')}}</a>
                             <ul class="sub-menu">
-                                <li class="menu-item"><a href="{{url('/user-profile')}}">{{trans('lang.profile')}}</a></li>
+                                <li class="menu-item"><a href="{{url('/user-profile')}}">{{trans('lang.profile')}}</a>
+                                </li>
 
-                                <li class="menu-item"><a href="{{url('/favourite-list')}}">{{trans('lang.favourite')}}</a></li>
+                                <li class="menu-item"><a
+                                        href="{{url('/favourite-list')}}">{{trans('lang.favourite')}}</a></li>
                                 <li class="menu-item"><a href="{{url('/subscribe')}}">{{trans('lang.subscribes')}}</a>
                                 <li class="menu-item"><a href="{{url('/user-logout')}}">{{trans('lang.logout')}}</a>
                                 </li>
