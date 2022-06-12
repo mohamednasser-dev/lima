@@ -63,7 +63,11 @@ class CategoryController extends GeneralController
         }
         $this->model::where('id', $id)->update($data);
         $row = $this->model::findOrFail($id);
-        return redirect()->route($this->route . '.show', ['parent_id' => $row->parent_id])->with('success', 'تم التعديل بنجاح');
+        if($row->parent_id != null){
+            return redirect()->route($this->route . '.show', ['parent_id' => $row->parent_id])->with('success', 'تم التعديل بنجاح');
+        }else{
+            return redirect()->route($this->route )->with('success', 'تم التعديل بنجاح');
+        }
 
     }
 
