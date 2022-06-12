@@ -7,6 +7,7 @@ use App\Models\Category;
 use App\Models\Post;
 use App\Models\Slider;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -44,7 +45,17 @@ class HomeController extends Controller
         $data['post'] = Post::findOrFail($id);
         $data['title'] = $data['post']->name;
         if ($data['post']->free == 0) {
-//            check auth subscribe
+
+            return view('frontend.post_details', compact('data'));
+
+        } elseif (Auth::guard('users')->check()) {
+            if (Auth::guard('users')->user()->subscriber == 1) {
+                return view('frontend.post_details', compact('data'));
+            } else {
+                abort(404);
+            }
+
+        }else{
             abort(404);
         }
 

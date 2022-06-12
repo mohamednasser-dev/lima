@@ -26,11 +26,11 @@
             <div class="kids_top_content_middle ">
                 <div class="header_container ">
                     <div class="l-page-width">
-                        <h1>{{$data['title']}}</h1>
+                        <h1>{!! $data['title'] !!}</h1>
                         <ul id="breadcrumbs">
                             <li><a href="{{url('/')}}" title="{{trans('lang.Home')}}">{{trans('lang.Home')}}</a></li>
                             <span class="">-</span>
-                            <li><span class="current_crumb">{{$data['title']}}</span></li>
+                            <li><span class="current_crumb">{!! $data['title'] !!}</span></li>
                         </ul>
                     </div>
                 </div>
@@ -51,7 +51,7 @@
                                     <div class='grid-row clearfix'>
                                         <div class='grid-col grid-col-12'>
                                             <section class='cws-widget'>
-                                                <div class='widget-title'>{{$data['title']}}</div>
+                                                <div class='widget-title'>{!! $data['title'] !!}</div>
                                                 <section class='cws_widget_content'>
                                                     <p>
                                                     <div class="content-wrapper alignleft">
@@ -76,7 +76,7 @@
                                                             <video
                                                                 style="background-color: black; @if(session('lang')=="ar") padding: 6px; @endif"
                                                                 controls="" disablepictureinpicture
-                                                                controlslist="nodownload"   name="media"
+                                                                controlslist="nodownload" name="media"
                                                                 id="video" width="500px" height="500px">
                                                                 <source src="{{$data['post']->video}}" type="video/mp4">
                                                             </video>
@@ -100,7 +100,9 @@
 
                                                     {{--                                                    <img class="alignleft border size-medium" src="{{$data['post']->image}}" alt="{{$data['post']->name}}" width="300" height="300" />--}}
                                                     </p>
-                                                    {!! $data['post']->body !!}
+                                                    <div style="color:black;font-size: x-large">
+                                                        {!! $data['post']->body !!}
+                                                    </div>
                                                 </section>
                                             </section>
                                         </div>
@@ -115,7 +117,7 @@
                             </div>
                             <!-- .entry-container -->
                         </div>
-{{--                        <div class="bg-level-2 second-part"></div>--}}
+                        {{--                        <div class="bg-level-2 second-part"></div>--}}
                     </div>
                     <!-- ***************** - END Image floating - *************** -->
                 </section>
