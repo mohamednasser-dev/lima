@@ -49,6 +49,9 @@
             background-image: url({{url("/")}}/front/images/bg-2.png) !important;
         }
 
+        .content_bottom_bg {
+            z-index: -10 !important;
+        }
 
     </style>
 </head>
@@ -117,21 +120,14 @@
                         @endif
                     </div>
                 </li>
-                <li><a href="#" class="lang_sel_sel icl-en"><img class="iclflag" style="padding-top: 12px;padding-right: 6px;"
-                                                                 src="{{url('front')}}/images/en.png"
-                                                                 alt="en" title="English"/> &nbsp;
-                    </a></li>
-                <li><a href="#" title="Facebook"
-                       target="_blank"><i
-                            class="fa fa-facebook fa-2x"></i></a><span style="background-color:#3b5998;"></span></li>
-                <li><a href="#" title="Youtube"
-                       target="_blank"><i
-                            class="fa fa-youtube-play fa-2x"></i></a><span style="background-color:#b31217;"></span>
-                </li>
-                <li><a href="#" title="Twitter"
-                       target="_blank"><i
-                            class="fa fa-twitter fa-2x"></i></a><span style="background-color:#4099ff;"></span></li>
 
+                @foreach(\App\Models\SocialLink::all() as $link)
+                <li><a href="{{$link->link}}" class="lang_sel_sel icl-en"><img class="iclflag"
+                                                                 style="padding-top: 12px;padding-right: 6px;"
+                                                                 src="{{$link->imgae}}"
+                                                                 alt="{{$link->link}}" title="{{$link->link}}"/> &nbsp;
+                    </a></li>
+                @endforeach
 
             </ul>
             <!-- .kids_social -->
@@ -152,35 +148,51 @@
                     <li class="menu-item menu-item-type-custom menu-item-object-custom  @if(Request::segment(1) == "home" || Request::segment(1) == "" ) current-menu-item current_page_item @endif">
                         <a href="{{url('/')}}">{{trans('lang.Home')}}</a></li>
 
-                    <li class="menu-item menu-item-type-custom menu-item-object-custom  @if(Request::segment(1) == "about80Fekra"  ) current-menu-item current_page_item @endif">
-                        <a href="{{url('/')}}">{{trans('lang.about80Fekra')}}</a></li>
+                    <li class="menu-item menu-item-type-custom menu-item-object-custom  @if(Request::segment(1) == "page" && Request::segment(2) == "4"   ) current-menu-item current_page_item @endif">
+                        <a href="{{url('/page/4')}}">{{trans('lang.about80Fekra')}}</a></li>
 
                     <li class="menu-item menu-item-type-custom menu-item-object-custom  @if(Request::segment(1) == "team"  ) current-menu-item current_page_item @endif">
                         <a href="{{url('/')}}">{{trans('lang.team')}}</a></li>
 
-                    <li class="menu-item menu-item-type-custom menu-item-object-custom  @if(Request::segment(1) == "privacy"  ) current-menu-item current_page_item @endif">
-                        <a href="{{url('/')}}">{{trans('lang.privacy')}}</a></li>
+                    <li class="menu-item menu-item-type-custom menu-item-object-custom  @if(Request::segment(1) == "page" && Request::segment(2) == "3"   ) current-menu-item current_page_item @endif">
+                        <a href="{{url('/page/3')}}">{{trans('lang.privacy')}}</a></li>
 
-                    <li class="menu-item menu-item-type-custom menu-item-object-custom  @if(Request::segment(1) == "terms"  ) current-menu-item current_page_item @endif">
-                        <a href="{{url('/')}}">{{trans('lang.terms')}}</a></li>
+                    <li class="menu-item menu-item-type-custom menu-item-object-custom  @if(Request::segment(1) == "page" && Request::segment(2) == "2"   )  current-menu-item current_page_item @endif">
+                        <a href="{{url('/page/2')}}">{{trans('lang.terms')}}</a></li>
 
-                    <li class="menu-item menu-item-type-custom menu-item-object-custom  @if(Request::segment(1) == "contact"  ) current-menu-item current_page_item @endif">
-                        <a href="{{url('/')}}">{{trans('lang.contact')}}</a></li>
-                    {{--                    <li class="menu-item menu-item-has-children"><a href="page-features.html">Features</a>--}}
-                    {{--                        <ul class="sub-menu">--}}
-                    {{--                            <li class="menu-item"><a href="page-features.html">Template Features</a></li>--}}
-                    {{--                            <li class="menu-item menu-item-has-children"><a href="content-elements.html">Content--}}
-                    {{--                                    Elements</a>--}}
-                    {{--                                <ul class="sub-menu">--}}
-                    {{--                                    <li class="menu-item"><a href="page-grid.html">Grids Showcase</a></li>--}}
-                    {{--                                    <li class="menu-item"><a href="content-elements.html">Content Elements</a></li>--}}
-                    {{--                                    <li class="menu-item"><a href="page-video.html">Video</a></li>--}}
-                    {{--                                    <li class="menu-item"><a href="typography.html">Text and Headings</a></li>--}}
-                    {{--                                </ul>--}}
-                    {{--                            </li>--}}
-                    {{--                            <li class="menu-item"><a href="pricing-tables.html">Pricing Tables</a></li>--}}
-                    {{--                        </ul>--}}
-                    {{--                    </li>--}}
+                    <li class="menu-item menu-item-type-custom menu-item-object-custom  @if(Request::segment(1) == "page" && Request::segment(2) == "5"   ) current-menu-item current_page_item @endif">
+                        <a href="{{url('/page/5')}}">{{trans('lang.contact')}}</a></li>
+
+
+                    @if(!\Illuminate\Support\Facades\Auth::guard('users')->check())
+                        <li class="menu-item menu-item-has-children
+                                @if(Request::segment(1) == "user-login" ||  Request::segment(1) == "register")
+                            current-menu-item current_page_item
+@endif ">
+                            <a href="#">{{trans('lang.register')}}</a>
+                            <ul class="sub-menu">
+                                <li class="menu-item"><a href="{{url('/user-login')}}">{{trans('lang.login')}}</a></li>
+
+                                <li class="menu-item"><a href="{{url('/')}}">{{trans('lang.register')}}</a></li>
+                            </ul>
+                        </li>
+                    @else
+                        <li class="menu-item menu-item-has-children
+                        @if(Request::segment(1) == "user-profile" ||  Request::segment(1) == "subscribe"||  Request::segment(1) == "favourite-list")
+                            current-menu-item current_page_item
+                        @endif ">
+                            <a href="#">{{trans('lang.profile')}}</a>
+                            <ul class="sub-menu">
+                                <li class="menu-item"><a href="{{url('/user-profile')}}">{{trans('lang.profile')}}</a></li>
+
+                                <li class="menu-item"><a href="{{url('/favourite-list')}}">{{trans('lang.favourite')}}</a></li>
+                                <li class="menu-item"><a href="{{url('/subscribe')}}">{{trans('lang.subscribes')}}</a>
+                                <li class="menu-item"><a href="{{url('/user-logout')}}">{{trans('lang.logout')}}</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                    @endif
                     {{--                    <li class="menu-item menu-item-has-children"><a href="full-width-page.html">Pages</a>--}}
                     {{--                        <ul class="sub-menu">--}}
                     {{--                            <li class="menu-item"><a href="full-width-page.html">Full Width Page</a></li>--}}

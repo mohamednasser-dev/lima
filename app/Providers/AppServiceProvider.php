@@ -28,12 +28,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        ob_start();
         Paginator::useBootstrap();
         //for make api language make changes in system language
         $languages = ['ar', 'en'];
         App::setLocale('ar');
         Schema::defaultStringLength(255);
-
         $lang = request()->header('lang');
         if ($lang) {
             if (in_array($lang, $languages)) {

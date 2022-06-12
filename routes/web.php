@@ -46,6 +46,17 @@ Route::get('/', [\App\Http\Controllers\Front\HomeController::class, 'Home'])->na
 Route::get('/home', [\App\Http\Controllers\Front\HomeController::class, 'Home'])->name('front.home');
 Route::get('/category-details/{id}', [\App\Http\Controllers\Front\HomeController::class, 'CategoryDetails']);
 Route::get('/post-details/{id}', [\App\Http\Controllers\Front\HomeController::class, 'PostDetails']);
+Route::get('/user-login', [\App\Http\Controllers\Front\AuthController::class, 'Login'])->name('front.login');
+Route::post('/user-login', [\App\Http\Controllers\Front\AuthController::class, 'DoLogin'])->name('front.DoLogin');
+Route::get('/page/{id}', [\App\Http\Controllers\Front\PagesController::class, 'page'])->name('front.page');
+
+
+Route::group(['middleware' => 'AuthUser'], function () {
+    Route::get('/user-profile', [\App\Http\Controllers\Front\AuthController::class, 'Profile']);
+    Route::get('/user-logout', [\App\Http\Controllers\Front\AuthController::class, 'logout']);
+    Route::post('/update-profile', [\App\Http\Controllers\Front\AuthController::class, 'Update_Profile']);
+    Route::get('/favourite-list', [\App\Http\Controllers\Front\FavouritesController::class, 'Favourite_List']);
+});
 
 Route::get('lang/{lang}', function ($lang) {
     if (session()->has('lang')) {
@@ -185,7 +196,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('change_active', [TeamController::class, 'change_active'])->name('teams.change_active')->middleware('permission:delete-' . $permission);
     });
 
-    Route::group(['prefix' => 'categories','as'=>'categories'], function () {
+    Route::group(['prefix' => 'categories', 'as' => 'categories'], function () {
         $permission = 'categories';
         Route::get('/', [CategoryController::class, 'index'])->middleware('permission:read-' . $permission);
         Route::get('create/{parent_id}', [CategoryController::class, 'create'])->name('.create')->middleware('permission:create-' . $permission);
@@ -197,7 +208,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('delete/{id}', [CategoryController::class, 'delete'])->name('.delete')->middleware('permission:delete-' . $permission);
     });
 
-    Route::group(['prefix' => 'posts','as'=>'posts'], function () {
+    Route::group(['prefix' => 'posts', 'as' => 'posts'], function () {
         $permission = 'posts';
         Route::get('/{type}/create', [PostController::class, 'create'])->name('.create')->middleware('permission:create-' . $permission);
         Route::get('/{type}', [PostController::class, 'index'])->name('.index')->middleware('permission:read-' . $permission);

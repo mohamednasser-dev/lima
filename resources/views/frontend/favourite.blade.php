@@ -2,7 +2,7 @@
 @push('css')
 @endpush
 @section('title')
-{{$data['title']}}
+{{$title}}
 @endsection
 @section('content')
 
@@ -32,12 +32,12 @@
                                                     {{--                                                        for eac main category    --}}
 
                                                     <main>
-                                                        <div
-                                                            class='widget-title'>{{$data['main_categories']->name}}</div>
+                                                        {{--                                                        <div--}}
+                                                        {{--                                                            class='widget-title'>{{$data['main_categories']->name}}</div>--}}
                                                         <div class="portfolio iso-column iso-four-column">
                                                             <div class="grid isotope" data-ppp="8"
                                                                  data-cols="954">
-                                                                @foreach($data['main_categories']->Posts as $post)
+                                                                @foreach($favourites as $post)
                                                                     <div data-categories="happyfeet"
                                                                          class="iso-item happyfeet">
                                                                         <div class="content-wrapper">
@@ -66,14 +66,13 @@
                                                                                    href="{{url('user-login')}}"
                                                                                     @endif
                                                                                 >
-                                                                                    {!! $post->name !!}
+                                                                                   {!! $post->name !!}
                                                                                 </a>
 
                                                                             </div>
                                                                             {{--                                                                               <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetuer ...</p>--}}
                                                                         </div>
                                                                         <div class="post-footer">
-
                                                                             <a class="cws_button"
                                                                                {{--                                                                                   &&                                            --}}
                                                                                @if($post->free == 1 )

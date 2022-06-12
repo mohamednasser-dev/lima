@@ -28,7 +28,7 @@
                 <div class="l-page-width">
                     <h1>404</h1>
                     <ul id="breadcrumbs">
-                        <li><a href="index.html" title="Home">Home</a></li> <span class="delimiter">&gt;</span>
+                        <li><a href="/" title="Home">Home</a></li> <span class="delimiter">&gt;</span>
                         <li><span class="current_crumb">404 page</span></li>
                     </ul>
                 </div>
