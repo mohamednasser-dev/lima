@@ -41,12 +41,28 @@
                                                                     <div data-categories="happyfeet"
                                                                          class="iso-item happyfeet">
                                                                         <div class="content-wrapper">
-                                                                            <figure>
-                                                                                <img
-                                                                                    src='{{$post->image}}'
-                                                                                    width='278' height='182'
-                                                                                    alt='{{$post->name}}'/>
-                                                                            </figure>
+                                                                            <a
+                                                                                {{--                                                                                   &&                                            --}}
+                                                                                @if($post->free == 1 )
+                                                                                href="{{url('post-details/'.$post->id)}}"
+                                                                                @elseif(\Illuminate\Support\Facades\Auth::guard('users')->check())
+
+                                                                                @if(\Illuminate\Support\Facades\Auth::guard('users')->user()->subscriber == 1)
+                                                                                href="{{url('post-details/'.$post->id)}}"
+                                                                                @else
+                                                                                href="{{url('subscribe')}}"
+                                                                                @endif
+                                                                                @else
+                                                                                href="{{url('user-login')}}"
+                                                                                @endif
+                                                                            >
+                                                                                <figure>
+                                                                                    <img
+                                                                                        src='{{$post->image}}'
+                                                                                        width='278px' height='182px'
+                                                                                        alt='{{$post->name}}'/>
+                                                                                </figure>
+                                                                            </a>
                                                                         </div>
                                                                         <!--/ content-wrapper-->
                                                                         <div class="gallery-text">
@@ -66,32 +82,32 @@
                                                                                    href="{{url('user-login')}}"
                                                                                     @endif
                                                                                 >
-                                                                                   {!! $post->name !!}
+                                                                                    {!! $post->name !!}
                                                                                 </a>
 
                                                                             </div>
                                                                             {{--                                                                               <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetuer ...</p>--}}
                                                                         </div>
-                                                                        <div class="post-footer">
-                                                                            <a class="cws_button"
-                                                                               {{--                                                                                   &&                                            --}}
-                                                                               @if($post->free == 1 )
-                                                                               href="{{url('post-details/'.$post->id)}}"
-                                                                               @elseif(\Illuminate\Support\Facades\Auth::guard('users')->check())
+                                                                    {{--                                                                        <div class="post-footer">--}}
+                                                                    {{--                                                                            <a class="cws_button"--}}
+                                                                    {{--                                                                               --}}{{--                                                                                   &&                                            --}}
+                                                                    {{--                                                                               @if($post->free == 1 )--}}
+                                                                    {{--                                                                               href="{{url('post-details/'.$post->id)}}"--}}
+                                                                    {{--                                                                               @elseif(\Illuminate\Support\Facades\Auth::guard('users')->check())--}}
 
-                                                                               @if(\Illuminate\Support\Facades\Auth::guard('users')->user()->subscriber == 1)
-                                                                               href="{{url('post-details/'.$post->id)}}"
-                                                                               @else
-                                                                               href="{{url('subscribe')}}"
-                                                                               @endif
-                                                                               @else
-                                                                               href="{{url('user-login')}}"
-                                                                                @endif
-                                                                            >
-                                                                                {{trans('lang.ReadMore')}}
-                                                                            </a>
-                                                                        </div>
-                                                                        <!--/ post-footer-->
+                                                                    {{--                                                                               @if(\Illuminate\Support\Facades\Auth::guard('users')->user()->subscriber == 1)--}}
+                                                                    {{--                                                                               href="{{url('post-details/'.$post->id)}}"--}}
+                                                                    {{--                                                                               @else--}}
+                                                                    {{--                                                                               href="{{url('subscribe')}}"--}}
+                                                                    {{--                                                                               @endif--}}
+                                                                    {{--                                                                               @else--}}
+                                                                    {{--                                                                               href="{{url('user-login')}}"--}}
+                                                                    {{--                                                                                @endif--}}
+                                                                    {{--                                                                            >--}}
+                                                                    {{--                                                                                {{trans('lang.ReadMore')}}--}}
+                                                                    {{--                                                                            </a>--}}
+                                                                    {{--                                                                        </div>--}}
+                                                                    <!--/ post-footer-->
                                                                         <div class="kids_clear"></div>
                                                                     </div>
                                                                 @endforeach

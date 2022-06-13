@@ -84,7 +84,7 @@
 
                                                             <img class="alignleft border size-medium"
                                                                  src="{{$data['post']->image}}"
-                                                                 alt="{{$data['post']->name}}" width="500px"
+                                                                 alt="img" width="500px"
                                                                  height="500px"/>
                                                         @endif
                                                         {{--                                                        <iframe--}}

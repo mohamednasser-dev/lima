@@ -105,12 +105,15 @@
                                                                             <div data-categories="happyfeet"
                                                                                  class="iso-item happyfeet">
                                                                                 <div class="content-wrapper">
+                                                                                    <a
+                                                                                       href="{{url('category-details/'.$subCategory->id)}}">
                                                                                     <figure>
                                                                                         <img
                                                                                             src='{{$subCategory->image}}'
-                                                                                            width='278' height='182'
+                                                                                            width='278px' height='182px'
                                                                                             alt='{{$subCategory->name}}'/>
                                                                                     </figure>
+                                                                                    </a>
                                                                                 </div>
                                                                                 <!--/ content-wrapper-->
                                                                                 <div class="gallery-text">
