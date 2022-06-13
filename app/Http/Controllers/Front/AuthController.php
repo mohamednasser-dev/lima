@@ -22,6 +22,16 @@ class AuthController extends Controller
 
     public function DoLogin(Request $request)
     {
+        $data = $request->all();
+        $validator = Validator::make($data, [
+            'phone' => 'required',
+            'password' => 'required',
+        ]);
+        if ($validator->fails()) {
+
+            Alert::warning(trans('lang.warning'), $validator->messages()->first());
+            return redirect()->back();
+        }
 
         $data = $this->validate(request(), [
             'phone' => 'required',
@@ -49,13 +59,19 @@ class AuthController extends Controller
 
     public function Update_Profile(Request $request)
     {
-        $data = $this->validate(request(), [
+        $data = $request->all();
+        $validator = Validator::make($data, [
             'phone' => 'required|string|max:20|unique:users,phone,' . Auth::guard('users')->user()->id,
             'name' => 'required|string',
             'city_id' => 'required|exists:cities,id',
             'password' => 'nullable|confirmed',
-
         ]);
+        if ($validator->fails()) {
+
+            Alert::warning(trans('lang.warning'), $validator->messages()->first());
+            return redirect()->back();
+        }
+
 
         $user = Auth::guard('users')->user();
         $user->name = $request->name;
@@ -92,6 +108,19 @@ class AuthController extends Controller
 
     public function Register(Request $request)
     {
+        $data = $request->all();
+        $validator = Validator::make($data, [
+            'name' => 'required|string|min:2|max:255',
+            'phone' => 'required|string|unique:users,phone|max:20',
+            'city_id' => 'required|exists:cities,id',
+            'password' => 'required|string|confirmed|min:8|max:100',
+        ]);
+        if ($validator->fails()) {
+
+            Alert::warning(trans('lang.warning'), $validator->messages()->first());
+            return redirect()->back();
+        }
+
         $data = $this->validate(request(), [
             'name' => 'required|string|min:2|max:255',
             'phone' => 'required|string|unique:users,phone|max:20',
@@ -116,7 +145,19 @@ class AuthController extends Controller
 
     public function verify_phone(Request $request)
     {
+        $data = $request->all();
+        $validator = Validator::make($data, [
+            'name' => 'required|string|min:2|max:255',
+            'phone' => 'required|string|unique:users,phone|max:20',
+            'city_id' => 'required|exists:cities,id',
+            'password' => 'required|string|min:8|max:100',
+            'otp' => 'required|numeric|min:4',
+        ]);
+        if ($validator->fails()) {
 
+            Alert::warning(trans('lang.warning'), $validator->messages()->first());
+            return redirect()->back();
+        }
 
         $data = $this->validate(request(), [
             'name' => 'required|string|min:2|max:255',
