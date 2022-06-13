@@ -65,6 +65,7 @@ return [
     'terms' => 'terms',
     'contact' => 'contact',
     'screenShot' => 'App Screen Shot',
+    'LE' => 'LE',
 
 
 ];

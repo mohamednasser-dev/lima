@@ -43,7 +43,7 @@
                                                     <div class="price_part"> {{$type->month_count}} {{trans('lang.month')}} </div>
                                                     <div class="content_part">
                                                         <ul class="listing">
-                                                            <li><i class="fa fa-dollar"></i>  {{$type->cost}} {{trans('lang.LE')}}</li>
+                                                            <li><i class="fa fa-pound-sign"></i>  {{$type->cost}} {{trans('lang.LE')}}</li>
 
                                                         </ul>
 
