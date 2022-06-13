@@ -33,7 +33,8 @@
 
                                                     <main>
                                                         <div
-                                                            class='widget-title'>{{$data['main_categories']->name}}</div>
+                                                            class='widget-title'
+                                                            style="text-align: center;">{{$data['main_categories']->name}}</div>
                                                         <div class="portfolio iso-column iso-four-column">
                                                             <div class="grid isotope" data-ppp="8"
                                                                  data-cols="954">
@@ -58,22 +59,45 @@
                                                                             >
                                                                                 <figure>
                                                                                     <img class="img_post"
-                                                                                        src='{{$post->image}}'
-                                                                                        width='278px' height='182px'
-                                                                                        alt='img'/>
+                                                                                         src='{{$post->image}}'
+                                                                                         width='278px' height='182px'
+                                                                                         alt='img'/>
                                                                                 </figure>
                                                                             </a>
                                                                         </div>
                                                                         <!--/ content-wrapper-->
                                                                         <div class="gallery-text">
                                                                             <div class="title">
+                                                                                @if(auth()->guard('users')->check())
+                                                                                    @dd(auth()->guard('users')->user()->FavouritePosts);
+                                                                                    @if(in_array($post->id,auth()->guard('users')->user()->FavouritePosts))
+                                                                                        <a href="{{route('posts.make_favorite')}}">
+                                                                                            <img
+                                                                                                style="margin-right: -137px;margin-top: -219px;position: fixed;"
+                                                                                                src="{{url('/')}}/front/images/heart.png">
+                                                                                        </a>
+                                                                                    @else
+                                                                                        <a href="{{route('posts.make_favorite')}}">
+                                                                                            {{--                <img style="margin-right: -137px;margin-top: -219px;position: fixed;" src="{{url('/')}}/front/images/heart.png">--}}
+                                                                                            <img
+                                                                                                style="margin-right: -137px;margin-top: -219px;position: fixed;"
+                                                                                                src="{{url('/')}}/front/images/heart_empty.png">
+                                                                                        </a>
+                                                                                    @endif
 
+                                                                                @else
+                                                                                    <a href="{{url('user-login')}}">
+                                                                                        <img
+                                                                                            style="margin-right: -137px;margin-top: -219px;position: fixed;"
+                                                                                            src="{{url('/')}}/front/images/heart_empty.png">
+                                                                                    </a>
+                                                                                @endif
                                                                                 <a class="link"
                                                                                    {{--                                                                                   &&                                            --}}
                                                                                    @if($post->free == 1 )
                                                                                    href="{{url('post-details/'.$post->id)}}"
-                                                                                   @elseif(\Illuminate\Support\Facades\Auth::guard('users')->check())
-                                                                                   @if(\Illuminate\Support\Facades\Auth::guard('users')->user()->subscriber == 1)
+                                                                                   @elseif(auth()->guard('users')->check())
+                                                                                   @if(auth()->guard('users')->user()->subscriber == 1)
                                                                                    href="{{url('post-details/'.$post->id)}}"
                                                                                    @else
                                                                                    href="{{url('subscribe')}}"

@@ -45,6 +45,8 @@ Route::get('cache', function () {
 Route::get('/', [\App\Http\Controllers\Front\HomeController::class, 'Home'])->name('front.home');
 Route::get('/home', [\App\Http\Controllers\Front\HomeController::class, 'Home'])->name('front.home');
 Route::get('/category-details/{id}', [\App\Http\Controllers\Front\HomeController::class, 'CategoryDetails']);
+Route::get('posts/make_favorite/{id}',  [\App\Http\Controllers\Front\HomeController::class, 'make_favorite'])->name('post.make_favorite');
+
 Route::get('/post-details/{id}', [\App\Http\Controllers\Front\HomeController::class, 'PostDetails']);
 Route::get('/user-login', [\App\Http\Controllers\Front\AuthController::class, 'Login'])->name('front.login');
 Route::post('/user-login', [\App\Http\Controllers\Front\AuthController::class, 'DoLogin'])->name('front.DoLogin');

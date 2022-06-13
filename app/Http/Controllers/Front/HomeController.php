@@ -4,10 +4,12 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Favorite;
 use App\Models\Post;
 use App\Models\Slider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class HomeController extends Controller
 {
@@ -19,6 +21,22 @@ class HomeController extends Controller
 
         $data['sliders'] = Slider::all();
         return view('frontend.home', compact('data'));
+    }
+
+    public function make_favorite($id)
+    {
+        $user_id = auth()->guard('users')->user()->id;
+        try {
+            $data['post_id'] = $id;
+            $data['user_id'] = $user_id;
+            Favorite::create($data);
+            Alert::success(trans('lang.done'), trans('lang.post_favorite_added'));
+
+        } catch (\Exception $ex) {
+            Favorite::where('user_id', $user_id)->where('post_id', $id)->delete();
+            Alert::success(trans('lang.done'), trans('lang.post_favorite_removed'));
+        }
+        return redirect()->back();
     }
 
     public function CategoryDetails($id)
@@ -41,7 +59,6 @@ class HomeController extends Controller
     }
 
 
-
     public function PostDetails($id)
     {
         $data['post'] = Post::findOrFail($id);
@@ -57,10 +74,9 @@ class HomeController extends Controller
                 return redirect(url('subscribe'));
             }
 
-        }else{
-           return redirect(url('user-login'));
+        } else {
+            return redirect(url('user-login'));
         }
-
 
 
     }
