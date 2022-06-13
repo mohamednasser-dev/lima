@@ -65,8 +65,8 @@
 
                                                                 <img class="alignleft border size-medium"
                                                                      src="{{$data['post']->image}}"
-                                                                     alt="{{$data['post']->name}}" width="300"
-                                                                     height="300"/></a>
+                                                                     alt="img" width="300px"
+                                                                     height="300px"/></a>
                                                         </figure>
                                                     </div>
                                                     <div id="headerPopup"

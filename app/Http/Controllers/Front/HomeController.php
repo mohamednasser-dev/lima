@@ -54,15 +54,14 @@ class HomeController extends Controller
             if (Auth::guard('users')->user()->subscriber == 1) {
                 return view('frontend.post_details', compact('data'));
             } else {
-                abort(404);
+                return redirect(url('subscribe'));
             }
 
         }else{
-            abort(404);
+           return redirect(url('user-login'));
         }
 
-//        dd($data['post']);
 
-        return view('frontend.post_details', compact('data'));
+
     }
 }
