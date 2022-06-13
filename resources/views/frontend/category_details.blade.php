@@ -69,18 +69,17 @@
                                                                         <div class="gallery-text">
                                                                             <div class="title">
                                                                                 @if(auth()->guard('users')->check())
-                                                                                    @dd(auth()->guard('users')->user()->FavouritePosts);
-                                                                                    @if(in_array($post->id,auth()->guard('users')->user()->FavouritePosts))
-                                                                                        <a href="{{route('posts.make_favorite')}}">
+                                                                                    @if($post->is_favourite())
+                                                                                        <a href="{{route('posts.make_favorite',$post->id)}}">
                                                                                             <img
-                                                                                                style="margin-right: -137px;margin-top: -219px;position: fixed;"
+                                                                                                style=" @if(app()->getLocale() == 'ar') margin-right: -137px; @else margin-left: -133px; @endif margin-top: -219px;position: fixed;"
                                                                                                 src="{{url('/')}}/front/images/heart.png">
                                                                                         </a>
                                                                                     @else
-                                                                                        <a href="{{route('posts.make_favorite')}}">
+                                                                                        <a href="{{route('posts.make_favorite',$post->id)}}">
                                                                                             {{--                <img style="margin-right: -137px;margin-top: -219px;position: fixed;" src="{{url('/')}}/front/images/heart.png">--}}
                                                                                             <img
-                                                                                                style="margin-right: -137px;margin-top: -219px;position: fixed;"
+                                                                                                style=" @if(app()->getLocale() == 'ar') margin-right: -137px; @else margin-left: -133px; @endif margin-top: -219px;position: fixed;"
                                                                                                 src="{{url('/')}}/front/images/heart_empty.png">
                                                                                         </a>
                                                                                     @endif
@@ -88,7 +87,7 @@
                                                                                 @else
                                                                                     <a href="{{url('user-login')}}">
                                                                                         <img
-                                                                                            style="margin-right: -137px;margin-top: -219px;position: fixed;"
+                                                                                            style=" @if(app()->getLocale() == 'ar') margin-right: -137px; @else margin-left: -133px; @endif margin-top: -219px;position: fixed;"
                                                                                             src="{{url('/')}}/front/images/heart_empty.png">
                                                                                     </a>
                                                                                 @endif

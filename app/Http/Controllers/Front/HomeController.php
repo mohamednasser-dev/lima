@@ -30,11 +30,11 @@ class HomeController extends Controller
             $data['post_id'] = $id;
             $data['user_id'] = $user_id;
             Favorite::create($data);
-            Alert::success(trans('lang.done'), trans('lang.post_favorite_added'));
+//            Alert::success(trans('lang.done'), trans('lang.post_favorite_added'));
 
         } catch (\Exception $ex) {
             Favorite::where('user_id', $user_id)->where('post_id', $id)->delete();
-            Alert::success(trans('lang.done'), trans('lang.post_favorite_removed'));
+//            Alert::success(trans('lang.done'), trans('lang.post_favorite_removed'));
         }
         return redirect()->back();
     }
