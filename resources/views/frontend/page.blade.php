@@ -44,7 +44,7 @@
                                                         <ul class="kids_social">
                                                             @foreach(\App\Models\SocialLink::all() as $link)
                                                         <li><a href="{{$link->link}}" target="_blank" class="lang_sel_sel icl-en"><img class="iclflag"
-                                                                                                         style="padding-top: 12px;padding-right: 6px;"
+                                                                                                         style="padding-top: 12px;padding-right: 6px;width: 50px;height: 50px"
                                                                                                          src="{{$link->image}}"
                                                                                                          alt="lima" title="lima"/> &nbsp;
                                                             </a></li>

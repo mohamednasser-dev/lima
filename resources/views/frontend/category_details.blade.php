@@ -57,7 +57,7 @@
                                                                                 @endif
                                                                             >
                                                                                 <figure>
-                                                                                    <img
+                                                                                    <img class="img_post"
                                                                                         src='{{$post->image}}'
                                                                                         width='278px' height='182px'
                                                                                         alt='img'/>

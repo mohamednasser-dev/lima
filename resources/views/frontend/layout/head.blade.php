@@ -53,9 +53,9 @@
             z-index: -10 !important;
         }
 
-        img {
+        .img_post {
             height: 215px !important;
-            width: 272px!important;
+            width: 272px !important;
 
         }
 
@@ -129,8 +129,8 @@
 
                 @foreach(\App\Models\SocialLink::all() as $link)
                     <li><a href="{{$link->link}}" class="lang_sel_sel icl-en"><img class="iclflag"
-                                                                                   style="padding-top: 12px;padding-right: 6px;"
-                                                                                   src="{{$link->imgae}}"
+{{--                                                                                   style="padding-top: 12px;padding-right: 6px;width: 18px;height: 12px"--}}
+                                                                                   src="{{$link->image}}"
                                                                                    alt="{{$link->link}}"
                                                                                    title="{{$link->link}}"/> &nbsp;
                         </a></li>

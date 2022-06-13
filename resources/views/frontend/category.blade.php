@@ -43,7 +43,7 @@
                                                                         <div class="content-wrapper">
                                                                             <a  href="{{url('category-details/'.$subCategory->id)}}">
                                                                                 <figure>
-                                                                                    <img
+                                                                                    <img class="img_post"
                                                                                         src='{{$subCategory->image}}'
                                                                                         width='278px' height='182px'
                                                                                         alt='{{$subCategory->name}}'/>
