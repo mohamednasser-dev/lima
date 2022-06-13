@@ -53,6 +53,11 @@
             z-index: -10 !important;
         }
 
+        img{
+            height: 215px!important;
+            width: 272px;!important;
+        }
+
     </style>
 </head>
 
