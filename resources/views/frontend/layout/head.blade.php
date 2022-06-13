@@ -53,9 +53,10 @@
             z-index: -10 !important;
         }
 
-        img{
-            height: 215px!important;
-            width: 272px;!important;
+        img {
+            height: 215px !important;
+            width: 272px!important;
+
         }
 
     </style>
@@ -179,7 +180,8 @@
                             <ul class="sub-menu">
                                 <li class="menu-item"><a href="{{url('/user-login')}}">{{trans('lang.login')}}</a></li>
 
-                                <li class="menu-item"><a href="{{url('/user-register')}}">{{trans('lang.register')}}</a></li>
+                                <li class="menu-item"><a href="{{url('/user-register')}}">{{trans('lang.register')}}</a>
+                                </li>
                             </ul>
                         </li>
                     @else
