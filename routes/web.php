@@ -50,6 +50,10 @@ Route::get('/user-login', [\App\Http\Controllers\Front\AuthController::class, 'L
 Route::post('/user-login', [\App\Http\Controllers\Front\AuthController::class, 'DoLogin'])->name('front.DoLogin');
 Route::get('/page/{id}', [\App\Http\Controllers\Front\PagesController::class, 'page'])->name('front.page');
 
+Route::get('/user-register', [\App\Http\Controllers\Front\AuthController::class, 'RenderRegister'])->name('front.register');
+Route::post('/user-register', [\App\Http\Controllers\Front\AuthController::class, 'Register'])->name('front.doregister');
+Route::post('/check_otp', [\App\Http\Controllers\Front\AuthController::class, 'verify_phone']);
+
 
 Route::group(['middleware' => 'AuthUser'], function () {
     Route::get('/user-profile', [\App\Http\Controllers\Front\AuthController::class, 'Profile']);

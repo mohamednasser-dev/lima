@@ -37,15 +37,36 @@
 
 
 
-
-                                        <form method="post" action="{{url('user-login')}}" class="login">
+                                        <form method="post" action="{{url('user-register')}}" class="login">
                                             @csrf
+                                            <p class="form-row form-row">
+                                                <label for="name"
+                                                       style="color: black"><b>{{trans('lang.name')}}</b> <span
+                                                        class="required">*</span></label>
+                                                <input type="text" class="input-text" name="name" id="name"
+                                                       value="{{old('name')}}"/>
+                                            </p>
                                             <p class="form-row form-row">
                                                 <label for="phone"
                                                        style="color: black"><b>{{trans('lang.phone')}}</b> <span
                                                         class="required">*</span></label>
                                                 <input type="number" class="input-text" name="phone" id="phone"
-                                                       value=""/>
+                                                       value="{{old('phone')}}"/>
+                                            </p>
+                                            <p class="form-row  address-field update_totals_on_change validate-required"
+                                               id="billing_country_field">
+                                                <label for="city_id"
+                                                       style="color: black"><b>{{trans('lang.country')}}</b> <span
+                                                        class="required">*</span></label>
+                                                <select name="city_id" id="city_id" class="form-control" required>
+                                                    <option value="">{{trans('lang.select_country')}}</option>
+                                                    @foreach(\App\Models\City::all() as $city)
+                                                        <option
+
+                                                            value="{{$city->id}}">{{$city->name}}</option>
+                                                    @endforeach
+                                                </select>
+
                                             </p>
                                             <p class="form-row form-row">
                                                 <label for="password"
@@ -54,10 +75,17 @@
                                                 <input class="input-text" type="password" name="password"
                                                        id="password"/>
                                             </p>
+                                            <p class="form-row form-row">
+                                                <label for="password_confirmation"
+                                                       style="color: black"><b>{{trans('lang.password_confirmation')}}</b> <span
+                                                        class="required">*</span></label>
+                                                <input class="input-text" type="password" name="password_confirmation"
+                                                       id="password_confirmation"/>
+                                            </p>
                                             <p class="form-row">
 
                                                 <input type="submit" class="button btn btn-lg" name="login"
-                                                       value="{{trans('lang.login')}}"/>
+                                                       value="{{trans('lang.register')}}"/>
                                                 {{--                                                <a href="#" class="btn btn-dark">Lost your password?</a>--}}
                                             </p>
 

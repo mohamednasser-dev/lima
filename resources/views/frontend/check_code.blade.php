@@ -36,28 +36,43 @@
                                         <h2 class="widget-title" style="text-align: center">{{$data['title']}}</h2>
 
 
-
-
-                                        <form method="post" action="{{url('user-login')}}" class="login">
+                                        <form method="post" action="{{url('check_otp')}}" class="login">
                                             @csrf
                                             <p class="form-row form-row">
-                                                <label for="phone"
-                                                       style="color: black"><b>{{trans('lang.phone')}}</b> <span
+                                                <label for="otp"
+                                                       style="color: black"><b>{{trans('lang.otp')}}</b> <span
                                                         class="required">*</span></label>
-                                                <input type="number" class="input-text" name="phone" id="phone"
-                                                       value=""/>
+                                                <input type="number" class="input-text" name="otp" id="otp"
+                                                       value="{{old('otp')}}"/>
                                             </p>
                                             <p class="form-row form-row">
-                                                <label for="password"
-                                                       style="color: black"><b>{{trans('lang.password')}}</b> <span
-                                                        class="required">*</span></label>
-                                                <input class="input-text" type="password" name="password"
-                                                       id="password"/>
+
+                                                <input type="hidden" class="input-text" name="name" id="name"
+                                                       value="{{$data['name']}}"/>
                                             </p>
+                                            <p class="form-row form-row">
+
+                                                <input type="hidden" class="input-text" name="phone" id="phone"
+                                                       value="{{$data['phone']}}"/>
+                                            </p>
+                                            <p class="form-row  address-field update_totals_on_change validate-required"
+                                               id="billing_country_field">
+
+                                                <input type="hidden" name="city_id" id="city_id" class="form-control"
+                                                       value="{{$data['city_id']}}" required/>
+
+
+                                            </p>
+                                            <p class="form-row form-row">
+
+                                                <input class="input-text" type="hidden" name="password"
+                                                       id="password" value="{{$data['password']}}"/>
+                                            </p>
+
                                             <p class="form-row">
 
                                                 <input type="submit" class="button btn btn-lg" name="login"
-                                                       value="{{trans('lang.login')}}"/>
+                                                       value="{{trans('lang.check')}}"/>
                                                 {{--                                                <a href="#" class="btn btn-dark">Lost your password?</a>--}}
                                             </p>
 
