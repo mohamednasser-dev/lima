@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 
 class Post extends Model
 {
@@ -114,5 +115,39 @@ class Post extends Model
     public function childrenCategories()
     {
         return $this->hasMany(Category::class)->with('childrenCategories');
+    }
+
+    public function is_favourite()
+    {
+        $count = Favorite::where(['user_id' => Auth::guard('users')->id(), 'post_id' => $this->id])->count();
+        if ($count > 0) {
+            return true;
+        }
+        return false;
+    }
+
+    public function is_like()
+    {
+        $count = PostLike::where(['user_id' => Auth::guard('users')->id(), 'post_id' => $this->id])->count();
+        if ($count > 0) {
+            return true;
+        }
+        return false;
+    }
+
+    public function views()
+    {
+        $count = PostView::where(['post_id' => $this->id])->count();
+
+        return $count;
+
+    }
+
+    public function Likes()
+    {
+        $count = PostLike::where(['post_id' => $this->id])->count();
+
+        return $count;
+
     }
 }
