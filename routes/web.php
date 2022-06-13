@@ -60,6 +60,7 @@ Route::group(['middleware' => 'AuthUser'], function () {
     Route::get('/user-logout', [\App\Http\Controllers\Front\AuthController::class, 'logout']);
     Route::post('/update-profile', [\App\Http\Controllers\Front\AuthController::class, 'Update_Profile']);
     Route::get('/favourite-list', [\App\Http\Controllers\Front\FavouritesController::class, 'Favourite_List']);
+    Route::get('/subscribe', [\App\Http\Controllers\Front\SubscribeController::class, 'subscribe']);
 });
 
 Route::get('lang/{lang}', function ($lang) {
