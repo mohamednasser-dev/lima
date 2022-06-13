@@ -43,12 +43,12 @@ class FavPostsResources extends JsonResource
         }
         return [
             'fav_id' => $this->id,
-            'id' => $this->post_id,
+            'id' => (integer)$this->post_id,
             'name' => $this->Post->name,
             'video' => $this->Post->video,
             'image' => $this->Post->image,
-            'likes' => $this->Post->likes,
-            'views' => $this->Post->views,
+            'likes' => (integer)$this->Post->likes,
+            'views' => (integer)$this->Post->views,
             'type' => $this->Post->type,
             'free' => $free,
             'category_id' => $this->Post->category_id,
