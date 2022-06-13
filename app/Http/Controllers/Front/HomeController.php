@@ -40,6 +40,8 @@ class HomeController extends Controller
 
     }
 
+
+
     public function PostDetails($id)
     {
         $data['post'] = Post::findOrFail($id);

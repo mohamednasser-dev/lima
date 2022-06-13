@@ -174,7 +174,7 @@
                             <ul class="sub-menu">
                                 <li class="menu-item"><a href="{{url('/user-login')}}">{{trans('lang.login')}}</a></li>
 
-                                <li class="menu-item"><a href="{{url('/')}}">{{trans('lang.register')}}</a></li>
+                                <li class="menu-item"><a href="{{url('/user-register')}}">{{trans('lang.register')}}</a></li>
                             </ul>
                         </li>
                     @else

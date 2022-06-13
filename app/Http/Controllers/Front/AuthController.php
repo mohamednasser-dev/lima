@@ -10,6 +10,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class AuthController extends Controller
 {
@@ -29,12 +30,13 @@ class AuthController extends Controller
         ]);
 
         if (Auth::guard('users')->attempt($data)) {
+            Alert::success(trans('lang.success'), trans('lang.Login_successfully'));
 
             return redirect(url('/'));
         }
 
-
-        return redirect()->back()->with("danger", trans('lang.phoneOrPasswordError'));
+        Alert::warning(trans('lang.warning'), trans('lang.phoneOrPasswordError'));
+        return redirect()->back();
 
     }
 
@@ -64,8 +66,8 @@ class AuthController extends Controller
         }
 
         $user->save();
-
-        return redirect(url('user-profile'))->with('success', trans('lang.updatedSucssefully'));
+        Alert::success(trans('lang.success'), trans('lang.updatedSucssefully'));
+        return redirect(url('user-profile'));
 
     }
 
@@ -75,7 +77,7 @@ class AuthController extends Controller
         if (Auth::guard('users')->check()) {
             Auth::guard('users')->logout();
         }
-
+        Alert::success(trans('lang.success'), trans('lang.logoutSucssefully'));
         return redirect('/');
 
     }
@@ -136,8 +138,11 @@ class AuthController extends Controller
             if ($token) {
 
                 $user = Auth::guard('users')->user();
+                Alert::success(trans('lang.success'), trans('lang.registeredSuccessfully'));
+
                 return redirect(url('/'));
             } else {
+                Alert::error(trans('lang.Error'), trans('lang.CodeError'));
                 return view('frontend.check_code', compact('data'));
 
             }

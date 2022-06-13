@@ -201,7 +201,7 @@
 {{--    }--}}
 
 {{--</script>--}}
-
+@include('sweetalert::alert')
 @yield('js')
 </body>
 </html>
