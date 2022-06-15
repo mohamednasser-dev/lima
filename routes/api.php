@@ -68,8 +68,14 @@ Route::group(['middleware' => ['api'], 'prefix' => "v1", 'namespace' => 'v1'], f
         Route::get('/favorites', [FavoriteController::class, 'index']);
         Route::post('/favorite/store', [FavoriteController::class, 'store']);
 
+        Route::get('/subscription/payment_step_one', [SubscriptionController::class, 'payment_step_one']);
+        Route::get('/subscription/payment_step_two/{payment_method}/{subscription_id}', [SubscriptionController::class, 'payment_step_two']);
 
 
     });
+
+    Route::post('/student/buy/course/webhook_json', [SubscriptionController::class, 'excute_pay']);
+    Route::get('/pay/success', [SubscriptionController::class, 'pay_sucess']);
+    Route::get('/pay/error', [SubscriptionController::class, 'pay_error']);
 });
 
