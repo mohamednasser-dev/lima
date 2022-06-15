@@ -177,4 +177,5 @@ return [
     'CodeError' => 'الرمز غير صحيح',
     'Subscribe' => 'الاشتراك',
     'subscribe' => 'الاشتراك',
+    'select_country' => 'اختر دولة',
 ];

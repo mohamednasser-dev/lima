@@ -96,6 +96,7 @@ return [
     'CodeError' => 'Code Error',
     'Subscribe' => 'Subscribe',
     'subscribe' => 'Subscribe',
+    'select_country' => 'Select Country',
 
 
 ];
