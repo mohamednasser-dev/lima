@@ -1,6 +1,11 @@
 <?php
 
 return [
+    'links' => 'الروابط',
+    'pages' => 'الصفحات',
+    'screens' => 'الشاشات الترحيبية',
+    'teams' => 'فريق العمل',
+    'subscriptions' => 'الاشتراكات',
     'current_pass_incorrect' => 'كلمة المرور الحلية غير صحيحه',
     'user_password_updated_successfully' => 'تم تحديث كلمة المرور بنجاح',
     'fav_removed_successfully' => 'تم حذف المفضل بنجاح',
