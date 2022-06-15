@@ -64,7 +64,6 @@ class HomeController extends Controller
         $data['post'] = Post::findOrFail($id);
         $data['title'] = $data['post']->name;
         if ($data['post']->free == 0) {
-
             return view('frontend.post_details', compact('data'));
 
         } elseif (Auth::guard('users')->check()) {
