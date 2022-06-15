@@ -176,4 +176,5 @@ return [
     'Error' => 'حدث خطأ ',
     'CodeError' => 'الرمز غير صحيح',
     'Subscribe' => 'الاشتراك',
+    'subscribe' => 'الاشتراك',
 ];

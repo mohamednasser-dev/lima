@@ -66,7 +66,7 @@
                                                                 <img class="alignleft border size-medium"
                                                                      src="{{$data['post']->image}}"
                                                                      alt="img" width="300px"
-                                                                     style="height: 300px;width: 30px"
+{{--                                                                     style="height: 300px;width: 30px"--}}
                                                                      height="300px"/></a>
                                                         </figure>
                                                     </div>
@@ -84,7 +84,7 @@
                                                         @else
 
                                                             <img class="alignleft border size-medium"
-                                                                 style="width: 500px;height: 500px"
+{{--                                                                 style="width: 500px;height: 500px"--}}
                                                                  src="{{$data['post']->image}}"
                                                                  alt="img" width="500px"
                                                                  height="500px"/>

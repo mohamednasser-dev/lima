@@ -95,6 +95,7 @@ return [
     'Error' => 'Error',
     'CodeError' => 'Code Error',
     'Subscribe' => 'Subscribe',
+    'subscribe' => 'Subscribe',
 
 
 ];
