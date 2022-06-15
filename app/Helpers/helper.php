@@ -109,6 +109,6 @@ if(!function_exists('apiUser')){
 
 if(!function_exists('new_subscription')){
     function new_subscription(){
-        return \App\Models\SubscriptionHistory::where('status','pending')->get()->count();
+        return \App\Models\SubscriptionHistory::where('type','cash')->where('status','pending')->get()->count();
     }
 }

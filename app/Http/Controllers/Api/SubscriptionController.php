@@ -83,8 +83,10 @@ class SubscriptionController extends GeneralController
         ));
         $response = curl_exec($curl);
         curl_close($curl);
-        $response = json_decode($response);
-        return msgdata($request, success(), trans('lang.shown_s'), $response);
+        $data = SubscribeType::get();
+        $final_result['subscription_types'] = (SubscribeTypeResources::collection($data));
+        $final_result['payment_methods'] = json_decode($response);
+        return msgdata($request, success(), trans('lang.shown_s'), $final_result);
     }
 
     public function payment_step_two(Request $request, $payment_method_id, $subscription_id)
