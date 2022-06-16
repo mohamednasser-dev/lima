@@ -69,7 +69,7 @@ Route::group(['middleware' => ['api'], 'prefix' => "v1", 'namespace' => 'v1'], f
         Route::post('/favorite/store', [FavoriteController::class, 'store']);
 
         Route::get('/subscription/payment_step_one', [SubscriptionController::class, 'payment_step_one']);
-        Route::get('/subscription/payment_step_two/{payment_method}/{subscription_id}', [SubscriptionController::class, 'payment_step_two']);
+        Route::get('/subscription/payment_step_two', [SubscriptionController::class, 'payment_step_two']);
 
 
     });
