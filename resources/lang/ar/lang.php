@@ -1,6 +1,9 @@
 <?php
 
 return [
+    'delivery_reach_you' => 'المندوب سيصل اليك في اي مكان لتحصيل رسوم الاشتراك',
+    'with_delivery' => 'عن طريق مندوب',
+    'choose_payment_method' => 'أختر طريقة الدفع',
     'links' => 'الروابط',
     'pages' => 'الصفحات',
     'screens' => 'الشاشات الترحيبية',
@@ -155,7 +158,7 @@ return [
 
 
     'otp' => 'رمز التأكيد',
-    'login' => 'تسجيل دخول',
+    'login' => 'تسجيل الدخول',
     'register' => 'إنشاء حساب',
     'favourite' => 'المفضلة',
     'subscribes' => 'الاشتراك',

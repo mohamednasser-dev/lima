@@ -11,6 +11,7 @@
             margin: 0 auto;
         }
     </style>
+    <link rel="stylesheet" type="text/css" href="{{url('front')}}/css/select2.css" />
     @endpush
     @section('title')
     {{$title}}
@@ -60,7 +61,7 @@
                                                 <label for="city_id"
                                                        style="color: black"><b>{{trans('lang.country')}}</b> <span
                                                         class="required">*</span></label>
-                                                <select name="city_id" id="city_id" class="form-control" required>
+                                                <select name="city_id" id="billing_country" class="country_to_state country_select" required>
                                                     @foreach(\App\Models\City::all() as $city)
                                                         <option
                                                             @if($user->city_id == $city->id) selected
@@ -85,12 +86,9 @@
                                                        id="password_confirmation"/>
                                             </p>
                                             <p class="form-row">
-
                                                 <input type="submit" class="button btn btn-lg" name="login"
                                                        value="{{trans('lang.update')}}"/>
-                                                {{--                                                <a href="#" class="btn btn-dark">Lost your password?</a>--}}
                                             </p>
-
                                         </form>
 
                                     </div>
@@ -118,7 +116,6 @@
     @endsection
 
 @section('js')
-
-
+    <script src='{{url('front')}}/js/select2.js'></script>
 
 @endsection

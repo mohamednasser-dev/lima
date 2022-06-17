@@ -6,9 +6,6 @@
     {{$data['title']}}
 @endsection
 @section('content')
-
-
-
     <!-- HEADER END -->
     <div class="bg-level-2-page-width-container ">
         <div class="bg-level-2 first-part" id="bg-level-2"></div>
@@ -71,8 +68,6 @@
         <!-- .l-page-width -->
         <div class="bg-level-2 second-part" id="bg-level-2"></div>
     </div>
-    </div>
-    </div>
     <!-- .bg-level-1 -->
     <div id="kids_middle_container" class="kids_middle_container">
         <!-- .content -->
@@ -106,13 +101,14 @@
                                                                                  class="iso-item happyfeet">
                                                                                 <div class="content-wrapper">
                                                                                     <a
-                                                                                       href="{{url('category-details/'.$subCategory->id)}}">
-                                                                                    <figure>
-                                                                                        <img class="img_post"
-                                                                                            src='{{$subCategory->image}}'
-                                                                                            width='108px' height='82px'
-                                                                                            alt='{{$subCategory->name}}'/>
-                                                                                    </figure>
+                                                                                        href="{{url('category-details/'.$subCategory->id)}}">
+                                                                                        <figure>
+                                                                                            <img class="img_post"
+                                                                                                 src='{{$subCategory->image}}'
+                                                                                                 width='108px'
+                                                                                                 height='82px'
+                                                                                                 alt='{{$subCategory->name}}'/>
+                                                                                        </figure>
                                                                                     </a>
                                                                                 </div>
                                                                                 <!--/ content-wrapper-->
@@ -120,77 +116,36 @@
                                                                                     <div class="title"><a class="link"
                                                                                                           href="{{url('category-details/'.$subCategory->id)}}">{{$subCategory->name}}
                                                                                         </a></div>
-                                                                                    {{--                                                                            <p>Lorem ipsum dolor sit amet. Lorem ipsum--}}
-                                                                                    {{--                                                                                dolor sit amet, consectetuer ...</p>--}}
                                                                                 </div>
-{{--                                                                                <div class="post-footer">--}}
-{{--                                                                                    <a href="{{url('category-details/'.$subCategory->id)}}"--}}
-{{--                                                                                       class="cws_button" >{{trans('lang.ReadMore')}}</a>--}}
-{{--                                                                                </div>--}}
-                                                                                <!--/ post-footer-->
                                                                                 <div class="kids_clear"></div>
                                                                             </div>
                                                                         @endforeach
-
-
                                                                     </div>
-                                                                    <!-- grid isotope -->
-
-                                                                    <!-- .gl_col_ -->
-                                                                    <!-- comments block -->
-                                                                    <!-- //end comments block -->
                                                             </main>
                                                         @endforeach
-
                                                     </div>
-                                                    <!-- .entry-container -->
                                                 </div>
-{{--                                                <div class="bg-level-2 second-part"></div>--}}
                                             </div>
                                         </div>
                                     </div>
-{{--                                    <div class='grid-row clearfix'>--}}
-{{--                                        <div class='grid-col grid-col-12'>--}}
-{{--                                            <section class='cws-widget'>--}}
-{{--                                                <div class='widget-title'>{{trans('lang.aboutUs')}}</div>--}}
-{{--                                                <section class='cws_widget_content'>--}}
-{{--                                                    <p style="color: black;"><img class="alignleft border size-thumbnail"--}}
-{{--                                                            src="{{ \App\Models\Page::where('type','about')->first()->image}}"--}}
-{{--                                                            alt="content_img_1" width="150" height="150"/>--}}
-{{--                                                        {!! \App\Models\Page::where('type','about')->first()->title !!}--}}
-{{--                                                    </p>--}}
-{{--                                                </section>--}}
-{{--                                            </section>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
 
-                                    <div class='grid-row clearfix margin-top-none margin-bottom-none'>
-                                        <div class='grid-col grid-col-12'>
-                                            <section class='cws-widget'>
-                                                <section class='cws_widget_content'>
-                                                    <hr/>
-                                                    <p>&nbsp;</p>
-                                                </section>
-                                            </section>
-                                        </div>
-                                    </div>
-
-                                    <!-- comments block -->
-                                    <!-- //end comments block -->
+                                    <div class="content_bottom_bg"></div>
                                 </main>
-                                <div class="kids_clear"></div>
 
                             </div>
+
                             <!-- .entry-container -->
                         </div>
+
                     </div>
                     <!-- ***************** - END Image floating - *************** -->
+
                 </section>
                 <!-- .bottom_content_container -->
-            </div>
 
-            <div class="content_bottom_bg"></div>
+            </div>
         </div>
+
     </div>
 
 @endsection

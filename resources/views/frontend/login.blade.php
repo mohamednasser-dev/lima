@@ -32,7 +32,7 @@
                         <div class="container l-page-width" style="">
                             <div class="entry-container">
                                 <main>
-                                    <div class="woocommerce" style="padding:11%;">
+                                    <div class="woocommerce" style="padding:11%;" >
                                         <h2 class="widget-title" style="text-align: center">{{$data['title']}}</h2>
 
 
@@ -42,19 +42,17 @@
                                             @csrf
                                             <p class="form-row form-row">
                                                 <label for="phone"
-                                                       style="color: black"><b>{{trans('lang.phone')}}</b> <span
-                                                        class="required">*</span></label>
-                                                <input type="number" class="input-text" name="phone" id="phone"
+                                                       style="color: black"><b>{{trans('lang.phone')}}</b></label>
+                                                <input type="text" class="input-text" name="phone" id="phone"
                                                        value=""/>
                                             </p>
                                             <p class="form-row form-row">
                                                 <label for="password"
-                                                       style="color: black"><b>{{trans('lang.password')}}</b> <span
-                                                        class="required">*</span></label>
+                                                       style="color: black"><b>{{trans('lang.password')}}</b></label>
                                                 <input class="input-text" type="password" name="password"
                                                        id="password"/>
                                             </p>
-                                            <p class="form-row">
+                                            <p class="form-row" style="text-align: center;">
 
                                                 <input type="submit" class="button btn btn-lg" name="login"
                                                        value="{{trans('lang.login')}}"/>

@@ -160,9 +160,6 @@
 
                     <li class="menu-item menu-item-type-custom menu-item-object-custom  @if(Request::segment(1) == "page" && Request::segment(2) == "1"   ) current-menu-item current_page_item @endif">
                         <a href="{{url('/page/1')}}">{{trans('lang.aboutUs')}}</a></li>
-                    <li class="menu-item menu-item-type-custom menu-item-object-custom  @if(Request::segment(1) == "page" && Request::segment(2) == "5"   ) current-menu-item current_page_item @endif">
-                        <a href="{{url('/page/5')}}">{{trans('lang.contact')}}</a></li>
-
 
                     <li class="menu-item menu-item-type-custom menu-item-object-custom  @if(Request::segment(1) == "page" && Request::segment(2) == "3"   ) current-menu-item current_page_item @endif">
                         <a href="{{url('/page/3')}}">{{trans('lang.privacy')}}</a></li>
@@ -176,7 +173,7 @@
                                 @if(Request::segment(1) == "user-login" ||  Request::segment(1) == "register")
                             current-menu-item current_page_item
                         @endif ">
-                            <a href="#">{{trans('lang.my_account')}}</a>
+                            <a>{{trans('lang.my_account')}}</a>
                             <ul class="sub-menu">
                                 <li class="menu-item"><a href="{{url('/user-login')}}">{{trans('lang.login')}}</a></li>
 
