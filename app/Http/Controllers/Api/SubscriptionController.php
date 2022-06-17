@@ -114,7 +114,7 @@ class SubscriptionController extends GeneralController
                         "customer": {
                             "first_name": "' . apiUser()->name . '",
                             "last_name": "' . apiUser()->id . '",
-                            "email": "' . apiUser()->email . '",
+                            "email": "mohamed_hisham@80fekra.com",
                             "phone": "' . apiUser()->phone . '",
                             "address": "address"
                         },

@@ -171,6 +171,15 @@
                     </a>
                 </li>
             @endcan
+            @can('read-subscription_types')
+                <li class="menu-item menu-item-submenu @if(request()->segment(1) == 'subscription_types') menu-item-open @endif "
+                    aria-haspopup="true" data-menu-toggle="hover">
+                    <a href="{{route('subscription_types')}}" class="menu-link menu-toggle">
+                        <i class="menu-icon flaticon2-notepad"></i>
+                        <span class="menu-text">أنواع الاشتراكات</span>
+                    </a>
+                </li>
+            @endcan
             @can('read-pages')
                 <li class="menu-item menu-item-submenu @if( Request::segment(1)== 'pages' ) menu-item-open @endif"
                     aria-haspopup="true" data-menu-toggle="hover">

@@ -16,6 +16,7 @@ use App\Http\Controllers\Dashboard\ScreenController;
 use App\Http\Controllers\Dashboard\TeamController;
 use App\Http\Controllers\Dashboard\SocialLinkController;
 use App\Http\Controllers\Dashboard\SubscriptionController;
+use App\Http\Controllers\Dashboard\SubscriptionTypeController;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
@@ -188,6 +189,14 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('deletes', [CityController::class, 'deletes'])->name('cities.deletes')->middleware('permission:delete-' . $permission);
         Route::get('delete/{id}', [CityController::class, 'delete'])->name('cities.delete')->middleware('permission:delete-' . $permission);
         Route::post('change_active', [CityController::class, 'change_active'])->name('cities.change_active')->middleware('permission:delete-' . $permission);
+    });
+
+    // subscription_types Route
+    Route::group(['prefix' => 'subscription_types'], function () {
+        $permission = 'subscription_types';
+        Route::get('/', [SubscriptionTypeController::class, 'index'])->name($permission)->middleware('permission:read-' . $permission);
+        Route::get('edit/{id}', [SubscriptionTypeController::class, 'edit'])->name($permission.'.edit')->middleware('permission:update-' . $permission);
+        Route::post('update/{id}', [SubscriptionTypeController::class, 'update'])->name($permission.'.update')->middleware('permission:update-' . $permission);
     });
 
     // teams Route
