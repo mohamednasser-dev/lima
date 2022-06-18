@@ -12,7 +12,9 @@ use App\Models\SubscribeType;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
+use Milon\Barcode\Facades\DNS2DFacade;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class SubscribeController extends Controller
@@ -207,7 +209,8 @@ class SubscribeController extends Controller
             //wallet payment
             //return to view to display aman code
             $aman_code = $response->data->payment_data->meezaReference ;
-            $expire_date = $response->data->payment_data->meezaQrCode ;
+            $expire_date = time().'_'.$request->payment_method_id . '.png';
+            Storage::disk('public')->put($expire_date, base64_decode(DNS2DFacade::getBarcodePNG($response->data->payment_data->meezaQrCode, "QRCODE")));
             $title = 'Pay With wallet page';
             return view('frontend.payment.aman_page',compact('payment_method_id','aman_code','title','expire_date'));
         } elseif($request->payment_method_id == 12){

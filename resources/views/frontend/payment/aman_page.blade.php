@@ -32,7 +32,11 @@
                                     <div class="woocommerce" style="padding:11%;text-align: -webkit-center;">
                                         <h2 class="widget-title" style="text-align: center">{{$title}}</h2>
                                         <p>code for pay by aman is : </p> <b>{{$aman_code}}</b>
+                                        @if($payment_method_id == 4)
+                                            <img style="width: 100px; height: 100px;" src="{{asset('storage/app/public/')}}/{{$expire_date}}">
+                                        @else
                                          <b>{{$expire_date}}</b>
+                                        @endif
                                     </div>
                                     <!-- comments block -->
                                     <!-- //end comments block -->

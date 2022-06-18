@@ -27,7 +27,7 @@
     </div>
     @endif
     <div class="form-group col-md-6">
-        <label> صورة القسم
+        <label> صورة القسم ( 250 * 250 )
         </label>
         <div class="col-lg-8">
             <div class="image-input image-input-outline" id="kt_image_1">

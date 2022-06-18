@@ -135,7 +135,7 @@
                                     </div>
                                 </div>
                                 <div class="col-4">
-                                    <label for="">خلفيه صفحه الدخول<span
+                                    <label for="">خلفيه صفحه الدخول (600  * 1100 )<span
                                             class="text-danger">*</span></label>
                                     <div class="col-lg-8">
                                         <div class="image-input image-input-outline" id="kt_image_2">
