@@ -17,13 +17,10 @@
     {{$title}}
     @endsection
     @section('content')
-
-
     </div>
     <!-- .bg-level-1 -->
     <div id="kids_middle_container">
         <!-- .content -->
-
         <div class="bg-level-2-full-width-container kids_bottom_content">
             <div class="bg-level-2-page-width-container no-padding">
                 <section class="kids_bottom_content_container">
@@ -33,7 +30,7 @@
                         <div class="container l-page-width" style="">
                             <div class="entry-container">
                                 <main>
-                                    <div class="woocommerce" style="padding:11%;">
+                                    <div class="woocommerce" style="padding:11%;text-align: -webkit-center;">
                                         <h2 class="widget-title" style="text-align: center"> {{$title}}</h2>
 
                                         <form method="post" action="{{url('update-profile')}}" class="login">

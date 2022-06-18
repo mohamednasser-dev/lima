@@ -14,6 +14,9 @@
                             <div class="entry-container" style="margin-bottom: 100px;">
                                 <main>
                                     <h2 class="widget-title" style="text-align: center"> {{$title}}</h2>
+                                    @if(auth()->guard('users')->user()->subscriber == 1)
+                                        <label>you are subscribe to a package </label>
+                                    @endif
                                     <div class='grid-row eq-columns clearfix'
                                          style='margin-top:25px; justify-content: center;'>
                                         @foreach($subscribe_types as $type)

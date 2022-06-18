@@ -170,6 +170,7 @@ class SubscriptionController extends GeneralController
                 $data['ended_at'] = $ended_date;
                 $data['payment_status'] = 1;
                 $data['type'] = 'visa';
+                $data['status'] = 'accepted';
                 SubscriptionHistory::create($data);
 
                 $user['subscriber'] = 1;

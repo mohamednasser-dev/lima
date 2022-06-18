@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'dont_have_account' => 'لا تمتلك حساب ؟',
     'delivery_reach_you' => 'المندوب سيصل اليك في اي مكان لتحصيل رسوم الاشتراك',
     'with_delivery' => 'عن طريق مندوب',
     'choose_payment_method' => 'أختر طريقة الدفع',
