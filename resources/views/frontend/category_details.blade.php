@@ -96,11 +96,11 @@
                                                                                    @if($post->free == 1 )
                                                                                    href="{{url('post-details/'.$post->id)}}"
                                                                                    @elseif(auth()->guard('users')->check())
-                                                                                   @if(auth()->guard('users')->user()->subscriber == 1)
-                                                                                   href="{{url('post-details/'.$post->id)}}"
-                                                                                   @else
-                                                                                   href="{{url('subscribe')}}"
-                                                                                   @endif
+                                                                                       @if(auth()->guard('users')->user()->subscriber == 1)
+                                                                                       href="{{url('post-details/'.$post->id)}}"
+                                                                                       @else
+                                                                                       href="{{url('subscribe')}}"
+                                                                                       @endif
                                                                                    @else
                                                                                    href="{{url('user-login')}}"
                                                                                     @endif
