@@ -14,8 +14,8 @@ class UpdatePostsViewsTable extends Migration
     public function up()
     {
         Schema::table('posts', function (Blueprint $table) {
-            $table->integer('likes');
-            $table->integer('views');
+            $table->integer('likes')->default(0);
+            $table->integer('views')->default(0);
         });
     }
 
