@@ -97,6 +97,7 @@ return [
     'Subscribe' => 'Subscribe',
     'subscribe' => 'Subscribe',
     'select_country' => 'Select Country',
+    'my_account' => 'My Account',
 
 
 ];
