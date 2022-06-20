@@ -19,8 +19,8 @@ class CreateInvoicesTable extends Migration
             $table->string('invoice_key');
             $table->bigInteger('user_id')->unsigned()->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('set null');
-            $table->bigInteger('subscription_history_id')->unsigned();
-            $table->foreign('subscription_history_id')->references('id')->on('subscription_histories')->onDelete('restrict');
+            $table->bigInteger('subscription_id')->unsigned();
+            $table->foreign('subscription_id')->references('id')->on('subscribe_types')->onDelete('restrict');
             $table->integer('status')->default(0);
             $table->integer('payment_id');
             $table->string('fawry_code')->nullable();

@@ -11,18 +11,16 @@
             margin: 0 auto;
         }
     </style>
+    <link rel="stylesheet" type="text/css" href="{{url('front')}}/css/select2.css" />
     @endpush
     @section('title')
     {{$title}}
     @endsection
     @section('content')
-
-
     </div>
     <!-- .bg-level-1 -->
     <div id="kids_middle_container">
         <!-- .content -->
-
         <div class="bg-level-2-full-width-container kids_bottom_content">
             <div class="bg-level-2-page-width-container no-padding">
                 <section class="kids_bottom_content_container">
@@ -32,7 +30,7 @@
                         <div class="container l-page-width" style="">
                             <div class="entry-container">
                                 <main>
-                                    <div class="woocommerce" style="padding:11%;">
+                                    <div class="woocommerce" style="padding:11%;text-align: -webkit-center;">
                                         <h2 class="widget-title" style="text-align: center"> {{$title}}</h2>
 
                                         <form method="post" action="{{url('update-profile')}}" class="login">
@@ -60,7 +58,7 @@
                                                 <label for="city_id"
                                                        style="color: black"><b>{{trans('lang.country')}}</b> <span
                                                         class="required">*</span></label>
-                                                <select name="city_id" id="city_id" class="form-control" required>
+                                                <select name="city_id" id="billing_country" class="country_to_state country_select" required>
                                                     @foreach(\App\Models\City::all() as $city)
                                                         <option
                                                             @if($user->city_id == $city->id) selected
@@ -85,12 +83,9 @@
                                                        id="password_confirmation"/>
                                             </p>
                                             <p class="form-row">
-
                                                 <input type="submit" class="button btn btn-lg" name="login"
                                                        value="{{trans('lang.update')}}"/>
-                                                {{--                                                <a href="#" class="btn btn-dark">Lost your password?</a>--}}
                                             </p>
-
                                         </form>
 
                                     </div>
@@ -118,7 +113,6 @@
     @endsection
 
 @section('js')
-
-
+    <script src='{{url('front')}}/js/select2.js'></script>
 
 @endsection

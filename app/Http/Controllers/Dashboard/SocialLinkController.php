@@ -12,6 +12,7 @@ use App\Http\Requests\TeamRequest;
 use App\Models\Screen;
 use App\Models\SocialLink;
 use App\Models\Team;
+use Illuminate\Http\Request;
 
 class SocialLinkController extends GeneralController
 {
@@ -68,6 +69,18 @@ class SocialLinkController extends GeneralController
         }
         $this->model::where('id', $id)->update($data);
         return redirect()->route($this->route)->with('success', 'تم التعديل بنجاح');
+
+    }
+    
+    public function delete(Request $request, $id)
+    {
+        try {
+            $data = $this->model::findOrFail($id);
+            $data->delete();
+            return redirect()->back()->with('success', 'تم الحذف بنجاح');
+        } catch (\Exception $e) {
+            return redirect()->route($this->route)->with('danger', 'لا يمكنك الحذف لاستخدام الدولة عن طريق العملاء');
+        }
 
     }
 }

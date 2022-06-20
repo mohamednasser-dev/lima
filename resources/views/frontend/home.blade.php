@@ -6,9 +6,6 @@
     {{$data['title']}}
 @endsection
 @section('content')
-
-
-
     <!-- HEADER END -->
     <div class="bg-level-2-page-width-container ">
         <div class="bg-level-2 first-part" id="bg-level-2"></div>
@@ -71,8 +68,6 @@
         <!-- .l-page-width -->
         <div class="bg-level-2 second-part" id="bg-level-2"></div>
     </div>
-    </div>
-    </div>
     <!-- .bg-level-1 -->
     <div id="kids_middle_container" class="kids_middle_container">
         <!-- .content -->
@@ -106,13 +101,14 @@
                                                                                  class="iso-item happyfeet">
                                                                                 <div class="content-wrapper">
                                                                                     <a
-                                                                                       href="{{url('category-details/'.$subCategory->id)}}">
-                                                                                    <figure>
-                                                                                        <img class="img_post"
-                                                                                            src='{{$subCategory->image}}'
-                                                                                            width='278px' height='182px'
-                                                                                            alt='{{$subCategory->name}}'/>
-                                                                                    </figure>
+                                                                                        href="{{url('category-details/'.$subCategory->id)}}">
+                                                                                        <figure>
+                                                                                            <img class="img_post"
+                                                                                                 src='{{$subCategory->image}}'
+                                                                                                 width='108px'
+                                                                                                 height='82px'
+                                                                                                 alt='{{$subCategory->name}}'/>
+                                                                                        </figure>
                                                                                     </a>
                                                                                 </div>
                                                                                 <!--/ content-wrapper-->
@@ -120,210 +116,37 @@
                                                                                     <div class="title"><a class="link"
                                                                                                           href="{{url('category-details/'.$subCategory->id)}}">{{$subCategory->name}}
                                                                                         </a></div>
-                                                                                    {{--                                                                            <p>Lorem ipsum dolor sit amet. Lorem ipsum--}}
-                                                                                    {{--                                                                                dolor sit amet, consectetuer ...</p>--}}
                                                                                 </div>
-{{--                                                                                <div class="post-footer">--}}
-{{--                                                                                    <a href="{{url('category-details/'.$subCategory->id)}}"--}}
-{{--                                                                                       class="cws_button" >{{trans('lang.ReadMore')}}</a>--}}
-{{--                                                                                </div>--}}
-                                                                                <!--/ post-footer-->
                                                                                 <div class="kids_clear"></div>
                                                                             </div>
                                                                         @endforeach
-
-
                                                                     </div>
-                                                                    <!-- grid isotope -->
-
-                                                                    <!-- .gl_col_ -->
-                                                                    <!-- comments block -->
-                                                                    <!-- //end comments block -->
                                                             </main>
                                                         @endforeach
-
                                                     </div>
-                                                    <!-- .entry-container -->
                                                 </div>
-{{--                                                <div class="bg-level-2 second-part"></div>--}}
                                             </div>
                                         </div>
                                     </div>
-{{--                                    <div class='grid-row clearfix'>--}}
-{{--                                        <div class='grid-col grid-col-12'>--}}
-{{--                                            <section class='cws-widget'>--}}
-{{--                                                <div class='widget-title'>{{trans('lang.aboutUs')}}</div>--}}
-{{--                                                <section class='cws_widget_content'>--}}
-{{--                                                    <p style="color: black;"><img class="alignleft border size-thumbnail"--}}
-{{--                                                            src="{{ \App\Models\Page::where('type','about')->first()->image}}"--}}
-{{--                                                            alt="content_img_1" width="150" height="150"/>--}}
-{{--                                                        {!! \App\Models\Page::where('type','about')->first()->title !!}--}}
-{{--                                                    </p>--}}
-{{--                                                </section>--}}
-{{--                                            </section>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
 
-                                    <div class='grid-row clearfix margin-top-none margin-bottom-none'>
-                                        <div class='grid-col grid-col-12'>
-                                            <section class='cws-widget'>
-                                                <section class='cws_widget_content'>
-                                                    <hr/>
-                                                    <p>&nbsp;</p>
-                                                </section>
-                                            </section>
-                                        </div>
-                                    </div>
-
-                                    <!-- comments block -->
-                                    <!-- //end comments block -->
+                                    <div class="content_bottom_bg"></div>
                                 </main>
-                                <div class="kids_clear"></div>
 
                             </div>
+
                             <!-- .entry-container -->
                         </div>
+
                     </div>
                     <!-- ***************** - END Image floating - *************** -->
+
                 </section>
                 <!-- .bottom_content_container -->
+
             </div>
-
-            <div class="content_bottom_bg"></div>
         </div>
-        <div class="bg-level-2-full-width-container kids_bottom_content">
-            <div class="bg-level-2-page-width-container no-padding">
-                <section class="kids_bottom_content_container">
-                    <!-- ***************** - START Image floating - *************** -->
-                    <div class='grid-row clearfix'>
-                        <div class='grid-col grid-col-12'>
-                            <section class='cws-widget'>
-                                <h3 class='widget-title'>{{trans('lang.screenShot')}}</h3>
 
-                            </section>
-                        </div>
-                    </div>
-
-                    <div class="page-content">
-                        <div class="bg-level-2 first-part"></div>
-                        <div class="container l-page-width">
-                            <div class="entry-container ">
-                                <main>
-                                    <div class='grid-row clearfix'>
-                                        <div class='grid-col grid-col-12'>
-                                            <section class='cws-widget'>
-                                                <section class='cws_widget_content'>
-
-                                                    <!-- see gallery_shortcode() -->
-                                                    <div id='ngallery-1' class='ngallery clearfix column-4'>
-                                                        <dl class='gallery-item'>
-                                                            <dt class='gallery-icon '>
-                                                                <div class='content-wrapper'>
-                                                                    <figure>
-                                                                        <a href="{{url('front')}}/pic/Tangled_3rd5.jpg" data-rel="prettyPhoto[25727]" class="prettyPhoto kids_picture">
-                                                                            <img src="{{url('front')}}/pic/300x300-img-12.jpg" alt="" /></a>
-                                                                    </figure>
-                                                                </div>
-                                                            </dt>
-                                                        </dl>
-                                                        <dl class='gallery-item'>
-                                                            <dt class='gallery-icon '>
-                                                                <div class='content-wrapper'>
-                                                                    <figure>
-                                                                        <a href="{{url('front')}}/pic/Tangled_2nd5.jpg" data-rel="prettyPhoto[25727]" class="prettyPhoto kids_picture">
-                                                                            <img src="{{url('front')}}/pic/300x300-img-11.jpg" alt="" /></a>
-                                                                    </figure>
-                                                                </div>
-                                                            </dt>
-                                                        </dl>
-                                                        <dl class='gallery-item'>
-                                                            <dt class='gallery-icon '>
-                                                                <div class='content-wrapper'>
-                                                                    <figure>
-                                                                        <a href="{{url('front')}}/pic/LegoMovie_4th5.jpg" data-rel="prettyPhoto[25727]" class="prettyPhoto kids_picture">
-                                                                            <img src="{{url('front')}}/pic/300x300-img-10.jpg" alt="" /></a>
-                                                                    </figure>
-                                                                </div>
-                                                            </dt>
-                                                        </dl>
-                                                        <dl class='gallery-item'>
-                                                            <dt class='gallery-icon '>
-                                                                <div class='content-wrapper'>
-                                                                    <figure>
-                                                                        <a href="{{url('front')}}/pic/LegoMovie_3rd4.jpg" data-rel="prettyPhoto[25727]" class="prettyPhoto kids_picture">
-                                                                            <img src="{{url('front')}}/pic/300x300-img-9.jpg" alt="" /></a>
-                                                                    </figure>
-                                                                </div>
-                                                            </dt>
-                                                        </dl>
-                                                        <dl class='gallery-item'>
-                                                            <dt class='gallery-icon '>
-                                                                <div class='content-wrapper'>
-                                                                    <figure>
-                                                                        <a href="{{url('front')}}/pic/HappyFeet_5th5.jpg" data-rel="prettyPhoto[25727]" class="prettyPhoto kids_picture">
-                                                                            <img src="{{url('front')}}/pic/300x300-img-8.jpg" alt="" /></a>
-                                                                    </figure>
-                                                                </div>
-                                                            </dt>
-                                                        </dl>
-                                                        <dl class='gallery-item'>
-                                                            <dt class='gallery-icon '>
-                                                                <div class='content-wrapper'>
-                                                                    <figure>
-                                                                        <a href="{{url('front')}}/pic/HappyFeet_2nd4.jpg" data-rel="prettyPhoto[25727]" class="prettyPhoto kids_picture">
-                                                                            <img src="{{url('front')}}/pic/300x300-img-5.jpg" alt="" /></a>
-                                                                    </figure>
-                                                                </div>
-                                                            </dt>
-                                                        </dl>
-                                                        <dl class='gallery-item'>
-                                                            <dt class='gallery-icon '>
-                                                                <div class='content-wrapper'>
-                                                                    <figure>
-                                                                        <a href="{{url('front')}}/pic/HappyFeet_1st4.jpg" data-rel="prettyPhoto[25727]" class="prettyPhoto kids_picture">
-                                                                            <img src="{{url('front')}}/pic/300x300-img-4.jpg" alt="" /></a>
-                                                                    </figure>
-                                                                </div>
-                                                            </dt>
-                                                        </dl>
-                                                        <dl class='gallery-item'>
-                                                            <dt class='gallery-icon '>
-                                                                <div class='content-wrapper'>
-                                                                    <figure>
-                                                                        <a href="{{url('front')}}/pic/HappyFeet_4th5.jpg" data-rel="prettyPhoto[25727]" class="prettyPhoto kids_picture">
-                                                                            <img src="{{url('front')}}/pic/300x300-img-7.jpg" alt="" /></a>
-                                                                    </figure>
-                                                                </div>
-                                                            </dt>
-                                                        </dl>
-                                                    </div>
-                                                </section>
-                                            </section>
-                                        </div>
-                                    </div>
-                                    <!-- comments block -->
-                                    <!-- //end comments block -->
-                                </main>
-                                <div class="kids_clear"></div>
-                            </div>
-                            <!-- .entry-container -->
-                        </div>
-                        <div class="bg-level-2 second-part"></div>
-                    </div>
-                    <!-- ***************** - END Image floating - *************** -->
-                </section>
-                <!-- .bottom_content_container -->
-            </div>
-            <div class="content_bottom_bg"></div>
-        </div>
     </div>
-
-
-
-
-
-    <!-- .end_content -->
-
 
 @endsection
 

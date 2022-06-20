@@ -1,6 +1,11 @@
 <?php
 
 return [
+    'my_account' => 'my account',
+    'dont_have_account' => 'you don\'t have account ?',
+    'delivery_reach_you' => 'The representative will reach you anywhere to collect the subscription fee',
+    'with_delivery' => 'by delegate',
+    'choose_payment_method' => 'choose payment method',
     'fav_removed_successfully' => 'favorite removed successfully',
     'fav_added_successfully' => 'favorite added successfully',
     'finished' => 'finished',

@@ -66,6 +66,22 @@ class PermissionsSeeder extends Seeder
                 'display_name' => 'delete cities',
                 'description' => 'حذف المدن',
             ],
+
+            // subscription_types permissions
+            [
+                'path' => 'subscription_types',
+                'name' => 'read-subscription_types',
+                'display_name' => 'read subscription types',
+                'description' => 'عرض انواع الاشتراكات',
+            ],
+            [
+                'path' => 'subscription_types',
+                'name' => 'update-subscription_types',
+                'display_name' => 'update subscription types',
+                'description' => 'تعديل انواع الاشتراكات',
+            ],
+
+
             // categories permissions
             [
                 'path' => 'categories',

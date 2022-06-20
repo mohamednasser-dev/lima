@@ -1,6 +1,15 @@
 <?php
 
 return [
+    'dont_have_account' => 'لا تمتلك حساب ؟',
+    'delivery_reach_you' => 'المندوب سيصل اليك في اي مكان لتحصيل رسوم الاشتراك',
+    'with_delivery' => 'عن طريق مندوب',
+    'choose_payment_method' => 'أختر طريقة الدفع',
+    'links' => 'الروابط',
+    'pages' => 'الصفحات',
+    'screens' => 'الشاشات الترحيبية',
+    'teams' => 'فريق العمل',
+    'subscriptions' => 'الاشتراكات',
     'current_pass_incorrect' => 'كلمة المرور الحلية غير صحيحه',
     'user_password_updated_successfully' => 'تم تحديث كلمة المرور بنجاح',
     'fav_removed_successfully' => 'تم حذف المفضل بنجاح',
@@ -150,7 +159,7 @@ return [
 
 
     'otp' => 'رمز التأكيد',
-    'login' => 'تسجيل دخول',
+    'login' => 'تسجيل الدخول',
     'register' => 'إنشاء حساب',
     'favourite' => 'المفضلة',
     'subscribes' => 'الاشتراك',

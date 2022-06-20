@@ -180,6 +180,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
         Yajra\DataTables\DataTablesServiceProvider::class,
+        Milon\Barcode\BarcodeServiceProvider::class,
         Teckwei1993\Otp\OtpServiceProvider::class
     ],
 
@@ -235,7 +236,8 @@ return [
         'Image' => Intervention\Image\Facades\Image::class,
         'Otp' => Teckwei1993\Otp\OtpFacade::class,
         'Alert' => RealRashid\SweetAlert\Facades\Alert::class,
-
+        'DNS1D' => Milon\Barcode\Facades\DNS1DFacade::class,
+        'DNS2D' => Milon\Barcode\Facades\DNS2DFacade::class,
 
     ],
 

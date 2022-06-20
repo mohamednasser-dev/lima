@@ -28,7 +28,7 @@ class SubscriptionTypeSeeder extends Seeder
                 'name_ar' => 'نصف سنوي',
                 'name_en' => 'midterm',
                 'month_count' => 6,
-                'cost' => 500,
+                'cost' => 1200,
             ],
         ];
         foreach ($data as $get) {

@@ -26,7 +26,7 @@
                   class="form-control">{{ old('body_en', $data->body_en ?? '') }}</textarea>
     </div>
     <div class="form-group col-md-6">
-        <label> صورة العرض</label>
+        <label> صورة العرض (1150 * 400)</label>
         <div class="col-lg-8">
             <div class="image-input image-input-outline" id="kt_image_1">
                 <div class="image-input-wrapper {{ $errors->has('image') ? 'border-danger' : '' }}"
