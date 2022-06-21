@@ -81,7 +81,7 @@ Route::get('lang/{lang}', function ($lang) {
     }
     return back();
 });
-Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+Route::get('/logout', [LoginController::class, 'logout'])->name('user.logout');
 Route::get('/dashboard', [HomeController::class, 'index'])->name('admin');
 
 Route::group(['middleware' => 'auth'], function () {
