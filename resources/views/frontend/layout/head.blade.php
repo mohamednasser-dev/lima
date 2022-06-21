@@ -90,7 +90,7 @@
                         @if(session('lang') == "ar")
                             <ul>
                                 <li>
-                                    <a href="#" class="lang_sel_sel icl-en"><img class="iclflag"
+                                    <a  class="lang_sel_sel icl-en"><img class="iclflag"
                                                                                  src="{{url('front')}}/images/ar.png"
                                                                                  alt="ar" title="العربية"/> &nbsp;
                                     </a>
@@ -108,7 +108,7 @@
                         @else
                             <ul>
                                 <li>
-                                    <a href="#" class="lang_sel_sel icl-en"><img class="iclflag"
+                                    <a  class="lang_sel_sel icl-en"><img class="iclflag"
                                                                                  src="{{url('front')}}/images/en.png"
                                                                                  alt="en" title="English"/> &nbsp;
                                     </a>
@@ -186,7 +186,7 @@
                         @if(Request::segment(1) == "user-profile" ||  Request::segment(1) == "subscribe"||  Request::segment(1) == "favourite-list")
                             current-menu-item current_page_item
                         @endif ">
-                            <a href="#">{{trans('lang.my_account')}}</a>
+                            <a >{{trans('lang.my_account')}}</a>
                             <ul class="sub-menu">
                                 <li class="menu-item"><a href="{{url('/user-profile')}}">{{trans('lang.profile')}}</a>
                                 </li>
