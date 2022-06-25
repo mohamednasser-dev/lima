@@ -31,7 +31,7 @@ class SettingRequest extends FormRequest
             'logo' => 'nullable|mimes:jpeg,jpg,png',
             'login_pg' => 'nullable|mimes:jpeg,jpg,png',
             'logo_login' => 'nullable|mimes:jpeg,jpg,png',
-            'location' => 'nullable|url|max:191',
+            'location' => 'nullable|url|max:800',
             'facebook' => 'nullable|url|max:191',
             'twitter' => 'nullable|url|max:191',
             'instagram' => 'nullable|url|max:191',
