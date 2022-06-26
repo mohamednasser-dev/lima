@@ -31,10 +31,10 @@
                     <!-- ***************** - START Image floating - *************** -->
                     <div class="page-content">
                         <div class="bg-level-2 first-part"></div>
-                        <div class="container l-page-width" style="">
+                        <div class="container l-page-width" style="text-align-last: center;">
                             <div class="entry-container">
                                 <main>
-                                    <div class="woocommerce" style="padding:11%;">
+                                    <div class="woocommerce" style="padding:11%;text-align: -webkit-center;">
                                         <h2 class="widget-title" style="text-align: center">{{$data['title']}}</h2>
 
 
