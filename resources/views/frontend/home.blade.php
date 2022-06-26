@@ -103,10 +103,10 @@
                                                                                     <a
                                                                                         href="{{url('category-details/'.$subCategory->id)}}">
                                                                                         <figure>
-                                                                                            <img class="img_post"
+                                                                                            <img class=""
                                                                                                  src='{{$subCategory->image}}'
-                                                                                                 width='108px'
-                                                                                                 height='82px'
+{{--                                                                                                 width='108px'--}}
+{{--                                                                                                 height='82px'--}}
                                                                                                  alt='{{$subCategory->name}}'/>
                                                                                         </figure>
                                                                                     </a>
