@@ -44,6 +44,12 @@ class ScreenController extends GeneralController
 
     }
 
+    public function delete($id)
+    {
+        $inbox = $this->model::findOrFail($id);
+        $inbox->delete();
+        return redirect()->route($this->route)->with('success', 'تم الحذف بنجاح');
+    }
     public function edit($id)
     {
         $data = $this->model::findOrFail($id);
