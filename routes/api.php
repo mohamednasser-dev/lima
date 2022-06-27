@@ -50,7 +50,9 @@ Route::group(['middleware' => ['api'], 'prefix' => "v1", 'namespace' => 'v1'], f
         Route::post('/register', [UserController::class, 'register']);
         Route::post('/verify_phone', [UserController::class, 'verify_phone']);
         Route::post('/login', [UserController::class, 'login']);
-        Route::post('/forget/password', [UserController::class, 'forget_password_code']);
+        Route::post('/forget-password', [UserController::class, 'ForgetPassword']);
+        Route::post('/verify', [UserController::class, 'Verify']);
+        Route::post('/change-password', [UserController::class, 'changePassword']);
     });
 
     Route::group(['middleware' => ['auth:api'], 'prefix' => "user"], function () {

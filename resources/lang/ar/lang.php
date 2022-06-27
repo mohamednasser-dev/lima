@@ -1,6 +1,10 @@
 <?php
 
 return [
+    'passwordChangedSuccess' => 'تم تغيير كلمة المرور بنجاح',
+    'Verified_success' => 'تم تاكيد الرمز بنجاح',
+    'codeError' => 'الرمز غير صحيح ',
+    'CodeSent' => 'تم ارسال الرمز بنجاح',
     'dont_have_account' => 'لا تمتلك حساب ؟',
     'delivery_reach_you' => 'المندوب سيصل اليك في اي مكان لتحصيل رسوم الاشتراك',
     'with_delivery' => 'عن طريق مندوب',

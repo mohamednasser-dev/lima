@@ -181,6 +181,7 @@ return [
         Intervention\Image\ImageServiceProvider::class,
         Yajra\DataTables\DataTablesServiceProvider::class,
         Milon\Barcode\BarcodeServiceProvider::class,
+        Ghanem\LaravelSmsmisr\SmsmisrServiceProvider::class,
         Teckwei1993\Otp\OtpServiceProvider::class
     ],
 
@@ -238,7 +239,7 @@ return [
         'Alert' => RealRashid\SweetAlert\Facades\Alert::class,
         'DNS1D' => Milon\Barcode\Facades\DNS1DFacade::class,
         'DNS2D' => Milon\Barcode\Facades\DNS2DFacade::class,
-
+        'Smsmisr' => Ghanem\LaravelSmsmisr\Smsmisr::class,
     ],
 
 ];

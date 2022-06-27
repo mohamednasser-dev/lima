@@ -3,6 +3,11 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\GeneralController;
+use App\Http\Resources\UsersResources;
+use App\Models\Verfication;
+use Carbon\Carbon;
+use Ghanem\LaravelSmsmisr\Facades\Smsmisr;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Resources\UserResources;
 use Illuminate\Support\Facades\Auth;
@@ -151,6 +156,55 @@ class UserController extends GeneralController
         return $this->sendResponse($request['email'], __('lang.code_sent_to_email_successfully'), 200);
     }
 
+    public function ForgetPassword(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'phone' => 'required|exists:users,phone',
+        ]);
+        if ($validator->fails()) {
+            return response()->json(['status' => 401, 'msg' => $validator->messages()->first()]);
+        }
+        $otp = \Otp::generate($request->phone);
+        //send here sms
+        Smsmisr::send("كود التحقق الخاص بك هو: " . $otp, $request->phone, null, 2);
+        //end sending
+        $result['otp'] = $otp;
+        return response()->json(msgdata($request, success(), trans('lang.CodeSent'), $result));
+
+    }
+
+    public function Verify(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'phone' => 'required|exists:users,phone',
+            'code' => 'required|min:4',
+        ]);
+        if ($validator->fails()) {
+            return response()->json(['status' => 401, 'msg' => $validator->messages()->first()]);
+        }
+//        $validated_otp = \Otp::validate($request->phone, $request->code);
+//        if ($validated_otp->status == true) {
+            return response()->json(msg($request, success(), trans('lang.Verified_success')));
+//        } else {
+//            return response()->json(msg($request, failed(), trans('lang.codeError')));
+//        }
+    }
+
+    public function changePassword(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'phone' => 'required|exists:users,phone',
+            'password' => 'required|min:8|confirmed',
+        ]);
+        if ($validator->fails()) {
+            return response()->json(['status' => 401, 'msg' => $validator->messages()->first()]);
+        }
+        $user = User::where('phone', $request->phone)->first();
+        $user->password = $request->password;
+        $user->save();
+        return response()->json(msg($request, success(), trans('lang.passwordChangedSuccess')));
+    }
+
     public function login(Request $request)
     {
         $data = $request->all();
@@ -181,9 +235,6 @@ class UserController extends GeneralController
             }
         }
     }
-
-
-
 
 
     public function logout()
