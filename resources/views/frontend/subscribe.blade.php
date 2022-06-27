@@ -15,7 +15,9 @@
                                 <main>
                                     <h2 class="widget-title" style="text-align: center"> {{$title}}</h2>
                                     @if(auth()->guard('users')->user()->subscriber == 1)
-                                        <label>you are subscribe to a package </label>
+                                        <div style="text-align: -webkit-center">
+                                        <label style="color: red">{{trans('lang.you already subscribed to a package')}} </label>
+                                        </div>
                                     @endif
                                     <div class='grid-row eq-columns clearfix'
                                          style='margin-top:25px; justify-content: center;'>

@@ -187,4 +187,5 @@ return [
     'Subscribe' => 'الاشتراك',
     'subscribe' => 'الاشتراك',
     'select_country' => 'اختر دولة',
+    'you already subscribed to a package' => 'انت بالفعل مشترك فى باقة!',
 ];

@@ -103,6 +103,7 @@ return [
     'subscribe' => 'Subscribe',
     'select_country' => 'Select Country',
     'my_account' => 'My Account',
+    'you already subscribed to a package' => 'you already subscribed to a package',
 
 
 ];
