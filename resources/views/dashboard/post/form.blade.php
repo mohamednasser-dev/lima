@@ -105,6 +105,7 @@
                         <label class="custom-file-label" for="customFile">اختر الفيديو</label>
                     </div>
 
+
                     {{--            <input type="file" name="video" value="{{old('video', $data->video ?? '')}}" accept=".mp4, .mov, .wmv, .flv, .avi, .mkv, .webm">--}}
 
                 </div>
@@ -113,7 +114,7 @@
     @endif
 </div>
 <div class="card-footer text-left">
-    <button type="Submit" id="submit" class="btn btn-success btn-default ">حفظ</button>
+    <button id="saveButton" class="btn btn-success btn-default ">حفظ</button>
     <a href="{{ URL::previous() }}" class="btn btn-secondary">الغاء</a>
 </div>
 
@@ -203,4 +204,6 @@
         $('#kt_select2_5').select2({});
     </script>
     <script src="{{ asset('assets/js/pages/crud/forms/widgets/select2.js')}}"></script>
+
+
 @endpush
