@@ -218,19 +218,19 @@ class UserController extends GeneralController
         $credentials = $request->only(['phone', 'password']);
         $token = Auth::guard('api')->attempt($credentials);
         if (!$token) {
-            return $this->errorResponse(__('lang.login_data_not_correct'), null, 401);
+            return $this->errorLoginResponse(__('lang.login_data_not_correct'), null, failed());
         } else {
             $user = Auth::guard('api')->user();
             if (!$token) {
-                return $this->errorResponse(__('lang.login_data_not_correct'), null, 401);
+                return $this->errorLoginResponse(__('lang.login_data_not_correct'), null, failed());
             } else {
                 if ($user->status == 'inactive') {
                     Auth::guard('api')->logout();
-                    return $this->errorResponse(__('lang.you_are_not_active'), null, 406);
+                    return $this->errorLoginResponse(__('lang.you_are_not_active'), null, not_active());
                 } else {
                     $user->token_api = $token;
                     unset($user['status']);
-                    return $this->sendResponse($user, trans('lang.login_s'), 200);
+                    return $this->sendResponse($user, trans('lang.login_s'), success());
                 }
             }
         }
