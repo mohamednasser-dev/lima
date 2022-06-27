@@ -182,12 +182,12 @@ class UserController extends GeneralController
         if ($validator->fails()) {
             return response()->json(['status' => 401, 'msg' => $validator->messages()->first()]);
         }
-//        $validated_otp = \Otp::validate($request->phone, $request->code);
-//        if ($validated_otp->status == true) {
-        return response()->json(msg($request, success(), trans('lang.Verified_success')));
-//        } else {
-//            return response()->json(msg($request, failed(), trans('lang.codeError')));
-//        }
+        $validated_otp = \Otp::validate($request->phone, $request->code);
+        if ($validated_otp->status == true) {
+            return response()->json(msg($request, success(), trans('lang.Verified_success')));
+        } else {
+            return response()->json(msg($request, failed(), trans('lang.codeError')));
+        }
     }
 
     public function changePassword(Request $request)
