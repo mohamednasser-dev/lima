@@ -49,7 +49,7 @@
 
         $("#saveButton").click(function () {
             // $('#progressDialog').modal('show');
-            $("#progressDialog").modal({ backdrop: "static ", keyboard: false });
+            $("#progressDialog").modal({ backdrop: "static", keyboard: false });
 
             var updateForm = document.querySelector('#form');
             var request = new XMLHttpRequest();
