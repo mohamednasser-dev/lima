@@ -42,7 +42,7 @@ class UserController extends GeneralController
         //generate random 4 numbers
         $otp = \Otp::generate($data['phone']);
         //send here sms
-        //...
+        Smsmisr::send("كود التحقق الخاص بك هو: " . $otp, $request->phone, null, 2);
         //end sending
         $result['otp'] = $otp;
         return $this->sendResponse($result, __('lang.verify_phone'), 200);
@@ -61,8 +61,8 @@ class UserController extends GeneralController
         if ($validator->fails()) {
             return response()->json(['status' => 401, 'msg' => $validator->messages()->first()]);
         }
-//        $validated_otp = \Otp::validate($data['phone'], $data['otp']);
-//        if ($validated_otp->status == true) {
+        $validated_otp = \Otp::validate($data['phone'], $data['otp']);
+        if ($validated_otp->status == true) {
         unset($data['otp']);
         $created_user = User::create($data);
         if ($created_user) {
@@ -76,9 +76,9 @@ class UserController extends GeneralController
                 return $this->sendResponse($logined_user, __('lang.login_s'), 200);
             }
         }
-//        } else {
-//            return $this->errorResponse(__('lang.otp_invalid'), null, 401);
-//        }
+        } else {
+            return $this->errorResponse(__('lang.otp_invalid'), null, 401);
+        }
     }
 
 
@@ -166,7 +166,7 @@ class UserController extends GeneralController
         }
         $otp = \Otp::generate($request->phone);
         //send here sms
-//        Smsmisr::send("كود التحقق الخاص بك هو: " . $otp, $request->phone, null, 2);
+        Smsmisr::send("كود التحقق الخاص بك هو: " . $otp, $request->phone, null, 2);
         //end sending
         $result['otp'] = $otp;
         return response()->json(msgdata($request, success(), trans('lang.CodeSent'), $result));

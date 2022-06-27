@@ -37,24 +37,28 @@ class CategorySeeder extends Seeder
                 'name_ar' => 'حلقات كرتون',
                 'name_en' => 'Cartons episodes',
                 'image' => 'episodes.png',
+                'type' => 'video',
                 'parent_id' =>1,
             ],
             [
                 'name_ar' => 'حكايات',
                 'name_en' => 'Tales',
                 'image' => 'tales.png',
+                'type' => 'video',
                 'parent_id' =>1,
             ],
             [
                 'name_ar' => 'قصص',
                 'name_en' => 'Stories',
                 'image' => 'stories.png',
+                'type' => 'article',
                 'parent_id' =>1,
             ],
             [
                 'name_ar' => 'مقالات',
                 'name_en' => 'Articles',
                 'image' => 'articles.png',
+                'type' => 'article',
                 'parent_id' =>1,
             ],
 
@@ -117,12 +121,14 @@ class CategorySeeder extends Seeder
                 'name_ar' => 'فيديوهات',
                 'name_en' => 'videos',
                 'image' => 'videos.png',
+                'type' => 'video',
                 'parent_id' =>2,
             ],
             [
                 'name_ar' => 'مقالات',
                 'name_en' => 'Articles',
                 'image' => 'mother_articles.png',
+                'type' => 'article',
                 'parent_id' =>2,
             ],
         ];
