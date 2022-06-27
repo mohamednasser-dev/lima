@@ -114,7 +114,8 @@
     @endif
 </div>
 <div class="card-footer text-left">
-    <button id="saveButton" class="btn btn-success btn-default " data-backdrop="static" data-keyboard="false">حفظ</button>
+    <button id="saveButton" class="btn btn-success btn-default " data-backdrop="static" data-keyboard="false">حفظ
+    </button>
     <a href="{{ URL::previous() }}" class="btn btn-secondary">الغاء</a>
 </div>
 
@@ -178,7 +179,7 @@
                 var category = $(this).val();
                 var type = document.getElementById("txt_type").value;
                 $.ajax({
-                    url: "/posts/get_subcategory/" + category+ "/" + type,
+                    url: "/posts/get_subcategory/" + category + "/" + type,
                     dataType: 'html',
                     type: 'get',
                     success: function (data) {
@@ -205,5 +206,43 @@
     </script>
     <script src="{{ asset('assets/js/pages/crud/forms/widgets/select2.js')}}"></script>
 
+    <script>
+
+        $("#saveButton").click(function () {
+            // $('#progressDialog').modal('show');
+            $("#progressDialog").modal({backdrop: "static ", keyboard: false});
+
+            var updateForm = document.querySelector('#form');
+            var request = new XMLHttpRequest();
+
+            request.upload.addEventListener('progress', function (e) {
+                var percent = Math.round((e.loaded / e.total) * 100);
+
+                $('.progress-bar').css('width', percent + '%');
+                $('.sr-only').html(percent + '%');
+
+
+            }, false);
+
+            request.addEventListener('load', function (e) {
+                var jsonResponse = JSON.parse(e.target.responseText);
+                if (jsonResponse.errors) {
+                    console.log(jsonResponse.errors);
+                } else {
+                    $('#progressDialog').modal('hide');
+                    window.location.href = '{{url()->previous()}}';
+                }
+            }, false);
+
+            updateForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+                var formData = new FormData(updateForm);
+                request.open('post', updateForm['action']);
+                request.send(formData);
+            }, false);
+        });
+
+
+    </script>
 
 @endpush
