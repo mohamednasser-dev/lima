@@ -42,7 +42,7 @@ class UserController extends GeneralController
         //generate random 4 numbers
         $otp = \Otp::generate($data['phone']);
         //send here sms
-        //...
+        Smsmisr::send("كود التحقق الخاص بك هو: " . $otp, $request->phone, null, 2);
         //end sending
         $result['otp'] = $otp;
         return $this->sendResponse($result, __('lang.verify_phone'), 200);
@@ -61,24 +61,24 @@ class UserController extends GeneralController
         if ($validator->fails()) {
             return response()->json(['status' => 401, 'msg' => $validator->messages()->first()]);
         }
-//        $validated_otp = \Otp::validate($data['phone'], $data['otp']);
-//        if ($validated_otp->status == true) {
-        unset($data['otp']);
-        $created_user = User::create($data);
-        if ($created_user) {
-            $credentials = $request->only(['phone', 'password']);
-            $token = Auth::guard('api')->attempt($credentials);
-            if (!$token) {
-                return $this->errorResponse(__('lang.login_data_not_correct'), null, 401);
-            } else {
-                $logined_user = Auth::guard('api')->user();
-                $logined_user->token_api = $token;
-                return $this->sendResponse($logined_user, __('lang.login_s'), 200);
+        $validated_otp = \Otp::validate($data['phone'], $data['otp']);
+        if ($validated_otp->status == true) {
+            unset($data['otp']);
+            $created_user = User::create($data);
+            if ($created_user) {
+                $credentials = $request->only(['phone', 'password']);
+                $token = Auth::guard('api')->attempt($credentials);
+                if (!$token) {
+                    return $this->errorLoginResponse(__('lang.login_data_not_correct'), null, 401);
+                } else {
+                    $logined_user = Auth::guard('api')->user();
+                    $logined_user->token_api = $token;
+                    return $this->sendResponse($logined_user, __('lang.login_s'), 200);
+                }
             }
+        } else {
+            return $this->errorLoginResponse(__('lang.otp_invalid'), null, 401);
         }
-//        } else {
-//            return $this->errorResponse(__('lang.otp_invalid'), null, 401);
-//        }
     }
 
 
@@ -166,7 +166,7 @@ class UserController extends GeneralController
         }
         $otp = \Otp::generate($request->phone);
         //send here sms
-//        Smsmisr::send("كود التحقق الخاص بك هو: " . $otp, $request->phone, null, 2);
+        Smsmisr::send("كود التحقق الخاص بك هو: " . $otp, $request->phone, null, 2);
         //end sending
         $result['otp'] = $otp;
         return response()->json(msgdata($request, success(), trans('lang.CodeSent'), $result));
@@ -182,12 +182,12 @@ class UserController extends GeneralController
         if ($validator->fails()) {
             return response()->json(['status' => 401, 'msg' => $validator->messages()->first()]);
         }
-//        $validated_otp = \Otp::validate($request->phone, $request->code);
-//        if ($validated_otp->status == true) {
+        $validated_otp = \Otp::validate($request->phone, $request->code);
+        if ($validated_otp->status == true) {
             return response()->json(msg($request, success(), trans('lang.Verified_success')));
-//        } else {
-//            return response()->json(msg($request, failed(), trans('lang.codeError')));
-//        }
+        } else {
+            return response()->json(msg($request, failed(), trans('lang.codeError')));
+        }
     }
 
     public function changePassword(Request $request)
@@ -218,19 +218,19 @@ class UserController extends GeneralController
         $credentials = $request->only(['phone', 'password']);
         $token = Auth::guard('api')->attempt($credentials);
         if (!$token) {
-            return $this->errorResponse(__('lang.login_data_not_correct'), null, 401);
+            return $this->errorLoginResponse(__('lang.login_data_not_correct'), null, failed());
         } else {
             $user = Auth::guard('api')->user();
             if (!$token) {
-                return $this->errorResponse(__('lang.login_data_not_correct'), null, 401);
+                return $this->errorLoginResponse(__('lang.login_data_not_correct'), null, failed());
             } else {
                 if ($user->status == 'inactive') {
                     Auth::guard('api')->logout();
-                    return $this->errorResponse(__('lang.you_are_not_active'), null, 406);
+                    return $this->errorLoginResponse(__('lang.you_are_not_active'), null, not_active());
                 } else {
                     $user->token_api = $token;
                     unset($user['status']);
-                    return $this->sendResponse($user, trans('lang.login_s'), 200);
+                    return $this->sendResponse($user, trans('lang.login_s'), success());
                 }
             }
         }

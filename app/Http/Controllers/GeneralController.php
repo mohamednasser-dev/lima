@@ -363,7 +363,24 @@ class GeneralController extends Controller
         }
 
         // return response data
-        return response()->json($response, $code);
+        return response()->json($response, 200);
+    }
+
+    public function errorLoginResponse($error, $errorMessage = [], $code = 200)
+    {
+        // Set array response data
+        $response = [
+            'status' => $code,
+            'msg' => $error
+        ];
+
+        // If not empty errors message => set item data in response array
+        if(!empty($errorMessage)) {
+            $response['errors'] = $errorMessage;
+        }
+
+        // return response data
+        return response()->json($response, 200);
     }
 
 
