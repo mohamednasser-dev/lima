@@ -363,7 +363,7 @@ class GeneralController extends Controller
         }
 
         // return response data
-        return response()->json($response, $code);
+        return response()->json($response, 200);
     }
 
     public function errorLoginResponse($error, $errorMessage = [], $code = 200)

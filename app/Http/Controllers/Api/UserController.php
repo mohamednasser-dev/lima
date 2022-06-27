@@ -63,21 +63,21 @@ class UserController extends GeneralController
         }
         $validated_otp = \Otp::validate($data['phone'], $data['otp']);
         if ($validated_otp->status == true) {
-        unset($data['otp']);
-        $created_user = User::create($data);
-        if ($created_user) {
-            $credentials = $request->only(['phone', 'password']);
-            $token = Auth::guard('api')->attempt($credentials);
-            if (!$token) {
-                return $this->errorResponse(__('lang.login_data_not_correct'), null, 401);
-            } else {
-                $logined_user = Auth::guard('api')->user();
-                $logined_user->token_api = $token;
-                return $this->sendResponse($logined_user, __('lang.login_s'), 200);
+            unset($data['otp']);
+            $created_user = User::create($data);
+            if ($created_user) {
+                $credentials = $request->only(['phone', 'password']);
+                $token = Auth::guard('api')->attempt($credentials);
+                if (!$token) {
+                    return $this->errorLoginResponse(__('lang.login_data_not_correct'), null, 401);
+                } else {
+                    $logined_user = Auth::guard('api')->user();
+                    $logined_user->token_api = $token;
+                    return $this->sendResponse($logined_user, __('lang.login_s'), 200);
+                }
             }
-        }
         } else {
-            return $this->errorResponse(__('lang.otp_invalid'), null, 401);
+            return $this->errorLoginResponse(__('lang.otp_invalid'), null, 401);
         }
     }
 
@@ -184,7 +184,7 @@ class UserController extends GeneralController
         }
 //        $validated_otp = \Otp::validate($request->phone, $request->code);
 //        if ($validated_otp->status == true) {
-            return response()->json(msg($request, success(), trans('lang.Verified_success')));
+        return response()->json(msg($request, success(), trans('lang.Verified_success')));
 //        } else {
 //            return response()->json(msg($request, failed(), trans('lang.codeError')));
 //        }
