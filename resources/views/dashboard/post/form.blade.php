@@ -114,7 +114,7 @@
     @endif
 </div>
 <div class="card-footer text-left">
-    <button id="saveButton" class="btn btn-success btn-default ">حفظ</button>
+    <button id="saveButton" class="btn btn-success btn-default " data-backdrop="static" data-keyboard="false">حفظ</button>
     <a href="{{ URL::previous() }}" class="btn btn-secondary">الغاء</a>
 </div>
 

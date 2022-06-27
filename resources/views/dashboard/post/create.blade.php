@@ -69,7 +69,7 @@
 
 
     <div class="modal fade" id="progressDialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-         aria-hidden="true">
+         aria-hidden="true" data-backdrop="static" data-keyboard="false">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-body">
@@ -88,8 +88,10 @@
 @endsection
 @push('script')
     <script>
+
         $("#saveButton").click(function () {
-            $('#progressDialog').modal('show');
+            // $('#progressDialog').modal('show');
+            $("#progressDialog").modal({ backdrop: "static ", keyboard: false });
 
             var updateForm = document.querySelector('#form');
             var request = new XMLHttpRequest();
