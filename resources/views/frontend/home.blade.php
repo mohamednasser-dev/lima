@@ -128,7 +128,7 @@
                                             </div>
                                         </div>
                                     </div>
-
+                                    <div class="bg-level-2 second-part"></div>
                                     <div class="content_bottom_bg"></div>
                                 </main>
 
