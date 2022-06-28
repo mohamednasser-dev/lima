@@ -105,8 +105,8 @@
                                                                                         <figure>
                                                                                             <img class=""
                                                                                                  src='{{$subCategory->image}}'
-{{--                                                                                                 width='108px'--}}
-{{--                                                                                                 height='82px'--}}
+                                                                                                 {{--                                                                                                 width='108px'--}}
+                                                                                                 {{--                                                                                                 height='82px'--}}
                                                                                                  alt='{{$subCategory->name}}'/>
                                                                                         </figure>
                                                                                     </a>

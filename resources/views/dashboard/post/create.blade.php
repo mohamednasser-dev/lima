@@ -69,16 +69,16 @@
 
 
     <div class="modal fade" id="progressDialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-         aria-hidden="true" data-backdrop="static" data-keyboard="false">
+         aria-hidden="true" data-backdrop="static" data-keyboard="false" style="display: none">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-body">
                     <p>Please wait while we update your topic. You will be redirected automatically!</p>
-
                     <div class="progress progress-striped active">
                         <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0"
                              aria-valuemax="100" style="width: 0%">
                             <span class="sr-only"></span>
+                            <span id="percent"></span>
                         </div>
                     </div>
                 </div>
@@ -90,9 +90,8 @@
     <script>
 
         $("#saveButton").click(function () {
-            // $('#progressDialog').modal('show');
-            $("#progressDialog").modal({ backdrop: "static ", keyboard: false });
-
+            $('#progressDialog').modal('show');
+            // $("#progressDialog").modal({backdrop: "static ", keyboard: false});
             var updateForm = document.querySelector('#form');
             var request = new XMLHttpRequest();
 
