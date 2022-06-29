@@ -42,8 +42,9 @@ Route::get('cache', function () {
     Artisan::call('route:clear');
     return 'success';
 });
+Route::get('/', [\App\Http\Controllers\Landing\HomeController::class, 'home'])->name('front.home');
 
-Route::get('/', [\App\Http\Controllers\Front\HomeController::class, 'Home'])->name('front.home');
+//Route::get('/', [\App\Http\Controllers\Front\HomeController::class, 'Home'])->name('front.home');
 Route::get('/home', [\App\Http\Controllers\Front\HomeController::class, 'Home'])->name('home.front.home');
 Route::get('/category-details/{id}', [\App\Http\Controllers\Front\HomeController::class, 'CategoryDetails']);
 Route::get('posts/make_favorite/{id}',  [\App\Http\Controllers\Front\HomeController::class, 'make_favorite'])->name('posts.make_favorite');
