@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Models\Setting;
 use App\Models\User;
+use Illuminate\Support\Facades\View;
 use Carbon\Carbon;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\App;
@@ -54,6 +56,8 @@ class AppServiceProvider extends ServiceProvider
                User::find($user->id)->update(['subscriber'=>0]);
             }
         }
+        View::share('setting_phone', Setting::where('key','phone')->first()->val);
+        View::share('setting_email', Setting::where('key','email')->first()->val);
 
     }
 

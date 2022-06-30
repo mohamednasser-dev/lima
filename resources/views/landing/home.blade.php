@@ -49,7 +49,7 @@
 
     <link rel="stylesheet" href="{{url('landing')}}/assets/css/style.css">
 </head>
-<body>
+<body >
 
 <div class="main-wrapper">
 
@@ -90,7 +90,7 @@
     -->
     <div class="navigation">
         <div class="navigation-wrapper">
-            <div class="container">
+            <div class="container" style="direction: rtl;">
                 <div class="navigation-inner">
                     <div class="navigation-logo">
                         <a href="index.html">
@@ -116,6 +116,7 @@
                                     <span>{{trans('landing.home')}}</span>
                                 </a>
                             </li>
+                            &nbsp; &nbsp; &nbsp;
                             <li>
                                 <a href="index.html" class="link-underline link-underline-1">
                                     <span>{{trans('landing.about_80_idea')}}</span>
@@ -191,7 +192,7 @@
                     <div class="col-lg-6 offset-lg-0 order-lg-1 col-10 offset-1 order-2">
                         <div class="hero-content">
                             <h1 class="c-dark">Lima & Zola</h1>
-                            <p class="large c-grey">{{trans('landing.description')}}
+                            <p class="large c-grey" style="direction: rtl;">{{trans('landing.description')}}
                             </p>
                             <div class="download-button-group">
                                 <a href="#" class="download-button download-button-google">
@@ -241,12 +242,12 @@
     -->
     <div class="app-feature app-feature-1">
         <div class="app-feature-wrapper">
-            <div class="container">
+            <div class="container" style="direction: rtl;">
                 <div class="row">
                     <div class="col-lg-12 offset-lg-0 col-10 offset-1">
                         <div class="section-heading center width-64">
                             <div class="sub-heading c-blue upper ls-1">
-                                <i class="las la-cog"></i>
+                                {{--                                <i class="las la-cog"></i>--}}
                                 {{--                                <h5>app features</h5>--}}
                             </div>
                             <div class="main-heading c-dark">
@@ -256,90 +257,24 @@
                     </div>
                 </div>
                 <div class="row gx-5 gy-5">
-                    <div class="col-lg-4 offset-lg-0 col-md-6 offset-md-0 col-10 offset-1">
-                        <div class="app-feature-single app-feature-single-2">
-                            <div class="app-feature-single-wrapper">
-                                {{--                                <a href="feature-detail-1.html" class="icon">--}}
-                                {{--                                    <i class="las la-comments"></i>--}}
-                                {{--                                </a>--}}
-                                <a href="feature-detail-1.html">
-                                    <h3 class="c-dark">Easy to Use</h3>
-                                </a>
-                                <p class="c-grey">Heat multiply is second divided fowl there isn't man cattle they
-                                    wherein lights greater concern open days tree is brought.</p>
-                            </div>
+                    @foreach($data['main_categories'] as $key=> $mainCategory)
+                        <div class="main-heading c-dark">
+                            <h1>{{$mainCategory->name}}</h1>
                         </div>
-                    </div>
-                    <div class="col-lg-4 offset-lg-0 col-md-6 offset-md-0 col-10 offset-1">
-                        <div class="app-feature-single app-feature-single-2">
-                            <div class="app-feature-single-wrapper">
-                                {{--                                <a href="feature-detail-1.html" class="icon">--}}
-                                {{--                                    <i class="las la-headset"></i>--}}
-                                {{--                                </a>--}}
-                                <a href="feature-detail-1.html">
-                                    <h3 class="c-dark">Made for Everyone</h3>
-                                </a>
-                                <p class="c-grey">Heat multiply is second divided fowl there isn't man cattle they
-                                    wherein lights greater concern open days tree is brought.</p>
+                        @foreach($mainCategory->childrenCategories as $subCategory)
+                            <div class="col-lg-4 offset-lg-0 col-md-6 offset-md-0 col-10 offset-1">
+                                <div class="app-feature-single app-feature-single-2">
+                                    <div class="app-feature-single-wrapper">
+                                        <a href="blog-detail-1.html" class="figure">
+                                            <img src="{{$subCategory->image}}" style="width: 206px;"
+                                                 alt="blog-image">
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 offset-lg-0 col-md-6 offset-md-0 col-10 offset-1">
-                        <div class="app-feature-single app-feature-single-2">
-                            <div class="app-feature-single-wrapper">
-                                {{--                                <a href="feature-detail-1.html" class="icon">--}}
-                                {{--                                    <i class="las la-photo-video"></i>--}}
-                                {{--                                </a>--}}
-                                <a href="feature-detail-1.html">
-                                    <h3 class="c-dark">Share Everything</h3>
-                                </a>
-                                <p class="c-grey">Heat multiply is second divided fowl there isn't man cattle they
-                                    wherein lights greater concern open days tree is brought.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 offset-lg-0 col-md-6 offset-md-0 col-10 offset-1">
-                        <div class="app-feature-single app-feature-single-2">
-                            <div class="app-feature-single-wrapper">
-                                {{--                                <a href="feature-detail-1.html" class="icon">--}}
-                                {{--                                    <i class="las la-server"></i>--}}
-                                {{--                                </a>--}}
-                                <a href="feature-detail-1.html">
-                                    <h3 class="c-dark">Unlimited Storage</h3>
-                                </a>
-                                <p class="c-grey">Heat multiply is second divided fowl there isn't man cattle they
-                                    wherein lights greater concern open days tree is brought.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 offset-lg-0 col-md-6 offset-md-0 col-10 offset-1">
-                        <div class="app-feature-single app-feature-single-2">
-                            <div class="app-feature-single-wrapper">
-                                {{--                                <a href="feature-detail-1.html" class="icon">--}}
-                                {{--                                    <i class="las la-user-lock"></i>--}}
-                                {{--                                </a>--}}
-                                <a href="feature-detail-1.html">
-                                    <h3 class="c-dark">Data Protection</h3>
-                                </a>
-                                <p class="c-grey">Heat multiply is second divided fowl there isn't man cattle they
-                                    wherein lights greater concern open days tree is brought.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 offset-lg-0 col-md-6 offset-md-0 col-10 offset-1">
-                        <div class="app-feature-single app-feature-single-2">
-                            <div class="app-feature-single-wrapper">
-                                {{--                                <a href="feature-detail-1.html" class="icon">--}}
-                                {{--                                    <i class="las la-map-marked-alt"></i>--}}
-                                {{--                                </a>--}}
-                                <a href="feature-detail-1.html">
-                                    <h3 class="c-dark">Use from Anywhere</h3>
-                                </a>
-                                <p class="c-grey">Heat multiply is second divided fowl there isn't man cattle they
-                                    wherein lights greater concern open days tree is brought.</p>
-                            </div>
-                        </div>
-                    </div>
+                        @endforeach
+                        <hr>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -435,7 +370,7 @@
                                     <h1>{{trans('landing.app_advantage')}}</h1>
                                 </div>
                             </div>
-                            <div class="icon-text-1-group">
+                            <div class="icon-text-1-group" style="direction: rtl;">
                                 <div class="icon-text-1">
                                     <i class="las la-comments"></i>
                                     <div>
@@ -574,7 +509,7 @@
     -->
     <div class="testimonial-section">
         <div class="testimonial-section-wrapper">
-            <div class="container">
+            <div class="container" >
                 <div class="row">
                     <div class="col-lg-12 offset-lg-0 col-md-8 offset-md-2 col-10 offset-1">
                         <div class="section-heading center width-55">
@@ -604,8 +539,8 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="content">
-                                            <p>“This app is wonderful dry male ceepeth good them their in which to days
+                                        <div class="content" >
+                                            <p style="direction: rtl;" >“This app is wonderful dry male ceepeth good them their in which to days
                                                 two deep has yielding throw darkness bring likeness fifth by darkness
                                                 make face saw has under heaven forth saw there without lights app stars
                                                 for him replenish fowl creature.”</p>
@@ -625,7 +560,7 @@
                                             </div>
                                         </div>
                                         <div class="content">
-                                            <p>“This app is wonderful dry male ceepeth good them their in which to days
+                                            <p style="direction: rtl;"  > “This app is wonderful dry male ceepeth good them their in which to days
                                                 two deep has yielding throw darkness bring likeness fifth by darkness
                                                 make face saw has under heaven forth saw there without lights app stars
                                                 for him replenish fowl creature.”</p>
@@ -645,7 +580,7 @@
                                             </div>
                                         </div>
                                         <div class="content">
-                                            <p>“This app is wonderful dry male ceepeth good them their in which to days
+                                            <p style="direction: rtl;" >“This app is wonderful dry male ceepeth good them their in which to days
                                                 two deep has yielding throw darkness bring likeness fifth by darkness
                                                 make face saw has under heaven forth saw there without lights app stars
                                                 for him replenish fowl creature.”</p>
@@ -973,10 +908,10 @@
                         <div class="row">
                             <div class="col-lg-8 offset-lg-0 col-10 offset-1">
                                 <h1 class="c-white">Download from both Android and iOS</h1>
-{{--                                <h4 class="c-white">--}}
-{{--                                    <i class="fas fa-smile"></i>--}}
-{{--                                    3 Million users and counting!--}}
-{{--                                </h4>--}}
+                                {{--                                <h4 class="c-white">--}}
+                                {{--                                    <i class="fas fa-smile"></i>--}}
+                                {{--                                    3 Million users and counting!--}}
+                                {{--                                </h4>--}}
                             </div>
                             <div class="col-lg-4 offset-lg-0 col-10 offset-1">
                                 <div class="download-button-group download-button-1-group">
@@ -1028,91 +963,51 @@
     <!--
     blog section - start
     -->
-    <div class="blog-section">
-        <div class="blog-section-wrapper">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 offset-lg-0 col-10 offset-1">
-                        <div class="section-heading center width-55">
-                            {{--                            <div class="sub-heading c-blue upper ls-1">--}}
-                            {{--                                <i class="las la-bullhorn"></i>--}}
-                            {{--                                <h5>recent news</h5>--}}
-                            {{--                            </div>--}}
-                            <div class="main-heading c-dark">
-                                <h1>{{trans('landing.app_free_content')}}</h1>
+    @if(count($data['free_posts']) > 0)
+        <div class="blog-section">
+            <div class="blog-section-wrapper">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 offset-lg-0 col-10 offset-1">
+                            <div class="section-heading center width-55">
+                                {{--                            <div class="sub-heading c-blue upper ls-1">--}}
+                                {{--                                <i class="las la-bullhorn"></i>--}}
+                                {{--                                <h5>recent news</h5>--}}
+                                {{--                            </div>--}}
+                                <div class="main-heading c-dark">
+                                    <h1>{{trans('landing.app_free_content')}}</h1>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="row gx-5">
-                    <div class="col-lg-4 offset-lg-0 col-md-8 offset-md-2 col-10 offset-1">
-                        <div class="blog-single blog-single-1">
-                            <div class="blog-single-wrapper">
-                                <div class="blog-single-content">
-                                    <a href="blog-detail-1.html" class="figure">
-                                        <img src="{{url('landing')}}/assets/images/blog/blog-thumbnail-1.jpg"
-                                             alt="blog-image">
-                                    </a>
-                                    <a href="blog-detail-1.html">
-                                        <h3>New features coming in 2020 to our app.</h3>
-                                    </a>
-                                    <p>Behold creature him whose own doesn't god seasons winged two won't bearing herein
-                                        fowl fruitful they went there beginning ... </p>
+                    <div class="row gx-5">
+                        @foreach($data['free_posts'] as $row)
+                            <div class="col-lg-4 offset-lg-0 col-md-8 offset-md-2 col-10 offset-1">
+                                <div class="blog-single blog-single-1">
+                                    <div class="blog-single-wrapper">
+                                        <div class="blog-single-content">
+                                            <a href="#" class="figure">
+                                                <img src="{{$row->image}}"
+                                                     alt="blog-image">
+                                            </a>
+                                            <a href="#">
+                                                <h3>{!! $row->name !!}</h3>
+                                            </a>
+                                        </div>
+                                        <a href="#" class="circle">
+                                            <i class="las la-plus"></i>
+                                            <i class="las la-angle-right hover"></i>
+                                        </a>
+                                    </div>
                                 </div>
-                                <a href="blog-detail-1.html" class="circle">
-                                    <i class="las la-plus"></i>
-                                    <i class="las la-angle-right hover"></i>
-                                </a>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 offset-lg-0 col-md-8 offset-md-2 col-10 offset-1">
-                        <div class="blog-single blog-single-1">
-                            <div class="blog-single-wrapper">
-                                <div class="blog-single-content">
-                                    <a href="blog-detail-1.html" class="figure">
-                                        <img src="{{url('landing')}}/assets/images/blog/blog-thumbnail-2.jpg"
-                                             alt="blog-image">
-                                    </a>
-                                    <a href="blog-detail-1.html">
-                                        <h3>Raving reviews about our latest algorithms.</h3>
-                                    </a>
-                                    <p>Behold creature him whose own doesn't god seasons winged two won't bearing herein
-                                        fowl fruitful they went there beginning ... </p>
-                                </div>
-                                <a href="blog-detail-1.html" class="circle">
-                                    <i class="las la-plus"></i>
-                                    <i class="las la-angle-right hover"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 offset-lg-0 col-md-8 offset-md-2 col-10 offset-1">
-                        <div class="blog-single blog-single-1">
-                            <div class="blog-single-wrapper">
-                                <div class="blog-single-content">
-                                    <a href="blog-detail-1.html" class="figure">
-                                        <img src="{{url('landing')}}/assets/images/blog/blog-thumbnail-3.jpg"
-                                             alt="blog-image">
-                                    </a>
-                                    <a href="blog-detail-1.html">
-                                        <h3>New features coming in 2020 to our app.</h3>
-                                    </a>
-                                    <p>Behold creature him whose own doesn't god seasons winged two won't bearing herein
-                                        fowl fruitful they went there beginning ... </p>
-                                </div>
-                                <a href="blog-detail-1.html" class="circle">
-                                    <i class="las la-plus"></i>
-                                    <i class="las la-angle-right hover"></i>
-                                </a>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!--
+    @endif
+<!--
     blog section - end
     -->
 
@@ -1185,29 +1080,29 @@
                                         <h5>{{trans('landing.contact_us')}}</h5>
                                     </div>
                                     <div class="main-heading c-dark">
-                                        <h1>Write message</h1>
+                                        <h1>{{trans('landing.write_message')}}</h1>
                                     </div>
                                 </div>
                                 <form>
                                     <div class="form-floating">
                                         <input class="input form-control" id="name-field" type="text"
                                                placeholder="Full name">
-                                        <label for="name-field">Full name</label>
+                                        <label for="name-field">{{trans('landing.name')}}</label>
                                     </div>
                                     <div class="form-floating">
                                         <input class="input form-control" id="email-field" type="text"
                                                placeholder="Email address">
-                                        <label for="email-field">Email address</label>
+                                        <label for="email-field">{{trans('landing.email')}}</label>
                                     </div>
                                     <div class="form-floating">
                                         <input class="input form-control" id="message-field" type="text"
                                                placeholder="Message">
-                                        <label for="message-field">Message</label>
+                                        <label for="message-field">{{trans('landing.message')}}</label>
                                     </div>
                                     <button type="submit" class="button button-3">
                                         <span class="button-inner">
                                             <span class="button-content">
-                                                <span class="text">Submit Reply</span>
+                                                <span class="text">{{trans('landing.send')}}</span>
                                             </span>
                                         </span>
                                     </button>
@@ -1243,14 +1138,13 @@
                                 <a href="#">
                                     <img src="{{url('landing')}}/assets/images/logo.png" alt="footer-logo">
                                 </a>
-                                <p class="c-grey-1">Orions is a universal app template that was designed to cater to
-                                    most of the modern app landing page designs requirements.</p>
+                                <p class="c-grey-1">{{trans('landing.description')}}</p>
                                 <div class="links">
-                                    <a class="link-underline" href="mailto:hello@orions.com">
-                                        <span>hello@orions.com</span>
+                                    <a class="link-underline" href="{{$setting_email}}">
+                                        <span>{{$setting_email}}</span>
                                     </a>
-                                    <a class="link-underline" href="tel:+1-234-567-890">
-                                        <span>+1 234 567 890</span>
+                                    <a class="link-underline" href="tel:{{$setting_phone}}">
+                                        <span>{{$setting_phone}}</span>
                                     </a>
                                 </div>
                             </div>
@@ -1349,7 +1243,7 @@
                 <div class="row">
                     <div class="col-lg-12 offset-lg-0 col-md-8 offset-md-2 col-10 offset-1">
                         <div class="footer-copyright c-grey-1">
-                            <h6>&copy; GFXPARTNER</h6>
+                            <h6>&copy; 80-IDEA</h6>
                         </div>
                     </div>
                 </div>

@@ -12,7 +12,9 @@ class HomeController extends Controller
 {
     public function home()
     {
-        return view('landing.home');
+        $data['main_categories'] = Category::root()->with('childrenCategories')->get();
+        $data['free_posts'] = Post::free()->get()->take(3);
+        return view('landing.home',compact('data'));
     }
 
 
