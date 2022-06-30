@@ -1,7 +1,17 @@
 <?php
 
 return [
-    'my_account' => 'my account',
+    'passwordChangedSuccess' => 'Password changed successfully',
+    'Verified_success' => 'The code was confirmed successfully',
+    'codeError' => 'The code is invalid',
+    'CodeSent' => 'Code sent successfully',
+    'links' => 'links',
+    'pages' => 'pages',
+    'screens' => 'welcome screens',
+    'teams' => 'teams',
+    'subscriptions' => 'subscriptions',
+    'current_pass_incorrect' => 'The current password is incorrect',
+    'user_password_updated_successfully' => 'Password updated successfully',
     'dont_have_account' => 'you don\'t have account ?',
     'delivery_reach_you' => 'The representative will reach you anywhere to collect the subscription fee',
     'with_delivery' => 'by delegate',
