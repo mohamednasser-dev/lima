@@ -75,6 +75,9 @@ class PostController extends GeneralController
 
     public function like_store(Request $request)
     {
+        if (!apiUser()) {
+            return $this->errorLoginResponse(__('lang.should_login_first'), null, failed());
+        }
         $data = $request->all();
         $validator = Validator::make($data, [
             'post_id' => 'required|exists:posts,id',

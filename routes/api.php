@@ -55,6 +55,7 @@ Route::group(['middleware' => ['api'], 'prefix' => "v1", 'namespace' => 'v1'], f
         Route::post('/change-password', [UserController::class, 'changePassword']);
     });
     Route::post('/user/favorite/store', [FavoriteController::class, 'store']);
+    Route::post('/user/post/like/store', [PostController::class, 'like_store']);
 
     Route::group(['middleware' => ['auth:api'], 'prefix' => "user"], function () {
 
@@ -65,7 +66,6 @@ Route::group(['middleware' => ['api'], 'prefix' => "v1", 'namespace' => 'v1'], f
         Route::post('/logout', [UserController::class, 'logout']);
 
         Route::post('/subscription/store', [SubscriptionController::class, 'store_subscription']);
-        Route::post('/post/like/store', [PostController::class, 'like_store']);
 
         //favorites
         Route::get('/favorites', [FavoriteController::class, 'index']);
