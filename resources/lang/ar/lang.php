@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'should_login_first' => 'يرجى تسجيل الدخول اولا',
     'passwordChangedSuccess' => 'تم تغيير كلمة المرور بنجاح',
     'Verified_success' => 'تم تاكيد الرمز بنجاح',
     'codeError' => 'الرمز غير صحيح ',

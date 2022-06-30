@@ -30,6 +30,9 @@ class FavoriteController extends GeneralController
         if ($validator->fails()) {
             return response()->json(['status' =>  401, 'msg' => $validator->messages()->first()]);
         }
+        if (!apiUser()) {
+            return $this->errorLoginResponse(__('lang.should_login_first'), null, failed());
+        }
         $user_id = apiUser()->id;
         try{
             $data['user_id'] = $user_id;
