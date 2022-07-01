@@ -76,7 +76,7 @@ p {
     &-wrapper {
         position: relative;
     }
-    
+
     img {
         position: relative;
         z-index: 2;
@@ -87,7 +87,7 @@ p {
     .background-pattern {
         width: 95%;
         height: calc(100% + 10rem);
-        
+
 
         left: initial;
         right: 0;
@@ -162,8 +162,8 @@ p {
             transition: transform .3s ease;
         }
     }
-    
-    
+
+
     &:hover {
         color: unset;
         > span {
@@ -184,7 +184,7 @@ p {
 
 .slider-navigation {
     display: flex;
-    justify-content: flex-end; 
+    justify-content: flex-end;
     align-items: flex-end;
     width: 100%;
     height: 100%;
@@ -256,10 +256,10 @@ p {
 }
 
 
-.form-floating>.form-control:focus~label, 
-.form-floating>.form-control:not(:placeholder-shown)~label, 
+.form-floating>.form-control:focus~label,
+.form-floating>.form-control:not(:placeholder-shown)~label,
 .form-floating>.form-select~label {
-    transform: scale(.85) translateY(-2rem) translateX(.15rem);    
+    transform: scale(.85) translateY(-2rem) translateX(.15rem);
 }
 
 .drop-shadow {
@@ -315,6 +315,11 @@ p {
             color: $color-pink-1;
         }
     }
+    .whatsapp {
+        i {
+            color: green;
+        }
+    }
 }
 
 ul.icon-list {
@@ -353,7 +358,7 @@ ul.icon-list {
             }
         }
     }
-    
+
 
     &-2 {
         li {

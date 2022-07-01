@@ -11,7 +11,7 @@
     <!--
     title tag
     -->
-    <title>Orions - App Landing Page</title>
+    <title>Lima & Zola</title>
 
     <!--
     favicon
@@ -201,7 +201,7 @@
                                             <i class="fab fa-google-play"></i>
                                         </div>
                                         <div class="download-button-content">
-                                            <h5 class="c-grey upper ls-1">get it on</h5>
+                                            <h5 class="c-grey upper ls-1">{{trans('landing.get_it_on')}}</h5>
                                             <h3 class="c-dark ls-2">Google Play</h3>
                                         </div>
                                     </div>
@@ -212,7 +212,7 @@
                                             <i class="fab fa-apple"></i>
                                         </div>
                                         <div class="download-button-content">
-                                            <h5 class="c-grey upper ls-1">get it on</h5>
+                                            <h5 class="c-grey upper ls-1">{{trans('landing.get_it_on')}}</h5>
                                             <h3 class="c-dark ls-2">Apple Store</h3>
                                         </div>
                                     </div>
@@ -256,24 +256,21 @@
                         </div>
                     </div>
                 </div>
-                <div class="row gx-5 gy-5">
-                    @foreach($data['main_categories'] as $key=> $mainCategory)
-                        <div class="main-heading c-dark">
-                            <h1>{{$mainCategory->name}}</h1>
-                        </div>
-                        @foreach($mainCategory->childrenCategories as $subCategory)
+                <div class="row gx-5 gy-5" style="text-align: center;">
+                    @foreach($data['categories'] as $key=> $category)
                             <div class="col-lg-4 offset-lg-0 col-md-6 offset-md-0 col-10 offset-1">
-                                <div class="app-feature-single app-feature-single-2">
-                                    <div class="app-feature-single-wrapper">
+                                <div class="">
+                                    <div class="">
                                         <a href="blog-detail-1.html" class="figure">
-                                            <img src="{{$subCategory->image}}" style="width: 206px;"
+                                            <img src="{{$category->image}}" style="width: 206px;"
                                                  alt="blog-image">
+                                        </a>
+                                        <a href="feature-detail-1.html">
+                                            <h3 class="c-dark">{{$category->name}}</h3>
                                         </a>
                                     </div>
                                 </div>
                             </div>
-                        @endforeach
-                        <hr>
                     @endforeach
                 </div>
             </div>
@@ -295,20 +292,21 @@
                             <div class="section-heading section-heading-1 center-responsive c-white">
                                 <div class="sub-heading upper ls-1">
                                     <i class="las la-video"></i>
-                                    <h5>{{trans('landing.our_video')}}</h5>
+                                    <h5>{{trans('landing.learn_more')}}</h5>
                                 </div>
                                 <div class="main-heading">
-                                    <h1>Orions is a fast and secure app that was built for both Android and iOS
-                                        platforms.</h1>
+                                    <h1>
+                                        {{trans('landing.video_description')}}
+                                    </h1>
                                 </div>
                             </div>
-                            <a href="contact.html" class="button button-1">
-                                <div class="button-inner">
-                                    <div class="button-content">
-                                        <h4>Get Started</h4>
-                                    </div>
-                                </div>
-                            </a>
+{{--                            <a href="contact.html" class="button button-1">--}}
+{{--                                <div class="button-inner">--}}
+{{--                                    <div class="button-content">--}}
+{{--                                        <h4>Get Started</h4>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </a>--}}
                         </div>
                     </div>
                     <div class="col-lg-5 offset-lg-1 order-lg-2 order-1">
@@ -372,27 +370,40 @@
                             </div>
                             <div class="icon-text-1-group" style="direction: rtl;">
                                 <div class="icon-text-1">
-                                    <i class="las la-comments"></i>
+                                    <i class="las la-user-alt"></i>
                                     <div>
-                                        <h4 class="c-dark">Video calls</h4>
-                                        <p class="c-grey">He saw lesser whales man air. Seasons void fly replenish man
-                                            divided open fifth own fruitful.</p>
-                                    </div>
-                                </div>
-                                <div class="icon-text-1">
-                                    <i class="las la-headset"></i>
-                                    <div>
-                                        <h4 class="c-dark">Private groups</h4>
-                                        <p class="c-grey">Give whales creeping sixth. Blessed itself created dry they're
-                                            firmament face whose face lesser spirit day dry.</p>
+                                        <h4 class="c-dark">آمن لطفلك</h4>
+                                        <p class="c-grey">تم مراجعة كل شيء بدقة وعناية فائقة حتى يكون آمن تمامًا على طفلك وجميع أفراد أسرتك.
+                                            كن واثقًا من ذلك, لقد شاهده أولادنا أولًا.</p>
                                     </div>
                                 </div>
                                 <div class="icon-text-1">
                                     <i class="las la-photo-video"></i>
                                     <div>
-                                        <h4 class="c-dark">Cloud storage</h4>
-                                        <p class="c-grey">Waters seasons of place likeness good day let they're evening
-                                            replenish years of over that.</p>
+                                        <h4 class="c-dark">موثوق للأمهات</h4>
+                                        <p class="c-grey">فيديوهات ومقالات تم إعدادها من قبل أفضل الاستشاريين التربويين  الموثوق بعلمهم.
+                                            إننا نقدم لك خلاصة خبراتهم وتجاربهم.</p>
+                                    </div>
+                                </div>
+                                <div class="icon-text-1">
+                                    <i class="las la-low-vision"></i>
+                                    <div>
+                                        <h4 class="c-dark">بدون أي شيء مزعج</h4>
+                                        <p class="c-grey">هنا، لا يوجد أي إعلانات مزعجة أو مشاهد غير لائقة أو موسيقى.</p>
+                                    </div>
+                                </div>
+                                <div class="icon-text-1">
+                                    <i class="las la-sync"></i>
+                                    <div>
+                                        <h4 class="c-dark">محتوى متجدد</h4>
+                                        <p class="c-grey">نضيف العديد من المحتوى الرائع  بشكل أسبوعي، فريق عملنا لن يتوقف عن إفادتكم أبدًا إن شاء الله .</p>
+                                    </div>
+                                </div>
+                                <div class="icon-text-1">
+                                    <i class="las la-money-bill-wave"></i>
+                                    <div>
+                                        <h4 class="c-dark">طرق دفع متعددة</h4>
+                                        <p class="c-grey">التطبيق متوفر بتكلفة مناسبة ويمكنك الدفع بسهولة عن طريق فوري , أمان , المحافظ الإلكترونية , visa . mastercard</p>
                                     </div>
                                 </div>
                             </div>
@@ -443,19 +454,19 @@
                                     <div class="swiper-wrapper" style="justify-content: center;">
                                         <div class="swiper-slide">
                                             <div class="pricing-single basic">
-                                                <h5 class="plan">Basic</h5>
+                                                <h5 class="plan">6 شهور</h5>
                                                 <div class="price price-month">
                                                     <div class="month">
-                                                        $<span class="number">10.00</span><sup>/mo</sup>
+                                                        L.E<span class="number">200 بدل L.E400</span><sup></sup>
                                                     </div>
                                                     <div class="year">
-                                                        $<span class="number">120.00</span><sup>/yr</sup>
+                                                        L.E<span class="number">200 بدل L.E400</span><sup></sup>
                                                     </div>
                                                 </div>
                                                 <a href="contact.html" class="button button-basic">
                                                     <div class="button-inner">
                                                         <div class="button-content">
-                                                            <h4>Get Started</h4>
+                                                            <h4>اشترك الان</h4>
                                                         </div>
                                                     </div>
                                                 </a>
@@ -463,19 +474,19 @@
                                         </div>
                                         <div class="swiper-slide">
                                             <div class="pricing-single premium">
-                                                <h5 class="plan">Premium</h5>
+                                                <h5 class="plan">سنة</h5>
                                                 <div class="price price-month">
                                                     <div class="month">
-                                                        $<span class="number">20.00</span><sup>/mo</sup>
+                                                        L.E<span class="number">250 بدل L.E500</span><sup></sup>
                                                     </div>
                                                     <div class="year">
-                                                        $<span class="number">240.00</span><sup>/yr</sup>
+                                                        L.E<span class="number">250 بدل L.E500</span><sup></sup>
                                                     </div>
                                                 </div>
                                                 <a href="contact.html" class="button button-premium">
                                                     <div class="button-inner">
                                                         <div class="button-content">
-                                                            <h4>Get Started</h4>
+                                                            <h4>اشترك الان</h4>
                                                         </div>
                                                     </div>
                                                 </a>
@@ -507,94 +518,94 @@
     <!--
     testimonial section - start
     -->
-    <div class="testimonial-section">
-        <div class="testimonial-section-wrapper">
-            <div class="container" >
-                <div class="row">
-                    <div class="col-lg-12 offset-lg-0 col-md-8 offset-md-2 col-10 offset-1">
-                        <div class="section-heading center width-55">
-                            <div class="sub-heading c-blue upper ls-1">
-                                <i class="las la-comments"></i>
-                            </div>
-                            <div class="main-heading c-dark">
-                                <h1>{{trans('landing.reviews')}}</h1>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="testimonial-slider">
-                        <div class="swiper-container">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <div class="testimonial-slide">
-                                        <div class="image">
-                                            <div class="image-wrapper">
-                                                <div class="image-inner">
-                                                    <img
-                                                        src="{{url('landing')}}/assets/images/testimonial-slide-img-2.png"
-                                                        alt="testimony-image">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="content" >
-                                            <p style="direction: rtl;" >“This app is wonderful dry male ceepeth good them their in which to days
-                                                two deep has yielding throw darkness bring likeness fifth by darkness
-                                                make face saw has under heaven forth saw there without lights app stars
-                                                for him replenish fowl creature.”</p>
-                                            <h5>— Jack William</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="testimonial-slide">
-                                        <div class="image">
-                                            <div class="image-wrapper">
-                                                <div class="image-inner">
-                                                    <img
-                                                        src="{{url('landing')}}/assets/images/testimonial-slide-img-1.png"
-                                                        alt="testimony-image">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="content">
-                                            <p style="direction: rtl;"  > “This app is wonderful dry male ceepeth good them their in which to days
-                                                two deep has yielding throw darkness bring likeness fifth by darkness
-                                                make face saw has under heaven forth saw there without lights app stars
-                                                for him replenish fowl creature.”</p>
-                                            <h5>— Jack William</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="testimonial-slide">
-                                        <div class="image">
-                                            <div class="image-wrapper">
-                                                <div class="image-inner">
-                                                    <img
-                                                        src="{{url('landing')}}/assets/images/testimonial-slide-img-3.png"
-                                                        alt="testimony-image">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="content">
-                                            <p style="direction: rtl;" >“This app is wonderful dry male ceepeth good them their in which to days
-                                                two deep has yielding throw darkness bring likeness fifth by darkness
-                                                make face saw has under heaven forth saw there without lights app stars
-                                                for him replenish fowl creature.”</p>
-                                            <h5>— Jack William</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+{{--    <div class="testimonial-section">--}}
+{{--        <div class="testimonial-section-wrapper">--}}
+{{--            <div class="container" >--}}
+{{--                <div class="row">--}}
+{{--                    <div class="col-lg-12 offset-lg-0 col-md-8 offset-md-2 col-10 offset-1">--}}
+{{--                        <div class="section-heading center width-55">--}}
+{{--                            <div class="sub-heading c-blue upper ls-1">--}}
+{{--                                <i class="las la-comments"></i>--}}
+{{--                            </div>--}}
+{{--                            <div class="main-heading c-dark">--}}
+{{--                                <h1>{{trans('landing.reviews')}}</h1>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="container">--}}
+{{--                <div class="row">--}}
+{{--                    <div class="testimonial-slider">--}}
+{{--                        <div class="swiper-container">--}}
+{{--                            <div class="swiper-wrapper">--}}
+{{--                                <div class="swiper-slide">--}}
+{{--                                    <div class="testimonial-slide">--}}
+{{--                                        <div class="image">--}}
+{{--                                            <div class="image-wrapper">--}}
+{{--                                                <div class="image-inner">--}}
+{{--                                                    <img--}}
+{{--                                                        src="{{url('landing')}}/assets/images/testimonial-slide-img-2.png"--}}
+{{--                                                        alt="testimony-image">--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="content" >--}}
+{{--                                            <p style="direction: rtl;" >“This app is wonderful dry male ceepeth good them their in which to days--}}
+{{--                                                two deep has yielding throw darkness bring likeness fifth by darkness--}}
+{{--                                                make face saw has under heaven forth saw there without lights app stars--}}
+{{--                                                for him replenish fowl creature.”</p>--}}
+{{--                                            <h5>— Jack William</h5>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                                <div class="swiper-slide">--}}
+{{--                                    <div class="testimonial-slide">--}}
+{{--                                        <div class="image">--}}
+{{--                                            <div class="image-wrapper">--}}
+{{--                                                <div class="image-inner">--}}
+{{--                                                    <img--}}
+{{--                                                        src="{{url('landing')}}/assets/images/testimonial-slide-img-1.png"--}}
+{{--                                                        alt="testimony-image">--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="content">--}}
+{{--                                            <p style="direction: rtl;"  > “This app is wonderful dry male ceepeth good them their in which to days--}}
+{{--                                                two deep has yielding throw darkness bring likeness fifth by darkness--}}
+{{--                                                make face saw has under heaven forth saw there without lights app stars--}}
+{{--                                                for him replenish fowl creature.”</p>--}}
+{{--                                            <h5>— Jack William</h5>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                                <div class="swiper-slide">--}}
+{{--                                    <div class="testimonial-slide">--}}
+{{--                                        <div class="image">--}}
+{{--                                            <div class="image-wrapper">--}}
+{{--                                                <div class="image-inner">--}}
+{{--                                                    <img--}}
+{{--                                                        src="{{url('landing')}}/assets/images/testimonial-slide-img-3.png"--}}
+{{--                                                        alt="testimony-image">--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="content">--}}
+{{--                                            <p style="direction: rtl;" >“This app is wonderful dry male ceepeth good them their in which to days--}}
+{{--                                                two deep has yielding throw darkness bring likeness fifth by darkness--}}
+{{--                                                make face saw has under heaven forth saw there without lights app stars--}}
+{{--                                                for him replenish fowl creature.”</p>--}}
+{{--                                            <h5>— Jack William</h5>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
     <!--
     testimonial section - end
     -->
@@ -921,7 +932,7 @@
                                                 <i class="fab fa-google-play"></i>
                                             </div>
                                             <div class="download-button-content">
-                                                <h5 class="c-grey upper ls-1">get it on</h5>
+                                                <h5 class="c-grey upper ls-1">{{trans('landing.get_it_on')}}</h5>
                                                 <h3 class="c-dark ls-2">Google Play</h3>
                                             </div>
                                         </div>
@@ -932,7 +943,7 @@
                                                 <i class="fab fa-apple"></i>
                                             </div>
                                             <div class="download-button-content">
-                                                <h5 class="c-grey upper ls-1">get it on</h5>
+                                                <h5 class="c-grey upper ls-1">{{trans('landing.get_it_on')}}</h5>
                                                 <h3 class="c-dark ls-2">Apple Store</h3>
                                             </div>
                                         </div>
@@ -1035,7 +1046,7 @@
                                         <i class="fab fa-google-play"></i>
                                     </div>
                                     <div class="download-button-content">
-                                        <h5 class="c-grey upper ls-1">get it on</h5>
+                                        <h5 class="c-grey upper ls-1">{{trans('landing.get_it_on')}}</h5>
                                         <h3 class="c-dark ls-2">Google Play</h3>
                                     </div>
                                 </div>
@@ -1046,7 +1057,7 @@
                                         <i class="fab fa-apple"></i>
                                     </div>
                                     <div class="download-button-content">
-                                        <h5 class="c-grey upper ls-1">get it on</h5>
+                                        <h5 class="c-grey upper ls-1">{{trans('landing.get_it_on')}}</h5>
                                         <h3 class="c-dark ls-2">Apple Store</h3>
                                     </div>
                                 </div>
@@ -1138,7 +1149,7 @@
                                 <a href="#">
                                     <img src="{{url('landing')}}/assets/images/logo.png" alt="footer-logo">
                                 </a>
-                                <p class="c-grey-1">{{trans('landing.description')}}</p>
+                                <p class="c-grey-1" style="direction: rtl;">{{trans('landing.description')}}</p>
                                 <div class="links">
                                     <a class="link-underline" href="{{$setting_email}}">
                                         <span>{{$setting_email}}</span>
@@ -1149,36 +1160,43 @@
                                 </div>
                             </div>
                             <div class="footer-list footer-social social-gradient">
-                                <h6>Follow</h6>
+                                <h6>مواقع التواصل الاجتماعي</h6>
                                 <ul>
-                                    <li class="twitter">
-                                        <a href="#" class="link-underline">
-                                            <i class="fab fa-twitter"></i>
-                                            <span>Twitter</span>
+                                    <li class="instagram">
+                                        <a target="_blank" href="https://www.instagram.com/80fekra" class="link-underline">
+                                            <i class="fab fa-instagram"></i>
+                                            <span>Instgram</span>
                                         </a>
                                     </li>
                                     <li class="facebook">
-                                        <a href="#" class="link-underline">
+                                        <a target="_blank" href="https://www.facebook.com/80fekra" class="link-underline">
                                             <i class="fab fa-facebook"></i>
                                             <span>Facebook</span>
                                         </a>
                                     </li>
-                                    <li class="linkedin">
-                                        <a href="#" class="link-underline">
-                                            <i class="fab fa-linkedin-in"></i>
-                                            <span>Linkedin</span>
-                                        </a>
-                                    </li>
+
                                     <li class="youtube">
-                                        <a href="#" class="link-underline">
+                                        <a target="_blank" href="https://www.youtube.com/channel/UC5GKLcvxkuktuR2KRN4gyeg" class="link-underline">
                                             <i class="fab fa-youtube"></i>
                                             <span>Youtube</span>
+                                        </a>
+                                    </li>
+                                    <li class="whatsapp">
+                                        <a href="tel:01095758550" target="_blank" class="link-underline">
+                                            <i class="fab fa-whatsapp"></i>
+                                            <span>whatsapp</span>
+                                        </a>
+                                    </li>
+                                    <li class="globe">
+                                        <a href="http://80fekra.com/ar/products" target="_blank" class="link-underline">
+                                            <i class="fab fa-globe"></i>
+                                            <span>Site</span>
                                         </a>
                                     </li>
                                 </ul>
                             </div>
                             <div class="footer-list">
-                                <h6>Menu</h6>
+                                <h6>القوائم</h6>
                                 <ul>
                                     <li>
                                         <a href="about.html" class="link-underline">
@@ -1213,7 +1231,7 @@
                                 </ul>
                             </div>
                             <div class="footer-list">
-                                <h6>Explore</h6>
+                                <h6>الاكثر زيارة</h6>
                                 <ul>
                                     <li>
                                         <a href="pricing.html" class="link-underline">
