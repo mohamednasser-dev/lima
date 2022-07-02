@@ -94,14 +94,14 @@
                 <div class="navigation-inner">
                     <div class="navigation-logo">
                         <a href="index.html">
-                            <img src="{{url('landing')}}/assets/images/logo.png" alt="orions-logo">
+                            <img style="width: 185px;" src="{{url('landing')}}/assets/images/logo.png" alt="orions-logo">
                         </a>
                     </div>
                     <div class="navigation-menu">
                         <div class="mobile-header">
                             <div class="logo">
                                 <a href="index.html">
-                                    <img src="{{url('landing')}}/assets/images/logo-white.png" alt="image">
+                                    <img style="width: 185px;" src="{{url('landing')}}/assets/images/logo-white.png" alt="image">
                                 </a>
                             </div>
                             <ul>
@@ -139,26 +139,25 @@
                             </li>
                         </ul>
                         <div class="social">
-                            <h6>Follow</h6>
                             <ul>
                                 <li>
-                                    <a href="#">
-                                        <i class="fab fa-twitter"></i>
+                                    <a href="https://www.instagram.com/80fekra" target="_blank">
+                                        <i class="fab fa-instagram"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="https://www.facebook.com/80fekra" target="_blank">
                                         <i class="fab fa-facebook"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
-                                        <i class="fab fa-linkedin"></i>
+                                    <a href="https://www.youtube.com/channel/UC5GKLcvxkuktuR2KRN4gyeg" target="_blank">
+                                        <i class="fab fa-youtube"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
-                                        <i class="fab fa-youtube"></i>
+                                    <a href="https://wa.me/01095758550" target="_blank">
+                                        <i class="fab fa-whatsapp"></i>
                                     </a>
                                 </li>
                             </ul>
@@ -451,16 +450,20 @@
                         <div class="col">
                             <div class="pricing-slider">
                                 <div class="swiper-container">
-                                    <div class="swiper-wrapper" style="justify-content: center;">
+                                    <div class="swiper-wrapper">
                                         <div class="swiper-slide">
                                             <div class="pricing-single basic">
                                                 <h5 class="plan">6 شهور</h5>
                                                 <div class="price price-month">
-                                                    <div class="month">
-                                                        L.E<span class="number">200 بدل L.E400</span><sup></sup>
+                                                    <div class="month" style=" width: 132px;">
+                                                        <span class="number">200</span><sup>/جنية مصري</sup>
+                                                        بدل من
+                                                        <br>
+                                                        <span class="number">400</span><sup>/جنية مصري</sup>
                                                     </div>
+
                                                     <div class="year">
-                                                        L.E<span class="number">200 بدل L.E400</span><sup></sup>
+                                                        <span class="number">120.00</span><sup>/yr</sup>
                                                     </div>
                                                 </div>
                                                 <a href="contact.html" class="button button-basic">
@@ -476,11 +479,15 @@
                                             <div class="pricing-single premium">
                                                 <h5 class="plan">سنة</h5>
                                                 <div class="price price-month">
-                                                    <div class="month">
-                                                        L.E<span class="number">250 بدل L.E500</span><sup></sup>
+                                                    <div class="month" style=" width: 132px;">
+                                                        <span class="number">250</span><sup>/جنية مصري</sup>
+                                                        بدل من
+                                                        <br>
+                                                        <span class="number">500</span><sup>/جنية مصري</sup>
                                                     </div>
+
                                                     <div class="year">
-                                                        L.E<span class="number">250 بدل L.E500</span><sup></sup>
+                                                        <span class="number">120.00</span><sup>/yr</sup>
                                                     </div>
                                                 </div>
                                                 <a href="contact.html" class="button button-premium">
@@ -511,6 +518,7 @@
             </div>
         </div>
     </div>
+
     <!--
     pricing section - end
     -->
@@ -639,26 +647,22 @@
                                 <div class="accordion-item">
                                     <div class="accordion-header" id="faq-1">
                                         <button
-                                            class="accordion-button collapsed"
+                                            class="accordion-button"
                                             type="button"
                                             data-bs-toggle="collapse"
                                             data-bs-target="#faq-collapse-1"
                                             aria-expanded="true"
                                             aria-controls="faq-collapse-1">
-                                            <span>Can I try Orions before I buy?</span>
+                                            <span>كيف يستفيد طفلي من التطبيق؟</span>
                                         </button>
                                     </div>
                                     <div
                                         id="faq-collapse-1"
-                                        class="accordion-collapse collapse"
+                                        class="accordion-collapse collapse show"
                                         aria-labelledby="faq-1"
                                         data-bs-parent="#faq-accordion">
                                         <div class="accordion-body">
-                                            <p>Prepare questions that the patient should answer when registering for an
-                                                online
-                                                there consultation. We will send them to him before the visit in the
-                                                form of survey
-                                                to which he will also be able to attach his research results.</p>
+                                            <p>يقدم التطبيق العديد من حلقات الكرتون العلمية و القصص ومقالات تبسيط العلوم و الحكايات وغيرها من المعلومات الممتعة والآمنة تمامًا على طفلك.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -671,26 +675,22 @@
                                 <div class="accordion-item">
                                     <div class="accordion-header" id="faq-2">
                                         <button
-                                            class="accordion-button"
+                                            class="accordion-button collapsed"
                                             type="button"
                                             data-bs-toggle="collapse"
                                             data-bs-target="#faq-collapse-2"
                                             aria-expanded="true"
                                             aria-controls="faq-collapse-2">
-                                            <span>What's your cancellation policy?</span>
+                                            <span>كيف يستفيد ولي الأمر من التطبيق؟</span>
                                         </button>
                                     </div>
                                     <div
                                         id="faq-collapse-2"
-                                        class="accordion-collapse collapse show"
+                                        class="accordion-collapse collapse"
                                         aria-labelledby="faq-2"
                                         data-bs-parent="#faq-accordion">
                                         <div class="accordion-body">
-                                            <p>Prepare questions that the patient should answer when registering for an
-                                                online
-                                                there consultation. We will send them to him before the visit in the
-                                                form of survey
-                                                to which he will also be able to attach his research results.</p>
+                                            <p>يقدم التطبيق فيديوهات تربوية ومقالات تم إعدادها من قبل أفضل الاستشاريين لحل أكثر المشاكل التربوية الشائعة التي يعاني منها ولي الأمر بشكل عملي ومبسط.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -709,7 +709,7 @@
                                             data-bs-target="#faq-collapse-3"
                                             aria-expanded="true"
                                             aria-controls="faq-collapse-3">
-                                            <span>Do I need my own Apple Developer account?</span>
+                                            <span>ما هو العمر المناسب للتطبيق؟</span>
                                         </button>
                                     </div>
                                     <div
@@ -718,11 +718,7 @@
                                         aria-labelledby="faq-3"
                                         data-bs-parent="#faq-accordion">
                                         <div class="accordion-body">
-                                            <p>Prepare questions that the patient should answer when registering for an
-                                                online
-                                                there consultation. We will send them to him before the visit in the
-                                                form of survey
-                                                to which he will also be able to attach his research results.</p>
+                                            <p>تم إعداد المحتوى ليناسب الأطفال +6 أعوام ولكن إذا كان طفلك أقل من 6 أعوام ومدمن للشاشات  فيمكنه الاعتماد على التطبيق كبديل أكثر أمانًا وأعلى في معدل الاستفادة.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -741,7 +737,7 @@
                                             data-bs-target="#faq-collapse-4"
                                             aria-expanded="true"
                                             aria-controls="faq-collapse-4">
-                                            <span>Is there Orions branding in my app?</span>
+                                            <span>كم تكلفة التطبيق؟</span>
                                         </button>
                                     </div>
                                     <div
@@ -750,11 +746,7 @@
                                         aria-labelledby="faq-4"
                                         data-bs-parent="#faq-accordion">
                                         <div class="accordion-body">
-                                            <p>Prepare questions that the patient should answer when registering for an
-                                                online
-                                                there consultation. We will send them to him before the visit in the
-                                                form of survey
-                                                to which he will also be able to attach his research results.</p>
+                                            <p>يمكنك الاستفادة من بعض المحتوى المجاني ولكن إذا كنت ترغب في الاستفادة من المحتوى كاملًا, حينها يجب الاشتراك في التطبيق وتكلفة ذلك بسيطة وهي 200ج بدل 400ج للاشتراك مدة 6 شهور أو 250ج بدل من 500ج  لمدة سنة كاملا.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -773,7 +765,7 @@
                                             data-bs-target="#faq-collapse-5"
                                             aria-expanded="true"
                                             aria-controls="faq-collapse-5">
-                                            <span>Can I preview before I publish?</span>
+                                            <span>ما هي طرق الدفع المتاحة؟</span>
                                         </button>
                                     </div>
                                     <div
@@ -782,11 +774,83 @@
                                         aria-labelledby="faq-5"
                                         data-bs-parent="#faq-accordion">
                                         <div class="accordion-body">
-                                            <p>Prepare questions that the patient should answer when registering for an
-                                                online
-                                                there consultation. We will send them to him before the visit in the
-                                                form of survey
-                                                to which he will also be able to attach his research results.</p>
+                                            <p>يمكنك الدفع بطرق مختلفة مناسبة للجميع سواء كانت
+                                                •	بطاقات الدفع ( VISA – MASTERCARD – ميزة )
+                                                •	فوري
+                                                •	أمان
+                                                •	المحافظ الإلكترونية ( فودافون كاش, أورانج كاش, اتصالات فلوس)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <div class="accordion-header" id="faq-6">
+                                        <button
+                                            class="accordion-button collapsed"
+                                            type="button"
+                                            data-bs-toggle="collapse"
+                                            data-bs-target="#faq-collapse-6"
+                                            aria-expanded="true"
+                                            aria-controls="faq-collapse-6">
+                                            <span>هل يوجد موسيقى في محتوى التطبيق؟</span>
+                                        </button>
+                                    </div>
+                                    <div
+                                        id="faq-collapse-6"
+                                        class="accordion-collapse collapse"
+                                        aria-labelledby="faq-6"
+                                        data-bs-parent="#faq-accordion">
+                                        <div class="accordion-body">
+<p>جميع الأقسام في التطبيق لا تضم أي نوع من أنواع الموسيقى.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <div class="accordion-header" id="faq-7">
+                                        <button
+                                            class="accordion-button collapsed"
+                                            type="button"
+                                            data-bs-toggle="collapse"
+                                            data-bs-target="#faq-collapse-7"
+                                            aria-expanded="true"
+                                            aria-controls="faq-collapse-7">
+                                            <span>كيفية الاشتراك في التطبيق؟</span>
+                                        </button>
+                                    </div>
+                                    <div
+                                        id="faq-collapse-7"
+                                        class="accordion-collapse collapse"
+                                        aria-labelledby="faq-7"
+                                        data-bs-parent="#faq-accordion">
+                                        <div class="accordion-body">
+                                            <p>نقوم بالدخول على التطبيق.
+                                                بعد ذلك يتم تسجيل الدخول أو إنشاء حساب جديد.
+                                                ندخل على أي فيديو أو مقالة من المقالات الغير مجانية وعند الضغط عليها فان التطبيق يوجهنا لصفحة الدفع.
+                                                يتم اختيار وسيلة الدفع المناسبة.
+                                                بعد الدفع, يمكنك الاستمتاع بالتطبيق كاملًا.</p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <div class="accordion-header" id="faq-8">
+                                        <button
+                                            class="accordion-button collapsed"
+                                            type="button"
+                                            data-bs-toggle="collapse"
+                                            data-bs-target="#faq-collapse-8"
+                                            aria-expanded="true"
+                                            aria-controls="faq-collapse-8">
+                                            <span>ماذا عن التجديد التلقائي للاشتراك؟</span>
+                                        </button>
+                                    </div>
+                                    <div
+                                        id="faq-collapse-8"
+                                        class="accordion-collapse collapse"
+                                        aria-labelledby="faq-8"
+                                        data-bs-parent="#faq-accordion">
+                                        <div class="accordion-body">
+                                            <p>لا يتم تجديد الاشتراك  التلقائي  ويمكنك إعادة الاشتراك متى شئتِ. نثق في انطباعك عن التطبيق وفي انتظارِك مرة أخرى.</p>
+
                                         </div>
                                     </div>
                                 </div>
