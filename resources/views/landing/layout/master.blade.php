@@ -1,4 +1,4 @@
-@include('frontend.layout.head')
-@stack('css')
+@include('landing.layout.head')
+@include('landing.layout.navigation')
 @yield('content')
-@include('frontend.layout.foot')
+@include('landing.layout.footer')

@@ -1,189 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <!--
-    meta tags
-    -->
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!--
-    title tag
-    -->
-    <title>Lima & Zola</title>
-
-    <!--
-    favicon
-    -->
-    <link rel="apple-touch-icon" sizes="180x180" href="{{url('landing')}}/assets/images/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{url('landing')}}/assets/images/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{url('landing')}}/assets/images/favicon/favicon-16x16.png">
-    <link rel="manifest" href="{{url('landing')}}/assets/images/favicon/site.webmanifest">
-
-    <!--
-    stylesheets
-    -->
-    {{--    English font--}}
-    {{--    <link rel="preconnect" href="https://fonts.googleapis.com">--}}
-    {{--    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>--}}
-    {{--    <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@500;600;700&display=swap" rel="stylesheet">--}}
-
-    {{--    arabic font--}}
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@300&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Noto Kufi Arabic', sans-serif !important;
-            font-size: 48px;
-        }
-    </style>
-
-    <link rel="stylesheet" href="{{url('landing')}}/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{{url('landing')}}/assets/css/glightbox.min.css">
-    <link rel="stylesheet" href="{{url('landing')}}/assets/css/all.min.css">
-    <link rel="stylesheet" href="{{url('landing')}}/assets/css/line-awesome.min.css">
-    <link rel="stylesheet" href="{{url('landing')}}/assets/css/overlay-scrollbars.min.css">
-    <link rel="stylesheet" href="{{url('landing')}}/assets/css/swiper-bundle.min.css">
-
-    <link rel="stylesheet" href="{{url('landing')}}/assets/css/style.css">
-</head>
-<body >
-
-<div class="main-wrapper">
-
-    <!--
-    preloader - start
-    -->
-    <div class="preloader">
-        <div class="preloader-wrapper">
-            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                 viewBox="0 0 200 200">
-                <g class="pre load6">
-                    <path fill="#1B1A1C" d="M124.5,57L124.5,57c0,3.9-3.1,7-7,7h-36c-3.9,0-7-3.1-7-7v0c0-3.9,3.1-7,7-7h36
-                C121.4,50,124.5,53.1,124.5,57z"/>
-                    <path fill="#1B1A1C" d="M147.7,86.9L147.7,86.9c-2.7,2.7-7.2,2.7-9.9,0l-25.5-25.5c-2.7-2.7-2.7-7.2,0-9.9l0,0
-                c2.7-2.7,7.2-2.7,9.9,0L147.7,77C150.5,79.8,150.5,84.2,147.7,86.9z"/>
-                    <path fill="#1B1A1C" d="M143,74.5L143,74.5c3.9,0,7,3.1,7,7v36c0,3.9-3.1,7-7,7l0,0c-3.9,0-7-3.1-7-7v-36
-                C136,77.6,139.1,74.5,143,74.5z"/>
-                    <path fill="#1B1A1C" d="M148.4,112.4L148.4,112.4c2.7,2.7,2.7,7.2,0,9.9L123,147.7c-2.7,2.7-7.2,2.7-9.9,0h0c-2.7-2.7-2.7-7.2,0-9.9
-                l25.5-25.5C141.3,109.6,145.7,109.6,148.4,112.4z"/>
-                    <path fill="#1B1A1C"
-                          d="M125.5,143L125.5,143c0,3.9-3.1,7-7,7h-36c-3.9,0-7-3.1-7-7l0,0c0-3.9,3.1-7,7-7h36 C122.4,136,125.5,139.1,125.5,143z"/>
-                    <path fill="#1B1A1C" d="M52.3,113.1L52.3,113.1c2.7-2.7,7.2-2.7,9.9,0l25.5,25.5c2.7,2.7,2.7,7.2,0,9.9h0c-2.7,2.7-7.2,2.7-9.9,0
-                L52.3,123C49.5,120.2,49.5,115.8,52.3,113.1z"/>
-                    <path fill="#1B1A1C"
-                          d="M57,75.5L57,75.5c3.9,0,7,3.1,7,7v36c0,3.9-3.1,7-7,7h0c-3.9,0-7-3.1-7-7v-36C50,78.6,53.1,75.5,57,75.5z"/>
-                    <path fill="#1B1A1C" d="M86.9,52.3L86.9,52.3c2.7,2.7,2.7,7.2,0,9.9L61.5,87.6c-2.7,2.7-7.2,2.7-9.9,0l0,0c-2.7-2.7-2.7-7.2,0-9.9
-                L77,52.3C79.8,49.5,84.2,49.5,86.9,52.3z"/>
-                </g>
-            </svg>
-        </div>
-    </div>
-    <!--
-    preloader - end
-    -->
-
-    <!--
-    navigation - start
-    -->
-    <div class="navigation">
-        <div class="navigation-wrapper">
-            <div class="container" style="direction: rtl;">
-                <div class="navigation-inner">
-                    <div class="navigation-logo">
-                        <a href="index.html">
-                            <img style="width: 185px;" src="{{url('landing')}}/assets/images/logo.png" alt="orions-logo">
-                        </a>
-                    </div>
-                    <div class="navigation-menu">
-                        <div class="mobile-header">
-                            <div class="logo">
-                                <a href="index.html">
-                                    <img style="width: 185px;" src="{{url('landing')}}/assets/images/logo-white.png" alt="image">
-                                </a>
-                            </div>
-                            <ul>
-                                <li class="close-button">
-                                    <i class="fas fa-times"></i>
-                                </li>
-                            </ul>
-                        </div>
-                        <ul class="parent">
-                            <li>
-                                <a href="index.html" class="link-underline link-underline-1">
-                                    <span>{{trans('landing.home')}}</span>
-                                </a>
-                            </li>
-                            &nbsp; &nbsp; &nbsp;
-                            <li>
-                                <a href="index.html" class="link-underline link-underline-1">
-                                    <span>{{trans('landing.about_80_idea')}}</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="index.html" class="link-underline link-underline-1">
-                                    <span>{{trans('landing.about_app')}}</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="pricing.html" class="link-underline link-underline-1">
-                                    <span>{{trans('landing.pricing')}}</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="contact.html" class="link-underline link-underline-1">
-                                    <span>{{trans('landing.contact_us')}}</span>
-                                </a>
-                            </li>
-                        </ul>
-                        <div class="social">
-                            <ul>
-                                <li>
-                                    <a href="https://www.instagram.com/80fekra" target="_blank">
-                                        <i class="fab fa-instagram"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://www.facebook.com/80fekra" target="_blank">
-                                        <i class="fab fa-facebook"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://www.youtube.com/channel/UC5GKLcvxkuktuR2KRN4gyeg" target="_blank">
-                                        <i class="fab fa-youtube"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://wa.me/01095758550" target="_blank">
-                                        <i class="fab fa-whatsapp"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="background-pattern">
-                            <div class="background-pattern-img background-loop"
-                                 style="background-image: url(landing/assets/images/patterns/pattern.jpg);"></div>
-                            <div class="background-pattern-gradient"></div>
-                        </div>
-                    </div>
-                    <div class="navigation-bar">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--
-    navigation - end
-    -->
-
-    <!--
-    hero 1 - start
-    -->
+@extends('landing.layout.master')
+@section('content')
     <div class="hero hero-1">
         <div class="hero-wrapper">
             <div class="container">
@@ -221,7 +38,7 @@
                     </div>
                     <div class="col-lg-6 offset-lg-0 order-lg-2 col-10 offset-1 order-1">
                         <div class="hero-image">
-                            <img class="drop-shadow" src="{{url('landing')}}/assets/images/hero-phone.png" alt="image">
+                            <img style="width: 334px;" class="drop-shadow" src="{{url('landing')}}/assets/images/hero-phone.gif" alt="image">
                             <div class="hero-absolute-image">
                                 <img src="{{url('landing')}}/assets/images/Artwork.png" alt="artwork">
                             </div>
@@ -260,11 +77,11 @@
                             <div class="col-lg-4 offset-lg-0 col-md-6 offset-md-0 col-10 offset-1">
                                 <div class="">
                                     <div class="">
-                                        <a href="blog-detail-1.html" class="figure">
+                                        <a href="{{route('front.home')}}#mobile_section" class="figure">
                                             <img src="{{$category->image}}" style="width: 206px;"
                                                  alt="blog-image">
                                         </a>
-                                        <a href="feature-detail-1.html">
+                                        <a href="{{route('front.home')}}#mobile_section">
                                             <h3 class="c-dark">{{$category->name}}</h3>
                                         </a>
                                     </div>
@@ -293,7 +110,7 @@
                                     <i class="las la-video"></i>
                                     <h5>{{trans('landing.learn_more')}}</h5>
                                 </div>
-                                <div class="main-heading">
+                                <div class="main-heading" style="direction: rtl;">
                                     <h1>
                                         {{trans('landing.video_description')}}
                                     </h1>
@@ -406,7 +223,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="contact.html" class="button button-3">
+                            <a href="{{route('front.home')}}#mobile_section" class="button button-3">
                                 <div class="button-inner">
                                     <div class="button-content">
                                         <h4>Get Started</h4>
@@ -426,7 +243,7 @@
     <!--
     pricing section - start
     -->
-    <div class="pricing-section">
+    <div class="pricing-section" id="pricing">
         <div class="pricing-section-wrapper">
             <div class="container">
                 <div class="row">
@@ -455,18 +272,18 @@
                                             <div class="pricing-single basic">
                                                 <h5 class="plan">6 شهور</h5>
                                                 <div class="price price-month">
-                                                    <div class="month" style=" width: 132px;">
-                                                        <span class="number">200</span><sup>/جنية مصري</sup>
-                                                        بدل من
+                                                    <div class="month" style=" width: 132px;direction: rtl;">
+                                                        <span class="number">200</span>&nbsp;<sup>جنية مصري</sup>
+                                                        <span class="plan">بدل</span>
                                                         <br>
-                                                        <span class="number">400</span><sup>/جنية مصري</sup>
+                                                        <span class="number">400</span>&nbsp;<sup>جنية مصري</sup>
                                                     </div>
 
                                                     <div class="year">
                                                         <span class="number">120.00</span><sup>/yr</sup>
                                                     </div>
                                                 </div>
-                                                <a href="contact.html" class="button button-basic">
+                                                <a href="{{route('front.home')}}#mobile_section" class="button button-basic">
                                                     <div class="button-inner">
                                                         <div class="button-content">
                                                             <h4>اشترك الان</h4>
@@ -479,25 +296,25 @@
                                             <div class="pricing-single premium">
                                                 <h5 class="plan">سنة</h5>
                                                 <div class="price price-month">
-                                                    <div class="month" style=" width: 132px;">
-                                                        <span class="number">250</span><sup>/جنية مصري</sup>
-                                                        بدل من
+                                                    <div class="month" style=" width: 132px;direction: rtl;">
+                                                        <span class="number">250</span>&nbsp;<sup>جنية مصري</sup>
+
+                                                        <span class="plan">بدل</span>
                                                         <br>
-                                                        <span class="number">500</span><sup>/جنية مصري</sup>
+                                                        <span class="number">500</span>&nbsp;<sup>جنية مصري</sup>
                                                     </div>
 
                                                     <div class="year">
                                                         <span class="number">120.00</span><sup>/yr</sup>
                                                     </div>
                                                 </div>
-                                                <a href="contact.html" class="button button-premium">
+                                                <a href="{{route('front.home')}}#mobile_section" class="button button-premium">
                                                     <div class="button-inner">
                                                         <div class="button-content">
                                                             <h4>اشترك الان</h4>
                                                         </div>
                                                     </div>
                                                 </a>
-
                                             </div>
                                         </div>
                                     </div>
@@ -621,7 +438,10 @@
     <!--
     faq section - start
     -->
-    <div class="faq-section">
+    <br>
+    <br>
+    <br>
+    <div class="faq-section ">
         <div class="faq-section-wrapper">
             <div class="container">
                 <div class="row">
@@ -871,7 +691,7 @@
     <!--
     screen section - start
     -->
-    <div class="screen-section">
+    <div class="screen-section" id="mobile_section">
         <div class="screen-section-wrapper">
             <!--
             screen section header - start
@@ -886,7 +706,7 @@
                                 {{--                                    <h5>orions universal app</h5>--}}
                                 {{--                                </div>--}}
                                 <div class="main-heading c-dark">
-                                    <h1>{{trans('landing.app_images')}}</h1>
+                                    <h1>{{trans('landing.download_now')}} </h1>
                                 </div>
                             </div>
                         </div>
@@ -982,7 +802,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-8 offset-lg-0 col-10 offset-1">
-                                <h1 class="c-white">Download from both Android and iOS</h1>
+                                <h1 class="c-white">{{trans('landing.app_images')}}</h1>
                                 {{--                                <h4 class="c-white">--}}
                                 {{--                                    <i class="fas fa-smile"></i>--}}
                                 {{--                                    3 Million users and counting!--}}
@@ -1061,15 +881,15 @@
                                 <div class="blog-single blog-single-1">
                                     <div class="blog-single-wrapper">
                                         <div class="blog-single-content">
-                                            <a href="#" class="figure">
+                                            <a href="{{route('front.home')}}#mobile_section" class="figure">
                                                 <img src="{{$row->image}}"
                                                      alt="blog-image">
                                             </a>
-                                            <a href="#">
+                                            <a href="{{route('front.home')}}#mobile_section">
                                                 <h3>{!! $row->name !!}</h3>
                                             </a>
                                         </div>
-                                        <a href="#" class="circle">
+                                        <a href="{{route('front.home')}}#mobile_section" class="circle">
                                             <i class="las la-plus"></i>
                                             <i class="las la-angle-right hover"></i>
                                         </a>
@@ -1089,7 +909,7 @@
     <!--
     cta section - start
     -->
-    <div class="cta-section">
+    <div class="cta-section" id="download_section">
         <div class="cta-section-wrapper">
             <div class="container">
                 <div class="row">
@@ -1139,7 +959,7 @@
     <!--
     contact form section - start
     -->
-    <div class="contact-form-section contact-form-section-1">
+    <div class="contact-form-section contact-form-section-1" id="contact">
         <div class="contact-form-section-wrapper">
             <div class="container">
                 <div class="row gx-5 contact-form-section-row" style="    justify-content: center;">
@@ -1200,154 +1020,4 @@
     contact form section - end
     -->
 
-    <!--
-    footer - start
-    -->
-    <footer class="footer">
-        <div class="footer-wrapper">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 offset-lg-0 col-md-8 offset-md-2 col-10 offset-1">
-                        <div class="footer-row">
-                            <div class="footer-detail">
-                                <a href="#">
-                                    <img src="{{url('landing')}}/assets/images/logo.png" alt="footer-logo">
-                                </a>
-                                <p class="c-grey-1" style="direction: rtl;">{{trans('landing.description')}}</p>
-                                <div class="links">
-                                    <a class="link-underline" href="{{$setting_email}}">
-                                        <span>{{$setting_email}}</span>
-                                    </a>
-                                    <a class="link-underline" href="tel:{{$setting_phone}}">
-                                        <span>{{$setting_phone}}</span>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="footer-list footer-social social-gradient">
-                                <h6>مواقع التواصل الاجتماعي</h6>
-                                <ul>
-                                    <li class="instagram">
-                                        <a target="_blank" href="https://www.instagram.com/80fekra" class="link-underline">
-                                            <i class="fab fa-instagram"></i>
-                                            <span>Instgram</span>
-                                        </a>
-                                    </li>
-                                    <li class="facebook">
-                                        <a target="_blank" href="https://www.facebook.com/80fekra" class="link-underline">
-                                            <i class="fab fa-facebook"></i>
-                                            <span>Facebook</span>
-                                        </a>
-                                    </li>
-
-                                    <li class="youtube">
-                                        <a target="_blank" href="https://www.youtube.com/channel/UC5GKLcvxkuktuR2KRN4gyeg" class="link-underline">
-                                            <i class="fab fa-youtube"></i>
-                                            <span>Youtube</span>
-                                        </a>
-                                    </li>
-                                    <li class="whatsapp">
-                                        <a href="tel:01095758550" target="_blank" class="link-underline">
-                                            <i class="fab fa-whatsapp"></i>
-                                            <span>whatsapp</span>
-                                        </a>
-                                    </li>
-                                    <li class="globe">
-                                        <a href="http://80fekra.com/ar/products" target="_blank" class="link-underline">
-                                            <i class="fab fa-globe"></i>
-                                            <span>Site</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="footer-list">
-                                <h6>القوائم</h6>
-                                <ul>
-                                    <li>
-                                        <a href="about.html" class="link-underline">
-                                            <span>About</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="about.html" class="link-underline">
-                                            <span>Our Team</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="features-1.html" class="link-underline">
-                                            <span>Features</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="blog-1.html" class="link-underline">
-                                            <span>Blog</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="about.html" class="link-underline">
-                                            <span>How It Works</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="contact.html" class="link-underline">
-                                            <span>Contact</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="footer-list">
-                                <h6>الاكثر زيارة</h6>
-                                <ul>
-                                    <li>
-                                        <a href="pricing.html" class="link-underline">
-                                            <span>Pricing</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="privacy-policy.html" class="link-underline">
-                                            <span>Terms of Services</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="privacy-policy.html" class="link-underline">
-                                            <span>Privacy Policy</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="contact.html" class="link-underline">
-                                            <span>Help Center</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12 offset-lg-0 col-md-8 offset-md-2 col-10 offset-1">
-                        <div class="footer-copyright c-grey-1">
-                            <h6>&copy; 80-IDEA</h6>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-pattern"
-                 style="background-image: url(landing/assets/images/patterns/pattern-1.jpg)"></div>
-        </div>
-    </footer>
-    <!--
-    footer - end
-    -->
-
-</div>
-
-<!--
-scripts
--->
-<script src="{{url('landing')}}/assets/js/bootstrap.bundle.min.js"></script>
-<script src="{{url('landing')}}/assets/js/swiper-bundle.min.js"></script>
-<script src="{{url('landing')}}/assets/js/glightbox.min.js"></script>
-<script src="{{url('landing')}}/assets/js/overlay-scrollbars.min.js"></script>
-<script src="{{url('landing')}}/assets/js/gsap.min.js"></script>
-<script src="{{url('landing')}}/assets/js/main.js"></script>
-</body>
-</html>
+@endsection
