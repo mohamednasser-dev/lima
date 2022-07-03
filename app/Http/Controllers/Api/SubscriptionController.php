@@ -160,23 +160,23 @@ class SubscriptionController extends GeneralController
             if ($user) {
                 $subscription = SubscribeType::find($invoice->subscription_id);
                 $month_count = $subscription->month_count ;
-                $data['name_ar'] = $subscription->name_ar;
-                $data['name_en'] = $subscription->name_en;
-                $data['cost'] = $subscription->cost;
-                $data['user_name'] = $invoice->User->name;
-                $data['phone'] = $invoice->User->phone;
-                $data['user_id'] = $invoice->user_id;
                 $today = Carbon::now();
-                $data['started_at'] = $today;
                 $ended_date = Carbon::now()->addMonth($month_count);
-                $data['ended_at'] = $ended_date;
-                $data['payment_status'] = 1;
-                $data['type'] = 'visa';
-                $data['status'] = 'accepted';
-                SubscriptionHistory::create($data);
                 $user->subscriber = 1;
                 $user->subscription_ended_at = $ended_date;
                 $user->save();
+                $history_data['name_ar'] = $subscription->name_ar;
+                $history_data['name_en'] = $subscription->name_en;
+                $history_data['cost'] = $subscription->cost;
+                $history_data['user_name'] = $invoice->User->name;
+                $history_data['phone'] = $invoice->User->phone;
+                $history_data['user_id'] = $invoice->user_id;
+                $history_data['started_at'] = $today;
+                $history_data['ended_at'] = $ended_date;
+                $history_data['payment_status'] = 1;
+                $history_data['type'] = 'visa';
+                $history_data['status'] = 'accepted';
+                SubscriptionHistory::create($history_data);
             } else {
                 return "no user selected";
             }
