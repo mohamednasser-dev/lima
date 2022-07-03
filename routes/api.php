@@ -76,7 +76,7 @@ Route::group(['middleware' => ['api'], 'prefix' => "v1", 'namespace' => 'v1'], f
 
     });
 
-    Route::post('/student/buy/course/webhook_json', [SubscriptionController::class, 'excute_pay']);
+    Route::post('/subscriber/buy/webhook_json', [SubscriptionController::class, 'excute_pay']);
     Route::get('/pay/success', [SubscriptionController::class, 'pay_sucess']);
     Route::get('/pay/error', [SubscriptionController::class, 'pay_error']);
 });

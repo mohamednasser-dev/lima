@@ -172,10 +172,9 @@ class SubscriptionController extends GeneralController
                 $data['type'] = 'visa';
                 $data['status'] = 'accepted';
                 SubscriptionHistory::create($data);
-
-                $user['subscriber'] = 1;
-                $user['subscription_ended_at'] = $ended_date;
-                User::find(apiUser()->id)->update($user);
+                $user->subscriber = 1;
+                $user->subscription_ended_at = $ended_date;
+                $user->save();
             } else {
                 return "no user selected";
             }
