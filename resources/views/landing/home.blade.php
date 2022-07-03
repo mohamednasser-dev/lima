@@ -274,7 +274,7 @@
                                                 <div class="price price-month">
                                                     <div class="month" style=" width: 132px;direction: rtl;">
                                                         <span class="number">200</span>&nbsp;<sup>جنية مصري</sup>
-                                                        <span class="plan">بدل</span>
+                                                        بدل
                                                         <br>
                                                         <span class="number">400</span>&nbsp;<sup>جنية مصري</sup>
                                                     </div>
@@ -298,8 +298,7 @@
                                                 <div class="price price-month">
                                                     <div class="month" style=" width: 132px;direction: rtl;">
                                                         <span class="number">250</span>&nbsp;<sup>جنية مصري</sup>
-
-                                                        <span class="plan">بدل</span>
+                                                        بدل
                                                         <br>
                                                         <span class="number">500</span>&nbsp;<sup>جنية مصري</sup>
                                                     </div>
