@@ -33,6 +33,7 @@ class PostController extends GeneralController
 
         return $this->sendResponse($data, __('lang.data_show_successfully'), 200);
     }
+
     public function posts($id)
     {
         //selected category
@@ -40,13 +41,13 @@ class PostController extends GeneralController
         //check if this sub category or not
         $parents = [1, 2];
         if (!in_array($category->parent_id, $parents)) {
-            $posts = $this->model::Where('category_id', $id)->active()->orderBy('free','desc')->paginate(20);
-        }else{
+            $posts = $this->model::Where('category_id', $id)->active()->orderBy('free', 'desc')->paginate(20);
+        } else {
             $sub_ids = Category::where('parent_id', $id)->get()->pluck('id')->toArray();
-            if(count($sub_ids) > 0){
-                $posts = $this->model::whereIn('category_id', $sub_ids)->active()->orderBy('free','desc')->paginate(20);
-            }else{
-                $posts = $this->model::where('category_id', $id)->active()->orderBy('free','desc')->paginate(20);
+            if (count($sub_ids) > 0) {
+                $posts = $this->model::whereIn('category_id', $sub_ids)->active()->orderBy('free', 'desc')->paginate(20);
+            } else {
+                $posts = $this->model::where('category_id', $id)->active()->orderBy('free', 'desc')->paginate(20);
             }
         }
         $data = (PostResources::collection($posts))->response()->getData(true);
@@ -57,6 +58,8 @@ class PostController extends GeneralController
     {
 
         $post = $this->model::findOrFail($id);
+        $post->views = $post->views + 1;
+        $post->save();
         $data = new PostResources($post);
         //make user view
         if (apiUser()) {
@@ -66,8 +69,6 @@ class PostController extends GeneralController
                 $view_data['post_id'] = $id;
                 $view_data['user_id'] = apiUser()->id;
                 PostView::create($view_data);
-                $post->views = $post->views + 1;
-                $post->save();
             }
         }
         return $this->sendResponse($data, __('lang.data_show_successfully'), 200);
