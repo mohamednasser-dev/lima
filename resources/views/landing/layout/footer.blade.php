@@ -42,7 +42,7 @@
                                     </a>
                                 </li>
                                 <li class="whatsapp">
-                                    <a href="tel:01095758550" target="_blank" class="link-underline">
+                                    <a href="https://wa.me/01095758550" target="_blank" class="link-underline">
                                         <i class="fab fa-whatsapp"></i>
                                         <span>whatsapp</span>
                                     </a>

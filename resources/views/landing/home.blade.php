@@ -226,7 +226,7 @@
                             <a href="{{route('front.home')}}#mobile_section" class="button button-3">
                                 <div class="button-inner">
                                     <div class="button-content">
-                                        <h4>Get Started</h4>
+                                        <h4>{{trans('landing.get_it_on')}}</h4>
                                     </div>
                                 </div>
                             </a>
