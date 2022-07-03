@@ -42,6 +42,10 @@ Route::get('cache', function () {
     Artisan::call('route:clear');
     return 'success';
 });
+
+Route::get('/success', function () { return view('success'); })->name('success');
+Route::get('/error', function () { return view('error');})->name('error');
+
 Route::get('/', [\App\Http\Controllers\Landing\HomeController::class, 'home'])->name('front.home');
 Route::get('/page/{type}', [\App\Http\Controllers\Landing\HomeController::class, 'pages'])->name('front.pages');
 

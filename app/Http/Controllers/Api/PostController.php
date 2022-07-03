@@ -56,7 +56,6 @@ class PostController extends GeneralController
 
     public function post_details($id)
     {
-
         $post = $this->model::findOrFail($id);
         $post->views = $post->views + 1;
         $post->save();
