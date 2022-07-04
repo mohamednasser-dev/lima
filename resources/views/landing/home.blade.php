@@ -58,7 +58,7 @@
     -->
     <div class="app-feature app-feature-1">
         <div class="app-feature-wrapper">
-            <div class="container" style="direction: rtl;">
+            <div class="container">
                 <div class="row">
                     <div class="col-lg-12 offset-lg-0 col-10 offset-1">
                         <div class="section-heading center width-64">
@@ -128,7 +128,7 @@
                     <div class="col-lg-5 offset-lg-1 order-lg-2 order-1">
                         <div class="video-section-video">
                             <figure>
-                                <img class="drop-shadow-1" src="{{url('landing')}}/assets/images/video-img.jpg"
+                                <img class="drop-shadow-1" src="{{url('landing')}}/assets/images/video-img.png"
                                      alt="image">
 
                                 <div class="play">
@@ -162,7 +162,7 @@
                 <div class="row gx-5">
                     <div class="col-lg-5 offset-lg-0 col-10 offset-1">
                         <div class="feature-section-image">
-                            <img src="{{url('landing')}}/assets/images/feature-section-2-img.jpg" class="image"
+                            <img src="{{url('landing')}}/assets/images/advantage.png" class="image"
                                  alt="image">
                             <img src="{{url('landing')}}/assets/images/feature-section-2-phone.png" class="phone"
                                  alt="phone">
@@ -705,7 +705,7 @@
                                 {{--                                    <h5>orions universal app</h5>--}}
                                 {{--                                </div>--}}
                                 <div class="main-heading c-dark">
-                                    <h1>{{trans('landing.download_now')}} </h1>
+                                    <h1>{{trans('landing.app_images')}} </h1>
                                 </div>
                             </div>
                         </div>
@@ -801,7 +801,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-8 offset-lg-0 col-10 offset-1">
-                                <h1 class="c-white">{{trans('landing.app_images')}}</h1>
+                                <h1 class="c-white">{{trans('landing.download_now')}}</h1>
                                 {{--                                <h4 class="c-white">--}}
                                 {{--                                    <i class="fas fa-smile"></i>--}}
                                 {{--                                    3 Million users and counting!--}}
