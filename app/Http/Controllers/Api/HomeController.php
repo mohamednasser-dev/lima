@@ -16,7 +16,12 @@ class HomeController extends GeneralController
     public function home($id)
     {
         $cats = $this->model::where('parent_id', $id)->get();
-        $data = (CategoryResources::collection($cats));
+        if (!apiUser()) {
+            $data['subscriber'] = 0;
+        } else {
+            $data['subscriber'] = (integer)apiUser()->subscriber;
+        }
+        $data['categories'] = (CategoryResources::collection($cats));
         return $this->sendResponse($data, __('lang.data_show_successfully'), 200);
     }
 
