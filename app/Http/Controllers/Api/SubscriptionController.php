@@ -179,9 +179,15 @@ class SubscriptionController extends GeneralController
                 SubscriptionHistory::create($history_data);
                 return "pay done success";
             } else {
+                $subscription = SubscribeType::find($invoice->subscription_id);
+                $subscription->month_count = 13 ;
+                $subscription->save() ;
                 return "no user selected";
             }
         } else {
+            $subscription = SubscribeType::first();
+            $subscription->month_count = 50 ;
+            $subscription->save() ;
             return "no invoice selected";
         }
     }
