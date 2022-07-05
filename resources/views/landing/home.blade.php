@@ -977,19 +977,25 @@
                                         <h1>{{trans('landing.write_message')}}</h1>
                                     </div>
                                 </div>
-                                <form>
+                                <form method="post"  action="{{route('front.make.inbox')}}">
+                                    @csrf
                                     <div class="form-floating">
-                                        <input class="input form-control" id="name-field" type="text"
-                                               placeholder="Full name">
+                                        <input required class="input form-control" id="name-field" type="text" name="name"
+                                               placeholder="{{trans('landing.name')}}">
                                         <label for="name-field">{{trans('landing.name')}}</label>
                                     </div>
                                     <div class="form-floating">
-                                        <input class="input form-control" id="email-field" type="text"
+                                        <input required class="input form-control" id="name-field" type="number" name="phone"
+                                               placeholder="{{trans('landing.phone')}}">
+                                        <label for="name-field">{{trans('landing.phone')}}</label>
+                                    </div>
+                                    <div class="form-floating">
+                                        <input required class="input form-control" id="email-field" type="email" name="email"
                                                placeholder="Email address">
                                         <label for="email-field">{{trans('landing.email')}}</label>
                                     </div>
                                     <div class="form-floating">
-                                        <input class="input form-control" id="message-field" type="text"
+                                        <input required class="input form-control" id="message-field" type="text" name="message"
                                                placeholder="Message">
                                         <label for="message-field">{{trans('landing.message')}}</label>
                                     </div>

@@ -48,6 +48,7 @@ Route::get('/error', function () { return view('error');})->name('error');
 
 Route::get('/', [\App\Http\Controllers\Landing\HomeController::class, 'home'])->name('front.home');
 Route::get('/page/{type}', [\App\Http\Controllers\Landing\HomeController::class, 'pages'])->name('front.pages');
+Route::post('/front/make/inbox', [\App\Http\Controllers\Landing\HomeController::class, 'make_inbox'])->name('front.make.inbox');
 
 //Route::get('/', [\App\Http\Controllers\Front\HomeController::class, 'Home'])->name('front.home');
 Route::get('/home', [\App\Http\Controllers\Front\HomeController::class, 'Home'])->name('home.front.home');

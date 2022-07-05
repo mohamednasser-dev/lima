@@ -5,9 +5,11 @@ namespace App\Http\Controllers\Landing;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Favorite;
+use App\Models\Inbox;
 use App\Models\Page;
 use App\Models\Post;
 use App\Models\Slider;
+use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
@@ -25,6 +27,20 @@ class HomeController extends Controller
     {
         $data = Page::where('type',$type)->first();
         return view('landing.pages',compact('data','type'));
+    }
+
+
+    public function make_inbox(Request $request)
+    {
+        $data = $this->validate(request(),
+            [
+                'name' => 'required|string|max:255',
+                'email' => 'required|email|max:255',
+                'phone' => 'required|string|max:255',
+                'message' => 'required|string|max:800',
+            ]);
+        Inbox::create($data);
+        return redirect()->back()->with('success', trans('تم الارسال بنجاح'));
     }
 
 

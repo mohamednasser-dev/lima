@@ -25,17 +25,10 @@
 @endsection
 @section('content')
     <div class="card">
-        <form action="{{ route('posts.deletes') }}" method="post" id="delete-form">
-            @csrf
             <div class="card-header">
                 <div class="row">
                     <div class="col-md-6 text-left">
-                        @can('delete-posts')
-                            <button type="submit" style="display:none; margin-right: 10px;"
-                                    class="btn btn-sm btn-light-danger font-weight-bolder mr-2 delete-selected-btn">
-                                <i class="fa fa-trash"></i> حذف المحدد
-                            </button>
-                        @endcan
+
                     </div>
                     <div class="col-md-6 text-right">
                         @can('create-posts')
@@ -47,12 +40,65 @@
                 </div>
             </div>
             <div class="card-body">
-            {!! $dataTable->table() !!}
-        </form>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover table-checkable" id="kt_datatable">
+                        <thead>
+                        <tr>
+
+                            <th style="text-align: center;" title="Field #1">الصورة الاساسية</th>
+                            <th style="text-align: center;" title="Field #1">عنوان المحتوى</th>
+                            <th style="text-align: center;" title="Field #2">عدد الاعجابات</th>
+                            <th style="text-align: center;" title="Field #2">عدد المشاهدات</th>
+                            <th style="text-align: center;" title="Field #2">مجانا</th>
+                            <th style="text-align: center;" title="Field #3">الاجرائات</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach($data as $key => $row)
+                            <tr>
+                                <td style="text-align: center;"><img style="width: 70px; height: 70px;"
+                                                                     class="img-thumbnail" src="{{$row->image}}">
+                                </td>
+                                <td style="text-align: center;">{!! $row->name_ar  !!}</td>
+                                <td style="text-align: center;">{{$row->likes}}</td>
+                                <td style="text-align: center;">{{$row->views}}</td>
+                                <td style="text-align: center;">
+                                    @can('update-posts')
+                                        <span class="switch">
+                                            <label>
+                                                <input type="checkbox" onchange="update_free(this)"
+                                                       @if ($row->free == 1) checked
+                                                       @endif name="select" value="{{ $row->id }}"/>
+                                                <span></span>
+                                            </label>
+                                        </span>
+                                    @endcan
+                                </td>
+                                <td style="text-align: center;">
+                                    @can('update-posts')
+                                        <a href="{{route('posts.edit',$row->id)}}"  title="تعديل" class="btn btn-icon btn-light-primary btn-circle mr-2">
+                                            <i class="flaticon-edit"></i>
+                                        </a>
+                                    @endcan
+                                    @can('delete-posts')
+                                        <a href="{{route('posts.delete',$row->id)}}" title="حذف" onclick=" return confirm('هل متاكد من الحذف ؟ ')" class="btn btn-icon btn-light-danger btn-circle mr-2">
+                                            <i class="flaticon2-rubbish-bin-delete-button"></i>
+                                        </a>
+                                    @endcan
+
+                                </td>
+                            </tr>
+                        @endforeach
+                        </tbody>
+                    </table>
+                    {{$data->links()}}
+                    <!--end: Datatable-->
+                </div>
+            </div>
     </div>
 @endsection
 @section('script')
-    {!! $dataTable->scripts() !!}
+{{--    {!! $dataTable->scripts() !!}--}}
     <script type="text/javascript">
         function update_free(el) {
             if (el.checked) {

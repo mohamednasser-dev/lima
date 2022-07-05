@@ -22,10 +22,14 @@ class PostController extends GeneralController
     {
         parent::__construct($model);
     }
-
-    public function index(PostDataTable $dataTable, $type)
+    public function old_index(PostDataTable $dataTable, $type)
     {
         return $dataTable->with('type', $type)->render($this->viewPath . '.index');
+    }
+    public function index($type)
+    {
+        $data = Post::where('type', $type)->orderBy('id', 'desc')->paginate(10);
+        return view($this->viewPath . '.index',compact('data'));
     }
 
     public function create($type)
