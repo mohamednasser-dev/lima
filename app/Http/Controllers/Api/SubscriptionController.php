@@ -79,7 +79,7 @@ class SubscriptionController extends GeneralController
         return msgdata($request, success(), trans('lang.shown_s'), $final_result);
     }
 
-    public function payment_step_two(Request $request )
+    public function payment_step_two(Request $request)
     {
         $data = $request->all();
         $validator = Validator::make($data, [
@@ -160,42 +160,30 @@ class SubscriptionController extends GeneralController
             $user = User::where('id', $invoice->user_id)->first();
             if ($user) {
                 $subscription = SubscribeType::find($invoice->subscription_id);
-                $month_count = $subscription->month_count ;
+                $month_count = $subscription->month_count;
                 $today = Carbon::now();
                 $ended_date = Carbon::now()->addMonths($month_count);
                 $user->subscriber = 1;
                 $user->subscription_ended_at = $ended_date;
                 $user->save();
-                try {
-                    $history_data['subscribe_type_id'] = $invoice->subscription_id;
-                    $history_data['name_ar'] = $subscription->name_ar;
-                    $history_data['name_en'] = $subscription->name_en;
-                    $history_data['cost'] = $subscription->cost;
-                    $history_data['user_name'] = $user->name;
-                    $history_data['phone'] = $user->phone;
-                    $history_data['user_id'] = $invoice->user_id;
-                    $history_data['started_at'] = $today;
-                    $history_data['ended_at'] = $ended_date;
-                    $history_data['payment_status'] = 1;
-                    $history_data['type'] = 'visa';
-                    $history_data['status'] = 'accepted';
-                    SubscriptionHistory::create($history_data);
-                }catch (\Exception $ex){
-                    $setting = Setting::where('key','location')->first();
-                    $setting->val = $ex ;
-                    $setting->save() ;
-                }
+                $history_data['subscribe_type_id'] = $invoice->subscription_id;
+                $history_data['name_ar'] = $subscription->name_ar;
+                $history_data['name_en'] = $subscription->name_en;
+                $history_data['cost'] = $subscription->cost;
+                $history_data['user_name'] = $user->name;
+                $history_data['phone'] = $user->phone;
+                $history_data['user_id'] = $invoice->user_id;
+                $history_data['started_at'] = $today;
+                $history_data['ended_at'] = $ended_date;
+                $history_data['payment_status'] = 1;
+                $history_data['type'] = 'visa';
+                $history_data['status'] = 'accepted';
+                SubscriptionHistory::create($history_data);
                 return "pay done success";
             } else {
-                $subscription = SubscribeType::find($invoice->subscription_id);
-                $subscription->month_count = 13 ;
-                $subscription->save() ;
                 return "no user selected";
             }
         } else {
-            $subscription = SubscribeType::first();
-            $subscription->month_count = 50 ;
-            $subscription->save() ;
             return "no invoice selected";
         }
     }
