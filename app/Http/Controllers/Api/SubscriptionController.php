@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Resources\SubscribeTypeResources;
 use App\Http\Controllers\GeneralController;
 use App\Models\Invoices;
+use App\Models\Setting;
 use Illuminate\Support\Facades\Validator;
 use App\Models\SubscriptionHistory;
 use App\Models\SubscribeType;
@@ -165,18 +166,25 @@ class SubscriptionController extends GeneralController
                 $user->subscriber = 1;
                 $user->subscription_ended_at = $ended_date;
                 $user->save();
-                $history_data['name_ar'] = $subscription->name_ar;
-                $history_data['name_en'] = $subscription->name_en;
-                $history_data['cost'] = $subscription->cost;
-                $history_data['user_name'] = $invoice->User->name;
-                $history_data['phone'] = $invoice->User->phone;
-                $history_data['user_id'] = $invoice->user_id;
-                $history_data['started_at'] = $today;
-                $history_data['ended_at'] = $ended_date;
-                $history_data['payment_status'] = 1;
-                $history_data['type'] = 'visa';
-                $history_data['status'] = 'accepted';
-                SubscriptionHistory::create($history_data);
+                try {
+                    $history_data['subscribe_type_id'] = $invoice->subscription_id;
+                    $history_data['name_ar'] = $subscription->name_ar;
+                    $history_data['name_en'] = $subscription->name_en;
+                    $history_data['cost'] = $subscription->cost;
+                    $history_data['user_name'] = $user->name;
+                    $history_data['phone'] = $user->phone;
+                    $history_data['user_id'] = $invoice->user_id;
+                    $history_data['started_at'] = $today;
+                    $history_data['ended_at'] = $ended_date;
+                    $history_data['payment_status'] = 1;
+                    $history_data['type'] = 'visa';
+                    $history_data['status'] = 'accepted';
+                    SubscriptionHistory::create($history_data);
+                }catch (\Exception $ex){
+                    $setting = Setting::where('key','location')->first();
+                    $setting->val = $ex ;
+                    $setting->save() ;
+                }
                 return "pay done success";
             } else {
                 $subscription = SubscribeType::find($invoice->subscription_id);
