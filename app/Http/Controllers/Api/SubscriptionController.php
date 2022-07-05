@@ -45,7 +45,7 @@ class SubscriptionController extends GeneralController
         $data['user_id'] = apiUser()->id;
         $today = Carbon::now();
         $data['started_at'] = $today;
-        $ended_date = Carbon::now()->addMonth($subscription->month_count);
+        $ended_date = Carbon::now()->addMonths($subscription->month_count);
         $data['ended_at'] = $ended_date;
         $data['payment_status'] = 1;
         $created = SubscriptionHistory::create($data);
@@ -161,7 +161,7 @@ class SubscriptionController extends GeneralController
                 $subscription = SubscribeType::find($invoice->subscription_id);
                 $month_count = $subscription->month_count ;
                 $today = Carbon::now();
-                $ended_date = Carbon::now()->addMonth($month_count);
+                $ended_date = Carbon::now()->addMonths($month_count);
                 $user->subscriber = 1;
                 $user->subscription_ended_at = $ended_date;
                 $user->save();
@@ -177,6 +177,7 @@ class SubscriptionController extends GeneralController
                 $history_data['type'] = 'visa';
                 $history_data['status'] = 'accepted';
                 SubscriptionHistory::create($history_data);
+                return "pay done success";
             } else {
                 return "no user selected";
             }
