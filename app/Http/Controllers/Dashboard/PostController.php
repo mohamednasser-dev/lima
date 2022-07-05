@@ -28,7 +28,7 @@ class PostController extends GeneralController
     }
     public function index($type)
     {
-        $data = Post::where('type', $type)->orderBy('id', 'desc')->paginate(10);
+        $data = Post::where('type', $type)->orderBy('id', 'desc')->paginate(5);
         return view($this->viewPath . '.index',compact('data'));
     }
 

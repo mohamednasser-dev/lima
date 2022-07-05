@@ -44,8 +44,6 @@
                     <table class="table table-bordered table-hover table-checkable" id="kt_datatable">
                         <thead>
                         <tr>
-
-                            <th style="text-align: center;" title="Field #1">الصورة الاساسية</th>
                             <th style="text-align: center;" title="Field #1">عنوان المحتوى</th>
                             <th style="text-align: center;" title="Field #2">عدد الاعجابات</th>
                             <th style="text-align: center;" title="Field #2">عدد المشاهدات</th>
@@ -56,9 +54,6 @@
                         <tbody>
                         @foreach($data as $key => $row)
                             <tr>
-                                <td style="text-align: center;"><img style="width: 70px; height: 70px;"
-                                                                     class="img-thumbnail" src="{{$row->image}}">
-                                </td>
                                 <td style="text-align: center;">{!! $row->name_ar  !!}</td>
                                 <td style="text-align: center;">{{$row->likes}}</td>
                                 <td style="text-align: center;">{{$row->views}}</td>
