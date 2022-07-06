@@ -35,7 +35,7 @@
                         @endcan
                     </div>
                     <div class="col-md-6 text-right">
-                        
+
                     </div>
                 </div>
             </div>

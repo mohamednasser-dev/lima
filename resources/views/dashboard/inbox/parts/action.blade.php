@@ -3,7 +3,7 @@
 {{--        <i class="flaticon-eye"></i>--}}
 {{--    </a>--}}
 {{--@endcan--}}
-@can('update-cities')
+@can('delete-inbox')
     <a href="{{route('inbox.delete',$id)}}" title="حذف" onclick=" return confirm('هل متاكد من الحذف ؟ ')"
        class="btn btn-icon btn-light-danger btn-circle mr-2">
         <i class="flaticon2-rubbish-bin-delete-button"></i>
