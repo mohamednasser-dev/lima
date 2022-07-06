@@ -9,6 +9,7 @@ use App\DataTables\ScreenDataTable;
 use App\Http\Requests\TeamRequest;
 use App\Models\Screen;
 use App\Models\Team;
+use Illuminate\Http\Request;
 
 class TeamController extends GeneralController
 {
@@ -66,5 +67,13 @@ class TeamController extends GeneralController
         $this->model::where('id', $id)->update($data);
         return redirect()->route($this->route)->with('success', 'تم التعديل بنجاح');
 
+    }
+
+    public function delete(Request $request, $id)
+    {
+        $data = $this->model::findOrFail($id);
+        $this->deleteImage($data->image);
+        $data->delete();
+        return redirect()->back()->with('success', 'تم الحذف بنجاح');
     }
 }
