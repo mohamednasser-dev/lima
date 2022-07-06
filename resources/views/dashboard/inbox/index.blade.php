@@ -35,11 +35,7 @@
                         @endcan
                     </div>
                     <div class="col-md-6 text-right">
-                        @can('create-cities')
-                            <a href="{{route('cities.create')}}"
-                               class="btn btn-sm btn-light-success font-weight-bolder mr-2">
-                                <i class="fa fa-plus"></i>اضـافـه</a>
-                        @endcan
+                        
                     </div>
                 </div>
             </div>
