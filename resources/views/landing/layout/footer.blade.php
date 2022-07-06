@@ -102,7 +102,7 @@
                 </div>
                 <div class="col-lg-6 offset-lg-0 col-md-8 offset-md-2 col-10 offset-1">
                     <div class="footer-copyright c-grey-1">
-                        <a href="https://tesolutionspro.com/" target="_blank">
+                        <a href="http://80fekra.com/ar/products" target="_blank">
                             <img class="link-underline" style="width: 151px;padding-bottom: 14px;"  src="{{url('/')}}/idea_logo.png">
                             <br>
                             {{--                                                <h6>&copy; 80-IDEA</h6>--}}
