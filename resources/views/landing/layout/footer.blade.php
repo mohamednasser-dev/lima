@@ -17,6 +17,7 @@
                                 <a class="link-underline" href="tel:{{$setting_phone}}">
                                     <span>{{$setting_phone}}</span>
                                 </a>
+
                             </div>
                         </div>
                         <div class="footer-list footer-social social-gradient">
@@ -86,10 +87,29 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-12 offset-lg-0 col-md-8 offset-md-2 col-10 offset-1">
+            <div class="row" style="text-align: center;">
+                <div class="col-lg-6 offset-lg-0 col-md-8 offset-md-2 col-10 offset-1">
                     <div class="footer-copyright c-grey-1">
-                        <h6>&copy; 80-IDEA</h6>
+                        <a href="https://tesolutionspro.com/" target="_blank">
+                        <img class="link-underline" style="width: 100px;padding-bottom: 14px;"  src="{{url('/')}}/logo.png">
+                            <br>
+{{--                                                <h6>&copy; 80-IDEA</h6>--}}
+                                <h5>&copy;<span style="color: #5c5cf2;" > Te-Solutions</span>   تنفيذ وتطوير شركة</h5>
+                            <span></span>
+                        </a>
+
+                    </div>
+                </div>
+                <div class="col-lg-6 offset-lg-0 col-md-8 offset-md-2 col-10 offset-1">
+                    <div class="footer-copyright c-grey-1">
+                        <a href="https://tesolutionspro.com/" target="_blank">
+                            <img class="link-underline" style="width: 151px;padding-bottom: 14px;"  src="{{url('/')}}/idea_logo.png">
+                            <br>
+                            {{--                                                <h6>&copy; 80-IDEA</h6>--}}
+                            <h5>&copy; 2022 <span style="color: #5c5cf2;" > 80 Fekra</span>   - جميع الحقوق محفوظة شركة </h5>
+                            <span></span>
+                        </a>
+
                     </div>
                 </div>
             </div>

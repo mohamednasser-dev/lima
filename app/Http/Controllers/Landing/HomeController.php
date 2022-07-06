@@ -41,7 +41,7 @@ class HomeController extends Controller
                 'message' => 'required|string|max:800',
             ]);
         Inbox::create($data);
-        Alert::success('تم الارسال بنجاح','الرجاء انتظار الادارة للرد');
+        Alert::success('تم الارسال بنجاح','سيتم الرد في أسرع وقت إن شاء الله');
         return redirect()->back();
     }
 
