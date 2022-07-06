@@ -9,6 +9,7 @@ use App\Http\Controllers\Dashboard\ProfileController;
 use App\Http\Controllers\Dashboard\UserController;
 use App\Http\Controllers\Dashboard\HomeController;
 use App\Http\Controllers\Dashboard\RoleController;
+use App\Http\Controllers\Dashboard\InboxController;
 use App\Http\Controllers\Dashboard\CategoryController;
 use App\Http\Controllers\Dashboard\PostController;
 use App\Http\Controllers\Dashboard\PageController;
@@ -104,6 +105,11 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('deletes', [AdminController::class, 'deletes'])->name('admins.deletes')->middleware('permission:delete-' . $permission);
 
     });
+
+    Route::get('/inbox', [InboxController::class, 'inbox'])->name('inbox');
+    Route::get('/admin/inbox/edit/{id}', [InboxController::class, 'edit'])->name('current.inbox.edit');
+    Route::get('/inbox/delete/{id}', [InboxController::class, 'destroy'])->name('inbox.delete');
+
 // roles Route
     Route::group(['prefix' => 'roles'], function () {
         $permission = 'roles';

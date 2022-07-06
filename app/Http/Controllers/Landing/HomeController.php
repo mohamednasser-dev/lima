@@ -10,6 +10,7 @@ use App\Models\Page;
 use App\Models\Post;
 use App\Models\Slider;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class HomeController extends Controller
 {
@@ -40,7 +41,8 @@ class HomeController extends Controller
                 'message' => 'required|string|max:800',
             ]);
         Inbox::create($data);
-        return redirect()->back()->with('success', trans('تم الارسال بنجاح'));
+        Alert::success('تم الارسال بنجاح','الرجاء انتظار الادارة للرد');
+        return redirect()->back();
     }
 
 

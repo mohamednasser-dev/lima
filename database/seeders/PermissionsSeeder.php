@@ -41,6 +41,20 @@ class PermissionsSeeder extends Seeder
                 'description' => 'حذف صور العرض',
             ],
 
+            // inbox permissions
+            [
+                'path' => 'inbox',
+                'name' => 'read-inbox',
+                'display_name' => 'read inbox',
+                'description' => 'عرض الرسائل',
+            ],
+            [
+                'path' => 'inbox',
+                'name' => 'delete-inbox',
+                'display_name' => 'delete inbox',
+                'description' => 'حذف الرسائل',
+            ],
+
             // cities permissions
             [
                 'path' => 'cities',

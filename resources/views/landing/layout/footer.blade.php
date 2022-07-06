@@ -113,5 +113,6 @@ scripts
 <script src="{{url('landing')}}/assets/js/overlay-scrollbars.min.js"></script>
 <script src="{{url('landing')}}/assets/js/gsap.min.js"></script>
 <script src="{{url('landing')}}/assets/js/main.js"></script>
+@include('sweetalert::alert')
 </body>
 </html>

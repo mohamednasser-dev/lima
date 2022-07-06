@@ -9,4 +9,5 @@ class Inbox extends Model
 {
     use HasFactory;
     protected $guarded = [];
+
 }

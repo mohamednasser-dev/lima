@@ -24,6 +24,13 @@ if (!function_exists('msgdata')) {
     }
 }
 
+if (!function_exists('new_inbox')) {
+    function new_inbox()
+    {
+        return \App\Models\Inbox::where('seen_at', null)->get()->count();
+    }
+}
+
 if (!function_exists('msg')) {
     function msg($request, $status, $key)
     {

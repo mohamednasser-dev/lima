@@ -151,7 +151,26 @@
                     </div>
                 </li>
             @endcan
+            @can('read-inbox')
+            <li class="menu-item menu-item-submenu @if( Request::segment(1)== 'inbox' ) menu-item-open @endif"
+                aria-haspopup="true" data-menu-toggle="hover">
+                <a href="{{route('inbox')}}" class="menu-link menu-toggle">
+                    <i class="menu-icon flaticon2-browser"></i>
+                    <span class="menu-text">
 
+                        الرسائل
+                         @if(new_inbox() > 0)
+                            &nbsp;
+                            &nbsp;
+                            <span style="width: 20px;height: 20px;"
+                                  href="#" class="btn btn-icon btn-danger btn-circle pulse pulse-danger">
+                                    {{new_inbox()}}
+                                </span>
+                        @endif
+                    </span>
+                </a>
+            </li>
+            @endcan
             @can('read-subscriptions')
                 <li class="menu-item menu-item-submenu @if(request()->segment(1) == 'subscriptions') menu-item-open @endif "
                     aria-haspopup="true" data-menu-toggle="hover">
