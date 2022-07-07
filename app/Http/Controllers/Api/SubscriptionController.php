@@ -98,8 +98,6 @@ class SubscriptionController extends GeneralController
         } else {
             return msgdata($request, failed(), trans('lang.should_choose_valid_course'), (object)[]);
         }
-        return msgdata($request, failed(), 'user_phone', apiUser()->phone);
-
         $curl = curl_init();
         curl_setopt_array($curl, array(
             CURLOPT_URL => 'https://app.fawaterk.com/api/v2/invoiceInitPay',
