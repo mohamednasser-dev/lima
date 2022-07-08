@@ -166,11 +166,11 @@ class UserController extends GeneralController
         }
         $otp = \Otp::generate($request->phone);
         //send here sms
-//        Smsmisr::send("كود التحقق الخاص بك هو: " . $otp, $request->phone, null, 2);
+        Smsmisr::send("كود التحقق الخاص بك هو: " . $otp, $request->phone, null, 2);
 //        Smsmisr::send("كود التحقق الخاص بك هو: " . $otp, $this->SendSMS($user_phone, $message););
-        $phone = $request->phone;
-        $message = "كود التحقق الخاص بك هو: " . $otp;
-        sendSMS($phone, $message);
+//        $phone = $request->phone;
+//        $message = "كود التحقق الخاص بك هو: " . $otp;
+//        sendSMS($phone, $message);
         //end sending
         $result['otp'] = $otp;
         return response()->json(msgdata($request, success(), trans('lang.CodeSent'), $result));

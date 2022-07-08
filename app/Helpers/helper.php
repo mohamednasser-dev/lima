@@ -128,14 +128,35 @@ if (!function_exists('new_subscription')) {
 if (!function_exists('sendSMS')) {
     function sendSMS($phone = null, $message = null)
     {
-        $ch = curl_init();
-        $url = "https://smsmisr.com/api/webapi/";
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_POST, true);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, "username=" . env('SMSMISR_USERNAME') . "&password=" .env('SMSMISR_PASSWORD'). "&language=3&sender=" . env('SMSMISR_SENDER')  . "&mobile=" . $phone  . "&message=" . $message ); // define what you want to post
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        $output = curl_exec($ch);
-        curl_close($ch);
-        return curl_setopt;
+//
+//        $data1 = [
+//            'Username' => env('SMSMISR_USERNAME'),
+//            'password' => env('SMSMISR_PASSWORD'),
+//            'language' => '3',
+//            'sender' => env('SMSMISR_SENDER'),
+//            'Mobile' => $phone,
+//            'message' => $message,
+//        ];
+
+        $curl = curl_init();
+        curl_setopt_array($curl, array(
+        CURLOPT_URL => "https://smsmisr.com/api/webapi?username=" . env('SMSMISR_USERNAME') . "&password=" .env('SMSMISR_PASSWORD'). "&language=3&sender=" . env('SMSMISR_SENDER')  . "&mobile=" . $phone  . "&message=" . $message,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 30000,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+            CURLOPT_HTTPHEADER => array(
+                // Set here requred headers
+                "accept: */*",
+                "accept-language: en-US,en;q=0.8",
+                "content-type: application/json",
+            ),
+        ));
+        $response = curl_exec($curl);
+        $err = curl_error($curl);
+        curl_close($curl);
+        return $response ;
     }
 }
