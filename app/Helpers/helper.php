@@ -126,60 +126,16 @@ if (!function_exists('new_subscription')) {
 
 //sms
 if (!function_exists('sendSMS')) {
-    function sendSMS($Phone = null, $Message = null)
+    function sendSMS($phone = null, $message = null)
     {
-
-        $data1 = [
-            'Username' => env('SMSMISR_USERNAME'),
-            'password' => env('SMSMISR_PASSWORD'),
-            'language' => '3',
-            'sender' => env('SMSMISR_SENDER'),
-            'Mobile' => $Phone,
-            'message' => $Message,
-        ];
-
         $ch = curl_init();
-        $url = "https://www.enjazsms.com/api/sendsms.php";
+        $url = "https://smsmisr.com/api/webapi/";
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_POST, true);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, "username=fs4host&password=544566&message=" . $msg . "&numbers=" . $number . "&sender=iGold&unicode=E&return=full"); // define what you want to post
+        curl_setopt($ch, CURLOPT_POSTFIELDS, "username=" . env('SMSMISR_USERNAME') . "&password=" .env('SMSMISR_PASSWORD'). "&language=3&sender=" . env('SMSMISR_SENDER')  . "&mobile=" . $phone  . "&message=" . $message ); // define what you want to post
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $output = curl_exec($ch);
         curl_close($ch);
-
-        $curl = curl_init();
-        curl_setopt_array($curl, array(
-            CURLOPT_URL => "https://smsmisr.com/api/v2/username=XXX&password=XXX&language=X&sender=XXX&mobile=XXX&message=XXX&DelayUntil=XXX",
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_ENCODING => "",
-            CURLOPT_MAXREDIRS => 10,
-            CURLOPT_TIMEOUT => 30000,
-            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-            CURLOPT_CUSTOMREQUEST => "GET",
-            CURLOPT_POSTFIELDS => json_encode($data1),
-            CURLOPT_HTTPHEADER => array(
-                // Set here requred headers
-                "accept: */*",
-                "accept-language: en-US,en;q=0.8",
-                "content-type: application/json",
-            ),
-        ));
-
-        $ch = curl_init();
-        $url = "https://smsmisr.com/api/v2/username=XXX&password=XXX&language=X&sender=XXX&mobile=XXX&message=XXX&DelayUntil=XXX";
-        curl_setopt($ch, CURLOPT_URL,$url);
-        curl_setopt($ch, CURLOPT_POST, true);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, "AppSid=su7G9tOZc6U0kPVnoeiJGHUDMKe8tp&Body=".$message."&SenderID=EmarSrh&Recipient=".$mobile_num."&encoding=UTF8&responseType=json"); // define what you want to post
-        //  curl_setopt($ch, CURLOPT_POSTFIELDS, "userid=fetoh@koof-ksa.com&password=fetoh000000&msg=".$Message."&sender=ALKHALIL-GR&to=".$user->phone."&encoding=UTF8"); // define what you want to post
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        $output = curl_exec ($ch);
-        curl_close ($ch);
-
-        $response = curl_exec($curl);
-        $err = curl_error($curl);
-
-        curl_close($curl);
-
-        return $response;
+        return curl_setopt;
     }
 }
