@@ -137,6 +137,16 @@ if (!function_exists('sendSMS')) {
             'Mobile' => $Phone,
             'message' => $Message,
         ];
+
+        $ch = curl_init();
+        $url = "https://www.enjazsms.com/api/sendsms.php";
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, "username=fs4host&password=544566&message=" . $msg . "&numbers=" . $number . "&sender=iGold&unicode=E&return=full"); // define what you want to post
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $output = curl_exec($ch);
+        curl_close($ch);
+
         $curl = curl_init();
         curl_setopt_array($curl, array(
             CURLOPT_URL => "https://smsmisr.com/api/v2/username=XXX&password=XXX&language=X&sender=XXX&mobile=XXX&message=XXX&DelayUntil=XXX",
