@@ -14,14 +14,14 @@ class PostDataTable extends DataTable
     {
         return datatables()
             ->eloquent($query)
-            ->editColumn('image', '<img class="img-thumbnail" src="{{$image}}" style="height: 75px; width: 75px;">')
+//            ->editColumn('image', '<img class="img-thumbnail" src="{{$image}}" style="height: 75px; width: 75px;">')
             ->addColumn('action', 'dashboard.post.parts.action')
             ->addColumn('free_btn', 'dashboard.post.parts.free_btn')
             ->escapeColumns(['name_en'])
-            ->addColumn('id', function ($data) {
-                return "<input type='checkbox' name='data[]' class='data-item' value='{$data['id']}'/> ";
-            })
-            ->rawColumns(['action', 'image', 'id','free_btn']);
+//            ->addColumn('id', function ($data) {
+//                return "<input type='checkbox' name='data[]' class='data-item' value='{$data['id']}'/> ";
+//            })
+            ->rawColumns(['action','free_btn']);
     }
 
     /**
@@ -66,11 +66,11 @@ class PostDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            Column::make('id')
-                ->title("<input type='checkbox' id='DataSelect' class='select-checkbox'>")
-                ->orderable(false)
-                ->width(30),
-            Column::make('image')->class('text-center')->title('الصورة الاساسية'),
+//            Column::make('id')
+//                ->title("<input type='checkbox' id='DataSelect' class='select-checkbox'>")
+//                ->orderable(false)
+//                ->width(30),
+//            Column::make('image')->class('text-center')->title('الصورة الاساسية'),
             Column::make('name_ar')->class('text-center')->title('عنوان المحتوى'),
             Column::make('likes')->class('text-center')->title('عدد الاعجابات'),
             Column::make('views')->class('text-center')->title('عدد المشاهدات'),

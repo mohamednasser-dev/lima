@@ -118,6 +118,13 @@ class PostController extends GeneralController
                 $data['image'] = $img_name;
             }
         }
+        if($request->video){
+            if (is_file($request->video)) {
+                $video_name = time() . uniqid() . '.' . $request->video->getClientOriginalExtension();
+                $request->video->move(public_path('/uploads/posts/'), $video_name);
+                $data['video'] =$video_name;
+            }
+        }
         $this->model::where('id', $id)->update($data);
         return redirect()->route($this->route . '.index', ['type' => $data['type']])->with('success', 'تم التعديل بنجاح');
 
