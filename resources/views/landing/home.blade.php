@@ -77,11 +77,11 @@
                             <div class="col-lg-4 offset-lg-0 col-md-6 offset-md-0 col-10 offset-1">
                                 <div class="">
                                     <div class="">
-                                        <a href="{{route('front.home')}}#mobile_section" class="figure">
+                                        <a href="{{route('front.home')}}#download_section" class="figure">
                                             <img src="{{$category->image}}" style="width: 206px;"
                                                  alt="blog-image">
                                         </a>
-                                        <a href="{{route('front.home')}}#mobile_section">
+                                        <a href="{{route('front.home')}}#download_section">
                                             <h3 class="c-dark">{{$category->name}}</h3>
                                         </a>
                                     </div>
@@ -211,7 +211,7 @@
                                 <div class="icon-text-1">
                                     <i class="las la-sync"></i>
                                     <div>
-                                        <h4 class="c-dark">محتوى متجدد</h4>
+                                        <h4 class="c-dark">محتوى متجدد أسبوعيًا </h4>
                                         <p class="c-grey">نضيف العديد من المحتوى الرائع  بشكل أسبوعي، فريق عملنا لن يتوقف عن إفادتكم أبدًا إن شاء الله .</p>
                                     </div>
                                 </div>
@@ -223,7 +223,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="{{route('front.home')}}#mobile_section" class="button button-3">
+                            <a href="{{route('front.home')}}#download_section" class="button button-3">
                                 <div class="button-inner">
                                     <div class="button-content">
                                         <h4>{{trans('landing.get_it_on')}}</h4>
@@ -270,20 +270,20 @@
                                     <div class="swiper-wrapper">
                                         <div class="swiper-slide">
                                             <div class="pricing-single basic">
-                                                <h5 class="plan">6 شهور</h5>
+                                                <h5 class="plan">{{$data['first_price']->name_ar}}</h5>
                                                 <div class="price price-month">
                                                     <div class="month" style=" width: 132px;direction: rtl;">
-                                                        <span class="number">200</span>&nbsp;<sup>جنية مصري</sup>
+                                                        <span class="number" style="font-size: 24px;">{{$data['first_price']->cost}}</span>&nbsp;<sup>جنية مصري</sup>
                                                         بدل
                                                         <br>
-                                                        <span class="number">400</span>&nbsp;<sup>جنية مصري</sup>
+                                                        <span class="number" style="font-size: 24px;">{{$data['first_price']->cost + 100}}</span>&nbsp;<sup>جنية مصري</sup>
                                                     </div>
 
                                                     <div class="year">
                                                         <span class="number">120.00</span><sup>/yr</sup>
                                                     </div>
                                                 </div>
-                                                <a href="{{route('front.home')}}#mobile_section" class="button button-basic">
+                                                <a href="{{route('front.home')}}#download_section" class="button button-basic">
                                                     <div class="button-inner">
                                                         <div class="button-content">
                                                             <h4>اشترك الان</h4>
@@ -294,20 +294,20 @@
                                         </div>
                                         <div class="swiper-slide">
                                             <div class="pricing-single premium">
-                                                <h5 class="plan">سنة</h5>
+                                                <h5 class="plan">{{$data['second_price']->name_ar}}</h5>
                                                 <div class="price price-month">
                                                     <div class="month" style=" width: 132px;direction: rtl;">
-                                                        <span class="number">250</span>&nbsp;<sup>جنية مصري</sup>
+                                                        <span class="number" style="font-size: 24px;">{{$data['second_price']->cost}}</span>&nbsp;<sup>جنية مصري</sup>
                                                         بدل
                                                         <br>
-                                                        <span class="number">500</span>&nbsp;<sup>جنية مصري</sup>
+                                                        <span class="number" style="font-size: 24px;">{{$data['second_price']->cost + 100}}</span>&nbsp;<sup>جنية مصري</sup>
                                                     </div>
 
                                                     <div class="year">
                                                         <span class="number">120.00</span><sup>/yr</sup>
                                                     </div>
                                                 </div>
-                                                <a href="{{route('front.home')}}#mobile_section" class="button button-premium">
+                                                <a href="{{route('front.home')}}#download_section" class="button button-premium">
                                                     <div class="button-inner">
                                                         <div class="button-content">
                                                             <h4>اشترك الان</h4>
@@ -880,15 +880,15 @@
                                 <div class="blog-single blog-single-1">
                                     <div class="blog-single-wrapper">
                                         <div class="blog-single-content">
-                                            <a href="{{route('front.home')}}#mobile_section" class="figure">
+                                            <a href="{{route('front.home')}}#download_section" class="figure">
                                                 <img src="{{$row->image}}"
                                                      alt="blog-image">
                                             </a>
-                                            <a href="{{route('front.home')}}#mobile_section">
+                                            <a href="{{route('front.home')}}#download_section">
                                                 <h3>{!! $row->name !!}</h3>
                                             </a>
                                         </div>
-                                        <a href="{{route('front.home')}}#mobile_section" class="circle">
+                                        <a href="{{route('front.home')}}#download_section" class="circle">
                                             <i class="las la-plus"></i>
                                             <i class="las la-angle-right hover"></i>
                                         </a>
@@ -958,69 +958,69 @@
     <!--
     contact form section - start
     -->
-    <div class="contact-form-section contact-form-section-1" id="contact">
-        <div class="contact-form-section-wrapper">
-            <div class="container">
-                <div class="row gx-5 contact-form-section-row" style="    justify-content: center;">
-                    <div class="col-lg-6 offset-lg-0 col-md-8 offset-md-2 col-10 offset-1">
-                        <!--
-                        contact form - start
-                        -->
-                        <div class="contact-form drop-shadow-2">
-                            <div class="contact-form-wrapper">
-                                <div class="section-heading section-heading-2 center">
-                                    <div class="sub-heading c-blue upper ls-1">
-                                        <i class="las la-envelope"></i>
-                                        <h5>{{trans('landing.contact_us')}}</h5>
-                                    </div>
-                                    <div class="main-heading c-dark">
-                                        <h1>{{trans('landing.write_message')}}</h1>
-                                    </div>
-                                </div>
-                                <form method="post"  action="{{route('front.make.inbox')}}">
-                                    @csrf
-                                    <div class="form-floating">
-                                        <input required class="input form-control" id="name-field" type="text" name="name"
-                                               placeholder="{{trans('landing.name')}}">
-                                        <label for="name-field">{{trans('landing.name')}}</label>
-                                    </div>
-                                    <div class="form-floating">
-                                        <input required class="input form-control" id="name-field" type="number" name="phone"
-                                               placeholder="{{trans('landing.phone')}}">
-                                        <label for="name-field">{{trans('landing.phone')}}</label>
-                                    </div>
-                                    <div class="form-floating">
-                                        <input required class="input form-control" id="email-field" type="email" name="email"
-                                               placeholder="Email address">
-                                        <label for="email-field">{{trans('landing.email')}}</label>
-                                    </div>
-                                    <div class="form-floating">
-                                        <input required class="input form-control" id="message-field" type="text" name="message"
-                                               placeholder="Message">
-                                        <label for="message-field">{{trans('landing.message')}}</label>
-                                    </div>
-                                    <button type="submit" class="button button-3">
-                                        <span class="button-inner">
-                                            <span class="button-content">
-                                                <span class="text">{{trans('landing.send')}}</span>
-                                            </span>
-                                        </span>
-                                    </button>
-                                </form>
-                            </div>
-                        </div>
-                        <!--
-                        contact form - end
-                        -->
-                    </div>
-                </div>
-            </div>
-            <div class="contact-form-section-pattern">
-                <div class="left" style="background-image: url('landing/assets/images/Artwork-left.png');"></div>
-                <div class="right" style="background-image: url('landing/assets/images/Artwork-right.png');"></div>
-            </div>
-        </div>
-    </div>
+{{--    <div class="contact-form-section contact-form-section-1" id="contact">--}}
+{{--        <div class="contact-form-section-wrapper">--}}
+{{--            <div class="container">--}}
+{{--                <div class="row gx-5 contact-form-section-row" style="    justify-content: center;">--}}
+{{--                    <div class="col-lg-6 offset-lg-0 col-md-8 offset-md-2 col-10 offset-1">--}}
+{{--                        <!----}}
+{{--                        contact form - start--}}
+{{--                        -->--}}
+{{--                        <div class="contact-form drop-shadow-2">--}}
+{{--                            <div class="contact-form-wrapper">--}}
+{{--                                <div class="section-heading section-heading-2 center">--}}
+{{--                                    <div class="sub-heading c-blue upper ls-1">--}}
+{{--                                        <i class="las la-envelope"></i>--}}
+{{--                                        <h5>{{trans('landing.contact_us')}}</h5>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="main-heading c-dark">--}}
+{{--                                        <h1>{{trans('landing.write_message')}}</h1>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                                <form method="post"  action="{{route('front.make.inbox')}}">--}}
+{{--                                    @csrf--}}
+{{--                                    <div class="form-floating">--}}
+{{--                                        <input required class="input form-control" id="name-field" type="text" name="name"--}}
+{{--                                               placeholder="{{trans('landing.name')}}">--}}
+{{--                                        <label for="name-field">{{trans('landing.name')}}</label>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="form-floating">--}}
+{{--                                        <input required class="input form-control" id="name-field" type="number" name="phone"--}}
+{{--                                               placeholder="{{trans('landing.phone')}}">--}}
+{{--                                        <label for="name-field">{{trans('landing.phone')}}</label>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="form-floating">--}}
+{{--                                        <input required class="input form-control" id="email-field" type="email" name="email"--}}
+{{--                                               placeholder="Email address">--}}
+{{--                                        <label for="email-field">{{trans('landing.email')}}</label>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="form-floating">--}}
+{{--                                        <input required class="input form-control" id="message-field" type="text" name="message"--}}
+{{--                                               placeholder="Message">--}}
+{{--                                        <label for="message-field">{{trans('landing.message')}}</label>--}}
+{{--                                    </div>--}}
+{{--                                    <button type="submit" class="button button-3">--}}
+{{--                                        <span class="button-inner">--}}
+{{--                                            <span class="button-content">--}}
+{{--                                                <span class="text">{{trans('landing.send')}}</span>--}}
+{{--                                            </span>--}}
+{{--                                        </span>--}}
+{{--                                    </button>--}}
+{{--                                </form>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <!----}}
+{{--                        contact form - end--}}
+{{--                        -->--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="contact-form-section-pattern">--}}
+{{--                <div class="left" style="background-image: url('landing/assets/images/Artwork-left.png');"></div>--}}
+{{--                <div class="right" style="background-image: url('landing/assets/images/Artwork-right.png');"></div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
     <!--
     contact form section - end
     -->

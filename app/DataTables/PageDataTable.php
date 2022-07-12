@@ -63,8 +63,8 @@ class PageDataTable extends DataTable
         return [
             Column::make('image')->class('text-center')->title('صورة الصفحة'),
             Column::make('type_text')->class('text-center')->title('نوع الصفحة'),
-            Column::make('title_ar')->class('text-center')->title('العنوان بالعربيه'),
-            Column::make('title_en')->class('text-center')->title('العنوان بالانجليزيه'),
+//            Column::make('title_ar')->class('text-center')->title('العنوان بالعربيه'),
+//            Column::make('title_en')->class('text-center')->title('العنوان بالانجليزيه'),
             Column::make('action')->class('text-center')->title('الاجرائات'),
         ];
     }

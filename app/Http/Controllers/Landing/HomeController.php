@@ -9,6 +9,7 @@ use App\Models\Inbox;
 use App\Models\Page;
 use App\Models\Post;
 use App\Models\Slider;
+use App\Models\SubscribeType;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -17,6 +18,8 @@ class HomeController extends Controller
     public function home()
     {
         $data['categories'] = Category::whereIn('parent_id',[1,2])->get();
+        $data['first_price'] = SubscribeType::whereId(1)->first();
+        $data['second_price'] = SubscribeType::whereId(2)->first();
 //        to get random free posts
 //        $data['free_posts'] = Post::free()->get()->take(3);
 //        to get spicefic posts
