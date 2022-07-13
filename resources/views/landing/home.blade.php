@@ -11,7 +11,7 @@
                             <p class="large c-grey" style="direction: rtl;">{{trans('landing.description')}}
                             </p>
                             <div class="download-button-group">
-                                <a href="#" class="download-button download-button-google">
+                                <a target="_blank" href="https://play.google.com/store/apps/details?id=app.te.lima_zola" class="download-button download-button-google">
                                     <div class="download-button-inner">
                                         <div class="download-button-icon c-purple">
                                             <i class="fab fa-google-play"></i>
@@ -22,7 +22,7 @@
                                         </div>
                                     </div>
                                 </a>
-                                <a href="#" class="download-button download-button-apple">
+                                <a target="_blank" href="#" class="download-button download-button-apple">
                                     <div class="download-button-inner">
                                         <div class="download-button-icon c-pink">
                                             <i class="fab fa-apple"></i>
@@ -809,7 +809,7 @@
                             </div>
                             <div class="col-lg-4 offset-lg-0 col-10 offset-1">
                                 <div class="download-button-group download-button-1-group">
-                                    <a href="#" class="download-button download-button-1 download-button-google">
+                                    <a target="_blank" href="https://play.google.com/store/apps/details?id=app.te.lima_zola" class="download-button download-button-1 download-button-google">
                                         <div class="download-button-inner">
                                             <div class="download-button-icon c-purple">
                                                 <i class="fab fa-google-play"></i>
@@ -820,7 +820,7 @@
                                             </div>
                                         </div>
                                     </a>
-                                    <a href="#" class="download-button download-button-1 download-button-apple">
+                                    <a target="_blank" href="#" class="download-button download-button-1 download-button-apple">
                                         <div class="download-button-inner">
                                             <div class="download-button-icon c-pink">
                                                 <i class="fab fa-apple"></i>
@@ -923,7 +923,7 @@
                             </div>
                         </div>
                         <div class="download-button-group">
-                            <a href="#" class="download-button download-button-google">
+                            <a target="_blank" href="https://play.google.com/store/apps/details?id=app.te.lima_zola" class="download-button download-button-google">
                                 <div class="download-button-inner">
                                     <div class="download-button-icon c-purple">
                                         <i class="fab fa-google-play"></i>
@@ -934,7 +934,7 @@
                                     </div>
                                 </div>
                             </a>
-                            <a href="#" class="download-button download-button-apple">
+                            <a target="_blank" href="#" class="download-button download-button-apple">
                                 <div class="download-button-inner">
                                     <div class="download-button-icon c-pink">
                                         <i class="fab fa-apple"></i>

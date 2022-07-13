@@ -48,12 +48,6 @@
                                         <span>whatsapp</span>
                                     </a>
                                 </li>
-                                <li class="globe">
-                                    <a href="http://80fekra.com/ar/products" target="_blank" class="link-underline">
-                                        <i class="fab fa-globe"></i>
-                                        <span>موقع 80 فكرة</span>
-                                    </a>
-                                </li>
                             </ul>
                         </div>
                         <div class="footer-list">
