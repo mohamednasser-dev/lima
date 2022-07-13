@@ -2,22 +2,24 @@
     <div class="row">
         <div class="form-group  col-6">
             <label>الاسم بالعربيه<span class="text-danger">*</span></label>
-            <textarea name="name_ar" id="kt-ckeditor-1">{{ old('name_ar', $data->name_ar ?? '') }}</textarea>
+            <textarea type="text" class="summernote" name="name_ar"  id="name_ar">{!! old('name_ar', $data->name_ar ?? '') !!}</textarea>
         </div>
         <div class="form-group  col-6">
             <label>الاسم بالانجليزيه<span class="text-danger">*</span></label>
-            <textarea name="name_en" id="kt-ckeditor-2">{{ old('name_en', $data->name_en ?? '') }}</textarea>
+            <textarea type="text" class="summernote" name="name_en" id="name_en">{!! old('name_en', $data->name_en ?? '') !!}</textarea>
+
+            {{--            <textarea name="name_en" id="kt-ckeditor-2">{{ old('name_en', $data->name_en ?? '') }}</textarea>--}}
         </div>
     </div>
     @if($type == 'article')
         <div class="row">
             <div class="form-group  col-6">
                 <label>تفاصيل المحتوى بالعربيه<span class="text-danger">*</span></label>
-                <textarea name="body_ar" id="kt-ckeditor-3">{{ old('body_ar', $data->body_ar ?? '') }}</textarea>
+                <textarea class="summernote" name="body_ar" id="body_ar">{!! old('body_ar', $data->body_ar ?? '') !!}</textarea>
             </div>
             <div class="form-group  col-6">
                 <label>تفاصيل المحتوى بالانجليزيه<span class="text-danger">*</span></label>
-                <textarea name="body_en" id="kt-ckeditor-4">{{ old('body_en', $data->body_en ?? '') }}</textarea>
+                <textarea class="summernote" name="body_en" id="body_en">{!! old('body_en', $data->body_en ?? '') !!}</textarea>
             </div>
         </div>
     @endif
@@ -112,10 +114,16 @@
             </div>
         </div>
     @endif
+
 </div>
 <div class="card-footer text-left">
-    <button id="saveButton" class="btn btn-success btn-default " data-backdrop="static" data-keyboard="false">حفظ
-    </button>
+    @if($type == 'article')
+        <button type="submit" class="btn btn-success btn-default ">حفظ
+        </button>
+    @else
+        <button id="saveButton" class="btn btn-success btn-default " data-backdrop="static" data-keyboard="false">حفظ
+        </button>
+    @endif
     <a href="{{ URL::previous() }}" class="btn btn-secondary">الغاء</a>
 </div>
 
@@ -154,7 +162,11 @@
             jQuery(document).ready(function () {
                 KTCkeditor.init();
             });
-            $(document).on('submit', 'form', function () {
+            $(document).on('submit', 'form', function (e) {
+                e.preventDefault();
+                var res = $('#name_ar').text();
+                $('#txt_name_ar').val(res);
+                alert(res);
                 $('button').attr('disabled', 'disabled');
             });
         });
@@ -203,7 +215,28 @@
     <script>
         // basic
         $('#kt_select2_5').select2({});
+        // Class definition
+
+        var KTSummernoteDemo = function () {
+            // Private functions
+            var demos = function () {
+                $('.summernote').summernote({
+                    height: 150
+                });
+            }
+            return {
+                // public functions
+                init: function () {
+                    demos();
+                }
+            };
+        }();
+        // Initialization
+        jQuery(document).ready(function () {
+            KTSummernoteDemo.init();
+        });
     </script>
+    <script src="{{ asset('assets/js/pages/crud/forms/editors/summernote.js')}}"></script>
     <script src="{{ asset('assets/js/pages/crud/forms/widgets/select2.js')}}"></script>
     <script src="{{ asset('assets/plugins/custom/ckeditor/ckeditor-document.bundle.js')}}"></script>
     <script src="{{ asset('assets/js/pages/crud/forms/editors/ckeditor-document.js')}}"></script>

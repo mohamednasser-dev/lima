@@ -46,7 +46,6 @@ class PostController extends GeneralController
 
     public function store(PostRequest $request)
     {
-
         $data = $request->validated();
         //generate category id
         if ($request->sub_sub_category_id != null) {
@@ -59,7 +58,9 @@ class PostController extends GeneralController
         unset($data['sub_category_id']);
         unset($data['sub_sub_category_id']);
         $this->model::create($data);
-        return response()->json(['success'=>'You have successfully upload file.']);
+        if($request->type == 'video'){
+            return response()->json(['success'=>'You have successfully upload file.']);
+        }
 
 
         return redirect()->route($this->route . '.index', ['type' => $data['type']])->with('success', 'تم الاضافه بنجاح');

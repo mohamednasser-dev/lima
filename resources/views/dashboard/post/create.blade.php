@@ -90,6 +90,7 @@
     <script>
 
         $("#saveButton").click(function () {
+
             $('#progressDialog').modal('show');
             // $("#progressDialog").modal({backdrop: "static ", keyboard: false});
             var updateForm = document.querySelector('#form');
