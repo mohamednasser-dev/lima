@@ -22,7 +22,7 @@
                                         </div>
                                     </div>
                                 </a>
-                                <a target="_blank" href="#" class="download-button download-button-apple">
+                                <a target="_blank" href="https://apps.apple.com/app/lima-zola/id1628064132" class="download-button download-button-apple">
                                     <div class="download-button-inner">
                                         <div class="download-button-icon c-pink">
                                             <i class="fab fa-apple"></i>
@@ -820,7 +820,7 @@
                                             </div>
                                         </div>
                                     </a>
-                                    <a target="_blank" href="#" class="download-button download-button-1 download-button-apple">
+                                    <a target="_blank" href="https://apps.apple.com/app/lima-zola/id1628064132" class="download-button download-button-1 download-button-apple">
                                         <div class="download-button-inner">
                                             <div class="download-button-icon c-pink">
                                                 <i class="fab fa-apple"></i>
@@ -934,7 +934,7 @@
                                     </div>
                                 </div>
                             </a>
-                            <a target="_blank" href="#" class="download-button download-button-apple">
+                            <a target="_blank" href="https://apps.apple.com/app/lima-zola/id1628064132" class="download-button download-button-apple">
                                 <div class="download-button-inner">
                                     <div class="download-button-icon c-pink">
                                         <i class="fab fa-apple"></i>
