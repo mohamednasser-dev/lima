@@ -132,7 +132,7 @@
                                      alt="image">
 
                                 <div class="play">
-                                    <a href="https://www.youtube.com/watch?v=WIl5F5rM5wQ" class="glightbox">
+                                    <a href="https://youtu.be/bWk2qmINhlk" class="glightbox">
                                         <i class="la la-play"></i>
                                     </a>
                                 </div>
