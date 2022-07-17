@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Resources\SubscribeTypeResources;
 use App\Http\Controllers\GeneralController;
+use App\Models\Coupon;
+use App\Models\CouponUsage;
 use App\Models\Invoices;
 use App\Models\Setting;
 use Illuminate\Support\Facades\Validator;
@@ -84,7 +86,8 @@ class SubscriptionController extends GeneralController
         $data = $request->all();
         $validator = Validator::make($data, [
             'payment_method_id' => 'required',
-            'subscribe_type_id' => 'required|exists:subscribe_types,id'
+            'subscribe_type_id' => 'required|exists:subscribe_types,id',
+            'code' => 'nullable|exists:coupons,code',
         ]);
         if ($validator->fails()) {
             return response()->json(['status' => 401, 'msg' => $validator->messages()->first()]);
@@ -92,7 +95,12 @@ class SubscriptionController extends GeneralController
         $subscription = SubscribeType::where('id', $request->subscribe_type_id)->first();
         if ($subscription) {
             //Generate price
-            $price = (string)$subscription->cost;
+            if ($request->code) {
+                $price = $this->check_coupon($request, $subscription->cost, apiUser());
+            } else {
+                $price = $subscription->cost;
+            }
+            $price = (string)$price;
             $Currency = "EGP";
             //end
         } else {
@@ -115,7 +123,7 @@ class SubscriptionController extends GeneralController
                         "customer": {
                             "first_name": "' . apiUser()->name . '",
                             "last_name": "' . apiUser()->id . '",
-                            "email": "' . apiUser()->id .'mohamed_hisham@80fekra.com",
+                            "email": "' . apiUser()->id . 'mohamed_hisham@80fekra.com",
                             "phone": "' . apiUser()->phone . '",
                             "address": "address"
                         },
@@ -143,10 +151,39 @@ class SubscriptionController extends GeneralController
         $result_data['user_id'] = apiUser()->id;
         $result_data['subscription_id'] = $subscription->id;
         $result_data['payment_id'] = $request->payment_method_id;
+        $result_data['code'] = $request->code;
         Invoices::create($result_data);
         //end store invoice .....
         return msgdata($request, success(), trans('lang.shown_s'), $response);
 
+    }
+
+    public function check_coupon(Request $request, $cost, $user)
+    {
+        $today = Carbon::now();
+        $exists_coupon = Coupon::where('code', $request->code)->where('from_date', '<=', $today)->where('to_date', '>=', $today)->first();
+        if ($exists_coupon) {
+            //calculate discount
+            $price = $cost;
+            $discount = $price * $exists_coupon->amount / 100;
+            $final_price = $price - $discount;
+            $exists_product_in_cart_coupon = Coupon::where('code', $request->code)
+                ->where('from_date', '<=', $today)
+                ->where('to_date', '>=', $today)
+                ->first();
+            if ($exists_product_in_cart_coupon) {
+                //check if customer used this coupon before or not
+                $exists_coupon_usage = CouponUsage::where('user_id', $user->id)->where('coupon_id', $exists_coupon->id)->first();
+                if ($exists_coupon_usage) {
+                    return $this->errorResponse('تم استخدام الكوبون من قبل - يرجى حذفه او تجربة كوبون اخر', null, 401);
+                }
+                return $final_price;
+            } else {
+                return $this->errorResponse('لا يوجد في السلة المنتج المحدد للخصم ', null, 401);
+            }
+        } else {
+            return $this->errorResponse('تم انتهاء الكوبون', null, 401);
+        }
     }
 
     public function excute_pay(Request $request)
@@ -166,10 +203,22 @@ class SubscriptionController extends GeneralController
                 $user->subscriber = 1;
                 $user->subscription_ended_at = $ended_date;
                 $user->save();
+
+                //calculate cost if exists coupon
+                $final_price = 0;
+                if ($invoice->code) {
+                    $exists_coupon = Coupon::where('code', $invoice->code)->first();
+                    $price = $subscription->cost;
+                    $discount = $price * $exists_coupon->amount/100 ;
+                    $final_price = $price - $discount ;
+                }else{
+                    $final_price = $subscription->cost ;
+                }
+                //end calculation
                 $history_data['subscribe_type_id'] = $invoice->subscription_id;
                 $history_data['name_ar'] = $subscription->name_ar;
                 $history_data['name_en'] = $subscription->name_en;
-                $history_data['cost'] = $subscription->cost;
+                $history_data['cost'] = $final_price;
                 $history_data['user_name'] = $user->name;
                 $history_data['phone'] = $user->phone;
                 $history_data['user_id'] = $invoice->user_id;
@@ -179,6 +228,19 @@ class SubscriptionController extends GeneralController
                 $history_data['type'] = 'visa';
                 $history_data['status'] = 'accepted';
                 SubscriptionHistory::create($history_data);
+
+                //if coupon exists
+                if ($invoice->code) {
+                    $coupon = Coupon::where('code', $invoice->code)->first();
+                    $exists_coupon_usage = CouponUsage::where('user_id', $user->id)->where('coupon_id', $coupon->id)->first();
+                    if (!$exists_coupon_usage) {
+                        $coupon_data['user_id'] = $user->id;
+                        $coupon_data['coupon_id'] = $coupon->id;
+                        CouponUsage::create($coupon_data);
+                        $coupon->usage_count = $coupon->usage_count + 1 ;
+                        $coupon->save();
+                    }
+                }
                 return "pay done success";
             } else {
                 return "no user selected";

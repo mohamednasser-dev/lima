@@ -5,6 +5,7 @@ use App\Http\Controllers\Dashboard\AdminController;
 use App\Http\Controllers\Dashboard\CityController;
 use App\Http\Controllers\Dashboard\SettingController;
 use App\Http\Controllers\Dashboard\SliderController;
+use App\Http\Controllers\Dashboard\CouponController;
 use App\Http\Controllers\Dashboard\ProfileController;
 use App\Http\Controllers\Dashboard\UserController;
 use App\Http\Controllers\Dashboard\HomeController;
@@ -204,6 +205,18 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('deletes', [CityController::class, 'deletes'])->name('cities.deletes')->middleware('permission:delete-' . $permission);
         Route::get('delete/{id}', [CityController::class, 'delete'])->name('cities.delete')->middleware('permission:delete-' . $permission);
         Route::post('change_active', [CityController::class, 'change_active'])->name('cities.change_active')->middleware('permission:delete-' . $permission);
+    });
+
+    //coupons
+    Route::group(['prefix' => 'coupons'], function () {
+        $permission = 'coupons';
+        Route::get('/', [CouponController::class, 'index'])->name($permission)->middleware('permission:read-' . $permission);
+        Route::get('create', [CouponController::class, 'create'])->name($permission.'.create')->middleware('permission:create-' . $permission);
+        Route::post('store', [CouponController::class, 'store'])->name($permission.'.store')->middleware('permission:create-' . $permission);
+        Route::get('edit/{id}', [CouponController::class, 'edit'])->name($permission.'.edit')->middleware('permission:update-' . $permission);
+        Route::post('update/{id}', [CouponController::class, 'update'])->name($permission.'.update')->middleware('permission:update-' . $permission);
+        Route::post('deletes', [CouponController::class, 'deletes'])->name($permission.'.deletes')->middleware('permission:delete-' . $permission);
+        Route::get('delete/{id}', [CouponController::class, 'delete'])->name($permission.'.delete')->middleware('permission:delete-' . $permission);
     });
 
     // subscription_types Route

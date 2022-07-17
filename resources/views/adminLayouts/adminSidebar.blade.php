@@ -50,6 +50,18 @@
                     </a>
                 </li>
             @endcan
+            @can('read-coupons')
+                <li class="menu-item menu-item-submenu @if( Request::segment(1)== 'coupons' ) menu-item-open @endif"
+                    aria-haspopup="true" data-menu-toggle="hover">
+                    <a href="{{route('coupons')}}" class="menu-link menu-toggle">
+                        <i class="menu-icon flaticon2-tag"></i>
+                        <span class="menu-text">كوبونات الخصم</span>
+                        <span class="menu-label">
+                            <span class="label label-danger label-inline">جديد</span>
+                        </span>
+                    </a>
+                </li>
+            @endcan
             @can('read-posts')
                 <li class="menu-item menu-item-submenu  @if( Request::segment(1)== 'posts')  menu-item-open @endif "
                     aria-haspopup="true" data-menu-toggle="hover">

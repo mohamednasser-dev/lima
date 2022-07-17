@@ -81,6 +81,32 @@ class PermissionsSeeder extends Seeder
                 'description' => 'حذف المدن',
             ],
 
+            // coupons permissions
+            [
+                'path' => 'coupons',
+                'name' => 'read-coupons',
+                'display_name' => 'read coupons',
+                'description' => 'عرض كوبونات الخصم',
+            ],
+            [
+                'path' => 'coupons',
+                'name' => 'update-coupons',
+                'display_name' => 'update coupons',
+                'description' => 'تعديل كوبونات الخصم',
+            ],
+            [
+                'path' => 'coupons',
+                'name' => 'create-coupons',
+                'display_name' => 'create coupons',
+                'description' => 'إضافة كوبونات الخصم',
+            ],
+            [
+                'path' => 'coupons',
+                'name' => 'delete-coupons',
+                'display_name' => 'delete coupons',
+                'description' => 'حذف كوبونات الخصم',
+            ],
+
             // subscription_types permissions
             [
                 'path' => 'subscription_types',
