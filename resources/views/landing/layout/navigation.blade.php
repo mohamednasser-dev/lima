@@ -91,11 +91,11 @@
                                     <span>{{trans('landing.pricing')}}</span>
                                 </a>
                             </li>
-                            <li>
-                                <a href="{{route('front.home')}}#contact" class="link-underline link-underline-1">
-                                    <span>{{trans('landing.contact_us')}}</span>
-                                </a>
-                            </li>
+{{--                            <li>--}}
+{{--                                <a href="{{route('front.home')}}#contact" class="link-underline link-underline-1">--}}
+{{--                                    <span>{{trans('landing.contact_us')}}</span>--}}
+{{--                                </a>--}}
+{{--                            </li>--}}
                         </ul>
                         <div class="social">
                             <ul>
