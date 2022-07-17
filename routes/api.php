@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\HelperController;
+use App\Http\Controllers\Api\CouponController;
 use App\Http\Controllers\Api\HomeController;
 use App\Http\Controllers\Api\FavoriteController;
 use App\Http\Controllers\Api\UserController;
@@ -58,6 +59,9 @@ Route::group(['middleware' => ['api'], 'prefix' => "v1", 'namespace' => 'v1'], f
     Route::post('/user/post/like/store', [PostController::class, 'like_store']);
 
     Route::group(['middleware' => ['auth:api'], 'prefix' => "user"], function () {
+
+        Route::post('/coupon/apply', [CouponController::class, 'apply_coupon']);
+
 
         //user profile
         Route::get('/profile', [UserController::class, 'profile']);

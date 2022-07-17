@@ -128,6 +128,41 @@
 </div>
 
 @push('script')
+    <script>
+        $("#saveButton").click(function () {
+
+            $('#progressDialog').modal('show');
+            // $("#progressDialog").modal({backdrop: "static ", keyboard: false});
+            var updateForm = document.querySelector('#form');
+            var request = new XMLHttpRequest();
+
+            request.upload.addEventListener('progress', function (e) {
+                var percent = Math.round((e.loaded / e.total) * 100);
+
+                $('.progress-bar').css('width', percent + '%');
+                $('.sr-only').html(percent + '%');
+
+
+            }, false);
+
+            request.addEventListener('load', function (e) {
+                var jsonResponse = JSON.parse(e.target.responseText);
+                if (jsonResponse.errors) {
+                    console.log(jsonResponse.errors);
+                } else {
+                    $('#progressDialog').modal('hide');
+                    window.location.href = '{{url()->previous()}}';
+                }
+            }, false);
+
+            updateForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+                var formData = new FormData(updateForm);
+                request.open('post', updateForm['action']);
+                request.send(formData);
+            }, false);
+        });
+    </script>
     <script src="{{url('/')}}/assets/plugins/custom/ckeditor/ckeditor-classic.bundle.js"></script>
     <script src="{{url('/')}}/assets/js/pages/crud/forms/editors/ckeditor-classic.js"></script>
     <script>
@@ -211,7 +246,6 @@
         var avatar1 = new KTImageInput('kt_image_1');
         var avatar2 = new KTImageInput('kt_image_2');
     </script>
-
     <script>
         // basic
         $('#kt_select2_5').select2({});
