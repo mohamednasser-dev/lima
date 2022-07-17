@@ -737,7 +737,7 @@
                         <div class="swiper-slide">
                             <div class="screen-slide">
                                 <figure>
-                                    <img src="{{url('landing')}}/assets/images/screens/screen-slider-img-1.png"
+                                    <img src="{{url('landing')}}/assets/images/screens/--01.jpg"
                                          alt="app-screen">
                                 </figure>
                             </div>
@@ -751,7 +751,7 @@
                         <div class="swiper-slide">
                             <div class="screen-slide">
                                 <figure>
-                                    <img src="{{url('landing')}}/assets/images/screens/screen-slider-img-2.png"
+                                    <img src="{{url('landing')}}/assets/images/screens/--02.jpg"
                                          alt="app-screen">
                                 </figure>
                             </div>
@@ -765,7 +765,7 @@
                         <div class="swiper-slide">
                             <div class="screen-slide">
                                 <figure>
-                                    <img src="{{url('landing')}}/assets/images/screens/screen-slider-img-3.png"
+                                    <img src="{{url('landing')}}/assets/images/screens/--03.jpg"
                                          alt="app-screen">
                                 </figure>
                             </div>
@@ -779,7 +779,31 @@
                         <div class="swiper-slide">
                             <div class="screen-slide">
                                 <figure>
-                                    <img src="{{url('landing')}}/assets/images/screens/screen-slider-img-4.png"
+                                    <img src="{{url('landing')}}/assets/images/screens/--04.jpg"
+                                         alt="app-screen">
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="screen-slide">
+                                <figure>
+                                    <img src="{{url('landing')}}/assets/images/screens/--05.jpg"
+                                         alt="app-screen">
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="screen-slide">
+                                <figure>
+                                    <img src="{{url('landing')}}/assets/images/screens/--06.jpg"
+                                         alt="app-screen">
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="screen-slide">
+                                <figure>
+                                    <img src="{{url('landing')}}/assets/images/screens/--07.jpg"
                                          alt="app-screen">
                                 </figure>
                             </div>
