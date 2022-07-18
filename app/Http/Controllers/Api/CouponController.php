@@ -5,10 +5,11 @@ namespace App\Http\Controllers\Api;
 use App\Http\Requests\Api\CouponApiRequest;
 use App\Http\Controllers\GeneralController;
 use App\Models\SubscribeType;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
 use App\Models\CouponUsage;
 use App\Models\Coupon;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Validator;
 
 class CouponController extends GeneralController
 {
@@ -17,12 +18,18 @@ class CouponController extends GeneralController
         parent::__construct($model);
     }
 
-    public function apply_coupon(CouponApiRequest $request)
+    public function apply_coupon(Request $request)
     {
         $user = apiUser();
-
         // Validate request
-        $data = $request->validated();
+        $data = $request->all();
+        $validator = Validator::make($data, [
+            'code' => 'required|exists:coupons,code|min:0|max:150',
+            'subscribe_type_id' => 'required|exists:subscribe_types,id'
+        ]);
+        if ($validator->fails()) {
+            return response()->json(['status' =>  401, 'msg' => $validator->messages()->first()]);
+        }
         //get coupon data if exists
         $today = Carbon::now();
         $exists_coupon = Coupon::where('code', $request->code)->where('from_date', '<=', $today)->where('to_date', '>=', $today)->first();
