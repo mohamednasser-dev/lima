@@ -88,9 +88,15 @@ class SubscriptionController extends GeneralController
             'payment_method_id' => 'required',
             'subscribe_type_id' => 'required|exists:subscribe_types,id',
             'code' => 'nullable|exists:coupons,code',
+            'phone' => 'nullable|numeric',
         ]);
         if ($validator->fails()) {
             return response()->json(['status' => 401, 'msg' => $validator->messages()->first()]);
+        }
+        if($request->phone){
+            $phone = $request->phone ;
+        }else{
+            $phone = apiUser()->phone ;
         }
         $subscription = SubscribeType::where('id', $request->subscribe_type_id)->first();
         if ($subscription) {
@@ -124,7 +130,7 @@ class SubscriptionController extends GeneralController
                             "first_name": "' . apiUser()->name . '",
                             "last_name": "' . apiUser()->id . '",
                             "email": "' . apiUser()->id . 'mohamed_hisham@80fekra.com",
-                            "phone": "' . apiUser()->phone . '",
+                            "phone": "' . $phone . '",
                             "address": "address"
                         },
                         "cartItems": [
