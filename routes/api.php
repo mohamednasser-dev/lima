@@ -62,6 +62,7 @@ Route::group(['middleware' => ['api'], 'prefix' => "v1", 'namespace' => 'v1'], f
 
         Route::post('/coupon/apply', [CouponController::class, 'apply_coupon']);
 
+        Route::post('/update_fcm_token', [UserController::class, 'update_fcm_token']);
 
         //user profile
         Route::get('/profile', [UserController::class, 'profile']);

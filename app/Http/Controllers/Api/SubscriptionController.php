@@ -93,10 +93,10 @@ class SubscriptionController extends GeneralController
         if ($validator->fails()) {
             return response()->json(['status' => 401, 'msg' => $validator->messages()->first()]);
         }
-        if($request->phone){
-            $phone = $request->phone ;
-        }else{
-            $phone = apiUser()->phone ;
+        if ($request->phone) {
+            $phone = $request->phone;
+        } else {
+            $phone = apiUser()->phone;
         }
         $subscription = SubscribeType::where('id', $request->subscribe_type_id)->first();
         if ($subscription) {
@@ -215,10 +215,10 @@ class SubscriptionController extends GeneralController
                 if ($invoice->code) {
                     $exists_coupon = Coupon::where('code', $invoice->code)->first();
                     $price = $subscription->cost;
-                    $discount = $price * $exists_coupon->amount/100 ;
-                    $final_price = $price - $discount ;
-                }else{
-                    $final_price = $subscription->cost ;
+                    $discount = $price * $exists_coupon->amount / 100;
+                    $final_price = $price - $discount;
+                } else {
+                    $final_price = $subscription->cost;
                 }
                 //end calculation
                 $history_data['subscribe_type_id'] = $invoice->subscription_id;
@@ -235,6 +235,11 @@ class SubscriptionController extends GeneralController
                 $history_data['status'] = 'accepted';
                 SubscriptionHistory::create($history_data);
 
+                //notify user if success pay
+                if ($user->fcm_token) {
+                    send($user->fcm_token, trans('lang.pay_done'), trans('lang.pay_done_subscription'), 'subscription');
+                }
+
                 //if coupon exists
                 if ($invoice->code) {
                     $coupon = Coupon::where('code', $invoice->code)->first();
@@ -243,7 +248,7 @@ class SubscriptionController extends GeneralController
                         $coupon_data['user_id'] = $user->id;
                         $coupon_data['coupon_id'] = $coupon->id;
                         CouponUsage::create($coupon_data);
-                        $coupon->usage_count = $coupon->usage_count + 1 ;
+                        $coupon->usage_count = $coupon->usage_count + 1;
                         $coupon->save();
                     }
                 }

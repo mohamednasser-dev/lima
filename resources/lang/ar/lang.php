@@ -1,6 +1,8 @@
 <?php
 
 return [
+    'pay_done' => 'عملية الدفع',
+    'pay_done_subscription' => 'تم الاشتراك بنجاح',
     'should_update_app_first' => 'يرجى تحديث التطبيق اولا',
     'should_login_first' => 'يرجى تسجيل الدخول اولا',
     'passwordChangedSuccess' => 'تم تغيير كلمة المرور بنجاح',

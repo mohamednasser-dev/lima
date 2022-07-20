@@ -57,9 +57,10 @@ class UserController extends GeneralController
             'city_id' => 'required|exists:cities,id',
             'password' => 'required|string|min:8|max:100',
             'otp' => 'required|numeric|min:4',
+            'fcm_token' => 'nullable|string',
         ]);
         if ($validator->fails()) {
-            return response()->json(['status' => 401, 'msg' => $validator->messages()->first()]);
+            return response()->json(['status' => failed(), 'msg' => $validator->messages()->first()]);
         }
         $validated_otp = \Otp::validate($data['phone'], $data['otp']);
         if ($validated_otp->status == true) {
@@ -69,15 +70,15 @@ class UserController extends GeneralController
                 $credentials = $request->only(['phone', 'password']);
                 $token = Auth::guard('api')->attempt($credentials);
                 if (!$token) {
-                    return $this->errorLoginResponse(__('lang.login_data_not_correct'), null, 401);
+                    return $this->errorLoginResponse(__('lang.login_data_not_correct'), null, failed());
                 } else {
                     $logined_user = Auth::guard('api')->user();
                     $logined_user->token_api = $token;
-                    return $this->sendResponse($logined_user, __('lang.login_s'), 200);
+                    return $this->sendResponse($logined_user, __('lang.login_s'), success());
                 }
             }
         } else {
-            return $this->errorLoginResponse(__('lang.otp_invalid'), null, 401);
+            return $this->errorLoginResponse(__('lang.otp_invalid'), null, failed());
         }
     }
 
@@ -87,7 +88,7 @@ class UserController extends GeneralController
         $id = apiUser()->id;
         $user = User::where('id', $id)->first();
         $data = (new UserResources($user));
-        return $this->sendResponse($data, __('lang.data_show_successfully'), 200);
+        return $this->sendResponse($data, __('lang.data_show_successfully'), success());
     }
 
     public function update_profile(Request $request)
@@ -99,13 +100,29 @@ class UserController extends GeneralController
             'city_id' => 'required|exists:cities,id',
         ]);
         if ($validator->fails()) {
-            return response()->json(['status' => 401, 'msg' => $validator->messages()->first()]);
+            return response()->json(['status' => failed(), 'msg' => $validator->messages()->first()]);
         }
         $id = auth('api')->user()->id;
         User::findOrFail($id)->update($data);
         $user = User::findOrFail($id);
         $user = (new UserResources($user));
-        return $this->sendResponse($user, __('lang.user_profile_updated_successfully'), 200);
+        return $this->sendResponse($user, __('lang.user_profile_updated_successfully'), success());
+    }
+
+    public function update_fcm_token(Request $request)
+    {
+        $data = $request->all();
+        $validator = Validator::make($data, [
+            'fcm_token' => 'required|string',
+        ]);
+        if ($validator->fails()) {
+            return response()->json(['status' => failed(), 'msg' => $validator->messages()->first()]);
+        }
+        $id = auth('api')->user()->id;
+        User::findOrFail($id)->update($data);
+        $user = User::findOrFail($id);
+        $user = (new UserResources($user));
+        return $this->sendResponse($user, __('lang.updatedSucssefully'), success());
     }
 
     public function update_password(Request $request)
@@ -214,7 +231,8 @@ class UserController extends GeneralController
         $data = $request->all();
         $validator = Validator::make($data, [
             'phone' => 'required|exists:users,phone',
-            'password' => 'required|min:8'
+            'password' => 'required|min:8',
+            'fcm_token' => 'nullable|string',
         ]);
         if ($validator->fails()) {
             return response()->json(['status' => 401, 'msg' => $validator->messages()->first()]);
@@ -232,6 +250,10 @@ class UserController extends GeneralController
                     Auth::guard('api')->logout();
                     return $this->errorLoginResponse(__('lang.you_are_not_active'), null, not_active());
                 } else {
+                    if ($request->fcm_token) {
+                        $user->fcm_token = $request->fcm_token;
+                        $user->save();
+                    }
                     $user->token_api = $token;
                     unset($user['status']);
                     return $this->sendResponse($user, trans('lang.login_s'), success());

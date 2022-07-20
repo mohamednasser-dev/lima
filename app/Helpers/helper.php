@@ -160,3 +160,57 @@ if (!function_exists('sendSMS')) {
         return $response ;
     }
 }
+
+//firebase notification
+if (!function_exists('send')) {
+
+    function send($tokens, $title = "رسالة جديدة", $msg = "رسالة جديدة فى البريد", $type = 'subscription')
+    {
+        $key = "AAAAjFS77Fo:APA91bHlNreCeMU6OlpMGkQQkFG169Jc9hBO2sHknTum0LALiBoD4PXJVd_gXZB_CudJAhEvLYrs49ZL-fakf7pJWE6GpCSr75T7tZXkvw91_EXQPz7wj1wBOMEw7ZpiyH-LAfTuWuHL";
+        $fields = array
+        (
+            "registration_ids" => (array)$tokens,  //array of user token whom notification sent to
+            "priority" => 10,
+            'data' => [
+                'title' => $title,
+                'body' => strip_tags($msg),
+                'type' => $type,
+                'icon' => 'myIcon',
+                'sound' => 'mySound',
+            ],
+            'notification' => [
+                'title' => $title,
+                'body' => strip_tags($msg),
+                'type' => $type,
+                'icon' => 'myIcon',
+                'sound' => 'mySound',
+            ],
+            'vibrate' => 1,
+            'sound' => 1
+        );
+
+        $headers = array
+        (
+            'accept: application/json',
+            'Content-Type: application/json',
+            'Authorization: key=' . $key
+        );
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, 'https://fcm.googleapis.com/fcm/send');
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($fields));
+        $result = curl_exec($ch);
+
+
+        if ($result === FALSE) {
+            die('Curl failed: ' . curl_error($ch));
+        }
+
+        curl_close($ch);
+        return $result;
+    }
+}
