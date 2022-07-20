@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'should_update_app_first' => 'please update application first',
     'should_login_first' => 'Please login first',
     'passwordChangedSuccess' => 'Password changed successfully',
     'Verified_success' => 'The code was confirmed successfully',

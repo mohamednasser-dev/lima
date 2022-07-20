@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\GeneralController;
 use App\Http\Resources\CategoryResources;
 use App\Models\Category;
+use App\Models\Setting;
+use Illuminate\Http\Request;
 
 class HomeController extends GeneralController
 {
@@ -13,9 +15,16 @@ class HomeController extends GeneralController
         parent::__construct($model);
     }
 
-    public function home($id)
+    public function home(Request $request, $id)
     {
-        $cats = $this->model::where('parent_id', $id)->get();
+        if ($request->header('platform') == 'android') {
+            $version = Setting::where('key', 'android_version')->first()->val;
+            if ($request->header('version') < $version) {
+                return response()->json(msg($request, failed(), __('lang.should_update_app_first')));
+            }
+        }
+
+        $cats = Category::where('parent_id', $id)->get();
         if (!apiUser()) {
             $data['subscriber'] = 0;
         } else {
@@ -23,6 +32,8 @@ class HomeController extends GeneralController
         }
         $data['categories'] = (CategoryResources::collection($cats));
         return $this->sendResponse($data, __('lang.data_show_successfully'), 200);
+
     }
+
 
 }

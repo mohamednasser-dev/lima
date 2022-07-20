@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'should_update_app_first' => 'يرجى تحديث التطبيق اولا',
     'should_login_first' => 'يرجى تسجيل الدخول اولا',
     'passwordChangedSuccess' => 'تم تغيير كلمة المرور بنجاح',
     'Verified_success' => 'تم تاكيد الرمز بنجاح',

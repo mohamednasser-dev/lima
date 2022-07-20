@@ -26,6 +26,8 @@ class SettingSeeder extends Seeder
             'address_ar' => 'المنوفية',
             'address_en' => 'al mnofia',
             'app_gif' => null,
+            'android_version' => 1,
+            'ios_version' => 1,
             'accessKey' => 'accessKey9A3q9p6V0eKVizqYt9Su9KAMfORbccWrvoJVUCGPKqHBvEgvtJq',
         ];
         Setting::setMany($data);
