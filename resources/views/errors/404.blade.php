@@ -1,85 +1,85 @@
-{{--@extends('errors::minimal')--}}
 
-{{--@section('title', __('Not Found'))--}}
-{{--@section('code', '404')--}}
-{{--@section('message', __('Not Found'))--}}
-
-@extends('frontend.layout.master')
-@push('css')
-@endpush
-
-@section('title')
-    {{trans('lang.page not found')}}
+@extends('landing.layout.master')
+@section('navigation_class')
+    navigation-1
 @endsection
 @section('content')
+    <div class="page-header">
+        <div class="page-header-wrapper">
+            <div class="page-header-inner">
+                <div class="container">
+                    <div class="row d-lg-flex align-items-lg-end">
+                        <div class="col-lg-6">
+                            <div class="page-header-content c-white">
+                                <h1>404 page</h1>
+                                <ul>
+                                    <li>
+                                        <a href="{{route('front.home')}}" class="link-underline">
+                                            <span>{{trans('landing.home')}}</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <i class="las la-angle-right"></i>
+                                        <a href="javascript:void($this);" class="link-underline">
+                                            <span>404 page</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
 
-</div>
-<!-- .bg-level-1 -->
-<div id="kids_middle_container">
-    <!-- .content -->
-    <div class="kids_top_content">
-        <!-- .middle_cloud -->
-        <div class="kids_top_content_head">
-            <div class="kids_top_content_head_body"></div>
-        </div>
-        <!-- .kids_top_content_head -->
-        <div class="kids_top_content_middle">
-            <div class="header_container ">
-                <div class="l-page-width">
-                    <h1>404</h1>
-                    <ul id="breadcrumbs">
-                        <li><a href="/" title="Home">Home</a></li> <span class="delimiter">&gt;</span>
-                        <li><span class="current_crumb">404 page</span></li>
-                    </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="background-pattern background-pattern-2">
+                <div class="background-pattern-img background-loop" style="background-image: url(landing/assets/images/patterns/pattern.jpg);"></div>
+                <div class="background-pattern-gradient"></div>
+                <div class="background-pattern-bottom">
+                    <div class="image" style="background-image: url(landing/assets/images/patterns/pattern-2.jpg)"></div>
                 </div>
             </div>
         </div>
-        <!-- .kids_top_content_middle -->
-        <div class="kids_top_content_footer"></div>
-        <!-- .end_middle_cloud -->
     </div>
-    <!-- .end_middle_cloud  -->
-    <div class="bg-level-2-full-width-container kids_bottom_content">
-        <div class="bg-level-2-page-width-container no-padding">
-            <section class="kids_bottom_content_container">
-                <!-- ***************** - START Image floating - *************** -->
-                <div class="page-content">
-                    <div class="bg-level-2 first-part"></div>
-                    <div class="container l-page-width">
-                        <div class="entry-container single-sidebar">
-                            <main>
-                                <div class="holder404">
-                                    <div class="e404">
-                                        <h1>404</h1>
-                                        <div class="title_error">
-                                            <span></span>
-                                            <div>{{trans('lang.page not found')}}</div>
-                                        </div>
-                                    </div>
-                                    <div class="kids_clear"></div>
-                                    <div class="description_error">
-                                        {{trans('lang.Unfortunately, this page is absent or unavailable')}}
+    <!--
+    page header - end
+    -->
 
-                                        <br />
+    <!--
+    about section - start
+    -->
+    <div class="about-section">
+        <div class="about-section-wrapper">
+            <div class="container">
+                <!--
+                first half - start
+                -->
+                <div class="row">
+                    <div class="col-lg-6 offset-lg-0 order-lg-1 col-md-8 offset-md-2 col-10 offset-1 order-2">
+                        <div class="about-section-content c-grey">
+                            <div class="section-heading">
+                            </div>
+                            <p class="paragraph-big" style="direction: rtl;">{{trans('lang.page not found')}}</p>
+                            <p class="paragraph-big" style="direction: rtl;">{{trans('lang.Unfortunately, this page is absent or unavailable')}}</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 offset-lg-0 order-lg-2 col-md-8 offset-md-2 col-10 offset-1 order-1">
+                        <div class="about-section-image">
+                            <div class="pattern-image pattern-image-1">
+                                <div class="pattern-image-wrapper">
+                                    {{trans('lang.Unfortunately, this page is absent or unavailable')}}
+                                    <div class="background-pattern background-pattern-radius drop-shadow-1">
+                                        <div class="background-pattern-img background-loop" style="background-image: url(assets/images/patterns/pattern.jpg);"></div>
+                                        <div class="background-pattern-gradient"></div>
                                     </div>
                                 </div>
-                                <!--/ 404-holder-->
-                            </main>
-
-                            <div class="kids_clear"></div>
+                            </div>
                         </div>
-                        <!-- .entry-container -->
                     </div>
-                    <div class="bg-level-2 second-part"></div>
-                    <!-- ***************** - END Image floating - *************** -->
                 </div>
-            </section>
-            <!-- .bottom_content_container -->
+            </div>
         </div>
-        <div class="content_bottom_bg"></div>
     </div>
-</div>
 
 @endsection
-@push('js')
-@endpush
